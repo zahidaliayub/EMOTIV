@@ -12,7 +12,7 @@
         <!--<link href="tabs.css" rel="stylesheet" type="text/css"/>-->
         <script type="text/javascript" src="dynsections.js"></script>
         <link href="doxygen.css" rel="stylesheet" type="text/css" />
-        <link href="customdoxygen.css" rel="stylesheet" type="text/css"/>
+        <link href="EmotivSDKStyleSheet.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="doxy-boot.js"></script>
@@ -21,7 +21,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">Emotiv SDK Community Edition 3.3.1</a>
+                    <a class="navbar-brand">Emotiv SDK Community Edition 3.3.3</a>
                 </div>
             </div>
         </nav>
@@ -36,14 +36,14 @@
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
     </ul>
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
 <div id="nav-path" class="navpath">
@@ -133,86 +133,22 @@ Macros</h2></td></tr>
 <tr class="memdesc:a474bf199f8d226cc8cb19ca6e50ae537"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved return value.  <a href="#a474bf199f8d226cc8cb19ca6e50ae537">More...</a><br /></td></tr>
 <tr class="separator:a474bf199f8d226cc8cb19ca6e50ae537"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="af845c1b9bfb4a6fde61b6bc58aea06e2"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EDK_OK&#160;&#160;&#160;0x0000</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Default success value. </p>
-<p>Emotiv SDK Copyright (c) 2016 Emotiv Inc.</p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Emotiv SDK Copyright (c) 2016 Emotiv Inc.</p>
 <p>This file is part of the Emotiv SDK.</p>
 <p>All the error codes that are returned by IEE_ functions are listed here. </p>
-
-<p>Definition at line <a class="el" href="_iedk_error_code_8h_source.html#l00014">14</a> of file <a class="el" href="_iedk_error_code_8h_source.html">IedkErrorCode.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a160b23e7fb18e625b87dd2f582b9b19a"></a>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="acf95077b4bd5f24e4d0f9e374367b331"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define EDK_UNKNOWN_ERROR&#160;&#160;&#160;0x0001</td>
+          <td class="memname">#define EDK_BUFFER_TOO_SMALL&#160;&#160;&#160;0x0300</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>An internal error occurred. </p>
-
-<p>Definition at line <a class="el" href="_iedk_error_code_8h_source.html#l00017">17</a> of file <a class="el" href="_iedk_error_code_8h_source.html">IedkErrorCode.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aca03f9442d5bc9392f69bfec5f70beb4"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EDK_INVALID_DEV_ID_ERROR&#160;&#160;&#160;0x0002</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Invalid Developer ID. </p>
-
-<p>Definition at line <a class="el" href="_iedk_error_code_8h_source.html#l00020">20</a> of file <a class="el" href="_iedk_error_code_8h_source.html">IedkErrorCode.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a4e43417c86ebbd2fbce5abcaa32ee18a"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EDK_INVALID_PROFILE_ARCHIVE&#160;&#160;&#160;0x0101</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The buffer supplied to IEE_SetUserProfile() is not a valid, serialized EmoEngine profile. </p>
-
-<p>Definition at line <a class="el" href="_iedk_error_code_8h_source.html#l00023">23</a> of file <a class="el" href="_iedk_error_code_8h_source.html">IedkErrorCode.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ab784fb96835113fa0233a403de684c93"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EDK_NO_USER_FOR_BASEPROFILE&#160;&#160;&#160;0x0102</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Returned from <a class="el" href="_iedk_8h.html#a94c7c63fe1b5d346b555bd3ef02102d7" title="Retrieve the user ID for IEE_UserAdded and IEE_UserRemoved events. ">IEE_EmoEngineEventGetUserId()</a> if the event supplied contains a base profile, and is not associated with specific user. </p>
-
-<p>Definition at line <a class="el" href="_iedk_error_code_8h_source.html#l00027">27</a> of file <a class="el" href="_iedk_error_code_8h_source.html">IedkErrorCode.h</a>.</p>
+<p>The buffer supplied to the function is not large enough. </p>
 
 </div>
 </div>
@@ -226,199 +162,6 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>The EmoEngine is unable to acquire data for processing. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="_iedk_8h.html#a113baeffb20d6c48625f007104251d5d" title="Initialize EmoEngine instance which reads data from the headset. ">IEE_EngineConnect</a> </dd></dl>
-
-<p>Definition at line <a class="el" href="_iedk_error_code_8h_source.html#l00031">31</a> of file <a class="el" href="_iedk_error_code_8h_source.html">IedkErrorCode.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="acf95077b4bd5f24e4d0f9e374367b331"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EDK_BUFFER_TOO_SMALL&#160;&#160;&#160;0x0300</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The buffer supplied to the function is not large enough. </p>
-
-<p>Definition at line <a class="el" href="_iedk_error_code_8h_source.html#l00034">34</a> of file <a class="el" href="_iedk_error_code_8h_source.html">IedkErrorCode.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a2b8e58cb87ea2aa5facce6dde3dcb652"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EDK_OUT_OF_RANGE&#160;&#160;&#160;0x0301</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>A parameter supplied to the function is out of range. </p>
-
-<p>Definition at line <a class="el" href="_iedk_error_code_8h_source.html#l00037">37</a> of file <a class="el" href="_iedk_error_code_8h_source.html">IedkErrorCode.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a32263575f97cae9990b09f16c74bd82a"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EDK_INVALID_PARAMETER&#160;&#160;&#160;0x0302</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>One of the parameters supplied to the function is invalid. </p>
-
-<p>Definition at line <a class="el" href="_iedk_error_code_8h_source.html#l00040">40</a> of file <a class="el" href="_iedk_error_code_8h_source.html">IedkErrorCode.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a42aac06a6dfc102a77e8597bb8386390"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EDK_PARAMETER_LOCKED&#160;&#160;&#160;0x0303</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The parameter is currently locked by the detection and cannot be modified at this time. </p>
-
-<p>Definition at line <a class="el" href="_iedk_error_code_8h_source.html#l00043">43</a> of file <a class="el" href="_iedk_error_code_8h_source.html">IedkErrorCode.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a9816b9067ecbd18cda56394439762a34"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EDK_MC_INVALID_TRAINING_ACTION&#160;&#160;&#160;0x0304</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The supplied MentalCommand training action flag is invalid. </p>
-
-<p>Definition at line <a class="el" href="_iedk_error_code_8h_source.html#l00046">46</a> of file <a class="el" href="_iedk_error_code_8h_source.html">IedkErrorCode.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a0f31ae5c3408cc0dfe9a2b4b0395d6ce"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EDK_MC_INVALID_TRAINING_CONTROL&#160;&#160;&#160;0x0305</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The supplied MentalCommand training control flag is invalid. </p>
-
-<p>Definition at line <a class="el" href="_iedk_error_code_8h_source.html#l00049">49</a> of file <a class="el" href="_iedk_error_code_8h_source.html">IedkErrorCode.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a133fa17c5e0800689ed614a2a452a06f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EDK_MC_INVALID_ACTIVE_ACTION&#160;&#160;&#160;0x0306</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The MentalCommand action bits vector is invalid. </p>
-
-<p>Definition at line <a class="el" href="_iedk_error_code_8h_source.html#l00052">52</a> of file <a class="el" href="_iedk_error_code_8h_source.html">IedkErrorCode.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a3d6cf403dfc873c440f08860d3d3b06d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EDK_MC_EXCESS_MAX_ACTIONS&#160;&#160;&#160;0x0307</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The MentalCommand action bits vector contains more action types than it is allowed. </p>
-
-<p>Definition at line <a class="el" href="_iedk_error_code_8h_source.html#l00055">55</a> of file <a class="el" href="_iedk_error_code_8h_source.html">IedkErrorCode.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a6f6d10c37bd49cdbbd7a05bd8a4fdc26"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EDK_FE_NO_SIG_AVAILABLE&#160;&#160;&#160;0x0308</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>A trained signature is not currently available for use, addition actions (including neutral) may be required. </p>
-
-<p>Definition at line <a class="el" href="_iedk_error_code_8h_source.html#l00059">59</a> of file <a class="el" href="_iedk_error_code_8h_source.html">IedkErrorCode.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a7a37a646f366460338936113402a7375"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EDK_FILESYSTEM_ERROR&#160;&#160;&#160;0x0309</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>A filesystem error occurred. </p>
-
-<p>Definition at line <a class="el" href="_iedk_error_code_8h_source.html#l00062">62</a> of file <a class="el" href="_iedk_error_code_8h_source.html">IedkErrorCode.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a5e95ad273cc833649be26fdddc704029"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EDK_INVALID_USER_ID&#160;&#160;&#160;0x0400</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The user ID supplied to the function is invalid. </p>
-
-<p>Definition at line <a class="el" href="_iedk_error_code_8h_source.html#l00065">65</a> of file <a class="el" href="_iedk_error_code_8h_source.html">IedkErrorCode.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a2d70cfbfcb4b40d7dc72a05f1ce9de4a"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define EDK_EMOENGINE_UNINITIALIZED&#160;&#160;&#160;0x0500</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The EDK needs to be initialized via <a class="el" href="_iedk_8h.html#a113baeffb20d6c48625f007104251d5d" title="Initialize EmoEngine instance which reads data from the headset. ">IEE_EngineConnect()</a> or <a class="el" href="_iedk_8h.html#abdbac8d82e8d588721c095c5115bd1fc" title="Initialize the connection to a remote instance of EmoEngine. ">IEE_EngineRemoteConnect()</a>. </p>
-
-<p>Definition at line <a class="el" href="_iedk_error_code_8h_source.html#l00068">68</a> of file <a class="el" href="_iedk_error_code_8h_source.html">IedkErrorCode.h</a>.</p>
 
 </div>
 </div>
@@ -434,8 +177,6 @@ Macros</h2></td></tr>
 
 <p>The connection with a remote instance of the EmoEngine made via EE_EngineRemoteConnect() has been lost. </p>
 
-<p>Definition at line <a class="el" href="_iedk_error_code_8h_source.html#l00071">71</a> of file <a class="el" href="_iedk_error_code_8h_source.html">IedkErrorCode.h</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="aed221cb10de26650a5fc37a630296988"></a>
@@ -450,23 +191,46 @@ Macros</h2></td></tr>
 
 <p>The API was unable to establish a connection with a remote instance of the EmoEngine. </p>
 
-<p>Definition at line <a class="el" href="_iedk_error_code_8h_source.html#l00074">74</a> of file <a class="el" href="_iedk_error_code_8h_source.html">IedkErrorCode.h</a>.</p>
-
 </div>
 </div>
-<a class="anchor" id="a9ff6ae0daaa6987da68594d3a5f212dd"></a>
+<a class="anchor" id="a2d70cfbfcb4b40d7dc72a05f1ce9de4a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define EDK_NO_EVENT&#160;&#160;&#160;0x0600</td>
+          <td class="memname">#define EDK_EMOENGINE_UNINITIALIZED&#160;&#160;&#160;0x0500</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>There are no new EmoEngine events at this time. </p>
+<p>The EDK needs to be initialized via <a class="el" href="_iedk_8h.html#a113baeffb20d6c48625f007104251d5d" title="Initialize EmoEngine instance which reads data from the headset. ">IEE_EngineConnect()</a> or <a class="el" href="_iedk_8h.html#abdbac8d82e8d588721c095c5115bd1fc" title="Initialize the connection to a remote instance of EmoEngine. ">IEE_EngineRemoteConnect()</a>. </p>
 
-<p>Definition at line <a class="el" href="_iedk_error_code_8h_source.html#l00077">77</a> of file <a class="el" href="_iedk_error_code_8h_source.html">IedkErrorCode.h</a>.</p>
+</div>
+</div>
+<a class="anchor" id="a6f6d10c37bd49cdbbd7a05bd8a4fdc26"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EDK_FE_NO_SIG_AVAILABLE&#160;&#160;&#160;0x0308</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>A trained signature is not currently available for use, addition actions (including neutral) may be required. </p>
+
+</div>
+</div>
+<a class="anchor" id="a7a37a646f366460338936113402a7375"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EDK_FILESYSTEM_ERROR&#160;&#160;&#160;0x0309</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A filesystem error occurred. </p>
 
 </div>
 </div>
@@ -482,7 +246,158 @@ Macros</h2></td></tr>
 
 <p>The gyro is not calibrated. Please ask the user to stay still for at least 0.5 seconds. </p>
 
-<p>Definition at line <a class="el" href="_iedk_error_code_8h_source.html#l00080">80</a> of file <a class="el" href="_iedk_error_code_8h_source.html">IedkErrorCode.h</a>.</p>
+</div>
+</div>
+<a class="anchor" id="aca03f9442d5bc9392f69bfec5f70beb4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EDK_INVALID_DEV_ID_ERROR&#160;&#160;&#160;0x0002</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Invalid Developer ID. </p>
+
+</div>
+</div>
+<a class="anchor" id="a32263575f97cae9990b09f16c74bd82a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EDK_INVALID_PARAMETER&#160;&#160;&#160;0x0302</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>One of the parameters supplied to the function is invalid. </p>
+
+</div>
+</div>
+<a class="anchor" id="a4e43417c86ebbd2fbce5abcaa32ee18a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EDK_INVALID_PROFILE_ARCHIVE&#160;&#160;&#160;0x0101</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The buffer supplied to IEE_SetUserProfile() is not a valid, serialized EmoEngine profile. </p>
+
+</div>
+</div>
+<a class="anchor" id="a5e95ad273cc833649be26fdddc704029"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EDK_INVALID_USER_ID&#160;&#160;&#160;0x0400</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The user ID supplied to the function is invalid. </p>
+
+</div>
+</div>
+<a class="anchor" id="a3d6cf403dfc873c440f08860d3d3b06d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EDK_MC_EXCESS_MAX_ACTIONS&#160;&#160;&#160;0x0307</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The MentalCommand action bits vector contains more action types than it is allowed. </p>
+
+</div>
+</div>
+<a class="anchor" id="a133fa17c5e0800689ed614a2a452a06f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EDK_MC_INVALID_ACTIVE_ACTION&#160;&#160;&#160;0x0306</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The MentalCommand action bits vector is invalid. </p>
+
+</div>
+</div>
+<a class="anchor" id="a9816b9067ecbd18cda56394439762a34"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EDK_MC_INVALID_TRAINING_ACTION&#160;&#160;&#160;0x0304</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The supplied MentalCommand training action flag is invalid. </p>
+
+</div>
+</div>
+<a class="anchor" id="a0f31ae5c3408cc0dfe9a2b4b0395d6ce"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EDK_MC_INVALID_TRAINING_CONTROL&#160;&#160;&#160;0x0305</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The supplied MentalCommand training control flag is invalid. </p>
+
+</div>
+</div>
+<a class="anchor" id="a9ff6ae0daaa6987da68594d3a5f212dd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EDK_NO_EVENT&#160;&#160;&#160;0x0600</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>There are no new EmoEngine events at this time. </p>
+
+</div>
+</div>
+<a class="anchor" id="ab784fb96835113fa0233a403de684c93"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EDK_NO_USER_FOR_BASEPROFILE&#160;&#160;&#160;0x0102</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returned from <a class="el" href="_iedk_8h.html#a94c7c63fe1b5d346b555bd3ef02102d7" title="Retrieve the user ID for IEE_UserAdded and IEE_UserRemoved events. ">IEE_EmoEngineEventGetUserId()</a> if the event supplied contains a base profile, and is not associated with specific user. </p>
+
+</div>
+</div>
+<a class="anchor" id="af845c1b9bfb4a6fde61b6bc58aea06e2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EDK_OK&#160;&#160;&#160;0x0000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Default success value. </p>
 
 </div>
 </div>
@@ -498,7 +413,33 @@ Macros</h2></td></tr>
 
 <p>Operation failure due to optimization. </p>
 
-<p>Definition at line <a class="el" href="_iedk_error_code_8h_source.html#l00083">83</a> of file <a class="el" href="_iedk_error_code_8h_source.html">IedkErrorCode.h</a>.</p>
+</div>
+</div>
+<a class="anchor" id="a2b8e58cb87ea2aa5facce6dde3dcb652"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EDK_OUT_OF_RANGE&#160;&#160;&#160;0x0301</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A parameter supplied to the function is out of range. </p>
+
+</div>
+</div>
+<a class="anchor" id="a42aac06a6dfc102a77e8597bb8386390"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EDK_PARAMETER_LOCKED&#160;&#160;&#160;0x0303</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The parameter is currently locked by the detection and cannot be modified at this time. </p>
 
 </div>
 </div>
@@ -514,7 +455,19 @@ Macros</h2></td></tr>
 
 <p>Reserved return value. </p>
 
-<p>Definition at line <a class="el" href="_iedk_error_code_8h_source.html#l00086">86</a> of file <a class="el" href="_iedk_error_code_8h_source.html">IedkErrorCode.h</a>.</p>
+</div>
+</div>
+<a class="anchor" id="a160b23e7fb18e625b87dd2f582b9b19a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EDK_UNKNOWN_ERROR&#160;&#160;&#160;0x0001</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>An internal error occurred. </p>
 
 </div>
 </div>
@@ -527,7 +480,7 @@ Macros</h2></td></tr>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 4 2016 16:40:51 for Emotiv SDK Community Edition by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri May 27 2016 13:37:44 for Emotiv SDK Community Edition by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

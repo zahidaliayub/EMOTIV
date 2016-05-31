@@ -12,7 +12,7 @@
         <!--<link href="tabs.css" rel="stylesheet" type="text/css"/>-->
         <script type="text/javascript" src="dynsections.js"></script>
         <link href="doxygen.css" rel="stylesheet" type="text/css" />
-        <link href="customdoxygen.css" rel="stylesheet" type="text/css"/>
+        <link href="EmotivSDKStyleSheet.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="doxy-boot.js"></script>
@@ -21,7 +21,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">Emotiv SDK Community Edition 3.3.1</a>
+                    <a class="navbar-brand">Emotiv SDK Community Edition 3.3.3</a>
                 </div>
             </div>
         </nav>
@@ -36,14 +36,14 @@
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
     </ul>
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
 <div id="nav-path" class="navpath">
@@ -128,7 +128,7 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a1869f5b42465f78b18c37bdf2fc07f18"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> <a class="el" href="_facial_expression_detection_8h.html#aca781b2f607cd12840306671c6b779c5">IEE_FacialExpressionEvent_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_facial_expression_detection_8h.html#a1869f5b42465f78b18c37bdf2fc07f18">IEE_FacialExpressionEventGetType</a> (<a class="el" href="_iedk_8h.html#a767bdae20508ff7c51b743472dde5b7f">EmoEngineEventHandle</a> hEvent)</td></tr>
+<tr class="memitem:a1869f5b42465f78b18c37bdf2fc07f18"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> <a class="el" href="_facial_expression_detection_8h.html#aca781b2f607cd12840306671c6b779c5">IEE_FacialExpressionEvent_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_facial_expression_detection_8h.html#a1869f5b42465f78b18c37bdf2fc07f18">IEE_FacialExpressionEventGetType</a> (<a class="el" href="_facial_expression_detection_8h.html#a767bdae20508ff7c51b743472dde5b7f">EmoEngineEventHandle</a> hEvent)</td></tr>
 <tr class="memdesc:a1869f5b42465f78b18c37bdf2fc07f18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the FacialExpression-specific event type.  <a href="#a1869f5b42465f78b18c37bdf2fc07f18">More...</a><br /></td></tr>
 <tr class="separator:a1869f5b42465f78b18c37bdf2fc07f18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab16eee88197573ff7d54c6319fd48f39"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_facial_expression_detection_8h.html#ab16eee88197573ff7d54c6319fd48f39">IEE_FacialExpressionSetThreshold</a> (unsigned int userId, <a class="el" href="_i_emo_state_d_l_l_8h.html#a3700a2d9d5c406e9c6695b3d64e5cbd7">IEE_FacialExpressionAlgo_t</a> algoName, <a class="el" href="_facial_expression_detection_8h.html#a9754121decdcac921d8ff73988b8717f">IEE_FacialExpressionThreshold_t</a> thresholdName, int value)</td></tr>
@@ -162,7 +162,11 @@ Functions</h2></td></tr>
 <tr class="memdesc:ab135e647aaf52cdea066ed40ed0cc978"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the FacialExpression suite is currently using either the built-in, universal signature or a trained signature.  <a href="#ab135e647aaf52cdea066ed40ed0cc978">More...</a><br /></td></tr>
 <tr class="separator:ab135e647aaf52cdea066ed40ed0cc978"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Emotiv SDK Copyright (c) 2016 Emotiv Inc.</p>
+<p>This file is part of the Emotiv SDK.</p>
+<p>Header file for Facial Expression related API. </p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a class="anchor" id="a71f2f924934ca9d7f770bc458493c4a8"></a>
 <div class="memitem">
 <div class="memproto">
@@ -172,11 +176,6 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Emotiv SDK Copyright (c) 2016 Emotiv Inc.</p>
-<p>This file is part of the Emotiv SDK.</p>
-<p>Header file for Facial Expression related API. </p>
-
-<p>Definition at line <a class="el" href="_facial_expression_detection_8h_source.html#l00036">36</a> of file <a class="el" href="_facial_expression_detection_8h_source.html">FacialExpressionDetection.h</a>.</p>
 
 </div>
 </div>
@@ -186,7 +185,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void* <a class="el" href="_iedk_8h.html#a767bdae20508ff7c51b743472dde5b7f">EmoEngineEventHandle</a></td>
+          <td class="memname">typedef void* <a class="el" href="_facial_expression_detection_8h.html#a767bdae20508ff7c51b743472dde5b7f">EmoEngineEventHandle</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -194,7 +193,33 @@ Functions</h2></td></tr>
 <p>Handle to EmoEngine event structure allocated by IEE_EmoEngineEventCreate. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="_iedk_8h.html#af07c8036b9a7959012f70e4f997f0972" title="Return a handle to memory that can hold an EmoEngine event. ">IEE_EmoEngineEventCreate()</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_facial_expression_detection_8h_source.html#l00049">49</a> of file <a class="el" href="_facial_expression_detection_8h_source.html">FacialExpressionDetection.h</a>.</p>
+</div>
+</div>
+<a class="anchor" id="aca781b2f607cd12840306671c6b779c5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="_facial_expression_detection_8h.html#a02d9fa7fa38edb2cd607949b38ba5bb5">IEE_FacialExpressionEvent_enum</a>  <a class="el" href="_facial_expression_detection_8h.html#aca781b2f607cd12840306671c6b779c5">IEE_FacialExpressionEvent_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>FacialExpression event types. </p>
+
+</div>
+</div>
+<a class="anchor" id="ae532a2d6f8b964342662f680df3f6656"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="_facial_expression_detection_8h.html#a42c56a73701c7502daff11e2d2170522">IEE_FacialExpressionSignature_enum</a>  <a class="el" href="_facial_expression_detection_8h.html#ae532a2d6f8b964342662f680df3f6656">IEE_FacialExpressionSignature_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>FacialExpression Suite signature type enumerator. </p>
 
 </div>
 </div>
@@ -226,116 +251,7 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ae532a2d6f8b964342662f680df3f6656"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef enum <a class="el" href="_facial_expression_detection_8h.html#a42c56a73701c7502daff11e2d2170522">IEE_FacialExpressionSignature_enum</a>  <a class="el" href="_facial_expression_detection_8h.html#ae532a2d6f8b964342662f680df3f6656">IEE_FacialExpressionSignature_t</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>FacialExpression Suite signature type enumerator. </p>
-
-</div>
-</div>
-<a class="anchor" id="aca781b2f607cd12840306671c6b779c5"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef enum <a class="el" href="_facial_expression_detection_8h.html#a02d9fa7fa38edb2cd607949b38ba5bb5">IEE_FacialExpressionEvent_enum</a>  <a class="el" href="_facial_expression_detection_8h.html#aca781b2f607cd12840306671c6b779c5">IEE_FacialExpressionEvent_t</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>FacialExpression event types. </p>
-
-</div>
-</div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
-<a class="anchor" id="aab3cfa10dc0658bcad9fd9316e84b9cc"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="_facial_expression_detection_8h.html#aab3cfa10dc0658bcad9fd9316e84b9cc">IEE_FacialExpressionThreshold_enum</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>FacialExpression Suite threshold type enumerator. </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="aab3cfa10dc0658bcad9fd9316e84b9ccaafe99f05afeda45ddb8ccd3f9e3e4eb9"></a>FE_SENSITIVITY&#160;</td><td class="fielddoc">
-<p>Sensitivity of each facial expression. </p>
-</td></tr>
-</table>
-
-<p>Definition at line <a class="el" href="_facial_expression_detection_8h_source.html#l00053">53</a> of file <a class="el" href="_facial_expression_detection_8h_source.html">FacialExpressionDetection.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a28114473630369b6633d0a72854a90fb"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="_facial_expression_detection_8h.html#a28114473630369b6633d0a72854a90fb">IEE_FacialExpressionTrainingControl_enum</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>FacialExpression Suite training control enumerator. </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a28114473630369b6633d0a72854a90fbaa1ad3146aa59e86e0c0ae53a61236402"></a>FE_NONE&#160;</td><td class="fielddoc">
-<p>No action. </p>
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a28114473630369b6633d0a72854a90fbac5eacc95711e149e20c5ebc4617cc35c"></a>FE_START&#160;</td><td class="fielddoc">
-<p>Start a new training. </p>
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a28114473630369b6633d0a72854a90fba974db1b50c049688469c28a0a00395da"></a>FE_ACCEPT&#160;</td><td class="fielddoc">
-<p>Accept current training. </p>
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a28114473630369b6633d0a72854a90fba25cb1f4a183b3f69c1d8009dd43b7c0c"></a>FE_REJECT&#160;</td><td class="fielddoc">
-<p>Reject current training. </p>
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a28114473630369b6633d0a72854a90fba5783b265f03d2344b13f96026c86b4a4"></a>FE_ERASE&#160;</td><td class="fielddoc">
-<p>Erase training data for a facial expression. </p>
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a28114473630369b6633d0a72854a90fba5ac4743f40cee8cb540377b8d6aaf923"></a>FE_RESET&#160;</td><td class="fielddoc">
-<p>Reset current training. </p>
-</td></tr>
-</table>
-
-<p>Definition at line <a class="el" href="_facial_expression_detection_8h_source.html#l00059">59</a> of file <a class="el" href="_facial_expression_detection_8h_source.html">FacialExpressionDetection.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a42c56a73701c7502daff11e2d2170522"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="_facial_expression_detection_8h.html#a42c56a73701c7502daff11e2d2170522">IEE_FacialExpressionSignature_enum</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>FacialExpression Suite signature type enumerator. </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a42c56a73701c7502daff11e2d2170522a053bb75ac3a32187ddbbe43aa4b16583"></a>FE_SIG_UNIVERSAL&#160;</td><td class="fielddoc">
-<p>Use built-in universal signature. </p>
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a42c56a73701c7502daff11e2d2170522a091ac407a43790deb9f0e623fde7210e"></a>FE_SIG_TRAINED&#160;</td><td class="fielddoc">
-<p>Use custom trained signature. </p>
-</td></tr>
-</table>
-
-<p>Definition at line <a class="el" href="_facial_expression_detection_8h_source.html#l00070">70</a> of file <a class="el" href="_facial_expression_detection_8h_source.html">FacialExpressionDetection.h</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="a02d9fa7fa38edb2cd607949b38ba5bb5"></a>
 <div class="memitem">
 <div class="memproto">
@@ -374,7 +290,80 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="_facial_expression_detection_8h_source.html#l00077">77</a> of file <a class="el" href="_facial_expression_detection_8h_source.html">FacialExpressionDetection.h</a>.</p>
+</div>
+</div>
+<a class="anchor" id="a42c56a73701c7502daff11e2d2170522"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="_facial_expression_detection_8h.html#a42c56a73701c7502daff11e2d2170522">IEE_FacialExpressionSignature_enum</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>FacialExpression Suite signature type enumerator. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a42c56a73701c7502daff11e2d2170522a053bb75ac3a32187ddbbe43aa4b16583"></a>FE_SIG_UNIVERSAL&#160;</td><td class="fielddoc">
+<p>Use built-in universal signature. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a42c56a73701c7502daff11e2d2170522a091ac407a43790deb9f0e623fde7210e"></a>FE_SIG_TRAINED&#160;</td><td class="fielddoc">
+<p>Use custom trained signature. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a class="anchor" id="aab3cfa10dc0658bcad9fd9316e84b9cc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="_facial_expression_detection_8h.html#aab3cfa10dc0658bcad9fd9316e84b9cc">IEE_FacialExpressionThreshold_enum</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>FacialExpression Suite threshold type enumerator. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="aab3cfa10dc0658bcad9fd9316e84b9ccaafe99f05afeda45ddb8ccd3f9e3e4eb9"></a>FE_SENSITIVITY&#160;</td><td class="fielddoc">
+<p>Sensitivity of each facial expression. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a class="anchor" id="a28114473630369b6633d0a72854a90fb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="_facial_expression_detection_8h.html#a28114473630369b6633d0a72854a90fb">IEE_FacialExpressionTrainingControl_enum</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>FacialExpression Suite training control enumerator. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a28114473630369b6633d0a72854a90fbaa1ad3146aa59e86e0c0ae53a61236402"></a>FE_NONE&#160;</td><td class="fielddoc">
+<p>No action. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a28114473630369b6633d0a72854a90fbac5eacc95711e149e20c5ebc4617cc35c"></a>FE_START&#160;</td><td class="fielddoc">
+<p>Start a new training. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a28114473630369b6633d0a72854a90fba974db1b50c049688469c28a0a00395da"></a>FE_ACCEPT&#160;</td><td class="fielddoc">
+<p>Accept current training. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a28114473630369b6633d0a72854a90fba25cb1f4a183b3f69c1d8009dd43b7c0c"></a>FE_REJECT&#160;</td><td class="fielddoc">
+<p>Reject current training. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a28114473630369b6633d0a72854a90fba5783b265f03d2344b13f96026c86b4a4"></a>FE_ERASE&#160;</td><td class="fielddoc">
+<p>Erase training data for a facial expression. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a28114473630369b6633d0a72854a90fba5ac4743f40cee8cb540377b8d6aaf923"></a>FE_RESET&#160;</td><td class="fielddoc">
+<p>Reset current training. </p>
+</td></tr>
+</table>
 
 </div>
 </div>
@@ -386,7 +375,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> <a class="el" href="_facial_expression_detection_8h.html#aca781b2f607cd12840306671c6b779c5">IEE_FacialExpressionEvent_t</a> IEE_FacialExpressionEventGetType </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="_iedk_8h.html#a767bdae20508ff7c51b743472dde5b7f">EmoEngineEventHandle</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_facial_expression_detection_8h.html#a767bdae20508ff7c51b743472dde5b7f">EmoEngineEventHandle</a>&#160;</td>
           <td class="paramname"><em>hEvent</em></td><td>)</td>
           <td></td>
         </tr>
@@ -405,12 +394,12 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ab16eee88197573ff7d54c6319fd48f39"></a>
+<a class="anchor" id="ab135e647aaf52cdea066ed40ed0cc978"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_FacialExpressionSetThreshold </td>
+          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_FacialExpressionGetSignatureType </td>
           <td>(</td>
           <td class="paramtype">unsigned int&#160;</td>
           <td class="paramname"><em>userId</em>, </td>
@@ -418,20 +407,8 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="_i_emo_state_d_l_l_8h.html#a3700a2d9d5c406e9c6695b3d64e5cbd7">IEE_FacialExpressionAlgo_t</a>&#160;</td>
-          <td class="paramname"><em>algoName</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="_facial_expression_detection_8h.html#a9754121decdcac921d8ff73988b8717f">IEE_FacialExpressionThreshold_t</a>&#160;</td>
-          <td class="paramname"><em>thresholdName</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>value</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="_facial_expression_detection_8h.html#ae532a2d6f8b964342662f680df3f6656">IEE_FacialExpressionSignature_t</a> *&#160;</td>
+          <td class="paramname"><em>pSigTypeOut</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -441,13 +418,12 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Set threshold for FacialExpression algorithms. </p>
+<p>Check whether the FacialExpression suite is currently using either the built-in, universal signature or a trained signature. </p>
+<p>Blocking call</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">userId</td><td>- user ID </td></tr>
-    <tr><td class="paramname">algoName</td><td>- FacialExpression algorithm type </td></tr>
-    <tr><td class="paramname">thresholdName</td><td>- FacialExpression threshold type </td></tr>
-    <tr><td class="paramname">value</td><td>- threshold value (min: 0, max: 1000)</td></tr>
+    <tr><td class="paramname">pSigTypeOut</td><td>- receives the signature type currently in use</td></tr>
   </table>
   </dd>
 </dl>
@@ -455,7 +431,7 @@ Functions</h2></td></tr>
 <li>EDK_OK if successful</li>
 </ul>
 </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="_iedk_error_code_8h.html">IedkErrorCode.h</a>, <a class="el" href="_i_emo_state_d_l_l_8h.html#a3700a2d9d5c406e9c6695b3d64e5cbd7" title="FacialExpression facial expression type enumerator. ">IEE_FacialExpressionAlgo_t</a>, <a class="el" href="_facial_expression_detection_8h.html#a9754121decdcac921d8ff73988b8717f" title="FacialExpression Suite threshold type enumerator. ">IEE_FacialExpressionThreshold_t</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_iedk_error_code_8h.html">IedkErrorCode.h</a>, <a class="el" href="_facial_expression_detection_8h.html#ae532a2d6f8b964342662f680df3f6656" title="FacialExpression Suite signature type enumerator. ">IEE_FacialExpressionSignature_t</a> </dd></dl>
 
 </div>
 </div>
@@ -510,162 +486,6 @@ Functions</h2></td></tr>
 </ul>
 </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="_iedk_error_code_8h.html">IedkErrorCode.h</a>, <a class="el" href="_i_emo_state_d_l_l_8h.html#a3700a2d9d5c406e9c6695b3d64e5cbd7" title="FacialExpression facial expression type enumerator. ">IEE_FacialExpressionAlgo_t</a>, <a class="el" href="_facial_expression_detection_8h.html#a9754121decdcac921d8ff73988b8717f" title="FacialExpression Suite threshold type enumerator. ">IEE_FacialExpressionThreshold_t</a> </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="abc0746e9b9717d924ff566f8db128528"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_FacialExpressionSetTrainingAction </td>
-          <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>userId</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="_i_emo_state_d_l_l_8h.html#a3700a2d9d5c406e9c6695b3d64e5cbd7">IEE_FacialExpressionAlgo_t</a>&#160;</td>
-          <td class="paramname"><em>action</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Set the current facial expression for FacialExpression training. </p>
-<p>Blocking call</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">userId</td><td>- user ID </td></tr>
-    <tr><td class="paramname">action</td><td>- which facial expression would like to be trained</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
-<li>EDK_OK if successful</li>
-</ul>
-</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="_iedk_error_code_8h.html">IedkErrorCode.h</a>, <a class="el" href="_i_emo_state_d_l_l_8h.html#a3700a2d9d5c406e9c6695b3d64e5cbd7" title="FacialExpression facial expression type enumerator. ">IEE_FacialExpressionAlgo_t</a> </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a08db8ad85f63a1883ff5f706666f99b2"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_FacialExpressionSetTrainingControl </td>
-          <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>userId</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="_facial_expression_detection_8h.html#ae31c23bcaae85de542b1786ece475586">IEE_FacialExpressionTrainingControl_t</a>&#160;</td>
-          <td class="paramname"><em>control</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Set the control flag for FacialExpression training. </p>
-<p>Blocking call </p><pre class="fragment">\param userId - user ID
-\param control - pre-defined control command
-
-\return EDK_ERROR_CODE
-        - EDK_OK if successful
-
-\sa IedkErrorCode.h, IEE_FacialExpressionTrainingControl_t</pre> 
-</div>
-</div>
-<a class="anchor" id="a1df34da01fd8217739edf561bfc42f1b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_FacialExpressionGetTrainingAction </td>
-          <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>userId</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="_i_emo_state_d_l_l_8h.html#a3700a2d9d5c406e9c6695b3d64e5cbd7">IEE_FacialExpressionAlgo_t</a> *&#160;</td>
-          <td class="paramname"><em>pActionOut</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get the facial expression currently selected for FacialExpression training. </p>
-<p>Blocking call</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">userId</td><td>- user ID </td></tr>
-    <tr><td class="paramname">pActionOut</td><td>- receives facial expression currently selected for training</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
-<li>EDK_OK if successful</li>
-</ul>
-</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="_iedk_error_code_8h.html">IedkErrorCode.h</a>, <a class="el" href="_i_emo_state_d_l_l_8h.html#a3700a2d9d5c406e9c6695b3d64e5cbd7" title="FacialExpression facial expression type enumerator. ">IEE_FacialExpressionAlgo_t</a> </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a2c48d8fbea211900767f1b9e88b6dfe3"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_FacialExpressionGetTrainingTime </td>
-          <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>userId</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned int *&#160;</td>
-          <td class="paramname"><em>pTrainingTimeOut</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Return the duration of a FacialExpression training session. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">userId</td><td>- user ID </td></tr>
-    <tr><td class="paramname">pTrainingTimeOut</td><td>- receive the training time in ms</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
-<li>EDK_OK if successful</li>
-</ul>
-</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="_iedk_error_code_8h.html">IedkErrorCode.h</a> </dd></dl>
 
 </div>
 </div>
@@ -752,6 +572,87 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a1df34da01fd8217739edf561bfc42f1b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_FacialExpressionGetTrainingAction </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>userId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_i_emo_state_d_l_l_8h.html#a3700a2d9d5c406e9c6695b3d64e5cbd7">IEE_FacialExpressionAlgo_t</a> *&#160;</td>
+          <td class="paramname"><em>pActionOut</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the facial expression currently selected for FacialExpression training. </p>
+<p>Blocking call</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">userId</td><td>- user ID </td></tr>
+    <tr><td class="paramname">pActionOut</td><td>- receives facial expression currently selected for training</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
+<li>EDK_OK if successful</li>
+</ul>
+</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_iedk_error_code_8h.html">IedkErrorCode.h</a>, <a class="el" href="_i_emo_state_d_l_l_8h.html#a3700a2d9d5c406e9c6695b3d64e5cbd7" title="FacialExpression facial expression type enumerator. ">IEE_FacialExpressionAlgo_t</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2c48d8fbea211900767f1b9e88b6dfe3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_FacialExpressionGetTrainingTime </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>userId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int *&#160;</td>
+          <td class="paramname"><em>pTrainingTimeOut</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the duration of a FacialExpression training session. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">userId</td><td>- user ID </td></tr>
+    <tr><td class="paramname">pTrainingTimeOut</td><td>- receive the training time in ms</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
+<li>EDK_OK if successful</li>
+</ul>
+</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_iedk_error_code_8h.html">IedkErrorCode.h</a> </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ad0911caf909f8d6cea2b55caf19a98b9"></a>
 <div class="memitem">
 <div class="memproto">
@@ -794,12 +695,12 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ab135e647aaf52cdea066ed40ed0cc978"></a>
+<a class="anchor" id="ab16eee88197573ff7d54c6319fd48f39"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_FacialExpressionGetSignatureType </td>
+          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_FacialExpressionSetThreshold </td>
           <td>(</td>
           <td class="paramtype">unsigned int&#160;</td>
           <td class="paramname"><em>userId</em>, </td>
@@ -807,8 +708,20 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="_facial_expression_detection_8h.html#ae532a2d6f8b964342662f680df3f6656">IEE_FacialExpressionSignature_t</a> *&#160;</td>
-          <td class="paramname"><em>pSigTypeOut</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="_i_emo_state_d_l_l_8h.html#a3700a2d9d5c406e9c6695b3d64e5cbd7">IEE_FacialExpressionAlgo_t</a>&#160;</td>
+          <td class="paramname"><em>algoName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_facial_expression_detection_8h.html#a9754121decdcac921d8ff73988b8717f">IEE_FacialExpressionThreshold_t</a>&#160;</td>
+          <td class="paramname"><em>thresholdName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -818,12 +731,13 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Check whether the FacialExpression suite is currently using either the built-in, universal signature or a trained signature. </p>
-<p>Blocking call</p>
+<p>Set threshold for FacialExpression algorithms. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">userId</td><td>- user ID </td></tr>
-    <tr><td class="paramname">pSigTypeOut</td><td>- receives the signature type currently in use</td></tr>
+    <tr><td class="paramname">algoName</td><td>- FacialExpression algorithm type </td></tr>
+    <tr><td class="paramname">thresholdName</td><td>- FacialExpression threshold type </td></tr>
+    <tr><td class="paramname">value</td><td>- threshold value (min: 0, max: 1000)</td></tr>
   </table>
   </dd>
 </dl>
@@ -831,8 +745,83 @@ Functions</h2></td></tr>
 <li>EDK_OK if successful</li>
 </ul>
 </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="_iedk_error_code_8h.html">IedkErrorCode.h</a>, <a class="el" href="_facial_expression_detection_8h.html#ae532a2d6f8b964342662f680df3f6656" title="FacialExpression Suite signature type enumerator. ">IEE_FacialExpressionSignature_t</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_iedk_error_code_8h.html">IedkErrorCode.h</a>, <a class="el" href="_i_emo_state_d_l_l_8h.html#a3700a2d9d5c406e9c6695b3d64e5cbd7" title="FacialExpression facial expression type enumerator. ">IEE_FacialExpressionAlgo_t</a>, <a class="el" href="_facial_expression_detection_8h.html#a9754121decdcac921d8ff73988b8717f" title="FacialExpression Suite threshold type enumerator. ">IEE_FacialExpressionThreshold_t</a> </dd></dl>
 
+</div>
+</div>
+<a class="anchor" id="abc0746e9b9717d924ff566f8db128528"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_FacialExpressionSetTrainingAction </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>userId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_i_emo_state_d_l_l_8h.html#a3700a2d9d5c406e9c6695b3d64e5cbd7">IEE_FacialExpressionAlgo_t</a>&#160;</td>
+          <td class="paramname"><em>action</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the current facial expression for FacialExpression training. </p>
+<p>Blocking call</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">userId</td><td>- user ID </td></tr>
+    <tr><td class="paramname">action</td><td>- which facial expression would like to be trained</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
+<li>EDK_OK if successful</li>
+</ul>
+</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_iedk_error_code_8h.html">IedkErrorCode.h</a>, <a class="el" href="_i_emo_state_d_l_l_8h.html#a3700a2d9d5c406e9c6695b3d64e5cbd7" title="FacialExpression facial expression type enumerator. ">IEE_FacialExpressionAlgo_t</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a08db8ad85f63a1883ff5f706666f99b2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_FacialExpressionSetTrainingControl </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>userId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_facial_expression_detection_8h.html#ae31c23bcaae85de542b1786ece475586">IEE_FacialExpressionTrainingControl_t</a>&#160;</td>
+          <td class="paramname"><em>control</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the control flag for FacialExpression training. </p>
+<p>Blocking call </p><pre class="fragment">\param userId - user ID
+\param control - pre-defined control command
+
+\return EDK_ERROR_CODE
+        - EDK_OK if successful
+
+\sa IedkErrorCode.h, IEE_FacialExpressionTrainingControl_t</pre> 
 </div>
 </div>
 </div><!-- contents -->
@@ -844,7 +833,7 @@ Functions</h2></td></tr>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 4 2016 16:40:50 for Emotiv SDK Community Edition by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri May 27 2016 13:37:44 for Emotiv SDK Community Edition by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

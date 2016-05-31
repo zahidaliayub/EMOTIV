@@ -12,7 +12,7 @@
         <!--<link href="tabs.css" rel="stylesheet" type="text/css"/>-->
         <script type="text/javascript" src="dynsections.js"></script>
         <link href="doxygen.css" rel="stylesheet" type="text/css" />
-        <link href="customdoxygen.css" rel="stylesheet" type="text/css"/>
+        <link href="EmotivSDKStyleSheet.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="doxy-boot.js"></script>
@@ -21,7 +21,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">Emotiv SDK Community Edition 3.3.1</a>
+                    <a class="navbar-brand">Emotiv SDK Community Edition 3.3.3</a>
                 </div>
             </div>
         </nav>
@@ -36,14 +36,14 @@
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
     </ul>
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
 <div id="nav-path" class="navpath">
@@ -116,7 +116,7 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a90cdffc3498cac97b905be948dd9fa14"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> <a class="el" href="_mental_command_detection_8h.html#ad11ec1c2b2625ceae2e8e1fd974be746">IEE_MentalCommandEvent_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_mental_command_detection_8h.html#a90cdffc3498cac97b905be948dd9fa14">IEE_MentalCommandEventGetType</a> (<a class="el" href="_iedk_8h.html#a767bdae20508ff7c51b743472dde5b7f">EmoEngineEventHandle</a> hEvent)</td></tr>
+<tr class="memitem:a90cdffc3498cac97b905be948dd9fa14"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> <a class="el" href="_mental_command_detection_8h.html#ad11ec1c2b2625ceae2e8e1fd974be746">IEE_MentalCommandEvent_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_mental_command_detection_8h.html#a90cdffc3498cac97b905be948dd9fa14">IEE_MentalCommandEventGetType</a> (<a class="el" href="_facial_expression_detection_8h.html#a767bdae20508ff7c51b743472dde5b7f">EmoEngineEventHandle</a> hEvent)</td></tr>
 <tr class="memdesc:a90cdffc3498cac97b905be948dd9fa14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the MentalCommand-specific event type.  <a href="#a90cdffc3498cac97b905be948dd9fa14">More...</a><br /></td></tr>
 <tr class="separator:a90cdffc3498cac97b905be948dd9fa14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a724b11d6a74da330bb853e8e454ac523"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_mental_command_detection_8h.html#a724b11d6a74da330bb853e8e454ac523">IEE_MentalCommandSetActiveActions</a> (unsigned int userId, unsigned long activeActions)</td></tr>
@@ -177,7 +177,11 @@ Functions</h2></td></tr>
 <tr class="memdesc:a5ae92998b4234a602ce04369da3fd979"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current cache size for the signature caching in MentalCommand.  <a href="#a5ae92998b4234a602ce04369da3fd979">More...</a><br /></td></tr>
 <tr class="separator:a5ae92998b4234a602ce04369da3fd979"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Emotiv SDK Copyright (c) 2016 Emotiv Inc.</p>
+<p>This file is part of the Emotiv SDK.</p>
+<p>Header file for Mental Command related API. </p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a class="anchor" id="a71f2f924934ca9d7f770bc458493c4a8"></a>
 <div class="memitem">
 <div class="memproto">
@@ -187,11 +191,6 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Emotiv SDK Copyright (c) 2016 Emotiv Inc.</p>
-<p>This file is part of the Emotiv SDK.</p>
-<p>Header file for Mental Command related API. </p>
-
-<p>Definition at line <a class="el" href="_mental_command_detection_8h_source.html#l00035">35</a> of file <a class="el" href="_mental_command_detection_8h_source.html">MentalCommandDetection.h</a>.</p>
 
 </div>
 </div>
@@ -201,29 +200,13 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void* <a class="el" href="_iedk_8h.html#a767bdae20508ff7c51b743472dde5b7f">EmoEngineEventHandle</a></td>
+          <td class="memname">typedef void* <a class="el" href="_facial_expression_detection_8h.html#a767bdae20508ff7c51b743472dde5b7f">EmoEngineEventHandle</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Handle to EmoEngine event structure allocated by IEE_EmoEngineEventCreate. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="_iedk_8h.html#af07c8036b9a7959012f70e4f997f0972" title="Return a handle to memory that can hold an EmoEngine event. ">IEE_EmoEngineEventCreate()</a> </dd></dl>
-
-<p>Definition at line <a class="el" href="_mental_command_detection_8h_source.html#l00048">48</a> of file <a class="el" href="_mental_command_detection_8h_source.html">MentalCommandDetection.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a12f460f5bcf8b15ec71db48cbb670728"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef enum <a class="el" href="_mental_command_detection_8h.html#af1cd60e3d8d00556960d2291423ea29e">IEE_MentalCommandTrainingControl_enum</a>  <a class="el" href="_mental_command_detection_8h.html#a12f460f5bcf8b15ec71db48cbb670728">IEE_MentalCommandTrainingControl_t</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>MentalCommand Suite training control enumerator. </p>
 
 </div>
 </div>
@@ -241,43 +224,21 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
-<a class="anchor" id="af1cd60e3d8d00556960d2291423ea29e"></a>
+<a class="anchor" id="a12f460f5bcf8b15ec71db48cbb670728"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="_mental_command_detection_8h.html#af1cd60e3d8d00556960d2291423ea29e">IEE_MentalCommandTrainingControl_enum</a></td>
+          <td class="memname">typedef enum <a class="el" href="_mental_command_detection_8h.html#af1cd60e3d8d00556960d2291423ea29e">IEE_MentalCommandTrainingControl_enum</a>  <a class="el" href="_mental_command_detection_8h.html#a12f460f5bcf8b15ec71db48cbb670728">IEE_MentalCommandTrainingControl_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>MentalCommand Suite training control enumerator. </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="af1cd60e3d8d00556960d2291423ea29ea59d30de895bdc47fb89b9d547f757aab"></a>MC_NONE&#160;</td><td class="fielddoc">
-<p>No action. </p>
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="af1cd60e3d8d00556960d2291423ea29ea2f81c59aae1e5e14efcd03934b39b18f"></a>MC_START&#160;</td><td class="fielddoc">
-<p>Start a new training. </p>
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="af1cd60e3d8d00556960d2291423ea29eae97ee1dc36882022e5243b83d17612bf"></a>MC_ACCEPT&#160;</td><td class="fielddoc">
-<p>Accept current training. </p>
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="af1cd60e3d8d00556960d2291423ea29ea68d020da8c3f06da4ceb9a4d4c65e1aa"></a>MC_REJECT&#160;</td><td class="fielddoc">
-<p>Reject current training. </p>
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="af1cd60e3d8d00556960d2291423ea29ea40e3a0ad6ebcf193ff8a99f0ec361041"></a>MC_ERASE&#160;</td><td class="fielddoc">
-<p>Erase training data for an action. </p>
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="af1cd60e3d8d00556960d2291423ea29ea0990f18de08c0d3ae5612d87e5590c5c"></a>MC_RESET&#160;</td><td class="fielddoc">
-<p>Reset current training. </p>
-</td></tr>
-</table>
-
-<p>Definition at line <a class="el" href="_mental_command_detection_8h_source.html#l00052">52</a> of file <a class="el" href="_mental_command_detection_8h_source.html">MentalCommandDetection.h</a>.</p>
 
 </div>
 </div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
 <a class="anchor" id="a6a07a41c4ee67e51cff8915f4060d258"></a>
 <div class="memitem">
 <div class="memproto">
@@ -322,7 +283,39 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="_mental_command_detection_8h_source.html#l00063">63</a> of file <a class="el" href="_mental_command_detection_8h_source.html">MentalCommandDetection.h</a>.</p>
+</div>
+</div>
+<a class="anchor" id="af1cd60e3d8d00556960d2291423ea29e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="_mental_command_detection_8h.html#af1cd60e3d8d00556960d2291423ea29e">IEE_MentalCommandTrainingControl_enum</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>MentalCommand Suite training control enumerator. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="af1cd60e3d8d00556960d2291423ea29ea59d30de895bdc47fb89b9d547f757aab"></a>MC_NONE&#160;</td><td class="fielddoc">
+<p>No action. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="af1cd60e3d8d00556960d2291423ea29ea2f81c59aae1e5e14efcd03934b39b18f"></a>MC_START&#160;</td><td class="fielddoc">
+<p>Start a new training. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="af1cd60e3d8d00556960d2291423ea29eae97ee1dc36882022e5243b83d17612bf"></a>MC_ACCEPT&#160;</td><td class="fielddoc">
+<p>Accept current training. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="af1cd60e3d8d00556960d2291423ea29ea68d020da8c3f06da4ceb9a4d4c65e1aa"></a>MC_REJECT&#160;</td><td class="fielddoc">
+<p>Reject current training. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="af1cd60e3d8d00556960d2291423ea29ea40e3a0ad6ebcf193ff8a99f0ec361041"></a>MC_ERASE&#160;</td><td class="fielddoc">
+<p>Erase training data for an action. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="af1cd60e3d8d00556960d2291423ea29ea0990f18de08c0d3ae5612d87e5590c5c"></a>MC_RESET&#160;</td><td class="fielddoc">
+<p>Reset current training. </p>
+</td></tr>
+</table>
 
 </div>
 </div>
@@ -334,7 +327,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> <a class="el" href="_mental_command_detection_8h.html#ad11ec1c2b2625ceae2e8e1fd974be746">IEE_MentalCommandEvent_t</a> IEE_MentalCommandEventGetType </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="_iedk_8h.html#a767bdae20508ff7c51b743472dde5b7f">EmoEngineEventHandle</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_facial_expression_detection_8h.html#a767bdae20508ff7c51b743472dde5b7f">EmoEngineEventHandle</a>&#160;</td>
           <td class="paramname"><em>hEvent</em></td><td>)</td>
           <td></td>
         </tr>
@@ -353,12 +346,12 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a724b11d6a74da330bb853e8e454ac523"></a>
+<a class="anchor" id="aa79e0d778d1e725e529c524550a5c3d1"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_MentalCommandSetActiveActions </td>
+          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_MentalCommandGetActionSensitivity </td>
           <td>(</td>
           <td class="paramtype">unsigned int&#160;</td>
           <td class="paramname"><em>userId</em>, </td>
@@ -366,8 +359,26 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned long&#160;</td>
-          <td class="paramname"><em>activeActions</em>&#160;</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>pAction1SensitivityOut</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>pAction2SensitivityOut</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>pAction3SensitivityOut</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>pAction4SensitivityOut</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -377,293 +388,14 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Set the current MentalCommand active action types. </p>
+<p>Query the sensitivity of MentalCommand actions. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">userId</td><td>- user ID </td></tr>
-    <tr><td class="paramname">activeActions</td><td>- a bit vector composed of IEE_MentalCommandAction_t contants</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
-<li>EDK_OK if successful</li>
-</ul>
-</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="_iedk_error_code_8h.html">IedkErrorCode.h</a>, <a class="el" href="_i_emo_state_d_l_l_8h.html#a5b5714828b62001df1ffd4979fd0f57f" title="MentalCommand action type enumerator. ">IEE_MentalCommandAction_t</a> </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ab0ed93a4447eed44c4ea5cecdf336b9c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_MentalCommandGetActiveActions </td>
-          <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>userId</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned long *&#160;</td>
-          <td class="paramname"><em>pActiveActionsOut</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get the current MentalCommand active action types. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">userId</td><td>- user ID </td></tr>
-    <tr><td class="paramname">pActiveActionsOut</td><td>- receive a bit vector composed of IEE_MentalCommandAction_t contants</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
-<li>EDK_OK if successful</li>
-</ul>
-</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="_iedk_error_code_8h.html">IedkErrorCode.h</a>, <a class="el" href="_i_emo_state_d_l_l_8h.html#a5b5714828b62001df1ffd4979fd0f57f" title="MentalCommand action type enumerator. ">IEE_MentalCommandAction_t</a> </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="aeb2be6910d5b8ac77c76c70d288356fe"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_MentalCommandGetTrainingTime </td>
-          <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>userId</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned int *&#160;</td>
-          <td class="paramname"><em>pTrainingTimeOut</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Return the duration of a MentalCommand training session. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">userId</td><td>- user ID </td></tr>
-    <tr><td class="paramname">pTrainingTimeOut</td><td>- receive the training time in ms</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
-<li>EDK_OK if successful</li>
-</ul>
-</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="_iedk_error_code_8h.html">IedkErrorCode.h</a> </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="aa840fe5c8a276492580f5b5d3a275bb7"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_MentalCommandSetTrainingControl </td>
-          <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>userId</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="_mental_command_detection_8h.html#a12f460f5bcf8b15ec71db48cbb670728">IEE_MentalCommandTrainingControl_t</a>&#160;</td>
-          <td class="paramname"><em>control</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Set the training control flag for MentalCommand training. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">userId</td><td>- user ID </td></tr>
-    <tr><td class="paramname">control</td><td>- pre-defined MentalCommand training control</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
-<li>EDK_OK if successful</li>
-</ul>
-</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="_iedk_error_code_8h.html">IedkErrorCode.h</a>, <a class="el" href="_mental_command_detection_8h.html#a12f460f5bcf8b15ec71db48cbb670728" title="MentalCommand Suite training control enumerator. ">IEE_MentalCommandTrainingControl_t</a> </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a4022fd9fcdeb2a0c48d1b64705e64a2b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_MentalCommandSetTrainingAction </td>
-          <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>userId</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="_i_emo_state_d_l_l_8h.html#a5b5714828b62001df1ffd4979fd0f57f">IEE_MentalCommandAction_t</a>&#160;</td>
-          <td class="paramname"><em>action</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Set the type of MentalCommand action to be trained. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">userId</td><td>- user ID </td></tr>
-    <tr><td class="paramname">action</td><td>- which action would like to be trained</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
-<li>EDK_OK if successful</li>
-</ul>
-</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="_iedk_error_code_8h.html">IedkErrorCode.h</a>, <a class="el" href="_i_emo_state_d_l_l_8h.html#a5b5714828b62001df1ffd4979fd0f57f" title="MentalCommand action type enumerator. ">IEE_MentalCommandAction_t</a> </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="abd5310998dd5c7652a6e1c0747029987"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_MentalCommandGetTrainingAction </td>
-          <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>userId</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="_i_emo_state_d_l_l_8h.html#a5b5714828b62001df1ffd4979fd0f57f">IEE_MentalCommandAction_t</a> *&#160;</td>
-          <td class="paramname"><em>pActionOut</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get the type of MentalCommand action currently selected for training. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">userId</td><td>- user ID </td></tr>
-    <tr><td class="paramname">pActionOut</td><td>- action that is currently selected for training</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
-<li>EDK_OK if successful</li>
-</ul>
-</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="_iedk_error_code_8h.html">IedkErrorCode.h</a>, <a class="el" href="_i_emo_state_d_l_l_8h.html#a5b5714828b62001df1ffd4979fd0f57f" title="MentalCommand action type enumerator. ">IEE_MentalCommandAction_t</a> </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a0eab8e1c75bbb7669175e1abbfc13fda"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_MentalCommandGetTrainedSignatureActions </td>
-          <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>userId</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned long *&#160;</td>
-          <td class="paramname"><em>pTrainedActionsOut</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get a list of the actions that have been trained by the user. </p>
-<p>Blocking call</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">userId</td><td>- user ID </td></tr>
-    <tr><td class="paramname">pTrainedActionsOut</td><td>- receives a bit vector composed of IEE_MentalCommandAction_t contants</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
-<li>EDK_OK if successful</li>
-</ul>
-</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="_iedk_error_code_8h.html">IedkErrorCode.h</a>, <a class="el" href="_i_emo_state_d_l_l_8h.html#a5b5714828b62001df1ffd4979fd0f57f" title="MentalCommand action type enumerator. ">IEE_MentalCommandAction_t</a> </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a41adfe6b48de322e65bc28ce94d1cc59"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_MentalCommandGetOverallSkillRating </td>
-          <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>userId</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float *&#160;</td>
-          <td class="paramname"><em>pOverallSkillRatingOut</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get the current overall skill rating of the user in MentalCommand. </p>
-<p>Blocking call</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">userId</td><td>- user ID </td></tr>
-    <tr><td class="paramname">pOverallSkillRatingOut</td><td>- receives the overall skill rating [from 0.0 to 1.0]</td></tr>
+    <tr><td class="paramname">pAction1SensitivityOut</td><td>- sensitivity of action 1 </td></tr>
+    <tr><td class="paramname">pAction2SensitivityOut</td><td>- sensitivity of action 2 </td></tr>
+    <tr><td class="paramname">pAction3SensitivityOut</td><td>- sensitivity of action 3 </td></tr>
+    <tr><td class="paramname">pAction4SensitivityOut</td><td>- sensitivity of action 4</td></tr>
   </table>
   </dd>
 </dl>
@@ -723,12 +455,12 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a26434b0f7b90dde9b61a17d365d2f086"></a>
+<a class="anchor" id="aab74a1b76c66f973f13de0154573750a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_MentalCommandSetActivationLevel </td>
+          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_MentalCommandGetActivationLevel </td>
           <td>(</td>
           <td class="paramtype">unsigned int&#160;</td>
           <td class="paramname"><em>userId</em>, </td>
@@ -736,8 +468,8 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>level</em>&#160;</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>pLevelOut</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -747,11 +479,293 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Set the overall sensitivity for all MentalCommand actions. </p>
+<p>Get the overall sensitivity for all MentalCommand actions. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">userId</td><td>- user ID </td></tr>
-    <tr><td class="paramname">level</td><td>- sensitivity level of all actions (lowest: 1, highest: 7)</td></tr>
+    <tr><td class="paramname">pLevelOut</td><td>- sensitivity level of all actions (min: 1, max: 10)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
+<li>EDK_OK if successful</li>
+</ul>
+</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_iedk_error_code_8h.html">IedkErrorCode.h</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab0ed93a4447eed44c4ea5cecdf336b9c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_MentalCommandGetActiveActions </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>userId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned long *&#160;</td>
+          <td class="paramname"><em>pActiveActionsOut</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the current MentalCommand active action types. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">userId</td><td>- user ID </td></tr>
+    <tr><td class="paramname">pActiveActionsOut</td><td>- receive a bit vector composed of IEE_MentalCommandAction_t contants</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
+<li>EDK_OK if successful</li>
+</ul>
+</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_iedk_error_code_8h.html">IedkErrorCode.h</a>, <a class="el" href="_i_emo_state_d_l_l_8h.html#a5b5714828b62001df1ffd4979fd0f57f" title="MentalCommand action type enumerator. ">IEE_MentalCommandAction_t</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a41adfe6b48de322e65bc28ce94d1cc59"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_MentalCommandGetOverallSkillRating </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>userId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>pOverallSkillRatingOut</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the current overall skill rating of the user in MentalCommand. </p>
+<p>Blocking call</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">userId</td><td>- user ID </td></tr>
+    <tr><td class="paramname">pOverallSkillRatingOut</td><td>- receives the overall skill rating [from 0.0 to 1.0]</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
+<li>EDK_OK if successful</li>
+</ul>
+</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_iedk_error_code_8h.html">IedkErrorCode.h</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5ae92998b4234a602ce04369da3fd979"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_MentalCommandGetSignatureCacheSize </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>userId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int *&#160;</td>
+          <td class="paramname"><em>pSizeOut</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the current cache size for the signature caching in MentalCommand. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">userId</td><td>- user ID </td></tr>
+    <tr><td class="paramname">pSizeOut</td><td>- number of signatures to be kept in the cache (0: unlimited)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
+<li>EDK_OK if successful</li>
+</ul>
+</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_iedk_error_code_8h.html">IedkErrorCode.h</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2c2fb16e5b3dc8086c732fc148a081bf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_MentalCommandGetSignatureCaching </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>userId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int *&#160;</td>
+          <td class="paramname"><em>pEnabledOut</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Query the status of signature caching in MentalCommand. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">userId</td><td>- user ID </td></tr>
+    <tr><td class="paramname">pEnabledOut</td><td>- flag to get status of caching (1: enable, 0: disable)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
+<li>EDK_OK if successful</li>
+</ul>
+</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_iedk_error_code_8h.html">IedkErrorCode.h</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0eab8e1c75bbb7669175e1abbfc13fda"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_MentalCommandGetTrainedSignatureActions </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>userId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned long *&#160;</td>
+          <td class="paramname"><em>pTrainedActionsOut</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get a list of the actions that have been trained by the user. </p>
+<p>Blocking call</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">userId</td><td>- user ID </td></tr>
+    <tr><td class="paramname">pTrainedActionsOut</td><td>- receives a bit vector composed of IEE_MentalCommandAction_t contants</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
+<li>EDK_OK if successful</li>
+</ul>
+</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_iedk_error_code_8h.html">IedkErrorCode.h</a>, <a class="el" href="_i_emo_state_d_l_l_8h.html#a5b5714828b62001df1ffd4979fd0f57f" title="MentalCommand action type enumerator. ">IEE_MentalCommandAction_t</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="abd5310998dd5c7652a6e1c0747029987"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_MentalCommandGetTrainingAction </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>userId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_i_emo_state_d_l_l_8h.html#a5b5714828b62001df1ffd4979fd0f57f">IEE_MentalCommandAction_t</a> *&#160;</td>
+          <td class="paramname"><em>pActionOut</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the type of MentalCommand action currently selected for training. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">userId</td><td>- user ID </td></tr>
+    <tr><td class="paramname">pActionOut</td><td>- action that is currently selected for training</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
+<li>EDK_OK if successful</li>
+</ul>
+</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_iedk_error_code_8h.html">IedkErrorCode.h</a>, <a class="el" href="_i_emo_state_d_l_l_8h.html#a5b5714828b62001df1ffd4979fd0f57f" title="MentalCommand action type enumerator. ">IEE_MentalCommandAction_t</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aeb2be6910d5b8ac77c76c70d288356fe"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_MentalCommandGetTrainingTime </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>userId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int *&#160;</td>
+          <td class="paramname"><em>pTrainingTimeOut</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the duration of a MentalCommand training session. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">userId</td><td>- user ID </td></tr>
+    <tr><td class="paramname">pTrainingTimeOut</td><td>- receive the training time in ms</td></tr>
   </table>
   </dd>
 </dl>
@@ -824,12 +838,12 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aab74a1b76c66f973f13de0154573750a"></a>
+<a class="anchor" id="a26434b0f7b90dde9b61a17d365d2f086"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_MentalCommandGetActivationLevel </td>
+          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_MentalCommandSetActivationLevel </td>
           <td>(</td>
           <td class="paramtype">unsigned int&#160;</td>
           <td class="paramname"><em>userId</em>, </td>
@@ -837,8 +851,8 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>pLevelOut</em>&#160;</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>level</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -848,11 +862,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get the overall sensitivity for all MentalCommand actions. </p>
+<p>Set the overall sensitivity for all MentalCommand actions. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">userId</td><td>- user ID </td></tr>
-    <tr><td class="paramname">pLevelOut</td><td>- sensitivity level of all actions (min: 1, max: 10)</td></tr>
+    <tr><td class="paramname">level</td><td>- sensitivity level of all actions (lowest: 1, highest: 7)</td></tr>
   </table>
   </dd>
 </dl>
@@ -864,12 +878,12 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aa79e0d778d1e725e529c524550a5c3d1"></a>
+<a class="anchor" id="a724b11d6a74da330bb853e8e454ac523"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_MentalCommandGetActionSensitivity </td>
+          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_MentalCommandSetActiveActions </td>
           <td>(</td>
           <td class="paramtype">unsigned int&#160;</td>
           <td class="paramname"><em>userId</em>, </td>
@@ -877,26 +891,8 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>pAction1SensitivityOut</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>pAction2SensitivityOut</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>pAction3SensitivityOut</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>pAction4SensitivityOut</em>&#160;</td>
+          <td class="paramtype">unsigned long&#160;</td>
+          <td class="paramname"><em>activeActions</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -906,14 +902,51 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Query the sensitivity of MentalCommand actions. </p>
+<p>Set the current MentalCommand active action types. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">userId</td><td>- user ID </td></tr>
-    <tr><td class="paramname">pAction1SensitivityOut</td><td>- sensitivity of action 1 </td></tr>
-    <tr><td class="paramname">pAction2SensitivityOut</td><td>- sensitivity of action 2 </td></tr>
-    <tr><td class="paramname">pAction3SensitivityOut</td><td>- sensitivity of action 3 </td></tr>
-    <tr><td class="paramname">pAction4SensitivityOut</td><td>- sensitivity of action 4</td></tr>
+    <tr><td class="paramname">activeActions</td><td>- a bit vector composed of IEE_MentalCommandAction_t contants</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
+<li>EDK_OK if successful</li>
+</ul>
+</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_iedk_error_code_8h.html">IedkErrorCode.h</a>, <a class="el" href="_i_emo_state_d_l_l_8h.html#a5b5714828b62001df1ffd4979fd0f57f" title="MentalCommand action type enumerator. ">IEE_MentalCommandAction_t</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="acfdbfc1ba051336110834f8e4b930bc0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_MentalCommandSetSignatureCacheSize </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>userId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the cache size for the signature caching in MentalCommand. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">userId</td><td>- user ID </td></tr>
+    <tr><td class="paramname">size</td><td>- number of signatures to be kept in the cache (0: unlimited)</td></tr>
   </table>
   </dd>
 </dl>
@@ -922,6 +955,127 @@ Functions</h2></td></tr>
 </ul>
 </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="_iedk_error_code_8h.html">IedkErrorCode.h</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a09a6404df23ca768ab8427de185abf63"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_MentalCommandSetSignatureCaching </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>userId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>enabled</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enable or disable signature caching in MentalCommand. </p>
+<p>Enable signature caching will shorten the time to build the signature after each training, with the penalty of more memory usage.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">userId</td><td>- user ID </td></tr>
+    <tr><td class="paramname">enabled</td><td>- flag to set status of caching (1: enable, 0: disable)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
+<li>EDK_OK if successful</li>
+</ul>
+</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_iedk_error_code_8h.html">IedkErrorCode.h</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4022fd9fcdeb2a0c48d1b64705e64a2b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_MentalCommandSetTrainingAction </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>userId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_i_emo_state_d_l_l_8h.html#a5b5714828b62001df1ffd4979fd0f57f">IEE_MentalCommandAction_t</a>&#160;</td>
+          <td class="paramname"><em>action</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the type of MentalCommand action to be trained. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">userId</td><td>- user ID </td></tr>
+    <tr><td class="paramname">action</td><td>- which action would like to be trained</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
+<li>EDK_OK if successful</li>
+</ul>
+</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_iedk_error_code_8h.html">IedkErrorCode.h</a>, <a class="el" href="_i_emo_state_d_l_l_8h.html#a5b5714828b62001df1ffd4979fd0f57f" title="MentalCommand action type enumerator. ">IEE_MentalCommandAction_t</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa840fe5c8a276492580f5b5d3a275bb7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_MentalCommandSetTrainingControl </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>userId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_mental_command_detection_8h.html#a12f460f5bcf8b15ec71db48cbb670728">IEE_MentalCommandTrainingControl_t</a>&#160;</td>
+          <td class="paramname"><em>control</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the training control flag for MentalCommand training. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">userId</td><td>- user ID </td></tr>
+    <tr><td class="paramname">control</td><td>- pre-defined MentalCommand training control</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
+<li>EDK_OK if successful</li>
+</ul>
+</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_iedk_error_code_8h.html">IedkErrorCode.h</a>, <a class="el" href="_mental_command_detection_8h.html#a12f460f5bcf8b15ec71db48cbb670728" title="MentalCommand Suite training control enumerator. ">IEE_MentalCommandTrainingControl_t</a> </dd></dl>
 
 </div>
 </div>
@@ -983,167 +1137,6 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a09a6404df23ca768ab8427de185abf63"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_MentalCommandSetSignatureCaching </td>
-          <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>userId</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>enabled</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Enable or disable signature caching in MentalCommand. </p>
-<p>Enable signature caching will shorten the time to build the signature after each training, with the penalty of more memory usage.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">userId</td><td>- user ID </td></tr>
-    <tr><td class="paramname">enabled</td><td>- flag to set status of caching (1: enable, 0: disable)</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
-<li>EDK_OK if successful</li>
-</ul>
-</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="_iedk_error_code_8h.html">IedkErrorCode.h</a> </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a2c2fb16e5b3dc8086c732fc148a081bf"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_MentalCommandGetSignatureCaching </td>
-          <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>userId</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned int *&#160;</td>
-          <td class="paramname"><em>pEnabledOut</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Query the status of signature caching in MentalCommand. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">userId</td><td>- user ID </td></tr>
-    <tr><td class="paramname">pEnabledOut</td><td>- flag to get status of caching (1: enable, 0: disable)</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
-<li>EDK_OK if successful</li>
-</ul>
-</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="_iedk_error_code_8h.html">IedkErrorCode.h</a> </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="acfdbfc1ba051336110834f8e4b930bc0"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_MentalCommandSetSignatureCacheSize </td>
-          <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>userId</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>size</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Set the cache size for the signature caching in MentalCommand. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">userId</td><td>- user ID </td></tr>
-    <tr><td class="paramname">size</td><td>- number of signatures to be kept in the cache (0: unlimited)</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
-<li>EDK_OK if successful</li>
-</ul>
-</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="_iedk_error_code_8h.html">IedkErrorCode.h</a> </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a5ae92998b4234a602ce04369da3fd979"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_MentalCommandGetSignatureCacheSize </td>
-          <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>userId</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned int *&#160;</td>
-          <td class="paramname"><em>pSizeOut</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get the current cache size for the signature caching in MentalCommand. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">userId</td><td>- user ID </td></tr>
-    <tr><td class="paramname">pSizeOut</td><td>- number of signatures to be kept in the cache (0: unlimited)</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
-<li>EDK_OK if successful</li>
-</ul>
-</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="_iedk_error_code_8h.html">IedkErrorCode.h</a> </dd></dl>
-
-</div>
-</div>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.8-->
 <!-- start footer part -->
@@ -1153,7 +1146,7 @@ Functions</h2></td></tr>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 4 2016 16:40:51 for Emotiv SDK Community Edition by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri May 27 2016 13:37:44 for Emotiv SDK Community Edition by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

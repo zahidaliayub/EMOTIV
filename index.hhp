@@ -1,5 +1,4 @@
 [OPTIONS]
-Compiled file=emotiv_sdk_3.3_community.chm
 Compatibility=1.1
 Full-text search=Yes
 Contents file=index.hhc
@@ -15,13 +14,14 @@ main="Emotiv SDK Community Edition","index.hhc","index.hhk","index.html","index.
 
 [FILES]
 _emotiv_cloud_client_8h_source.html
+_emotiv_cloud_error_code_8h_source.html
 _facial_expression_detection_8h_source.html
 _iedk_8h_source.html
 _iedk_error_code_8h_source.html
 _i_emo_state_d_l_l_8h_source.html
-mainpage_8md_source.html
 _mental_command_detection_8h_source.html
 _emotiv_cloud_client_8h.html
+_emotiv_cloud_error_code_8h.html
 _facial_expression_detection_8h.html
 _iedk_8h.html
 _iedk_error_code_8h.html
@@ -29,9 +29,7 @@ _i_emo_state_d_l_l_8h.html
 mainpage_8md.html
 _mental_command_detection_8h.html
 struct_i_input_sensor_descriptor__struct.html
-struct_i_input_sensor_descriptor__struct-members.html
 structprofile_ver_info.html
-structprofile_ver_info-members.html
 dir_d44c64559bbebec7f509842c48db8b23.html
 index.html
 annotated.html

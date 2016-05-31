@@ -18,23 +18,47 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#ad4d6758212bdf84ec610ee7832127eaea488b0aa8464f396ea626a21b4a35a16d"><param name="Name" value="DT_MentalCommand"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#ad4d6758212bdf84ec610ee7832127eaea1822e6e514e242dd15b2a7be97ebf661"><param name="Name" value="DT_Relaxation"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#ad4d6758212bdf84ec610ee7832127eaea13633c9bc492e203ebe14e3b713316cc"><param name="Name" value="DT_Stress"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#a88f492d70f54f7d0497d3834c4b59e32"><param name="Name" value="EC_Connect"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#aad3c2742489ddaa25e19d40c723c3573"><param name="Name" value="EC_DeleteUserProfile"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#a9fe13f4ac55566d83adc87d6b88cfa19"><param name="Name" value="EC_Disconnect"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#a22b4e15132c23f5e8f021d1060f07353"><param name="Name" value="EC_DisconnectEngine"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#a8b7c2c08227330f327b0f4e16aa1d9b0"><param name="Name" value="EC_BUFFER_TOO_SMALL"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#a4f1bb192ef460b33e12a322f783ad16a"><param name="Name" value="EC_CLOUD_USER_ID_DONT_LOGIN"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#afd05a78fd48245c1a679fa1325598a5b"><param name="Name" value="EC_Connect"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#a4e12aa679f063f990983e0682efdc5fd"><param name="Name" value="EC_COULDNT_CONNECT"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#ab927a80d289ee6022b3d0a123fa86f2f"><param name="Name" value="EC_COULDNT_RESOLVE_HOST"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#a62e535440706e74db5a827e8b03fd3ba"><param name="Name" value="EC_COULDNT_RESOLVE_PROXY"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#a9fde34c2adcd095507105123df8bbfaf"><param name="Name" value="EC_DeleteUserProfile"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#af3f0cff4086b7b1902b74222e3077c49"><param name="Name" value="EC_Disconnect"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#a03cd736a3c12e15ffa1ad37713e22752"><param name="Name" value="EC_DisconnectEngine"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#aa0f889440d4998ab21385bf90cac76b8"><param name="Name" value="EC_EMOENGINE_UNINITIALIZED"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#a3128e50a04d1716e703f6b5aa8a7582a"><param name="Name" value="EC_EMOTIVCLOUD_UNINITIALIZED"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#a5969cb2af049a3caf2a7847b27891889"><param name="Name" value="EC_FILE_EXISTS"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#aa0a6953fa61a93242270da9f14bb7361"><param name="Name" value="EC_FILESYSTEM_ERROR"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#aa78da1aa1c368417191bc123e31362b2"><param name="Name" value="EC_GetAllProfileName"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#a54aa11ef59a466f7148ef4b859c59b5b"><param name="Name" value="EC_GetProfileId"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#a41e11af5c24d9faf2c91faa4057e34cf"><param name="Name" value="EC_GetUserDetail"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#afc1c275a5cf8a29a2cd4d697c0341a52"><param name="Name" value="EC_LoadUserProfile"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#aa2d63bd7aafd73efc8fb04d5c754c7ef"><param name="Name" value="EC_Login"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#aea5d2b39abac918c4ce7e85d46166be8"><param name="Name" value="EC_Logout"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#ad774774fbc4209c4041520920af86d23"><param name="Name" value="EC_GetUserDetail"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#adf9bba4a3c9fa7f3f6fad30b146fa657"><param name="Name" value="EC_HEADSET_IS_OFF"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#ab36f1defa82e8ce13e1418a40bc14beb"><param name="Name" value="EC_HEADSET_NOT_AVAILABLE"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#a648ecea7569711ed8405e3ef5c35f708"><param name="Name" value="EC_INVALID_CLOUD_USER_ID"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#a809d37361b695591d5c56846486c50a8"><param name="Name" value="EC_INVALID_ENGINE_USER_ID"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#ac11c6f77530ded78ee51ab8e974063b1"><param name="Name" value="EC_INVALID_PARAMETER"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#a3f0f3f78f9e3088f0b56dbe1c98d385c"><param name="Name" value="EC_INVALID_PROFILE_ARCHIVE"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#ae169129f0d6aa769411e04ae9732dfca"><param name="Name" value="EC_LICENSE_NOT_EXPIRED"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#abda1eb0b0ff32d6c6d99e049f691ac30"><param name="Name" value="EC_LoadUserProfile"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#a760b473dcd6746c9a38ed80dfe68974f"><param name="Name" value="EC_Login"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#abf4df43820d0c4cfceaa7affb4e1ba9d"><param name="Name" value="EC_Logout"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#a96a49e5635a33fd090b7a99bd0df2268"><param name="Name" value="EC_OK"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#acbfb3707017b44eeb3cfdd7ea1b4dcd1"><param name="Name" value="EC_OUT_OF_RANGE"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#a00d38e68ce82a4f6f3c9c8f2744a9cb8"><param name="Name" value="EC_OVER_QUOTA"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#af16c07c9dfc2117997a8bb426fc234ee"><param name="Name" value="EC_PROFILE_CLOUD_EXISTED"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#ab9c76f89f47b69a450d0911408cc1db7"><param name="Name" value="EC_ProfileIDAtIndex"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#a896ebcc64c10ec64c0a6a2e274d3df10"><param name="Name" value="EC_ProfileLastModifiedAtIndex"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#a3f7c5b889d0fa571bdc450ed53c71254"><param name="Name" value="EC_ProfileNameAtIndex"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#af407c38c829dacafc1b010f77dd5a3d3"><param name="Name" value="EC_ProfileTypeAtIndex"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#ae3cbd387be04bcf7521213b98e6efbfa"><param name="Name" value="EC_ReconnectEngine"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#aff98da76ea027ad6e11e07d96c470565"><param name="Name" value="EC_SaveUserProfile"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#a3599d95fe45ca1f538f9e3f949afbb7c"><param name="Name" value="EC_UpdateUserProfile"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#ad955fc8f6436dfc33b75e0a6c4874abe"><param name="Name" value="EC_ReconnectEngine"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#a4afb9579a8e5c5c7062dfe41b8df49e7"><param name="Name" value="EC_RESERVED1"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#a0b6d48820d630b6edb4aff02a74cdd03"><param name="Name" value="EC_SaveUserProfile"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#adb7178ffeb4af4f6343e04cd55cb9d31"><param name="Name" value="EC_SAVING_IS_RUNNING"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#a29cafe98f60d0e707035710a84d4a7cc"><param name="Name" value="EC_UNKNOWN_ERROR"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#aa98ee0fc559d4ad041ab28516394e0a9"><param name="Name" value="EC_UpdateUserProfile"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#a174d29e29e6fa26c24a49a7560ab4aae"><param name="Name" value="EC_UPLOAD_FAILED"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="_facial_expression_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8"><param name="Name" value="EDK_API"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_facial_expression_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8"><param name="Name" value="FacialExpressionDetection.h"></OBJECT>
@@ -81,29 +105,56 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#a3de8838840d8e7b1a14792aeaa6b2b0e"><param name="Name" value="EMOTIVCLOUD_API"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html"><param name="Name" value="EmotivCloudClient.h"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#a88f492d70f54f7d0497d3834c4b59e32"><param name="Name" value="EC_Connect"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#aad3c2742489ddaa25e19d40c723c3573"><param name="Name" value="EC_DeleteUserProfile"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#a9fe13f4ac55566d83adc87d6b88cfa19"><param name="Name" value="EC_Disconnect"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#a22b4e15132c23f5e8f021d1060f07353"><param name="Name" value="EC_DisconnectEngine"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#afd05a78fd48245c1a679fa1325598a5b"><param name="Name" value="EC_Connect"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#a9fde34c2adcd095507105123df8bbfaf"><param name="Name" value="EC_DeleteUserProfile"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#af3f0cff4086b7b1902b74222e3077c49"><param name="Name" value="EC_Disconnect"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#a03cd736a3c12e15ffa1ad37713e22752"><param name="Name" value="EC_DisconnectEngine"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#aa78da1aa1c368417191bc123e31362b2"><param name="Name" value="EC_GetAllProfileName"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#a54aa11ef59a466f7148ef4b859c59b5b"><param name="Name" value="EC_GetProfileId"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#a41e11af5c24d9faf2c91faa4057e34cf"><param name="Name" value="EC_GetUserDetail"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#afc1c275a5cf8a29a2cd4d697c0341a52"><param name="Name" value="EC_LoadUserProfile"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#aa2d63bd7aafd73efc8fb04d5c754c7ef"><param name="Name" value="EC_Login"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#aea5d2b39abac918c4ce7e85d46166be8"><param name="Name" value="EC_Logout"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#ad774774fbc4209c4041520920af86d23"><param name="Name" value="EC_GetUserDetail"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#abda1eb0b0ff32d6c6d99e049f691ac30"><param name="Name" value="EC_LoadUserProfile"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#a760b473dcd6746c9a38ed80dfe68974f"><param name="Name" value="EC_Login"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#abf4df43820d0c4cfceaa7affb4e1ba9d"><param name="Name" value="EC_Logout"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#ab9c76f89f47b69a450d0911408cc1db7"><param name="Name" value="EC_ProfileIDAtIndex"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#a896ebcc64c10ec64c0a6a2e274d3df10"><param name="Name" value="EC_ProfileLastModifiedAtIndex"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#a3f7c5b889d0fa571bdc450ed53c71254"><param name="Name" value="EC_ProfileNameAtIndex"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#af407c38c829dacafc1b010f77dd5a3d3"><param name="Name" value="EC_ProfileTypeAtIndex"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#ae3cbd387be04bcf7521213b98e6efbfa"><param name="Name" value="EC_ReconnectEngine"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#aff98da76ea027ad6e11e07d96c470565"><param name="Name" value="EC_SaveUserProfile"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#a3599d95fe45ca1f538f9e3f949afbb7c"><param name="Name" value="EC_UpdateUserProfile"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#ad955fc8f6436dfc33b75e0a6c4874abe"><param name="Name" value="EC_ReconnectEngine"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#a0b6d48820d630b6edb4aff02a74cdd03"><param name="Name" value="EC_SaveUserProfile"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#aa98ee0fc559d4ad041ab28516394e0a9"><param name="Name" value="EC_UpdateUserProfile"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#a2568f07452bbc31fdd95f799cf6aa511ae62dc633b3ca0802db2e9609c954c43a"><param name="Name" value="EMOKEY"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#a3de8838840d8e7b1a14792aeaa6b2b0e"><param name="Name" value="EMOTIVCLOUD_API"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#a295963f8528e52d3c9725939dba02887"><param name="Name" value="MAX_NUM_OF_BACKUP_PROFILE_VERSION"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#aec68ad2b217427dac9995d6bfac4258a"><param name="Name" value="profileFileType"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#a6522e3ec77da2d2f9950f3a69d0548b8"><param name="Name" value="profileVersionInfo"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_client_8h.html#a2568f07452bbc31fdd95f799cf6aa511a4769922f2eb8a1083b607fcca642f7de"><param name="Name" value="TRAINING"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html"><param name="Name" value="EmotivCloudErrorCode.h"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#a8b7c2c08227330f327b0f4e16aa1d9b0"><param name="Name" value="EC_BUFFER_TOO_SMALL"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#a4f1bb192ef460b33e12a322f783ad16a"><param name="Name" value="EC_CLOUD_USER_ID_DONT_LOGIN"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#a4e12aa679f063f990983e0682efdc5fd"><param name="Name" value="EC_COULDNT_CONNECT"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#ab927a80d289ee6022b3d0a123fa86f2f"><param name="Name" value="EC_COULDNT_RESOLVE_HOST"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#a62e535440706e74db5a827e8b03fd3ba"><param name="Name" value="EC_COULDNT_RESOLVE_PROXY"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#aa0f889440d4998ab21385bf90cac76b8"><param name="Name" value="EC_EMOENGINE_UNINITIALIZED"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#a3128e50a04d1716e703f6b5aa8a7582a"><param name="Name" value="EC_EMOTIVCLOUD_UNINITIALIZED"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#a5969cb2af049a3caf2a7847b27891889"><param name="Name" value="EC_FILE_EXISTS"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#aa0a6953fa61a93242270da9f14bb7361"><param name="Name" value="EC_FILESYSTEM_ERROR"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#adf9bba4a3c9fa7f3f6fad30b146fa657"><param name="Name" value="EC_HEADSET_IS_OFF"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#ab36f1defa82e8ce13e1418a40bc14beb"><param name="Name" value="EC_HEADSET_NOT_AVAILABLE"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#a648ecea7569711ed8405e3ef5c35f708"><param name="Name" value="EC_INVALID_CLOUD_USER_ID"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#a809d37361b695591d5c56846486c50a8"><param name="Name" value="EC_INVALID_ENGINE_USER_ID"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#ac11c6f77530ded78ee51ab8e974063b1"><param name="Name" value="EC_INVALID_PARAMETER"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#a3f0f3f78f9e3088f0b56dbe1c98d385c"><param name="Name" value="EC_INVALID_PROFILE_ARCHIVE"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#ae169129f0d6aa769411e04ae9732dfca"><param name="Name" value="EC_LICENSE_NOT_EXPIRED"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#a96a49e5635a33fd090b7a99bd0df2268"><param name="Name" value="EC_OK"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#acbfb3707017b44eeb3cfdd7ea1b4dcd1"><param name="Name" value="EC_OUT_OF_RANGE"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#a00d38e68ce82a4f6f3c9c8f2744a9cb8"><param name="Name" value="EC_OVER_QUOTA"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#af16c07c9dfc2117997a8bb426fc234ee"><param name="Name" value="EC_PROFILE_CLOUD_EXISTED"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#a4afb9579a8e5c5c7062dfe41b8df49e7"><param name="Name" value="EC_RESERVED1"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#adb7178ffeb4af4f6343e04cd55cb9d31"><param name="Name" value="EC_SAVING_IS_RUNNING"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#a29cafe98f60d0e707035710a84d4a7cc"><param name="Name" value="EC_UNKNOWN_ERROR"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_emotiv_cloud_error_code_8h.html#a174d29e29e6fa26c24a49a7560ab4aae"><param name="Name" value="EC_UPLOAD_FAILED"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="_facial_expression_detection_8h.html"><param name="Name" value="FacialExpressionDetection.h"></OBJECT>
   <UL>
@@ -237,8 +288,6 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#a3c0fa9e0b17d6c62de69102251b70c54a93dcf6450c4d4059886251a0f18c88ec"><param name="Name" value="IEE_AllEvent"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#abe632505ca171bea676e7a4d9922225aaf459ef10dfec8b66600d07c2ff5c3501"><param name="Name" value="IEE_BLACKMAN"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#aef05ac5b1cf239e1e693436d46b0a9a7"><param name="Name" value="IEE_CheckDetectionsEnabled"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#adc8aa8760415881c02db3a271aaebedd"><param name="Name" value="IEE_ConnectEpocPlusDevice"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#a08768ea7655c971437a63eeb09119424"><param name="Name" value="IEE_ConnectInsightDevice"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#aa63b56ae1fe316af47816df13b00d646"><param name="Name" value="IEE_DataChannel_t"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#ad82ffd62766380f03d61eb8a91400e76"><param name="Name" value="IEE_Detection_t"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#af07c8036b9a7959012f70e4f997f0972"><param name="Name" value="IEE_EmoEngineEventCreate"></OBJECT>
@@ -246,7 +295,6 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#ad4fd04a174ab03e7779e4926698bf6b3"><param name="Name" value="IEE_EmoEngineEventGetEmoState"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#a951f5935ac17e4a95ea52c7fe3008227"><param name="Name" value="IEE_EmoEngineEventGetType"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#a94c7c63fe1b5d346b555bd3ef02102d7"><param name="Name" value="IEE_EmoEngineEventGetUserId"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#a5dbf79fb008133d9b769a37aef1a0fd7"><param name="Name" value="IEE_EmoInitDevice"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#a46675bfbb7a242ca4dd53e42d18695f7"><param name="Name" value="IEE_EmoStateCreate"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#a57cab40edc1bbc11bdfc48c2961f2371"><param name="Name" value="IEE_EmoStateFree"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#a3c0fa9e0b17d6c62de69102251b70c54a9691d6163a2b10fde7b9eff25106117f"><param name="Name" value="IEE_EmoStateUpdated"></OBJECT>
@@ -264,21 +312,14 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#a42d44998991b8faf8651677b5a47fd91"><param name="Name" value="IEE_FFTGetWindowingType"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#a0a6eeb2c5404e464736138fe90c13fc4"><param name="Name" value="IEE_FFTSetWindowingType"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#adca76c66323f250713e4e1f44e80aabe"><param name="Name" value="IEE_GetAverageBandPowers"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#aa251481e0e0ebd34753203a8c73795cd"><param name="Name" value="IEE_GetEpocPlusDeviceCount"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#a7b8c72ddc12b586f30a0911a429f0802"><param name="Name" value="IEE_GetEpocPlusDeviceName"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#a8bc0c25fd3ee8882bd9d04dc3518a01b"><param name="Name" value="IEE_GetEpocPlusDeviceState"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#a35a8ba5982e802405a25c99af2a6e658"><param name="Name" value="IEE_GetEpocPlusSignalStrength"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#a18f92eb37087dd5ef36503a08625e7d1"><param name="Name" value="IEE_GetHeadsetSettings"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#af7baab1c1bf24757740cb42fabb0535d"><param name="Name" value="IEE_GetInsightDeviceCount"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#a64438a1e17fc9575be394269523ec498"><param name="Name" value="IEE_GetInsightDeviceName"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#a8a744707b06cf1a9689d032f98e7707f"><param name="Name" value="IEE_GetInsightDeviceState"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#a0e26fc1942228bed8ebc0cecf388ede7"><param name="Name" value="IEE_GetInsightSignalStrength"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#abe632505ca171bea676e7a4d9922225aac55f19e8253c163664ce644cbc897785"><param name="Name" value="IEE_HAMMING"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#abe632505ca171bea676e7a4d9922225aa297a8266f815f608300ae60e70d4127e"><param name="Name" value="IEE_HANN"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#abe632505ca171bea676e7a4d9922225aa5cb795b1c976c75a8b35cb0744bbd1ae"><param name="Name" value="IEE_HANNING"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#a043cc0c084ec0bfd88d44980021c9811"><param name="Name" value="IEE_HardwareGetVersion"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#a1bede7d811176ed262c41595be0ef933"><param name="Name" value="IEE_HeadsetGetGyroDelta"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#a62a3eb18e35e50e2ada1d3f0f3cd44e8"><param name="Name" value="IEE_HeadsetGetSensorDetails"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#a6f8a4747c295b02d4bc97288dbd809a3"><param name="Name" value="IEE_HeadsetGetSerialNumber"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#a4c456827f98b3d0718e380cb9d0a1ebb"><param name="Name" value="IEE_HeadsetGyroRezero"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#a3c0fa9e0b17d6c62de69102251b70c54a091149ddad3e5e1950396fb7a57f2fa7"><param name="Name" value="IEE_InternalStateChanged"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#a3c0fa9e0b17d6c62de69102251b70c54accf68ca789f56e2c4cbd1094c537e2c0"><param name="Name" value="IEE_MentalCommandEvent"></OBJECT>
@@ -364,8 +405,6 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="_i_emo_state_d_l_l_8h.html#ac17e6efbcb130307e1cfabf11af2514aa0fa98571129653b858ab3877446db184"><param name="Name" value="IEE_CHAN_T7"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="_i_emo_state_d_l_l_8h.html#ac17e6efbcb130307e1cfabf11af2514aa5891746fa9ab5d5a12b655824ddce76f"><param name="Name" value="IEE_CHAN_T8"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#aef05ac5b1cf239e1e693436d46b0a9a7"><param name="Name" value="IEE_CheckDetectionsEnabled"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#adc8aa8760415881c02db3a271aaebedd"><param name="Name" value="IEE_ConnectEpocPlusDevice"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#a08768ea7655c971437a63eeb09119424"><param name="Name" value="IEE_ConnectInsightDevice"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#aa63b56ae1fe316af47816df13b00d646"><param name="Name" value="IEE_DataChannel_t"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#ad82ffd62766380f03d61eb8a91400e76"><param name="Name" value="IEE_Detection_t"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="_i_emo_state_d_l_l_8h.html#a0c87623c2ad0489689ab16b350bbedbf"><param name="Name" value="IEE_EEG_ContactQuality_t"></OBJECT>
@@ -374,7 +413,6 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#ad4fd04a174ab03e7779e4926698bf6b3"><param name="Name" value="IEE_EmoEngineEventGetEmoState"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#a951f5935ac17e4a95ea52c7fe3008227"><param name="Name" value="IEE_EmoEngineEventGetType"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#a94c7c63fe1b5d346b555bd3ef02102d7"><param name="Name" value="IEE_EmoEngineEventGetUserId"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#a5dbf79fb008133d9b769a37aef1a0fd7"><param name="Name" value="IEE_EmoInitDevice"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#a46675bfbb7a242ca4dd53e42d18695f7"><param name="Name" value="IEE_EmoStateCreate"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#a57cab40edc1bbc11bdfc48c2961f2371"><param name="Name" value="IEE_EmoStateFree"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#a3c0fa9e0b17d6c62de69102251b70c54a9691d6163a2b10fde7b9eff25106117f"><param name="Name" value="IEE_EmoStateUpdated"></OBJECT>
@@ -418,21 +456,14 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#a42d44998991b8faf8651677b5a47fd91"><param name="Name" value="IEE_FFTGetWindowingType"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#a0a6eeb2c5404e464736138fe90c13fc4"><param name="Name" value="IEE_FFTSetWindowingType"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#adca76c66323f250713e4e1f44e80aabe"><param name="Name" value="IEE_GetAverageBandPowers"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#aa251481e0e0ebd34753203a8c73795cd"><param name="Name" value="IEE_GetEpocPlusDeviceCount"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#a7b8c72ddc12b586f30a0911a429f0802"><param name="Name" value="IEE_GetEpocPlusDeviceName"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#a8bc0c25fd3ee8882bd9d04dc3518a01b"><param name="Name" value="IEE_GetEpocPlusDeviceState"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#a35a8ba5982e802405a25c99af2a6e658"><param name="Name" value="IEE_GetEpocPlusSignalStrength"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#a18f92eb37087dd5ef36503a08625e7d1"><param name="Name" value="IEE_GetHeadsetSettings"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#af7baab1c1bf24757740cb42fabb0535d"><param name="Name" value="IEE_GetInsightDeviceCount"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#a64438a1e17fc9575be394269523ec498"><param name="Name" value="IEE_GetInsightDeviceName"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#a8a744707b06cf1a9689d032f98e7707f"><param name="Name" value="IEE_GetInsightDeviceState"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#a0e26fc1942228bed8ebc0cecf388ede7"><param name="Name" value="IEE_GetInsightSignalStrength"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#abe632505ca171bea676e7a4d9922225aac55f19e8253c163664ce644cbc897785"><param name="Name" value="IEE_HAMMING"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#abe632505ca171bea676e7a4d9922225aa297a8266f815f608300ae60e70d4127e"><param name="Name" value="IEE_HANN"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#abe632505ca171bea676e7a4d9922225aa5cb795b1c976c75a8b35cb0744bbd1ae"><param name="Name" value="IEE_HANNING"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#a043cc0c084ec0bfd88d44980021c9811"><param name="Name" value="IEE_HardwareGetVersion"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#a1bede7d811176ed262c41595be0ef933"><param name="Name" value="IEE_HeadsetGetGyroDelta"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#a62a3eb18e35e50e2ada1d3f0f3cd44e8"><param name="Name" value="IEE_HeadsetGetSensorDetails"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#a6f8a4747c295b02d4bc97288dbd809a3"><param name="Name" value="IEE_HeadsetGetSerialNumber"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#a4c456827f98b3d0718e380cb9d0a1ebb"><param name="Name" value="IEE_HeadsetGyroRezero"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="_i_emo_state_d_l_l_8h.html#ac21f3c245327198455d68b8ff45beef6"><param name="Name" value="IEE_InputChannels_t"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="_iedk_8h.html#a3c0fa9e0b17d6c62de69102251b70c54a091149ddad3e5e1950396fb7a57f2fa7"><param name="Name" value="IEE_InternalStateChanged"></OBJECT>
