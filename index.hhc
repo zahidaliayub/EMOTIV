@@ -9,6 +9,19 @@
   <UL>
   <LI><OBJECT type="text/sitemap"><param name="Name" value="Data Structures"><param name="Local" value="annotated.html"><param name="ImageNumber" value="1"></OBJECT>
     <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="IEE_LicenseInfos_struct"><param name="Local" value="struct_i_e_e___license_infos__struct.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="date_from"><param name="Local" value="struct_i_e_e___license_infos__struct.html#a09a7e07fcf7f741a970daaa9aab75f16"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="date_to"><param name="Local" value="struct_i_e_e___license_infos__struct.html#a4661e6b3f69a0425d3fe0db661804cf5"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="quota"><param name="Local" value="struct_i_e_e___license_infos__struct.html#a63cb0990a9c89fe251c1f0beae1b5f0d"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="quotaDayLimit"><param name="Local" value="struct_i_e_e___license_infos__struct.html#afb517a29c721a6332aea4323f17ed456"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="quotaMonthLimit"><param name="Local" value="struct_i_e_e___license_infos__struct.html#af54c780526df33853a5c1f395cb163a0"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="scopes"><param name="Local" value="struct_i_e_e___license_infos__struct.html#a24527b308deccb0b7a30965e2e48b868"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="seat_count"><param name="Local" value="struct_i_e_e___license_infos__struct.html#a8a36e78f8ec1a7924b8d635bec9f0598"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="usedQuota"><param name="Local" value="struct_i_e_e___license_infos__struct.html#a201d5ab94dc856b18846cdb590bd2286"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="usedQuotaDay"><param name="Local" value="struct_i_e_e___license_infos__struct.html#aedde35a687daa0e7abd45b5e75633a68"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="usedQuotaMonth"><param name="Local" value="struct_i_e_e___license_infos__struct.html#a21d90449c70264efaabee297064e5b41"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="IInputSensorDescriptor_struct"><param name="Local" value="struct_i_input_sensor_descriptor__struct.html"><param name="ImageNumber" value="1"></OBJECT>
       <UL>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="channelId"><param name="Local" value="struct_i_input_sensor_descriptor__struct.html#a057ec02e9dd8902db3249bf423f46ac3"><param name="ImageNumber" value="11"></OBJECT>
@@ -55,8 +68,10 @@
       <LI><OBJECT type="text/sitemap"><param name="Name" value="EC_DeleteUserProfile"><param name="Local" value="_emotiv_cloud_client_8h.html#a9fde34c2adcd095507105123df8bbfaf"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="EC_Disconnect"><param name="Local" value="_emotiv_cloud_client_8h.html#af3f0cff4086b7b1902b74222e3077c49"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="EC_DisconnectEngine"><param name="Local" value="_emotiv_cloud_client_8h.html#a03cd736a3c12e15ffa1ad37713e22752"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="EC_DownloadProfileFile"><param name="Local" value="_emotiv_cloud_client_8h.html#a1904a7a7fada58831753999f9dd6a6e2"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="EC_GetAllProfileName"><param name="Local" value="_emotiv_cloud_client_8h.html#aa78da1aa1c368417191bc123e31362b2"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="EC_GetProfileId"><param name="Local" value="_emotiv_cloud_client_8h.html#a54aa11ef59a466f7148ef4b859c59b5b"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="EC_GetLastestProfileVersions"><param name="Local" value="_emotiv_cloud_client_8h.html#a3476697bf63f529fe15507fd052125d4"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="EC_GetProfileId"><param name="Local" value="_emotiv_cloud_client_8h.html#ac7ce298ee627c55c58b6ecc646791c58"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="EC_GetUserDetail"><param name="Local" value="_emotiv_cloud_client_8h.html#ad774774fbc4209c4041520920af86d23"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="EC_LoadUserProfile"><param name="Local" value="_emotiv_cloud_client_8h.html#abda1eb0b0ff32d6c6d99e049f691ac30"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="EC_Login"><param name="Local" value="_emotiv_cloud_client_8h.html#a760b473dcd6746c9a38ed80dfe68974f"><param name="ImageNumber" value="11"></OBJECT>
@@ -68,33 +83,34 @@
       <LI><OBJECT type="text/sitemap"><param name="Name" value="EC_ReconnectEngine"><param name="Local" value="_emotiv_cloud_client_8h.html#ad955fc8f6436dfc33b75e0a6c4874abe"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="EC_SaveUserProfile"><param name="Local" value="_emotiv_cloud_client_8h.html#a0b6d48820d630b6edb4aff02a74cdd03"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="EC_UpdateUserProfile"><param name="Local" value="_emotiv_cloud_client_8h.html#aa98ee0fc559d4ad041ab28516394e0a9"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="EC_UploadProfileFile"><param name="Local" value="_emotiv_cloud_client_8h.html#a6a9c6afa8fbe4cae1144ccff479b7aae"><param name="ImageNumber" value="11"></OBJECT>
       </UL>
-    <LI><OBJECT type="text/sitemap"><param name="Name" value="EmotivCloudErrorCode.h"><param name="Local" value="_emotiv_cloud_error_code_8h.html"><param name="ImageNumber" value="1"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="EmotivLicense.h"><param name="Local" value="_emotiv_license_8h.html"><param name="ImageNumber" value="1"></OBJECT>
       <UL>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="EC_BUFFER_TOO_SMALL"><param name="Local" value="_emotiv_cloud_error_code_8h.html#a8b7c2c08227330f327b0f4e16aa1d9b0"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="EC_CLOUD_USER_ID_DONT_LOGIN"><param name="Local" value="_emotiv_cloud_error_code_8h.html#a4f1bb192ef460b33e12a322f783ad16a"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="EC_COULDNT_CONNECT"><param name="Local" value="_emotiv_cloud_error_code_8h.html#a4e12aa679f063f990983e0682efdc5fd"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="EC_COULDNT_RESOLVE_HOST"><param name="Local" value="_emotiv_cloud_error_code_8h.html#ab927a80d289ee6022b3d0a123fa86f2f"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="EC_COULDNT_RESOLVE_PROXY"><param name="Local" value="_emotiv_cloud_error_code_8h.html#a62e535440706e74db5a827e8b03fd3ba"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="EC_EMOENGINE_UNINITIALIZED"><param name="Local" value="_emotiv_cloud_error_code_8h.html#aa0f889440d4998ab21385bf90cac76b8"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="EC_EMOTIVCLOUD_UNINITIALIZED"><param name="Local" value="_emotiv_cloud_error_code_8h.html#a3128e50a04d1716e703f6b5aa8a7582a"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="EC_FILE_EXISTS"><param name="Local" value="_emotiv_cloud_error_code_8h.html#a5969cb2af049a3caf2a7847b27891889"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="EC_FILESYSTEM_ERROR"><param name="Local" value="_emotiv_cloud_error_code_8h.html#aa0a6953fa61a93242270da9f14bb7361"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="EC_HEADSET_IS_OFF"><param name="Local" value="_emotiv_cloud_error_code_8h.html#adf9bba4a3c9fa7f3f6fad30b146fa657"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="EC_HEADSET_NOT_AVAILABLE"><param name="Local" value="_emotiv_cloud_error_code_8h.html#ab36f1defa82e8ce13e1418a40bc14beb"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="EC_INVALID_CLOUD_USER_ID"><param name="Local" value="_emotiv_cloud_error_code_8h.html#a648ecea7569711ed8405e3ef5c35f708"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="EC_INVALID_ENGINE_USER_ID"><param name="Local" value="_emotiv_cloud_error_code_8h.html#a809d37361b695591d5c56846486c50a8"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="EC_INVALID_PARAMETER"><param name="Local" value="_emotiv_cloud_error_code_8h.html#ac11c6f77530ded78ee51ab8e974063b1"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="EC_INVALID_PROFILE_ARCHIVE"><param name="Local" value="_emotiv_cloud_error_code_8h.html#a3f0f3f78f9e3088f0b56dbe1c98d385c"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="EC_LICENSE_NOT_EXPIRED"><param name="Local" value="_emotiv_cloud_error_code_8h.html#ae169129f0d6aa769411e04ae9732dfca"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="EC_OK"><param name="Local" value="_emotiv_cloud_error_code_8h.html#a96a49e5635a33fd090b7a99bd0df2268"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="EC_OUT_OF_RANGE"><param name="Local" value="_emotiv_cloud_error_code_8h.html#acbfb3707017b44eeb3cfdd7ea1b4dcd1"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="EC_OVER_QUOTA"><param name="Local" value="_emotiv_cloud_error_code_8h.html#a00d38e68ce82a4f6f3c9c8f2744a9cb8"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="EC_PROFILE_CLOUD_EXISTED"><param name="Local" value="_emotiv_cloud_error_code_8h.html#af16c07c9dfc2117997a8bb426fc234ee"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="EC_RESERVED1"><param name="Local" value="_emotiv_cloud_error_code_8h.html#a4afb9579a8e5c5c7062dfe41b8df49e7"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="EC_SAVING_IS_RUNNING"><param name="Local" value="_emotiv_cloud_error_code_8h.html#adb7178ffeb4af4f6343e04cd55cb9d31"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="EC_UNKNOWN_ERROR"><param name="Local" value="_emotiv_cloud_error_code_8h.html#a29cafe98f60d0e707035710a84d4a7cc"><param name="ImageNumber" value="11"></OBJECT>
-      <LI><OBJECT type="text/sitemap"><param name="Name" value="EC_UPLOAD_FAILED"><param name="Local" value="_emotiv_cloud_error_code_8h.html#a174d29e29e6fa26c24a49a7560ab4aae"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IEE_LicenseInfos_struct"><param name="Local" value="struct_i_e_e___license_infos__struct.html"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="date_from"><param name="Local" value="struct_i_e_e___license_infos__struct.html#a09a7e07fcf7f741a970daaa9aab75f16"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="date_to"><param name="Local" value="struct_i_e_e___license_infos__struct.html#a4661e6b3f69a0425d3fe0db661804cf5"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="quota"><param name="Local" value="struct_i_e_e___license_infos__struct.html#a63cb0990a9c89fe251c1f0beae1b5f0d"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="quotaDayLimit"><param name="Local" value="struct_i_e_e___license_infos__struct.html#afb517a29c721a6332aea4323f17ed456"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="quotaMonthLimit"><param name="Local" value="struct_i_e_e___license_infos__struct.html#af54c780526df33853a5c1f395cb163a0"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="scopes"><param name="Local" value="struct_i_e_e___license_infos__struct.html#a24527b308deccb0b7a30965e2e48b868"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="seat_count"><param name="Local" value="struct_i_e_e___license_infos__struct.html#a8a36e78f8ec1a7924b8d635bec9f0598"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="usedQuota"><param name="Local" value="struct_i_e_e___license_infos__struct.html#a201d5ab94dc856b18846cdb590bd2286"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="usedQuotaDay"><param name="Local" value="struct_i_e_e___license_infos__struct.html#aedde35a687daa0e7abd45b5e75633a68"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="usedQuotaMonth"><param name="Local" value="struct_i_e_e___license_infos__struct.html#a21d90449c70264efaabee297064e5b41"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_API"><param name="Local" value="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IEE_LicenseInfos_t"><param name="Local" value="_emotiv_license_8h.html#a045619d2c88cfc692278900afd10af3f"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IEE_LicenseType_t"><param name="Local" value="_emotiv_license_8h.html#a980aac782f13f99c8ed3c857b4b8e823"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IEE_LicenseType_enum"><param name="Local" value="_emotiv_license_8h.html#ad81f278ea3e1d7ea2590d3c287073393"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="IEE_EEG"><param name="Local" value="_emotiv_license_8h.html#ad81f278ea3e1d7ea2590d3c287073393a70424d2ec621a1c9518f360003c0d17c"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="IEE_PM"><param name="Local" value="_emotiv_license_8h.html#ad81f278ea3e1d7ea2590d3c287073393abcd6792f7a10a8dbd80e992e22e8f728"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="IEE_EEG_PM"><param name="Local" value="_emotiv_license_8h.html#ad81f278ea3e1d7ea2590d3c287073393a7f10339895eb7812e3efec7ae508c93b"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IEE_ActivateLicense"><param name="Local" value="_emotiv_license_8h.html#ab3e716f5c1629532980a4ac2f17acb0d"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IEE_LicenseInformation"><param name="Local" value="_emotiv_license_8h.html#a06cbd14b2015885e6ebe187f4301a5e9"><param name="ImageNumber" value="11"></OBJECT>
       </UL>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="FacialExpressionDetection.h"><param name="Local" value="_facial_expression_detection_8h.html"><param name="ImageNumber" value="1"></OBJECT>
       <UL>
@@ -189,6 +205,7 @@
         <LI><OBJECT type="text/sitemap"><param name="Name" value="IED_GYROX"><param name="Local" value="_iedk_8h.html#a79def4ace871855da2d7249a730041b3ad0e330643aec304b61c67091c4b5fd1a"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="IED_GYROY"><param name="Local" value="_iedk_8h.html#a79def4ace871855da2d7249a730041b3a25fdd9c67378c9906de45e8c624d5098"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="IED_TIMESTAMP"><param name="Local" value="_iedk_8h.html#a79def4ace871855da2d7249a730041b3aa0a24ec4ed5cbc5c3b8bbfecc85098c0"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="IED_MARKER_HARDWARE"><param name="Local" value="_iedk_8h.html#a79def4ace871855da2d7249a730041b3ab6f65f0930715d15fb47c3f447b3780b"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="IED_ES_TIMESTAMP"><param name="Local" value="_iedk_8h.html#a79def4ace871855da2d7249a730041b3a0253ecd89e20e3e6d377f8471d684b32"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="IED_FUNC_ID"><param name="Local" value="_iedk_8h.html#a79def4ace871855da2d7249a730041b3a00273bbb911e6dae4d161892f6dc9b9a"><param name="ImageNumber" value="11"></OBJECT>
         <LI><OBJECT type="text/sitemap"><param name="Name" value="IED_FUNC_VALUE"><param name="Local" value="_iedk_8h.html#a79def4ace871855da2d7249a730041b3a85bfa037eaf8939d8a27ce86d9fa849b"><param name="ImageNumber" value="11"></OBJECT>
@@ -264,6 +281,7 @@
       <LI><OBJECT type="text/sitemap"><param name="Name" value="IEE_FFTGetWindowingType"><param name="Local" value="_iedk_8h.html#a42d44998991b8faf8651677b5a47fd91"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="IEE_FFTSetWindowingType"><param name="Local" value="_iedk_8h.html#a0a6eeb2c5404e464736138fe90c13fc4"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="IEE_GetAverageBandPowers"><param name="Local" value="_iedk_8h.html#adca76c66323f250713e4e1f44e80aabe"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IEE_GetEditionName"><param name="Local" value="_iedk_8h.html#a9ea1ea26e1d344128549131c209f6327"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="IEE_GetHeadsetSettings"><param name="Local" value="_iedk_8h.html#a18f92eb37087dd5ef36503a08625e7d1"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="IEE_HardwareGetVersion"><param name="Local" value="_iedk_8h.html#a043cc0c084ec0bfd88d44980021c9811"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="IEE_HeadsetGetGyroDelta"><param name="Local" value="_iedk_8h.html#a1bede7d811176ed262c41595be0ef933"><param name="ImageNumber" value="11"></OBJECT>
@@ -285,30 +303,77 @@
       </UL>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="IedkErrorCode.h"><param name="Local" value="_iedk_error_code_8h.html"><param name="ImageNumber" value="1"></OBJECT>
       <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_ACCESS_DENIED"><param name="Local" value="_iedk_error_code_8h.html#ad01dd0dba0c5c0a9b7382c8cb02792e6"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_APP_INVALID_DATE"><param name="Local" value="_iedk_error_code_8h.html#a99a4b2e7b7d5656f2d4e9080992001ff"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_APP_QUOTA_EXCEEDED"><param name="Local" value="_iedk_error_code_8h.html#a993a531a9c1ae4c727c9caa55e967ea3"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_BUFFER_TOO_SMALL"><param name="Local" value="_iedk_error_code_8h.html#acf95077b4bd5f24e4d0f9e374367b331"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_CANNOT_ACQUIRE_DATA"><param name="Local" value="_iedk_error_code_8h.html#a84e05de1c069b0e8bf9d14501c034712"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_CLOUD_USER_ID_DONT_LOGIN"><param name="Local" value="_iedk_error_code_8h.html#aaf10d05655b2c572f4737b32fc92ccd2"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_COULDNT_CONNECT"><param name="Local" value="_iedk_error_code_8h.html#a1207f844828804f09859b109733112fd"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_COULDNT_RESOLVE_HOST"><param name="Local" value="_iedk_error_code_8h.html#a6c20ab0c625f8fd552ccd70bfa5ebe04"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_COULDNT_RESOLVE_PROXY"><param name="Local" value="_iedk_error_code_8h.html#a4d3cb9b1a7ff026da1a08b452d397819"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_DEVICE_CODE_ERROR"><param name="Local" value="_iedk_error_code_8h.html#a761857da7ce6580ebd43e137c671d0cd"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_EMOENGINE_DISCONNECTED"><param name="Local" value="_iedk_error_code_8h.html#aab929ea8dbd64c4245c0b79116a75055"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_EMOENGINE_PROXY_ERROR"><param name="Local" value="_iedk_error_code_8h.html#aed221cb10de26650a5fc37a630296988"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_EMOENGINE_UNINITIALIZED"><param name="Local" value="_iedk_error_code_8h.html#a2d70cfbfcb4b40d7dc72a05f1ce9de4a"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_EMOTIVCLOUD_UNINITIALIZED"><param name="Local" value="_iedk_error_code_8h.html#a1311588da9c8a4ebb1e46cdce6127c75"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_FE_NO_SIG_AVAILABLE"><param name="Local" value="_iedk_error_code_8h.html#a6f6d10c37bd49cdbbd7a05bd8a4fdc26"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_FILE_EXISTS"><param name="Local" value="_iedk_error_code_8h.html#a253b430de844ba75fa23d69904492ab4"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_FILE_NOT_FOUND"><param name="Local" value="_iedk_error_code_8h.html#ae035d811889f2035f3a3f3acb425bd10"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_FILESYSTEM_ERROR"><param name="Local" value="_iedk_error_code_8h.html#a7a37a646f366460338936113402a7375"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_GYRO_NOT_CALIBRATED"><param name="Local" value="_iedk_error_code_8h.html#a8d6f853af368b793d91e4b3faf668000"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_HEADSET_IS_OFF"><param name="Local" value="_iedk_error_code_8h.html#a51d75dd5a05726f69acf8171108b512a"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_HEADSET_NOT_AVAILABLE"><param name="Local" value="_iedk_error_code_8h.html#a1da899f7005b8b153aa58a6bba001c3c"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_INVALID_CLOUD_USER_ID"><param name="Local" value="_iedk_error_code_8h.html#aaac8a3275d0230afa1022ffa45c33a32"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_INVALID_DEV_ID_ERROR"><param name="Local" value="_iedk_error_code_8h.html#aca03f9442d5bc9392f69bfec5f70beb4"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_INVALID_ENGINE_USER_ID"><param name="Local" value="_iedk_error_code_8h.html#acda912c6867c10ee281e2a470aa825e3"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_INVALID_PARAMETER"><param name="Local" value="_iedk_error_code_8h.html#a32263575f97cae9990b09f16c74bd82a"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_INVALID_PROFILE_ARCHIVE"><param name="Local" value="_iedk_error_code_8h.html#a4e43417c86ebbd2fbce5abcaa32ee18a"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_INVALID_USER_ID"><param name="Local" value="_iedk_error_code_8h.html#a5e95ad273cc833649be26fdddc704029"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_LICENSE_DEVICE_LIMITED"><param name="Local" value="_iedk_error_code_8h.html#add64ed06c1f9a8a719e1941e3e7624d1"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_LICENSE_ERROR"><param name="Local" value="_iedk_error_code_8h.html#ad3731d2fe5db6cdd51da72e3dce1cdbf"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_LICENSE_EXPIRED"><param name="Local" value="_iedk_error_code_8h.html#aeb07267233b0717cd563b51083f1d8de"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_LICENSE_NO_EEG"><param name="Local" value="_iedk_error_code_8h.html#adb254c1dd4c7bd0ef3fde6cc6fa8fc67"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_LICENSE_NOT_FOUND"><param name="Local" value="_iedk_error_code_8h.html#a1f3abe0852aec120c0917bd607353f26"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_LICENSE_REGISTERED"><param name="Local" value="_iedk_error_code_8h.html#a525b1e994948d7b422a47e2b54990d22"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_MC_EXCESS_MAX_ACTIONS"><param name="Local" value="_iedk_error_code_8h.html#a3d6cf403dfc873c440f08860d3d3b06d"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_MC_INVALID_ACTIVE_ACTION"><param name="Local" value="_iedk_error_code_8h.html#a133fa17c5e0800689ed614a2a452a06f"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_MC_INVALID_TRAINING_ACTION"><param name="Local" value="_iedk_error_code_8h.html#a9816b9067ecbd18cda56394439762a34"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_MC_INVALID_TRAINING_CONTROL"><param name="Local" value="_iedk_error_code_8h.html#a0f31ae5c3408cc0dfe9a2b4b0395d6ce"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_NO_ACTIVE_LICENSE"><param name="Local" value="_iedk_error_code_8h.html#ad947d35d118039a59a9934ee6a07627b"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_NO_EVENT"><param name="Local" value="_iedk_error_code_8h.html#a9ff6ae0daaa6987da68594d3a5f212dd"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_NO_USER_FOR_BASEPROFILE"><param name="Local" value="_iedk_error_code_8h.html#ab784fb96835113fa0233a403de684c93"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_OK"><param name="Local" value="_iedk_error_code_8h.html#af845c1b9bfb4a6fde61b6bc58aea06e2"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_OPTIMIZATION_IS_ON"><param name="Local" value="_iedk_error_code_8h.html#a0e00524e1cd93b170886a5db08bc0cbb"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_OUT_OF_RANGE"><param name="Local" value="_iedk_error_code_8h.html#a2b8e58cb87ea2aa5facce6dde3dcb652"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_OVER_QUOTA"><param name="Local" value="_iedk_error_code_8h.html#a3a8e40d6c201d8ad665689635676b360"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_OVER_QUOTA_IN_DAY"><param name="Local" value="_iedk_error_code_8h.html#a3da9763f134ee8b67b4f5fc893bb3a0e"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_OVER_QUOTA_IN_MONTH"><param name="Local" value="_iedk_error_code_8h.html#aca895d7667cd3661fb2ee0d159d09f61"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_PARAMETER_LOCKED"><param name="Local" value="_iedk_error_code_8h.html#a42aac06a6dfc102a77e8597bb8386390"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_PROFILE_CLOUD_EXISTED"><param name="Local" value="_iedk_error_code_8h.html#a86413e3bf83e4fd393e35e930366e148"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_RESERVED1"><param name="Local" value="_iedk_error_code_8h.html#a474bf199f8d226cc8cb19ca6e50ae537"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_SAVING_IS_RUNNING"><param name="Local" value="_iedk_error_code_8h.html#a2c327d0e79f308baa8c788b8a5794ab5"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_UNKNOWN_ERROR"><param name="Local" value="_iedk_error_code_8h.html#a160b23e7fb18e625b87dd2f582b9b19a"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_UPDATE_LICENSE"><param name="Local" value="_iedk_error_code_8h.html#a659741c4ab6db0065e59c2fd6b72d511"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_UPLOAD_FAILED"><param name="Local" value="_iedk_error_code_8h.html#aa1c51529fd841cb4081e25208e9b1c97"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="IEegData.h"><param name="Local" value="_i_eeg_data_8h.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_API"><param name="Local" value="_i_eeg_data_8h.html#a71f2f924934ca9d7f770bc458493c4a8"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="DataHandle"><param name="Local" value="_i_eeg_data_8h.html#a69d0eae028ac31f9b30316927bc7db50"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IEE_DataAcquisitionEnable"><param name="Local" value="_i_eeg_data_8h.html#aedd97e0e269cf16236bd3fe46521747d"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IEE_DataAcquisitionIsEnabled"><param name="Local" value="_i_eeg_data_8h.html#a0b48b15ce37d55016f5516192849d7df"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IEE_DataCreate"><param name="Local" value="_i_eeg_data_8h.html#aa81b403f89833a626cf72a741bb87ed7"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IEE_DataFree"><param name="Local" value="_i_eeg_data_8h.html#a80b9dec45d215aa1e87ea4dc42631f3e"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IEE_DataGet"><param name="Local" value="_i_eeg_data_8h.html#a7fd94414cd4910d4755e3442e5223798"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IEE_DataGetBufferSizeInSec"><param name="Local" value="_i_eeg_data_8h.html#ae0de782c0eb51f9de3522ebf1642197f"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IEE_DataGetMultiChannels"><param name="Local" value="_i_eeg_data_8h.html#a7b9efb94d7bad88bf8fa010e3eb278be"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IEE_DataGetNumberOfSample"><param name="Local" value="_i_eeg_data_8h.html#a6abbe4e196cb9ece0131b51421c3b7d5"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IEE_DataGetSamplingRate"><param name="Local" value="_i_eeg_data_8h.html#ae5df597eb66a20c87e99b0e106d9d9a3"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IEE_DataSetBufferSizeInSec"><param name="Local" value="_i_eeg_data_8h.html#a7cb0550c5db27b7223b225741a658b98"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IEE_DataSetMarker"><param name="Local" value="_i_eeg_data_8h.html#a5b417a8e3070e6370635471c26e62fa9"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IEE_DataSetSychronizationSignal"><param name="Local" value="_i_eeg_data_8h.html#abd14221e5d662700e085fc9079ede427"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IEE_DataUpdateHandle"><param name="Local" value="_i_eeg_data_8h.html#ab2e3abbc834c31b16a324c5854007a10"><param name="ImageNumber" value="11"></OBJECT>
       </UL>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="IEmoStateDLL.h"><param name="Local" value="_i_emo_state_d_l_l_8h.html"><param name="ImageNumber" value="1"></OBJECT>
       <UL>
@@ -430,6 +495,48 @@
       <LI><OBJECT type="text/sitemap"><param name="Name" value="IS_MentalCommandGetCurrentAction"><param name="Local" value="_i_emo_state_d_l_l_8h.html#a752c1296c860e3cb91b31a8664bd459e"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="IS_MentalCommandGetCurrentActionPower"><param name="Local" value="_i_emo_state_d_l_l_8h.html#ae59995628886da1331cf5f693a30fe19"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="IS_MentalCommandIsActive"><param name="Local" value="_i_emo_state_d_l_l_8h.html#ad4ff6322e30cd593ef297e7a7b802d3f"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="IEmoStatePerformanceMetric.h"><param name="Local" value="_i_emo_state_performance_metric_8h.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="EMOSTATE_DLL_API"><param name="Local" value="_i_emo_state_performance_metric_8h.html#a801cd768cc0c7b20d80bef123302443f"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IEE_PerformanceMetricAlgo_t"><param name="Local" value="_i_emo_state_performance_metric_8h.html#a367479d258e4d872d1aa8d2f7c06ba61"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IEE_PerformanceMetricAlgo_enum"><param name="Local" value="_i_emo_state_performance_metric_8h.html#a7dcd0e8a1cdfde2d1d46d31410091413"><param name="ImageNumber" value="1"></OBJECT>
+        <UL>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="PM_EXCITEMENT"><param name="Local" value="_i_emo_state_performance_metric_8h.html#a7dcd0e8a1cdfde2d1d46d31410091413a152c379bc8085b1894f6fb00da861d31"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="PM_RELAXATION"><param name="Local" value="_i_emo_state_performance_metric_8h.html#a7dcd0e8a1cdfde2d1d46d31410091413a13563631571deda9e65603f3e855e462"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="PM_STRESS"><param name="Local" value="_i_emo_state_performance_metric_8h.html#a7dcd0e8a1cdfde2d1d46d31410091413af5afec1eb90d42403eb5c464707b5808"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="PM_ENGAGEMENT"><param name="Local" value="_i_emo_state_performance_metric_8h.html#a7dcd0e8a1cdfde2d1d46d31410091413a84863cf47d048d3e022a768a3f191e3a"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="PM_INTEREST"><param name="Local" value="_i_emo_state_performance_metric_8h.html#a7dcd0e8a1cdfde2d1d46d31410091413a2bf2952bbd198dbb1e41e998288b4625"><param name="ImageNumber" value="11"></OBJECT>
+        <LI><OBJECT type="text/sitemap"><param name="Name" value="PM_FOCUS"><param name="Local" value="_i_emo_state_performance_metric_8h.html#a7dcd0e8a1cdfde2d1d46d31410091413a78816b5c93c4d040b73656a5b52db93f"><param name="ImageNumber" value="11"></OBJECT>
+        </UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IS_PerformanceMetricEqual"><param name="Local" value="_i_emo_state_performance_metric_8h.html#a70151ef4dc2e6273411633483d3ed9c8"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IS_PerformanceMetricGetEngagementBoredomModelParams"><param name="Local" value="_i_emo_state_performance_metric_8h.html#a7b741519f8ca3f73cb27411c3bee0aec"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IS_PerformanceMetricGetEngagementBoredomScore"><param name="Local" value="_i_emo_state_performance_metric_8h.html#a7ac0993fd7cef2ac4bad0c128d42a1f4"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IS_PerformanceMetricGetExcitementLongTermScore"><param name="Local" value="_i_emo_state_performance_metric_8h.html#a63f9803166e9847fc5f2efeb92787104"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IS_PerformanceMetricGetFocusModelParams"><param name="Local" value="_i_emo_state_performance_metric_8h.html#aec969f036ee0979f0e779e937a61339d"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IS_PerformanceMetricGetFocusScore"><param name="Local" value="_i_emo_state_performance_metric_8h.html#a40adfafec6b2adbfbee0567bf304bf52"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IS_PerformanceMetricGetInstantaneousExcitementModelParams"><param name="Local" value="_i_emo_state_performance_metric_8h.html#a62b7e8546d851afc4248ff9dd20417b9"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IS_PerformanceMetricGetInstantaneousExcitementScore"><param name="Local" value="_i_emo_state_performance_metric_8h.html#a258c2c91a6e241056c15e70122541dd8"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IS_PerformanceMetricGetInterestModelParams"><param name="Local" value="_i_emo_state_performance_metric_8h.html#a36652b5c6043f50fc4dc08a8e69ac25c"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IS_PerformanceMetricGetInterestScore"><param name="Local" value="_i_emo_state_performance_metric_8h.html#a7390fbccf44d477651d923ba3c259ecb"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IS_PerformanceMetricGetRelaxationModelParams"><param name="Local" value="_i_emo_state_performance_metric_8h.html#ac4d6da201c41761f3e58ff71267c7cae"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IS_PerformanceMetricGetRelaxationScore"><param name="Local" value="_i_emo_state_performance_metric_8h.html#a4b6b5fdf89a0e62f13bee05e771648b8"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IS_PerformanceMetricGetStressModelParams"><param name="Local" value="_i_emo_state_performance_metric_8h.html#a9dc5786ce94e1cf3d7480017acc633d7"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IS_PerformanceMetricGetStressScore"><param name="Local" value="_i_emo_state_performance_metric_8h.html#a9176771468f5fff6f695bb67e46b9682"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IS_PerformanceMetricIsActive"><param name="Local" value="_i_emo_state_performance_metric_8h.html#aa73b734cd5fc2624af50571cca24155e"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="IEmotivProfile.h"><param name="Local" value="_i_emotiv_profile_8h.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="EDK_API"><param name="Local" value="_i_emotiv_profile_8h.html#a71f2f924934ca9d7f770bc458493c4a8"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="EmoEngineEventHandle"><param name="Local" value="_i_emotiv_profile_8h.html#a767bdae20508ff7c51b743472dde5b7f"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IEE_GetBaseProfile"><param name="Local" value="_i_emotiv_profile_8h.html#a1d275a63aa2d9c78c1a330ab857eab5b"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IEE_GetUserProfile"><param name="Local" value="_i_emotiv_profile_8h.html#a381911981eb44f0ad4ffffc44843ffc3"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IEE_GetUserProfileBytes"><param name="Local" value="_i_emotiv_profile_8h.html#a0d1a46df514abf4a0698052c76ea4f24"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IEE_GetUserProfileSize"><param name="Local" value="_i_emotiv_profile_8h.html#a042cfafc2897a294f5f1c6531135e5d1"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IEE_LoadUserProfile"><param name="Local" value="_i_emotiv_profile_8h.html#a23c9dcdffb3a1dc840b797450fd771da"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IEE_ProfileEventCreate"><param name="Local" value="_i_emotiv_profile_8h.html#acd616fed0ee370811ec9cdc95d935f31"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IEE_SaveUserProfile"><param name="Local" value="_i_emotiv_profile_8h.html#afdbf8e3ea2f4ab46be736300f787bcf4"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="IEE_SetUserProfile"><param name="Local" value="_i_emotiv_profile_8h.html#a005bed46522c9083a7d9ae289df9ddcd"><param name="ImageNumber" value="11"></OBJECT>
       </UL>
     <LI><OBJECT type="text/sitemap"><param name="Name" value="MentalCommandDetection.h"><param name="Local" value="_mental_command_detection_8h.html"><param name="ImageNumber" value="1"></OBJECT>
       <UL>

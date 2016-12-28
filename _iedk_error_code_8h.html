@@ -21,7 +21,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">Emotiv SDK Community Edition 3.3.3</a>
+                    <a class="navbar-brand">Emotiv SDK Community Edition 3.4.0</a>
                 </div>
             </div>
         </nav>
@@ -73,7 +73,7 @@ Macros</h2></td></tr>
 <tr class="memdesc:aca03f9442d5bc9392f69bfec5f70beb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid Developer ID.  <a href="#aca03f9442d5bc9392f69bfec5f70beb4">More...</a><br /></td></tr>
 <tr class="separator:aca03f9442d5bc9392f69bfec5f70beb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e43417c86ebbd2fbce5abcaa32ee18a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_error_code_8h.html#a4e43417c86ebbd2fbce5abcaa32ee18a">EDK_INVALID_PROFILE_ARCHIVE</a>&#160;&#160;&#160;0x0101</td></tr>
-<tr class="memdesc:a4e43417c86ebbd2fbce5abcaa32ee18a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The buffer supplied to IEE_SetUserProfile() is not a valid, serialized EmoEngine profile.  <a href="#a4e43417c86ebbd2fbce5abcaa32ee18a">More...</a><br /></td></tr>
+<tr class="memdesc:a4e43417c86ebbd2fbce5abcaa32ee18a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The buffer supplied to <a class="el" href="_i_emotiv_profile_8h.html#a005bed46522c9083a7d9ae289df9ddcd" title="Load an EmoEngine profile for the specified user. ">IEE_SetUserProfile()</a> is not a valid, serialized EmoEngine profile.  <a href="#a4e43417c86ebbd2fbce5abcaa32ee18a">More...</a><br /></td></tr>
 <tr class="separator:a4e43417c86ebbd2fbce5abcaa32ee18a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab784fb96835113fa0233a403de684c93"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_error_code_8h.html#ab784fb96835113fa0233a403de684c93">EDK_NO_USER_FOR_BASEPROFILE</a>&#160;&#160;&#160;0x0102</td></tr>
 <tr class="separator:ab784fb96835113fa0233a403de684c93"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -132,12 +132,128 @@ Macros</h2></td></tr>
 <tr class="memitem:a474bf199f8d226cc8cb19ca6e50ae537"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_error_code_8h.html#a474bf199f8d226cc8cb19ca6e50ae537">EDK_RESERVED1</a>&#160;&#160;&#160;0x0900</td></tr>
 <tr class="memdesc:a474bf199f8d226cc8cb19ca6e50ae537"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved return value.  <a href="#a474bf199f8d226cc8cb19ca6e50ae537">More...</a><br /></td></tr>
 <tr class="separator:a474bf199f8d226cc8cb19ca6e50ae537"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d3cb9b1a7ff026da1a08b452d397819"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_error_code_8h.html#a4d3cb9b1a7ff026da1a08b452d397819">EDK_COULDNT_RESOLVE_PROXY</a>&#160;&#160;&#160;0x1001</td></tr>
+<tr class="memdesc:a4d3cb9b1a7ff026da1a08b452d397819"><td class="mdescLeft">&#160;</td><td class="mdescRight">An internal error occurred.  <a href="#a4d3cb9b1a7ff026da1a08b452d397819">More...</a><br /></td></tr>
+<tr class="separator:a4d3cb9b1a7ff026da1a08b452d397819"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c20ab0c625f8fd552ccd70bfa5ebe04"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_error_code_8h.html#a6c20ab0c625f8fd552ccd70bfa5ebe04">EDK_COULDNT_RESOLVE_HOST</a>&#160;&#160;&#160;0x1002</td></tr>
+<tr class="separator:a6c20ab0c625f8fd552ccd70bfa5ebe04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1207f844828804f09859b109733112fd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_error_code_8h.html#a1207f844828804f09859b109733112fd">EDK_COULDNT_CONNECT</a>&#160;&#160;&#160;0x1003</td></tr>
+<tr class="separator:a1207f844828804f09859b109733112fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86413e3bf83e4fd393e35e930366e148"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_error_code_8h.html#a86413e3bf83e4fd393e35e930366e148">EDK_PROFILE_CLOUD_EXISTED</a>&#160;&#160;&#160;0x1010</td></tr>
+<tr class="memdesc:a86413e3bf83e4fd393e35e930366e148"><td class="mdescLeft">&#160;</td><td class="mdescRight">Profile created by EDK_SaveUserProfile() is existed in Emotiv Cloud.  <a href="#a86413e3bf83e4fd393e35e930366e148">More...</a><br /></td></tr>
+<tr class="separator:a86413e3bf83e4fd393e35e930366e148"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1c51529fd841cb4081e25208e9b1c97"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_error_code_8h.html#aa1c51529fd841cb4081e25208e9b1c97">EDK_UPLOAD_FAILED</a>&#160;&#160;&#160;0x1011</td></tr>
+<tr class="memdesc:aa1c51529fd841cb4081e25208e9b1c97"><td class="mdescLeft">&#160;</td><td class="mdescRight">The file uploaded to cloud is failed.  <a href="#aa1c51529fd841cb4081e25208e9b1c97">More...</a><br /></td></tr>
+<tr class="separator:aa1c51529fd841cb4081e25208e9b1c97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaac8a3275d0230afa1022ffa45c33a32"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_error_code_8h.html#aaac8a3275d0230afa1022ffa45c33a32">EDK_INVALID_CLOUD_USER_ID</a>&#160;&#160;&#160;0x1020</td></tr>
+<tr class="memdesc:aaac8a3275d0230afa1022ffa45c33a32"><td class="mdescLeft">&#160;</td><td class="mdescRight">The cloud user ID supplied to the function is invalid.  <a href="#aaac8a3275d0230afa1022ffa45c33a32">More...</a><br /></td></tr>
+<tr class="separator:aaac8a3275d0230afa1022ffa45c33a32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acda912c6867c10ee281e2a470aa825e3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_error_code_8h.html#acda912c6867c10ee281e2a470aa825e3">EDK_INVALID_ENGINE_USER_ID</a>&#160;&#160;&#160;0x1021</td></tr>
+<tr class="memdesc:acda912c6867c10ee281e2a470aa825e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The user ID supplied to the function is invalid.  <a href="#acda912c6867c10ee281e2a470aa825e3">More...</a><br /></td></tr>
+<tr class="separator:acda912c6867c10ee281e2a470aa825e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf10d05655b2c572f4737b32fc92ccd2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_error_code_8h.html#aaf10d05655b2c572f4737b32fc92ccd2">EDK_CLOUD_USER_ID_DONT_LOGIN</a>&#160;&#160;&#160;0x1022</td></tr>
+<tr class="memdesc:aaf10d05655b2c572f4737b32fc92ccd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The user ID supplied to the function dont login, call EDK_Login() first.  <a href="#aaf10d05655b2c572f4737b32fc92ccd2">More...</a><br /></td></tr>
+<tr class="separator:aaf10d05655b2c572f4737b32fc92ccd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1311588da9c8a4ebb1e46cdce6127c75"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_error_code_8h.html#a1311588da9c8a4ebb1e46cdce6127c75">EDK_EMOTIVCLOUD_UNINITIALIZED</a>&#160;&#160;&#160;0x1023</td></tr>
+<tr class="memdesc:a1311588da9c8a4ebb1e46cdce6127c75"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Emotiv Cloud needs to be initialized via EDK_Connect()  <a href="#a1311588da9c8a4ebb1e46cdce6127c75">More...</a><br /></td></tr>
+<tr class="separator:a1311588da9c8a4ebb1e46cdce6127c75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a253b430de844ba75fa23d69904492ab4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_error_code_8h.html#a253b430de844ba75fa23d69904492ab4">EDK_FILE_EXISTS</a>&#160;&#160;&#160;0x2000</td></tr>
+<tr class="separator:a253b430de844ba75fa23d69904492ab4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1da899f7005b8b153aa58a6bba001c3c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_error_code_8h.html#a1da899f7005b8b153aa58a6bba001c3c">EDK_HEADSET_NOT_AVAILABLE</a>&#160;&#160;&#160;0x2001</td></tr>
+<tr class="memdesc:a1da899f7005b8b153aa58a6bba001c3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The headset is not available to work.  <a href="#a1da899f7005b8b153aa58a6bba001c3c">More...</a><br /></td></tr>
+<tr class="separator:a1da899f7005b8b153aa58a6bba001c3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51d75dd5a05726f69acf8171108b512a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_error_code_8h.html#a51d75dd5a05726f69acf8171108b512a">EDK_HEADSET_IS_OFF</a>&#160;&#160;&#160;0x2002</td></tr>
+<tr class="memdesc:a51d75dd5a05726f69acf8171108b512a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The headset is off.  <a href="#a51d75dd5a05726f69acf8171108b512a">More...</a><br /></td></tr>
+<tr class="separator:a51d75dd5a05726f69acf8171108b512a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c327d0e79f308baa8c788b8a5794ab5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_error_code_8h.html#a2c327d0e79f308baa8c788b8a5794ab5">EDK_SAVING_IS_RUNNING</a>&#160;&#160;&#160;0x2003</td></tr>
+<tr class="memdesc:a2c327d0e79f308baa8c788b8a5794ab5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Other session of saving is running.  <a href="#a2c327d0e79f308baa8c788b8a5794ab5">More...</a><br /></td></tr>
+<tr class="separator:a2c327d0e79f308baa8c788b8a5794ab5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a761857da7ce6580ebd43e137c671d0cd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_error_code_8h.html#a761857da7ce6580ebd43e137c671d0cd">EDK_DEVICE_CODE_ERROR</a>&#160;&#160;&#160;0x2004</td></tr>
+<tr class="separator:a761857da7ce6580ebd43e137c671d0cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3731d2fe5db6cdd51da72e3dce1cdbf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_error_code_8h.html#ad3731d2fe5db6cdd51da72e3dce1cdbf">EDK_LICENSE_ERROR</a>&#160;&#160;&#160;0x2010</td></tr>
+<tr class="memdesc:ad3731d2fe5db6cdd51da72e3dce1cdbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">The license error.  <a href="#ad3731d2fe5db6cdd51da72e3dce1cdbf">More...</a><br /></td></tr>
+<tr class="separator:ad3731d2fe5db6cdd51da72e3dce1cdbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb07267233b0717cd563b51083f1d8de"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_error_code_8h.html#aeb07267233b0717cd563b51083f1d8de">EDK_LICENSE_EXPIRED</a>&#160;&#160;&#160;0x2011</td></tr>
+<tr class="memdesc:aeb07267233b0717cd563b51083f1d8de"><td class="mdescLeft">&#160;</td><td class="mdescRight">The license expried.  <a href="#aeb07267233b0717cd563b51083f1d8de">More...</a><br /></td></tr>
+<tr class="separator:aeb07267233b0717cd563b51083f1d8de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f3abe0852aec120c0917bd607353f26"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_error_code_8h.html#a1f3abe0852aec120c0917bd607353f26">EDK_LICENSE_NOT_FOUND</a>&#160;&#160;&#160;0x2012</td></tr>
+<tr class="memdesc:a1f3abe0852aec120c0917bd607353f26"><td class="mdescLeft">&#160;</td><td class="mdescRight">The license was not found.  <a href="#a1f3abe0852aec120c0917bd607353f26">More...</a><br /></td></tr>
+<tr class="separator:a1f3abe0852aec120c0917bd607353f26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a8e40d6c201d8ad665689635676b360"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_error_code_8h.html#a3a8e40d6c201d8ad665689635676b360">EDK_OVER_QUOTA</a>&#160;&#160;&#160;0x2013</td></tr>
+<tr class="memdesc:a3a8e40d6c201d8ad665689635676b360"><td class="mdescLeft">&#160;</td><td class="mdescRight">The license is over quota.  <a href="#a3a8e40d6c201d8ad665689635676b360">More...</a><br /></td></tr>
+<tr class="separator:a3a8e40d6c201d8ad665689635676b360"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3da9763f134ee8b67b4f5fc893bb3a0e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_error_code_8h.html#a3da9763f134ee8b67b4f5fc893bb3a0e">EDK_OVER_QUOTA_IN_DAY</a>&#160;&#160;&#160;0x2014</td></tr>
+<tr class="memdesc:a3da9763f134ee8b67b4f5fc893bb3a0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The license is over quota in day.  <a href="#a3da9763f134ee8b67b4f5fc893bb3a0e">More...</a><br /></td></tr>
+<tr class="separator:a3da9763f134ee8b67b4f5fc893bb3a0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca895d7667cd3661fb2ee0d159d09f61"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_error_code_8h.html#aca895d7667cd3661fb2ee0d159d09f61">EDK_OVER_QUOTA_IN_MONTH</a>&#160;&#160;&#160;0x2015</td></tr>
+<tr class="memdesc:aca895d7667cd3661fb2ee0d159d09f61"><td class="mdescLeft">&#160;</td><td class="mdescRight">The license is over quota in month.  <a href="#aca895d7667cd3661fb2ee0d159d09f61">More...</a><br /></td></tr>
+<tr class="separator:aca895d7667cd3661fb2ee0d159d09f61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a993a531a9c1ae4c727c9caa55e967ea3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_error_code_8h.html#a993a531a9c1ae4c727c9caa55e967ea3">EDK_APP_QUOTA_EXCEEDED</a>&#160;&#160;&#160;0x2016</td></tr>
+<tr class="separator:a993a531a9c1ae4c727c9caa55e967ea3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99a4b2e7b7d5656f2d4e9080992001ff"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_error_code_8h.html#a99a4b2e7b7d5656f2d4e9080992001ff">EDK_APP_INVALID_DATE</a>&#160;&#160;&#160;0x2017</td></tr>
+<tr class="separator:a99a4b2e7b7d5656f2d4e9080992001ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add64ed06c1f9a8a719e1941e3e7624d1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_error_code_8h.html#add64ed06c1f9a8a719e1941e3e7624d1">EDK_LICENSE_DEVICE_LIMITED</a>&#160;&#160;&#160;0x2019</td></tr>
+<tr class="memdesc:add64ed06c1f9a8a719e1941e3e7624d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Application register device number is exceeded.  <a href="#add64ed06c1f9a8a719e1941e3e7624d1">More...</a><br /></td></tr>
+<tr class="separator:add64ed06c1f9a8a719e1941e3e7624d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a525b1e994948d7b422a47e2b54990d22"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_error_code_8h.html#a525b1e994948d7b422a47e2b54990d22">EDK_LICENSE_REGISTERED</a>&#160;&#160;&#160;0x2020</td></tr>
+<tr class="memdesc:a525b1e994948d7b422a47e2b54990d22"><td class="mdescLeft">&#160;</td><td class="mdescRight">The license registered with the device.  <a href="#a525b1e994948d7b422a47e2b54990d22">More...</a><br /></td></tr>
+<tr class="separator:a525b1e994948d7b422a47e2b54990d22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad947d35d118039a59a9934ee6a07627b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_error_code_8h.html#ad947d35d118039a59a9934ee6a07627b">EDK_NO_ACTIVE_LICENSE</a>&#160;&#160;&#160;0x2021</td></tr>
+<tr class="memdesc:ad947d35d118039a59a9934ee6a07627b"><td class="mdescLeft">&#160;</td><td class="mdescRight">No license is activated.  <a href="#ad947d35d118039a59a9934ee6a07627b">More...</a><br /></td></tr>
+<tr class="separator:ad947d35d118039a59a9934ee6a07627b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb254c1dd4c7bd0ef3fde6cc6fa8fc67"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_error_code_8h.html#adb254c1dd4c7bd0ef3fde6cc6fa8fc67">EDK_LICENSE_NO_EEG</a>&#160;&#160;&#160;0x2022</td></tr>
+<tr class="memdesc:adb254c1dd4c7bd0ef3fde6cc6fa8fc67"><td class="mdescLeft">&#160;</td><td class="mdescRight">The license is not EEG data ouput.  <a href="#adb254c1dd4c7bd0ef3fde6cc6fa8fc67">More...</a><br /></td></tr>
+<tr class="separator:adb254c1dd4c7bd0ef3fde6cc6fa8fc67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a659741c4ab6db0065e59c2fd6b72d511"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_error_code_8h.html#a659741c4ab6db0065e59c2fd6b72d511">EDK_UPDATE_LICENSE</a>&#160;&#160;&#160;0x2023</td></tr>
+<tr class="memdesc:a659741c4ab6db0065e59c2fd6b72d511"><td class="mdescLeft">&#160;</td><td class="mdescRight">The license is updated.  <a href="#a659741c4ab6db0065e59c2fd6b72d511">More...</a><br /></td></tr>
+<tr class="separator:a659741c4ab6db0065e59c2fd6b72d511"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae035d811889f2035f3a3f3acb425bd10"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_error_code_8h.html#ae035d811889f2035f3a3f3acb425bd10">EDK_FILE_NOT_FOUND</a>&#160;&#160;&#160;0x2030</td></tr>
+<tr class="memdesc:ae035d811889f2035f3a3f3acb425bd10"><td class="mdescLeft">&#160;</td><td class="mdescRight">The file was not found.  <a href="#ae035d811889f2035f3a3f3acb425bd10">More...</a><br /></td></tr>
+<tr class="separator:ae035d811889f2035f3a3f3acb425bd10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad01dd0dba0c5c0a9b7382c8cb02792e6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_error_code_8h.html#ad01dd0dba0c5c0a9b7382c8cb02792e6">EDK_ACCESS_DENIED</a>&#160;&#160;&#160;0x2031</td></tr>
+<tr class="separator:ad01dd0dba0c5c0a9b7382c8cb02792e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Emotiv SDK Copyright (c) 2016 Emotiv Inc.</p>
 <p>This file is part of the Emotiv SDK.</p>
 <p>All the error codes that are returned by IEE_ functions are listed here. </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="ad01dd0dba0c5c0a9b7382c8cb02792e6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EDK_ACCESS_DENIED&#160;&#160;&#160;0x2031</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a99a4b2e7b7d5656f2d4e9080992001ff"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EDK_APP_INVALID_DATE&#160;&#160;&#160;0x2017</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a993a531a9c1ae4c727c9caa55e967ea3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EDK_APP_QUOTA_EXCEEDED&#160;&#160;&#160;0x2016</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="acf95077b4bd5f24e4d0f9e374367b331"></a>
 <div class="memitem">
 <div class="memproto">
@@ -162,6 +278,70 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>The EmoEngine is unable to acquire data for processing. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="_iedk_8h.html#a113baeffb20d6c48625f007104251d5d" title="Initialize EmoEngine instance which reads data from the headset. ">IEE_EngineConnect</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aaf10d05655b2c572f4737b32fc92ccd2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EDK_CLOUD_USER_ID_DONT_LOGIN&#160;&#160;&#160;0x1022</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The user ID supplied to the function dont login, call EDK_Login() first. </p>
+
+</div>
+</div>
+<a class="anchor" id="a1207f844828804f09859b109733112fd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EDK_COULDNT_CONNECT&#160;&#160;&#160;0x1003</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6c20ab0c625f8fd552ccd70bfa5ebe04"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EDK_COULDNT_RESOLVE_HOST&#160;&#160;&#160;0x1002</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4d3cb9b1a7ff026da1a08b452d397819"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EDK_COULDNT_RESOLVE_PROXY&#160;&#160;&#160;0x1001</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>An internal error occurred. </p>
+
+</div>
+</div>
+<a class="anchor" id="a761857da7ce6580ebd43e137c671d0cd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EDK_DEVICE_CODE_ERROR&#160;&#160;&#160;0x2004</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -207,6 +387,20 @@ Macros</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a1311588da9c8a4ebb1e46cdce6127c75"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EDK_EMOTIVCLOUD_UNINITIALIZED&#160;&#160;&#160;0x1023</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The Emotiv Cloud needs to be initialized via EDK_Connect() </p>
+
+</div>
+</div>
 <a class="anchor" id="a6f6d10c37bd49cdbbd7a05bd8a4fdc26"></a>
 <div class="memitem">
 <div class="memproto">
@@ -217,6 +411,32 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>A trained signature is not currently available for use, addition actions (including neutral) may be required. </p>
+
+</div>
+</div>
+<a class="anchor" id="a253b430de844ba75fa23d69904492ab4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EDK_FILE_EXISTS&#160;&#160;&#160;0x2000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae035d811889f2035f3a3f3acb425bd10"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EDK_FILE_NOT_FOUND&#160;&#160;&#160;0x2030</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The file was not found. </p>
 
 </div>
 </div>
@@ -248,6 +468,48 @@ Macros</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a51d75dd5a05726f69acf8171108b512a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EDK_HEADSET_IS_OFF&#160;&#160;&#160;0x2002</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The headset is off. </p>
+
+</div>
+</div>
+<a class="anchor" id="a1da899f7005b8b153aa58a6bba001c3c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EDK_HEADSET_NOT_AVAILABLE&#160;&#160;&#160;0x2001</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The headset is not available to work. </p>
+
+</div>
+</div>
+<a class="anchor" id="aaac8a3275d0230afa1022ffa45c33a32"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EDK_INVALID_CLOUD_USER_ID&#160;&#160;&#160;0x1020</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The cloud user ID supplied to the function is invalid. </p>
+
+</div>
+</div>
 <a class="anchor" id="aca03f9442d5bc9392f69bfec5f70beb4"></a>
 <div class="memitem">
 <div class="memproto">
@@ -259,6 +521,20 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Invalid Developer ID. </p>
+
+</div>
+</div>
+<a class="anchor" id="acda912c6867c10ee281e2a470aa825e3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EDK_INVALID_ENGINE_USER_ID&#160;&#160;&#160;0x1021</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The user ID supplied to the function is invalid. </p>
 
 </div>
 </div>
@@ -286,7 +562,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>The buffer supplied to IEE_SetUserProfile() is not a valid, serialized EmoEngine profile. </p>
+<p>The buffer supplied to <a class="el" href="_i_emotiv_profile_8h.html#a005bed46522c9083a7d9ae289df9ddcd" title="Load an EmoEngine profile for the specified user. ">IEE_SetUserProfile()</a> is not a valid, serialized EmoEngine profile. </p>
 
 </div>
 </div>
@@ -301,6 +577,90 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The user ID supplied to the function is invalid. </p>
+
+</div>
+</div>
+<a class="anchor" id="add64ed06c1f9a8a719e1941e3e7624d1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EDK_LICENSE_DEVICE_LIMITED&#160;&#160;&#160;0x2019</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Application register device number is exceeded. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad3731d2fe5db6cdd51da72e3dce1cdbf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EDK_LICENSE_ERROR&#160;&#160;&#160;0x2010</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The license error. </p>
+
+</div>
+</div>
+<a class="anchor" id="aeb07267233b0717cd563b51083f1d8de"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EDK_LICENSE_EXPIRED&#160;&#160;&#160;0x2011</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The license expried. </p>
+
+</div>
+</div>
+<a class="anchor" id="adb254c1dd4c7bd0ef3fde6cc6fa8fc67"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EDK_LICENSE_NO_EEG&#160;&#160;&#160;0x2022</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The license is not EEG data ouput. </p>
+
+</div>
+</div>
+<a class="anchor" id="a1f3abe0852aec120c0917bd607353f26"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EDK_LICENSE_NOT_FOUND&#160;&#160;&#160;0x2012</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The license was not found. </p>
+
+</div>
+</div>
+<a class="anchor" id="a525b1e994948d7b422a47e2b54990d22"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EDK_LICENSE_REGISTERED&#160;&#160;&#160;0x2020</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The license registered with the device. </p>
 
 </div>
 </div>
@@ -357,6 +717,20 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The supplied MentalCommand training control flag is invalid. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad947d35d118039a59a9934ee6a07627b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EDK_NO_ACTIVE_LICENSE&#160;&#160;&#160;0x2021</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>No license is activated. </p>
 
 </div>
 </div>
@@ -429,6 +803,48 @@ Macros</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a3a8e40d6c201d8ad665689635676b360"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EDK_OVER_QUOTA&#160;&#160;&#160;0x2013</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The license is over quota. </p>
+
+</div>
+</div>
+<a class="anchor" id="a3da9763f134ee8b67b4f5fc893bb3a0e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EDK_OVER_QUOTA_IN_DAY&#160;&#160;&#160;0x2014</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The license is over quota in day. </p>
+
+</div>
+</div>
+<a class="anchor" id="aca895d7667cd3661fb2ee0d159d09f61"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EDK_OVER_QUOTA_IN_MONTH&#160;&#160;&#160;0x2015</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The license is over quota in month. </p>
+
+</div>
+</div>
 <a class="anchor" id="a42aac06a6dfc102a77e8597bb8386390"></a>
 <div class="memitem">
 <div class="memproto">
@@ -440,6 +856,20 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The parameter is currently locked by the detection and cannot be modified at this time. </p>
+
+</div>
+</div>
+<a class="anchor" id="a86413e3bf83e4fd393e35e930366e148"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EDK_PROFILE_CLOUD_EXISTED&#160;&#160;&#160;0x1010</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Profile created by EDK_SaveUserProfile() is existed in Emotiv Cloud. </p>
 
 </div>
 </div>
@@ -457,6 +887,20 @@ Macros</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a2c327d0e79f308baa8c788b8a5794ab5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EDK_SAVING_IS_RUNNING&#160;&#160;&#160;0x2003</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Other session of saving is running. </p>
+
+</div>
+</div>
 <a class="anchor" id="a160b23e7fb18e625b87dd2f582b9b19a"></a>
 <div class="memitem">
 <div class="memproto">
@@ -471,6 +915,34 @@ Macros</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a659741c4ab6db0065e59c2fd6b72d511"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EDK_UPDATE_LICENSE&#160;&#160;&#160;0x2023</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The license is updated. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa1c51529fd841cb4081e25208e9b1c97"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EDK_UPLOAD_FAILED&#160;&#160;&#160;0x1011</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The file uploaded to cloud is failed. </p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.8-->
 <!-- start footer part -->
@@ -480,7 +952,7 @@ Macros</h2></td></tr>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri May 27 2016 13:37:44 for Emotiv SDK Community Edition by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Dec 22 2016 15:08:36 for Emotiv SDK Community Edition by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

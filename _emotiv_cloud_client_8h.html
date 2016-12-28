@@ -21,7 +21,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">Emotiv SDK Community Edition 3.3.3</a>
+                    <a class="navbar-brand">Emotiv SDK Community Edition 3.4.0</a>
                 </div>
             </div>
         </nav>
@@ -127,9 +127,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a9fde34c2adcd095507105123df8bbfaf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_cloud_client_8h.html#a3de8838840d8e7b1a14792aeaa6b2b0e">EMOTIVCLOUD_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_emotiv_cloud_client_8h.html#a9fde34c2adcd095507105123df8bbfaf">EC_DeleteUserProfile</a> (int userCloudID, int profileId)</td></tr>
 <tr class="memdesc:a9fde34c2adcd095507105123df8bbfaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete user profile from Emotiv Cloud.  <a href="#a9fde34c2adcd095507105123df8bbfaf">More...</a><br /></td></tr>
 <tr class="separator:a9fde34c2adcd095507105123df8bbfaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54aa11ef59a466f7148ef4b859c59b5b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_cloud_client_8h.html#a3de8838840d8e7b1a14792aeaa6b2b0e">EMOTIVCLOUD_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_emotiv_cloud_client_8h.html#a54aa11ef59a466f7148ef4b859c59b5b">EC_GetProfileId</a> (int userCloudID, const char *profileName)</td></tr>
-<tr class="memdesc:a54aa11ef59a466f7148ef4b859c59b5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get profile ID of a user.  <a href="#a54aa11ef59a466f7148ef4b859c59b5b">More...</a><br /></td></tr>
-<tr class="separator:a54aa11ef59a466f7148ef4b859c59b5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7ce298ee627c55c58b6ecc646791c58"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_cloud_client_8h.html#a3de8838840d8e7b1a14792aeaa6b2b0e">EMOTIVCLOUD_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_emotiv_cloud_client_8h.html#ac7ce298ee627c55c58b6ecc646791c58">EC_GetProfileId</a> (int userCloudID, const char *profileName, int *profileID)</td></tr>
+<tr class="memdesc:ac7ce298ee627c55c58b6ecc646791c58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get profile ID of a user.  <a href="#ac7ce298ee627c55c58b6ecc646791c58">More...</a><br /></td></tr>
+<tr class="separator:ac7ce298ee627c55c58b6ecc646791c58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abda1eb0b0ff32d6c6d99e049f691ac30"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_cloud_client_8h.html#a3de8838840d8e7b1a14792aeaa6b2b0e">EMOTIVCLOUD_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_emotiv_cloud_client_8h.html#abda1eb0b0ff32d6c6d99e049f691ac30">EC_LoadUserProfile</a> (int userCloudID, int engineUserID, int profileId, int version=-1)</td></tr>
 <tr class="memdesc:abda1eb0b0ff32d6c6d99e049f691ac30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load profile from Emotiv Cloud.  <a href="#abda1eb0b0ff32d6c6d99e049f691ac30">More...</a><br /></td></tr>
 <tr class="separator:abda1eb0b0ff32d6c6d99e049f691ac30"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -148,6 +148,15 @@ Functions</h2></td></tr>
 <tr class="memitem:af407c38c829dacafc1b010f77dd5a3d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_cloud_client_8h.html#a3de8838840d8e7b1a14792aeaa6b2b0e">EMOTIVCLOUD_API</a> <a class="el" href="_emotiv_cloud_client_8h.html#aec68ad2b217427dac9995d6bfac4258a">profileFileType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_emotiv_cloud_client_8h.html#af407c38c829dacafc1b010f77dd5a3d3">EC_ProfileTypeAtIndex</a> (int userCloudID, int index)</td></tr>
 <tr class="memdesc:af407c38c829dacafc1b010f77dd5a3d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the type of a profile in cache.  <a href="#af407c38c829dacafc1b010f77dd5a3d3">More...</a><br /></td></tr>
 <tr class="separator:af407c38c829dacafc1b010f77dd5a3d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1904a7a7fada58831753999f9dd6a6e2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_cloud_client_8h.html#a3de8838840d8e7b1a14792aeaa6b2b0e">EMOTIVCLOUD_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_emotiv_cloud_client_8h.html#a1904a7a7fada58831753999f9dd6a6e2">EC_DownloadProfileFile</a> (int cloudUserId, int profileId, const char *destPath, int version=-1)</td></tr>
+<tr class="memdesc:a1904a7a7fada58831753999f9dd6a6e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Donwload file Profile.  <a href="#a1904a7a7fada58831753999f9dd6a6e2">More...</a><br /></td></tr>
+<tr class="separator:a1904a7a7fada58831753999f9dd6a6e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a9c6afa8fbe4cae1144ccff479b7aae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_cloud_client_8h.html#a3de8838840d8e7b1a14792aeaa6b2b0e">EMOTIVCLOUD_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_emotiv_cloud_client_8h.html#a6a9c6afa8fbe4cae1144ccff479b7aae">EC_UploadProfileFile</a> (int cloudUserId, const char *profileName, const char *filePath, <a class="el" href="_emotiv_cloud_client_8h.html#aec68ad2b217427dac9995d6bfac4258a">profileFileType</a> ptype, bool overwrite_if_exists=false)</td></tr>
+<tr class="memdesc:a6a9c6afa8fbe4cae1144ccff479b7aae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Upload file profile of user.  <a href="#a6a9c6afa8fbe4cae1144ccff479b7aae">More...</a><br /></td></tr>
+<tr class="separator:a6a9c6afa8fbe4cae1144ccff479b7aae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3476697bf63f529fe15507fd052125d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_cloud_client_8h.html#a3de8838840d8e7b1a14792aeaa6b2b0e">EMOTIVCLOUD_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_emotiv_cloud_client_8h.html#a3476697bf63f529fe15507fd052125d4">EC_GetLastestProfileVersions</a> (int cloudUserId, int profileID, int *nVersion)</td></tr>
+<tr class="memdesc:a3476697bf63f529fe15507fd052125d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">get lastest version of profile  <a href="#a3476697bf63f529fe15507fd052125d4">More...</a><br /></td></tr>
+<tr class="separator:a3476697bf63f529fe15507fd052125d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Emotiv SDK Copyright (c) 2016 Emotiv Inc.</p>
@@ -245,8 +254,8 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initialize connection to Emotiv Cloud Server. </p>
-<dl class="section return"><dt>Returns</dt><dd>EC_ERROR_CODE<ul>
-<li>EC_OK if connect successfully</li>
+<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
+<li>EDK_OK if connect successfully</li>
 </ul>
 </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="_emotiv_cloud_client_8h.html#af3f0cff4086b7b1902b74222e3077c49" title="Terminate connection to Emotiv Cloud server. ">EC_Disconnect()</a> </dd></dl>
@@ -281,12 +290,12 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">userCloudID</td><td>- user ID from <a class="el" href="_emotiv_cloud_client_8h.html#ad774774fbc4209c4041520920af86d23" title="Get user ID after login. ">EC_GetUserDetail()</a> </td></tr>
-    <tr><td class="paramname">profileId</td><td>- profile ID to be deleted, from <a class="el" href="_emotiv_cloud_client_8h.html#a54aa11ef59a466f7148ef4b859c59b5b" title="Get profile ID of a user. ">EC_GetProfileId()</a></td></tr>
+    <tr><td class="paramname">profileId</td><td>- profile ID to be deleted, from <a class="el" href="_emotiv_cloud_client_8h.html#ac7ce298ee627c55c58b6ecc646791c58" title="Get profile ID of a user. ">EC_GetProfileId()</a></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>EC_ERROR_CODE<ul>
-<li>EC_OK if updated successfully</li>
+<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
+<li>EDK_OK if updated successfully</li>
 </ul>
 </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="_emotiv_cloud_client_8h.html#a0b6d48820d630b6edb4aff02a74cdd03" title="Save user profile to Emotiv Cloud. ">EC_SaveUserProfile()</a>, <a class="el" href="_emotiv_cloud_client_8h.html#aa98ee0fc559d4ad041ab28516394e0a9" title="Update user profile to Emotiv Cloud. ">EC_UpdateUserProfile()</a> </dd></dl>
@@ -307,8 +316,8 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Terminate connection to Emotiv Cloud server. </p>
-<dl class="section return"><dt>Returns</dt><dd>EC_ERROR_CODE<ul>
-<li>EC_OK if connect successfully</li>
+<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
+<li>EDK_OK if connect successfully</li>
 </ul>
 </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="_emotiv_cloud_client_8h.html#afd05a78fd48245c1a679fa1325598a5b" title="Initialize connection to Emotiv Cloud Server. ">EC_Connect()</a> </dd></dl>
@@ -329,11 +338,64 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Disconnect Emotiv engine. </p>
-<dl class="section return"><dt>Returns</dt><dd>EC_ERROR_CODE<ul>
-<li>EC_OK if Reconnect successfully</li>
+<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
+<li>EDK_OK if Reconnect successfully</li>
 </ul>
 </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="_emotiv_cloud_client_8h.html#ad955fc8f6436dfc33b75e0a6c4874abe" title="Reconnect Emotiv engine. ">EC_ReconnectEngine()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1904a7a7fada58831753999f9dd6a6e2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_emotiv_cloud_client_8h.html#a3de8838840d8e7b1a14792aeaa6b2b0e">EMOTIVCLOUD_API</a> int EC_DownloadProfileFile </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cloudUserId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>profileId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>destPath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>version</em> = <code>-1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Donwload file Profile. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cloudUserID</td><td>- id of user </td></tr>
+    <tr><td class="paramname">profileId</td><td></td></tr>
+    <tr><td class="paramname">destPath</td><td></td></tr>
+    <tr><td class="paramname">version</td><td>- default = -1 for download lastest version </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
+<li>EDK_OK if success </li>
+</ul>
+</dd></dl>
 
 </div>
 </div>
@@ -363,7 +425,41 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a54aa11ef59a466f7148ef4b859c59b5b"></a>
+<a class="anchor" id="a3476697bf63f529fe15507fd052125d4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_emotiv_cloud_client_8h.html#a3de8838840d8e7b1a14792aeaa6b2b0e">EMOTIVCLOUD_API</a> int EC_GetLastestProfileVersions </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cloudUserId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>profileID</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>nVersion</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>get lastest version of profile </p>
+
+</div>
+</div>
+<a class="anchor" id="ac7ce298ee627c55c58b6ecc646791c58"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -377,7 +473,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>profileName</em>&#160;</td>
+          <td class="paramname"><em>profileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>profileID</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -392,10 +494,14 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">userCloudID</td><td>- user ID from <a class="el" href="_emotiv_cloud_client_8h.html#ad774774fbc4209c4041520920af86d23" title="Get user ID after login. ">EC_GetUserDetail()</a> </td></tr>
     <tr><td class="paramname">profileName</td><td>- profile name to look for </td></tr>
+    <tr><td class="paramname">profileID</td><td>- profile id with name </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>int - return profile ID if found, otherwise -1 </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
+<li>EDK_OK if updated successfully </li>
+</ul>
+</dd></dl>
 
 </div>
 </div>
@@ -416,12 +522,12 @@ Functions</h2></td></tr>
 <p>Get user ID after login. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">userCloudID</td><td>- return user ID for subsequence requests </td></tr>
+    <tr><td class="paramname">userCloudID</td><td>- return user ID for subsequence requests</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>EC_ERROR_CODE<ul>
-<li>EC_OK if fetched successfully</li>
+<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
+<li>EDK_OK if fetched successfully</li>
 </ul>
 </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="_emotiv_cloud_client_8h.html#a760b473dcd6746c9a38ed80dfe68974f" title="Login Emotiv Cloud with EmotivID. ">EC_Login()</a> </dd></dl>
@@ -470,13 +576,13 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">userCloudID</td><td>- user ID from <a class="el" href="_emotiv_cloud_client_8h.html#ad774774fbc4209c4041520920af86d23" title="Get user ID after login. ">EC_GetUserDetail()</a> </td></tr>
     <tr><td class="paramname">engineUserID</td><td>- user ID from current EmoEngine (first user will be 0) </td></tr>
-    <tr><td class="paramname">profileId</td><td>- profile ID to be loaded, from <a class="el" href="_emotiv_cloud_client_8h.html#a54aa11ef59a466f7148ef4b859c59b5b" title="Get profile ID of a user. ">EC_GetProfileId()</a> </td></tr>
-    <tr><td class="paramname">version</td><td>- version of profile to download (default: -1 for lastest version) </td></tr>
+    <tr><td class="paramname">profileId</td><td>- profile ID to be loaded, from <a class="el" href="_emotiv_cloud_client_8h.html#ac7ce298ee627c55c58b6ecc646791c58" title="Get profile ID of a user. ">EC_GetProfileId()</a> </td></tr>
+    <tr><td class="paramname">version</td><td>- version of profile to download (default: -1 for lastest version)</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>EC_ERROR_CODE<ul>
-<li>EC_OK if loaded successfully </li>
+<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
+<li>EDK_OK if loaded successfully </li>
 </ul>
 </dd></dl>
 
@@ -511,12 +617,12 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">username</td><td>- username </td></tr>
-    <tr><td class="paramname">password</td><td>- password </td></tr>
+    <tr><td class="paramname">password</td><td>- password</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>EC_ERROR_CODE<ul>
-<li>EC_OK if login successfully</li>
+<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
+<li>EDK_OK if login successfully</li>
 </ul>
 </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="_emotiv_cloud_client_8h.html#abf4df43820d0c4cfceaa7affb4e1ba9d" title="Logout Emotiv Cloud. ">EC_Logout()</a> </dd></dl>
@@ -699,8 +805,8 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reconnect Emotiv engine. </p>
-<dl class="section return"><dt>Returns</dt><dd>EC_ERROR_CODE<ul>
-<li>EC_OK if Reconnect successfully</li>
+<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
+<li>EDK_OK if Reconnect successfully</li>
 </ul>
 </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="_emotiv_cloud_client_8h.html#a03cd736a3c12e15ffa1ad37713e22752" title="Disconnect Emotiv engine. ">EC_DisconnectEngine()</a> </dd></dl>
@@ -753,8 +859,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>EC_ERROR_CODE<ul>
-<li>EC_OK if saved successfully</li>
+<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
+<li>EDK_OK if saved successfully</li>
 </ul>
 </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="_emotiv_cloud_client_8h.html#aa98ee0fc559d4ad041ab28516394e0a9" title="Update user profile to Emotiv Cloud. ">EC_UpdateUserProfile()</a>, <a class="el" href="_emotiv_cloud_client_8h.html#a9fde34c2adcd095507105123df8bbfaf" title="Delete user profile from Emotiv Cloud. ">EC_DeleteUserProfile()</a> </dd></dl>
@@ -796,15 +902,74 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">userCloudID</td><td>- user ID from <a class="el" href="_emotiv_cloud_client_8h.html#ad774774fbc4209c4041520920af86d23" title="Get user ID after login. ">EC_GetUserDetail()</a> </td></tr>
     <tr><td class="paramname">engineUserID</td><td>- user ID from current EmoEngine (first user will be 0) </td></tr>
-    <tr><td class="paramname">profileId</td><td>- profile ID to be updated, from <a class="el" href="_emotiv_cloud_client_8h.html#a54aa11ef59a466f7148ef4b859c59b5b" title="Get profile ID of a user. ">EC_GetProfileId()</a></td></tr>
+    <tr><td class="paramname">profileId</td><td>- profile ID to be updated, from <a class="el" href="_emotiv_cloud_client_8h.html#ac7ce298ee627c55c58b6ecc646791c58" title="Get profile ID of a user. ">EC_GetProfileId()</a></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>EC_ERROR_CODE<ul>
-<li>EC_OK if updated successfully</li>
+<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
+<li>EDK_OK if updated successfully</li>
 </ul>
 </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="_emotiv_cloud_client_8h.html#a0b6d48820d630b6edb4aff02a74cdd03" title="Save user profile to Emotiv Cloud. ">EC_SaveUserProfile()</a>, <a class="el" href="_emotiv_cloud_client_8h.html#a9fde34c2adcd095507105123df8bbfaf" title="Delete user profile from Emotiv Cloud. ">EC_DeleteUserProfile()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6a9c6afa8fbe4cae1144ccff479b7aae"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_emotiv_cloud_client_8h.html#a3de8838840d8e7b1a14792aeaa6b2b0e">EMOTIVCLOUD_API</a> int EC_UploadProfileFile </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cloudUserId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>profileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>filePath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_emotiv_cloud_client_8h.html#aec68ad2b217427dac9995d6bfac4258a">profileFileType</a>&#160;</td>
+          <td class="paramname"><em>ptype</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>overwrite_if_exists</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Upload file profile of user. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cloudUserID</td><td>- id of user </td></tr>
+    <tr><td class="paramname">profileName</td><td></td></tr>
+    <tr><td class="paramname">filePath</td><td></td></tr>
+    <tr><td class="paramname">ptype</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
+<li>EDK_OK if success </li>
+</ul>
+</dd></dl>
 
 </div>
 </div>
@@ -817,7 +982,7 @@ Functions</h2></td></tr>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri May 27 2016 13:37:44 for Emotiv SDK Community Edition by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Dec 22 2016 15:08:36 for Emotiv SDK Community Edition by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

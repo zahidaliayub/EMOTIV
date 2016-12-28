@@ -21,7 +21,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">Emotiv SDK Community Edition 3.3.3</a>
+                    <a class="navbar-brand">Emotiv SDK Community Edition 3.4.0</a>
                 </div>
             </div>
         </nav>
@@ -79,11 +79,17 @@
 <li>EC_DisconnectEngine()
 : <a class="el" href="_emotiv_cloud_client_8h.html#a03cd736a3c12e15ffa1ad37713e22752">EmotivCloudClient.h</a>
 </li>
+<li>EC_DownloadProfileFile()
+: <a class="el" href="_emotiv_cloud_client_8h.html#a1904a7a7fada58831753999f9dd6a6e2">EmotivCloudClient.h</a>
+</li>
 <li>EC_GetAllProfileName()
 : <a class="el" href="_emotiv_cloud_client_8h.html#aa78da1aa1c368417191bc123e31362b2">EmotivCloudClient.h</a>
 </li>
+<li>EC_GetLastestProfileVersions()
+: <a class="el" href="_emotiv_cloud_client_8h.html#a3476697bf63f529fe15507fd052125d4">EmotivCloudClient.h</a>
+</li>
 <li>EC_GetProfileId()
-: <a class="el" href="_emotiv_cloud_client_8h.html#a54aa11ef59a466f7148ef4b859c59b5b">EmotivCloudClient.h</a>
+: <a class="el" href="_emotiv_cloud_client_8h.html#ac7ce298ee627c55c58b6ecc646791c58">EmotivCloudClient.h</a>
 </li>
 <li>EC_GetUserDetail()
 : <a class="el" href="_emotiv_cloud_client_8h.html#ad774774fbc4209c4041520920af86d23">EmotivCloudClient.h</a>
@@ -118,12 +124,57 @@
 <li>EC_UpdateUserProfile()
 : <a class="el" href="_emotiv_cloud_client_8h.html#aa98ee0fc559d4ad041ab28516394e0a9">EmotivCloudClient.h</a>
 </li>
+<li>EC_UploadProfileFile()
+: <a class="el" href="_emotiv_cloud_client_8h.html#a6a9c6afa8fbe4cae1144ccff479b7aae">EmotivCloudClient.h</a>
+</li>
 </ul>
 
 
 <h3><a class="anchor" id="index_i"></a>- i -</h3><ul>
+<li>IEE_ActivateLicense()
+: <a class="el" href="_emotiv_license_8h.html#ab3e716f5c1629532980a4ac2f17acb0d">EmotivLicense.h</a>
+</li>
 <li>IEE_CheckDetectionsEnabled()
 : <a class="el" href="_iedk_8h.html#aef05ac5b1cf239e1e693436d46b0a9a7">Iedk.h</a>
+</li>
+<li>IEE_DataAcquisitionEnable()
+: <a class="el" href="_i_eeg_data_8h.html#aedd97e0e269cf16236bd3fe46521747d">IEegData.h</a>
+</li>
+<li>IEE_DataAcquisitionIsEnabled()
+: <a class="el" href="_i_eeg_data_8h.html#a0b48b15ce37d55016f5516192849d7df">IEegData.h</a>
+</li>
+<li>IEE_DataCreate()
+: <a class="el" href="_i_eeg_data_8h.html#aa81b403f89833a626cf72a741bb87ed7">IEegData.h</a>
+</li>
+<li>IEE_DataFree()
+: <a class="el" href="_i_eeg_data_8h.html#a80b9dec45d215aa1e87ea4dc42631f3e">IEegData.h</a>
+</li>
+<li>IEE_DataGet()
+: <a class="el" href="_i_eeg_data_8h.html#a7fd94414cd4910d4755e3442e5223798">IEegData.h</a>
+</li>
+<li>IEE_DataGetBufferSizeInSec()
+: <a class="el" href="_i_eeg_data_8h.html#ae0de782c0eb51f9de3522ebf1642197f">IEegData.h</a>
+</li>
+<li>IEE_DataGetMultiChannels()
+: <a class="el" href="_i_eeg_data_8h.html#a7b9efb94d7bad88bf8fa010e3eb278be">IEegData.h</a>
+</li>
+<li>IEE_DataGetNumberOfSample()
+: <a class="el" href="_i_eeg_data_8h.html#a6abbe4e196cb9ece0131b51421c3b7d5">IEegData.h</a>
+</li>
+<li>IEE_DataGetSamplingRate()
+: <a class="el" href="_i_eeg_data_8h.html#ae5df597eb66a20c87e99b0e106d9d9a3">IEegData.h</a>
+</li>
+<li>IEE_DataSetBufferSizeInSec()
+: <a class="el" href="_i_eeg_data_8h.html#a7cb0550c5db27b7223b225741a658b98">IEegData.h</a>
+</li>
+<li>IEE_DataSetMarker()
+: <a class="el" href="_i_eeg_data_8h.html#a5b417a8e3070e6370635471c26e62fa9">IEegData.h</a>
+</li>
+<li>IEE_DataSetSychronizationSignal()
+: <a class="el" href="_i_eeg_data_8h.html#abd14221e5d662700e085fc9079ede427">IEegData.h</a>
+</li>
+<li>IEE_DataUpdateHandle()
+: <a class="el" href="_i_eeg_data_8h.html#ab2e3abbc834c31b16a324c5854007a10">IEegData.h</a>
 </li>
 <li>IEE_EmoEngineEventCreate()
 : <a class="el" href="_iedk_8h.html#af07c8036b9a7959012f70e4f997f0972">Iedk.h</a>
@@ -212,8 +263,23 @@
 <li>IEE_GetAverageBandPowers()
 : <a class="el" href="_iedk_8h.html#adca76c66323f250713e4e1f44e80aabe">Iedk.h</a>
 </li>
+<li>IEE_GetBaseProfile()
+: <a class="el" href="_i_emotiv_profile_8h.html#a1d275a63aa2d9c78c1a330ab857eab5b">IEmotivProfile.h</a>
+</li>
+<li>IEE_GetEditionName()
+: <a class="el" href="_iedk_8h.html#a9ea1ea26e1d344128549131c209f6327">Iedk.h</a>
+</li>
 <li>IEE_GetHeadsetSettings()
 : <a class="el" href="_iedk_8h.html#a18f92eb37087dd5ef36503a08625e7d1">Iedk.h</a>
+</li>
+<li>IEE_GetUserProfile()
+: <a class="el" href="_i_emotiv_profile_8h.html#a381911981eb44f0ad4ffffc44843ffc3">IEmotivProfile.h</a>
+</li>
+<li>IEE_GetUserProfileBytes()
+: <a class="el" href="_i_emotiv_profile_8h.html#a0d1a46df514abf4a0698052c76ea4f24">IEmotivProfile.h</a>
+</li>
+<li>IEE_GetUserProfileSize()
+: <a class="el" href="_i_emotiv_profile_8h.html#a042cfafc2897a294f5f1c6531135e5d1">IEmotivProfile.h</a>
 </li>
 <li>IEE_HardwareGetVersion()
 : <a class="el" href="_iedk_8h.html#a043cc0c084ec0bfd88d44980021c9811">Iedk.h</a>
@@ -229,6 +295,12 @@
 </li>
 <li>IEE_HeadsetGyroRezero()
 : <a class="el" href="_iedk_8h.html#a4c456827f98b3d0718e380cb9d0a1ebb">Iedk.h</a>
+</li>
+<li>IEE_LicenseInformation()
+: <a class="el" href="_emotiv_license_8h.html#a06cbd14b2015885e6ebe187f4301a5e9">EmotivLicense.h</a>
+</li>
+<li>IEE_LoadUserProfile()
+: <a class="el" href="_i_emotiv_profile_8h.html#a23c9dcdffb3a1dc840b797450fd771da">IEmotivProfile.h</a>
 </li>
 <li>IEE_MentalCommandEventGetType()
 : <a class="el" href="_mental_command_detection_8h.html#a90cdffc3498cac97b905be948dd9fa14">MentalCommandDetection.h</a>
@@ -317,11 +389,20 @@
 <li>IEE_MotionDataUpdateHandle()
 : <a class="el" href="_iedk_8h.html#aef7c1378d813e75ad95a83872aee9504">Iedk.h</a>
 </li>
+<li>IEE_ProfileEventCreate()
+: <a class="el" href="_i_emotiv_profile_8h.html#acd616fed0ee370811ec9cdc95d935f31">IEmotivProfile.h</a>
+</li>
+<li>IEE_SaveUserProfile()
+: <a class="el" href="_i_emotiv_profile_8h.html#afdbf8e3ea2f4ab46be736300f787bcf4">IEmotivProfile.h</a>
+</li>
 <li>IEE_SetHardwarePlayerDisplay()
 : <a class="el" href="_iedk_8h.html#a5b66e61c45eda8aae28364d1e59bf230">Iedk.h</a>
 </li>
 <li>IEE_SetHeadsetSettings()
 : <a class="el" href="_iedk_8h.html#a3a01a8835ce6d12e9bf96e5653c31552">Iedk.h</a>
+</li>
+<li>IEE_SetUserProfile()
+: <a class="el" href="_i_emotiv_profile_8h.html#a005bed46522c9083a7d9ae289df9ddcd">IEmotivProfile.h</a>
 </li>
 <li>IEE_SoftwareGetVersion()
 : <a class="el" href="_iedk_8h.html#a81986c97801633c62f69b5f4564fcaf5">Iedk.h</a>
@@ -434,6 +515,51 @@
 <li>IS_MentalCommandIsActive()
 : <a class="el" href="_i_emo_state_d_l_l_8h.html#ad4ff6322e30cd593ef297e7a7b802d3f">IEmoStateDLL.h</a>
 </li>
+<li>IS_PerformanceMetricEqual()
+: <a class="el" href="_i_emo_state_performance_metric_8h.html#a70151ef4dc2e6273411633483d3ed9c8">IEmoStatePerformanceMetric.h</a>
+</li>
+<li>IS_PerformanceMetricGetEngagementBoredomModelParams()
+: <a class="el" href="_i_emo_state_performance_metric_8h.html#a7b741519f8ca3f73cb27411c3bee0aec">IEmoStatePerformanceMetric.h</a>
+</li>
+<li>IS_PerformanceMetricGetEngagementBoredomScore()
+: <a class="el" href="_i_emo_state_performance_metric_8h.html#a7ac0993fd7cef2ac4bad0c128d42a1f4">IEmoStatePerformanceMetric.h</a>
+</li>
+<li>IS_PerformanceMetricGetExcitementLongTermScore()
+: <a class="el" href="_i_emo_state_performance_metric_8h.html#a63f9803166e9847fc5f2efeb92787104">IEmoStatePerformanceMetric.h</a>
+</li>
+<li>IS_PerformanceMetricGetFocusModelParams()
+: <a class="el" href="_i_emo_state_performance_metric_8h.html#aec969f036ee0979f0e779e937a61339d">IEmoStatePerformanceMetric.h</a>
+</li>
+<li>IS_PerformanceMetricGetFocusScore()
+: <a class="el" href="_i_emo_state_performance_metric_8h.html#a40adfafec6b2adbfbee0567bf304bf52">IEmoStatePerformanceMetric.h</a>
+</li>
+<li>IS_PerformanceMetricGetInstantaneousExcitementModelParams()
+: <a class="el" href="_i_emo_state_performance_metric_8h.html#a62b7e8546d851afc4248ff9dd20417b9">IEmoStatePerformanceMetric.h</a>
+</li>
+<li>IS_PerformanceMetricGetInstantaneousExcitementScore()
+: <a class="el" href="_i_emo_state_performance_metric_8h.html#a258c2c91a6e241056c15e70122541dd8">IEmoStatePerformanceMetric.h</a>
+</li>
+<li>IS_PerformanceMetricGetInterestModelParams()
+: <a class="el" href="_i_emo_state_performance_metric_8h.html#a36652b5c6043f50fc4dc08a8e69ac25c">IEmoStatePerformanceMetric.h</a>
+</li>
+<li>IS_PerformanceMetricGetInterestScore()
+: <a class="el" href="_i_emo_state_performance_metric_8h.html#a7390fbccf44d477651d923ba3c259ecb">IEmoStatePerformanceMetric.h</a>
+</li>
+<li>IS_PerformanceMetricGetRelaxationModelParams()
+: <a class="el" href="_i_emo_state_performance_metric_8h.html#ac4d6da201c41761f3e58ff71267c7cae">IEmoStatePerformanceMetric.h</a>
+</li>
+<li>IS_PerformanceMetricGetRelaxationScore()
+: <a class="el" href="_i_emo_state_performance_metric_8h.html#a4b6b5fdf89a0e62f13bee05e771648b8">IEmoStatePerformanceMetric.h</a>
+</li>
+<li>IS_PerformanceMetricGetStressModelParams()
+: <a class="el" href="_i_emo_state_performance_metric_8h.html#a9dc5786ce94e1cf3d7480017acc633d7">IEmoStatePerformanceMetric.h</a>
+</li>
+<li>IS_PerformanceMetricGetStressScore()
+: <a class="el" href="_i_emo_state_performance_metric_8h.html#a9176771468f5fff6f695bb67e46b9682">IEmoStatePerformanceMetric.h</a>
+</li>
+<li>IS_PerformanceMetricIsActive()
+: <a class="el" href="_i_emo_state_performance_metric_8h.html#aa73b734cd5fc2624af50571cca24155e">IEmoStatePerformanceMetric.h</a>
+</li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.8-->
@@ -444,7 +570,7 @@
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri May 27 2016 13:37:44 for Emotiv SDK Community Edition by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Dec 22 2016 15:08:37 for Emotiv SDK Community Edition by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

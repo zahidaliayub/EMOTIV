@@ -21,7 +21,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">Emotiv SDK Community Edition 3.3.3</a>
+                    <a class="navbar-brand">Emotiv SDK Community Edition 3.4.0</a>
                 </div>
             </div>
         </nav>
@@ -66,6 +66,8 @@
 <code>#include &quot;<a class="el" href="_i_emo_state_d_l_l_8h_source.html">IEmoStateDLL.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_facial_expression_detection_8h_source.html">FacialExpressionDetection.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_mental_command_detection_8h_source.html">MentalCommandDetection.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_i_emotiv_profile_8h_source.html">IEmotivProfile.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_emotiv_license_8h_source.html">EmotivLicense.h</a>&quot;</code><br />
 </div>
 <p><a href="_iedk_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -139,11 +141,12 @@ Enumerations</h2></td></tr>
 <a class="el" href="_iedk_8h.html#a79def4ace871855da2d7249a730041b3a25fdd9c67378c9906de45e8c624d5098">IED_GYROY</a>, 
 <br />
 &#160;&#160;<a class="el" href="_iedk_8h.html#a79def4ace871855da2d7249a730041b3aa0a24ec4ed5cbc5c3b8bbfecc85098c0">IED_TIMESTAMP</a>, 
+<a class="el" href="_iedk_8h.html#a79def4ace871855da2d7249a730041b3ab6f65f0930715d15fb47c3f447b3780b">IED_MARKER_HARDWARE</a>, 
 <a class="el" href="_iedk_8h.html#a79def4ace871855da2d7249a730041b3a0253ecd89e20e3e6d377f8471d684b32">IED_ES_TIMESTAMP</a>, 
 <a class="el" href="_iedk_8h.html#a79def4ace871855da2d7249a730041b3a00273bbb911e6dae4d161892f6dc9b9a">IED_FUNC_ID</a>, 
-<a class="el" href="_iedk_8h.html#a79def4ace871855da2d7249a730041b3a85bfa037eaf8939d8a27ce86d9fa849b">IED_FUNC_VALUE</a>, 
 <br />
-&#160;&#160;<a class="el" href="_iedk_8h.html#a79def4ace871855da2d7249a730041b3a96d6d8ab94e23572962cfda57dfa733c">IED_MARKER</a>, 
+&#160;&#160;<a class="el" href="_iedk_8h.html#a79def4ace871855da2d7249a730041b3a85bfa037eaf8939d8a27ce86d9fa849b">IED_FUNC_VALUE</a>, 
+<a class="el" href="_iedk_8h.html#a79def4ace871855da2d7249a730041b3a96d6d8ab94e23572962cfda57dfa733c">IED_MARKER</a>, 
 <a class="el" href="_iedk_8h.html#a79def4ace871855da2d7249a730041b3a594f330b5c1028a35cb60e027fcac2c6">IED_SYNC_SIGNAL</a>
 <br />
  }<tr class="memdesc:a79def4ace871855da2d7249a730041b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">EEG and system data channel description.  <a href="_iedk_8h.html#a79def4ace871855da2d7249a730041b3">More...</a><br /></td></tr>
@@ -217,117 +220,120 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a113baeffb20d6c48625f007104251d5d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a113baeffb20d6c48625f007104251d5d">IEE_EngineConnect</a> (const char *strDevID=&quot;Emotiv Systems-5&quot;)</td></tr>
+<tr class="memitem:a113baeffb20d6c48625f007104251d5d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a113baeffb20d6c48625f007104251d5d">IEE_EngineConnect</a> (const char *strDevID=&quot;Emotiv Systems-5&quot;)</td></tr>
 <tr class="memdesc:a113baeffb20d6c48625f007104251d5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize EmoEngine instance which reads data from the headset.  <a href="#a113baeffb20d6c48625f007104251d5d">More...</a><br /></td></tr>
 <tr class="separator:a113baeffb20d6c48625f007104251d5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abdbac8d82e8d588721c095c5115bd1fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#abdbac8d82e8d588721c095c5115bd1fc">IEE_EngineRemoteConnect</a> (const char *szHost, unsigned short port)</td></tr>
+<tr class="memitem:abdbac8d82e8d588721c095c5115bd1fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#abdbac8d82e8d588721c095c5115bd1fc">IEE_EngineRemoteConnect</a> (const char *szHost, unsigned short port)</td></tr>
 <tr class="memdesc:abdbac8d82e8d588721c095c5115bd1fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the connection to a remote instance of EmoEngine.  <a href="#abdbac8d82e8d588721c095c5115bd1fc">More...</a><br /></td></tr>
 <tr class="separator:abdbac8d82e8d588721c095c5115bd1fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6247c8700800f2e006f0a0886032488b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a6247c8700800f2e006f0a0886032488b">IEE_EngineDisconnect</a> ()</td></tr>
+<tr class="memitem:a6247c8700800f2e006f0a0886032488b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a6247c8700800f2e006f0a0886032488b">IEE_EngineDisconnect</a> ()</td></tr>
 <tr class="memdesc:a6247c8700800f2e006f0a0886032488b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Terminate the connection to EmoEngine.  <a href="#a6247c8700800f2e006f0a0886032488b">More...</a><br /></td></tr>
 <tr class="separator:a6247c8700800f2e006f0a0886032488b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a589f54cda227411092318fdf0041928b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a589f54cda227411092318fdf0041928b">IEE_EnableDiagnostics</a> (const char *szFilename, int fEnable, int nReserved)</td></tr>
+<tr class="memitem:a589f54cda227411092318fdf0041928b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a589f54cda227411092318fdf0041928b">IEE_EnableDiagnostics</a> (const char *szFilename, int fEnable, int nReserved)</td></tr>
 <tr class="memdesc:a589f54cda227411092318fdf0041928b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable diagnostics mode.  <a href="#a589f54cda227411092318fdf0041928b">More...</a><br /></td></tr>
 <tr class="separator:a589f54cda227411092318fdf0041928b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af07c8036b9a7959012f70e4f997f0972"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> <a class="el" href="_facial_expression_detection_8h.html#a767bdae20508ff7c51b743472dde5b7f">EmoEngineEventHandle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#af07c8036b9a7959012f70e4f997f0972">IEE_EmoEngineEventCreate</a> ()</td></tr>
+<tr class="memitem:af07c8036b9a7959012f70e4f997f0972"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> <a class="el" href="_iedk_8h.html#a767bdae20508ff7c51b743472dde5b7f">EmoEngineEventHandle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#af07c8036b9a7959012f70e4f997f0972">IEE_EmoEngineEventCreate</a> ()</td></tr>
 <tr class="memdesc:af07c8036b9a7959012f70e4f997f0972"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a handle to memory that can hold an EmoEngine event.  <a href="#af07c8036b9a7959012f70e4f997f0972">More...</a><br /></td></tr>
 <tr class="separator:af07c8036b9a7959012f70e4f997f0972"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade9ee08b3b9056d987959c1d8fc9323a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#ade9ee08b3b9056d987959c1d8fc9323a">IEE_EmoEngineEventFree</a> (<a class="el" href="_facial_expression_detection_8h.html#a767bdae20508ff7c51b743472dde5b7f">EmoEngineEventHandle</a> hEvent)</td></tr>
+<tr class="memitem:ade9ee08b3b9056d987959c1d8fc9323a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#ade9ee08b3b9056d987959c1d8fc9323a">IEE_EmoEngineEventFree</a> (<a class="el" href="_iedk_8h.html#a767bdae20508ff7c51b743472dde5b7f">EmoEngineEventHandle</a> hEvent)</td></tr>
 <tr class="memdesc:ade9ee08b3b9056d987959c1d8fc9323a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free memory referenced by an event handle.  <a href="#ade9ee08b3b9056d987959c1d8fc9323a">More...</a><br /></td></tr>
 <tr class="separator:ade9ee08b3b9056d987959c1d8fc9323a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46675bfbb7a242ca4dd53e42d18695f7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> <a class="el" href="_iedk_8h.html#a3641d4839966271cf3d2e375d4cbf12f">EmoStateHandle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a46675bfbb7a242ca4dd53e42d18695f7">IEE_EmoStateCreate</a> ()</td></tr>
+<tr class="memitem:a46675bfbb7a242ca4dd53e42d18695f7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> <a class="el" href="_iedk_8h.html#a3641d4839966271cf3d2e375d4cbf12f">EmoStateHandle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a46675bfbb7a242ca4dd53e42d18695f7">IEE_EmoStateCreate</a> ()</td></tr>
 <tr class="memdesc:a46675bfbb7a242ca4dd53e42d18695f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a handle to memory that can store an EmoState.  <a href="#a46675bfbb7a242ca4dd53e42d18695f7">More...</a><br /></td></tr>
 <tr class="separator:a46675bfbb7a242ca4dd53e42d18695f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57cab40edc1bbc11bdfc48c2961f2371"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a57cab40edc1bbc11bdfc48c2961f2371">IEE_EmoStateFree</a> (<a class="el" href="_iedk_8h.html#a3641d4839966271cf3d2e375d4cbf12f">EmoStateHandle</a> hState)</td></tr>
+<tr class="memitem:a57cab40edc1bbc11bdfc48c2961f2371"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a57cab40edc1bbc11bdfc48c2961f2371">IEE_EmoStateFree</a> (<a class="el" href="_iedk_8h.html#a3641d4839966271cf3d2e375d4cbf12f">EmoStateHandle</a> hState)</td></tr>
 <tr class="memdesc:a57cab40edc1bbc11bdfc48c2961f2371"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free memory referenced by an EmoState handle.  <a href="#a57cab40edc1bbc11bdfc48c2961f2371">More...</a><br /></td></tr>
 <tr class="separator:a57cab40edc1bbc11bdfc48c2961f2371"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a951f5935ac17e4a95ea52c7fe3008227"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> <a class="el" href="_iedk_8h.html#a576a9219e35f06a2aba1fe99f0ca97a6">IEE_Event_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a951f5935ac17e4a95ea52c7fe3008227">IEE_EmoEngineEventGetType</a> (<a class="el" href="_facial_expression_detection_8h.html#a767bdae20508ff7c51b743472dde5b7f">EmoEngineEventHandle</a> hEvent)</td></tr>
+<tr class="memitem:a951f5935ac17e4a95ea52c7fe3008227"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> <a class="el" href="_iedk_8h.html#a576a9219e35f06a2aba1fe99f0ca97a6">IEE_Event_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a951f5935ac17e4a95ea52c7fe3008227">IEE_EmoEngineEventGetType</a> (<a class="el" href="_iedk_8h.html#a767bdae20508ff7c51b743472dde5b7f">EmoEngineEventHandle</a> hEvent)</td></tr>
 <tr class="memdesc:a951f5935ac17e4a95ea52c7fe3008227"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the event type for an event already retrieved using <a class="el" href="_iedk_8h.html#a7350d5fe6d076ab08419eff76f5d931d" title="Retrieve the next EmoEngine event. ">IEE_EngineGetNextEvent()</a>.  <a href="#a951f5935ac17e4a95ea52c7fe3008227">More...</a><br /></td></tr>
 <tr class="separator:a951f5935ac17e4a95ea52c7fe3008227"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94c7c63fe1b5d346b555bd3ef02102d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a94c7c63fe1b5d346b555bd3ef02102d7">IEE_EmoEngineEventGetUserId</a> (<a class="el" href="_facial_expression_detection_8h.html#a767bdae20508ff7c51b743472dde5b7f">EmoEngineEventHandle</a> hEvent, unsigned int *pUserIdOut)</td></tr>
+<tr class="memitem:a94c7c63fe1b5d346b555bd3ef02102d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a94c7c63fe1b5d346b555bd3ef02102d7">IEE_EmoEngineEventGetUserId</a> (<a class="el" href="_iedk_8h.html#a767bdae20508ff7c51b743472dde5b7f">EmoEngineEventHandle</a> hEvent, unsigned int *pUserIdOut)</td></tr>
 <tr class="memdesc:a94c7c63fe1b5d346b555bd3ef02102d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the user ID for IEE_UserAdded and IEE_UserRemoved events.  <a href="#a94c7c63fe1b5d346b555bd3ef02102d7">More...</a><br /></td></tr>
 <tr class="separator:a94c7c63fe1b5d346b555bd3ef02102d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4fd04a174ab03e7779e4926698bf6b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#ad4fd04a174ab03e7779e4926698bf6b3">IEE_EmoEngineEventGetEmoState</a> (<a class="el" href="_facial_expression_detection_8h.html#a767bdae20508ff7c51b743472dde5b7f">EmoEngineEventHandle</a> hEvent, <a class="el" href="_iedk_8h.html#a3641d4839966271cf3d2e375d4cbf12f">EmoStateHandle</a> hEmoState)</td></tr>
+<tr class="memitem:ad4fd04a174ab03e7779e4926698bf6b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#ad4fd04a174ab03e7779e4926698bf6b3">IEE_EmoEngineEventGetEmoState</a> (<a class="el" href="_iedk_8h.html#a767bdae20508ff7c51b743472dde5b7f">EmoEngineEventHandle</a> hEvent, <a class="el" href="_iedk_8h.html#a3641d4839966271cf3d2e375d4cbf12f">EmoStateHandle</a> hEmoState)</td></tr>
 <tr class="memdesc:ad4fd04a174ab03e7779e4926698bf6b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy an EmoState returned with a IEE_EmoStateUpdate event to memory referenced by an EmoStateHandle.  <a href="#ad4fd04a174ab03e7779e4926698bf6b3">More...</a><br /></td></tr>
 <tr class="separator:ad4fd04a174ab03e7779e4926698bf6b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7350d5fe6d076ab08419eff76f5d931d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a7350d5fe6d076ab08419eff76f5d931d">IEE_EngineGetNextEvent</a> (<a class="el" href="_facial_expression_detection_8h.html#a767bdae20508ff7c51b743472dde5b7f">EmoEngineEventHandle</a> hEvent)</td></tr>
+<tr class="memitem:a7350d5fe6d076ab08419eff76f5d931d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a7350d5fe6d076ab08419eff76f5d931d">IEE_EngineGetNextEvent</a> (<a class="el" href="_iedk_8h.html#a767bdae20508ff7c51b743472dde5b7f">EmoEngineEventHandle</a> hEvent)</td></tr>
 <tr class="memdesc:a7350d5fe6d076ab08419eff76f5d931d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the next EmoEngine event.  <a href="#a7350d5fe6d076ab08419eff76f5d931d">More...</a><br /></td></tr>
 <tr class="separator:a7350d5fe6d076ab08419eff76f5d931d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8ab97f04a8e4da208ea58d0bf2046d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#aa8ab97f04a8e4da208ea58d0bf2046d7">IEE_EngineClearEventQueue</a> (int eventTypes)</td></tr>
+<tr class="memitem:aa8ab97f04a8e4da208ea58d0bf2046d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#aa8ab97f04a8e4da208ea58d0bf2046d7">IEE_EngineClearEventQueue</a> (int eventTypes)</td></tr>
 <tr class="memdesc:aa8ab97f04a8e4da208ea58d0bf2046d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear a specific EmoEngine event type or all events currently inside the event queue.  <a href="#aa8ab97f04a8e4da208ea58d0bf2046d7">More...</a><br /></td></tr>
 <tr class="separator:aa8ab97f04a8e4da208ea58d0bf2046d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a433cea5019f2448f3b89562c5a294225"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a433cea5019f2448f3b89562c5a294225">IEE_EngineGetNumUser</a> (unsigned int *pNumUserOut)</td></tr>
+<tr class="memitem:a433cea5019f2448f3b89562c5a294225"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a433cea5019f2448f3b89562c5a294225">IEE_EngineGetNumUser</a> (unsigned int *pNumUserOut)</td></tr>
 <tr class="memdesc:a433cea5019f2448f3b89562c5a294225"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve number of active users (headset) connected to the EmoEngine.  <a href="#a433cea5019f2448f3b89562c5a294225">More...</a><br /></td></tr>
 <tr class="separator:a433cea5019f2448f3b89562c5a294225"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b66e61c45eda8aae28364d1e59bf230"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a5b66e61c45eda8aae28364d1e59bf230">IEE_SetHardwarePlayerDisplay</a> (unsigned int userId, unsigned int playerNum)</td></tr>
+<tr class="memitem:a5b66e61c45eda8aae28364d1e59bf230"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a5b66e61c45eda8aae28364d1e59bf230">IEE_SetHardwarePlayerDisplay</a> (unsigned int userId, unsigned int playerNum)</td></tr>
 <tr class="memdesc:a5b66e61c45eda8aae28364d1e59bf230"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the player number display.  <a href="#a5b66e61c45eda8aae28364d1e59bf230">More...</a><br /></td></tr>
 <tr class="separator:a5b66e61c45eda8aae28364d1e59bf230"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18f92eb37087dd5ef36503a08625e7d1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a18f92eb37087dd5ef36503a08625e7d1">IEE_GetHeadsetSettings</a> (unsigned int userId, unsigned int *EPOCmode, unsigned int *eegRate, unsigned int *eegRes, unsigned int *memsRate, unsigned int *memsRes)</td></tr>
+<tr class="memitem:a18f92eb37087dd5ef36503a08625e7d1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a18f92eb37087dd5ef36503a08625e7d1">IEE_GetHeadsetSettings</a> (unsigned int userId, unsigned int *EPOCmode, unsigned int *eegRate, unsigned int *eegRes, unsigned int *memsRate, unsigned int *memsRes)</td></tr>
 <tr class="memdesc:a18f92eb37087dd5ef36503a08625e7d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get headset settings from EPOC+ headset.  <a href="#a18f92eb37087dd5ef36503a08625e7d1">More...</a><br /></td></tr>
 <tr class="separator:a18f92eb37087dd5ef36503a08625e7d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a01a8835ce6d12e9bf96e5653c31552"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a3a01a8835ce6d12e9bf96e5653c31552">IEE_SetHeadsetSettings</a> (unsigned int userId, unsigned int EPOCmode, unsigned int eegRate, unsigned int eegRes, unsigned int memsRate, unsigned int memsRes)</td></tr>
+<tr class="memitem:a3a01a8835ce6d12e9bf96e5653c31552"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a3a01a8835ce6d12e9bf96e5653c31552">IEE_SetHeadsetSettings</a> (unsigned int userId, unsigned int EPOCmode, unsigned int eegRate, unsigned int eegRes, unsigned int memsRate, unsigned int memsRes)</td></tr>
 <tr class="memdesc:a3a01a8835ce6d12e9bf96e5653c31552"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set headset setting for EPOC+ headset.  <a href="#a3a01a8835ce6d12e9bf96e5653c31552">More...</a><br /></td></tr>
 <tr class="separator:a3a01a8835ce6d12e9bf96e5653c31552"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62a3eb18e35e50e2ada1d3f0f3cd44e8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a62a3eb18e35e50e2ada1d3f0f3cd44e8">IEE_HeadsetGetSensorDetails</a> (<a class="el" href="_i_emo_state_d_l_l_8h.html#ac21f3c245327198455d68b8ff45beef6">IEE_InputChannels_t</a> channelId, <a class="el" href="_iedk_8h.html#a029acc2b0cbac794968b44dfb11f1c5c">IInputSensorDescriptor_t</a> *pDescriptorOut)</td></tr>
+<tr class="memitem:a62a3eb18e35e50e2ada1d3f0f3cd44e8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a62a3eb18e35e50e2ada1d3f0f3cd44e8">IEE_HeadsetGetSensorDetails</a> (<a class="el" href="_i_emo_state_d_l_l_8h.html#ac21f3c245327198455d68b8ff45beef6">IEE_InputChannels_t</a> channelId, <a class="el" href="_iedk_8h.html#a029acc2b0cbac794968b44dfb11f1c5c">IInputSensorDescriptor_t</a> *pDescriptorOut)</td></tr>
 <tr class="memdesc:a62a3eb18e35e50e2ada1d3f0f3cd44e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a struct containing details about a specific channel.  <a href="#a62a3eb18e35e50e2ada1d3f0f3cd44e8">More...</a><br /></td></tr>
 <tr class="separator:a62a3eb18e35e50e2ada1d3f0f3cd44e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a043cc0c084ec0bfd88d44980021c9811"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a043cc0c084ec0bfd88d44980021c9811">IEE_HardwareGetVersion</a> (unsigned int userId, unsigned long *pHwVersionOut)</td></tr>
+<tr class="memitem:a043cc0c084ec0bfd88d44980021c9811"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a043cc0c084ec0bfd88d44980021c9811">IEE_HardwareGetVersion</a> (unsigned int userId, unsigned long *pHwVersionOut)</td></tr>
 <tr class="memdesc:a043cc0c084ec0bfd88d44980021c9811"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the current hardware version of the headset and dongle (if available).  <a href="#a043cc0c084ec0bfd88d44980021c9811">More...</a><br /></td></tr>
 <tr class="separator:a043cc0c084ec0bfd88d44980021c9811"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81986c97801633c62f69b5f4564fcaf5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a81986c97801633c62f69b5f4564fcaf5">IEE_SoftwareGetVersion</a> (char *pszVersionOut, unsigned int nVersionChars, unsigned long *pBuildNumOut)</td></tr>
+<tr class="memitem:a81986c97801633c62f69b5f4564fcaf5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a81986c97801633c62f69b5f4564fcaf5">IEE_SoftwareGetVersion</a> (char *pszVersionOut, unsigned int nVersionChars, unsigned long *pBuildNumOut)</td></tr>
 <tr class="memdesc:a81986c97801633c62f69b5f4564fcaf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the current version of the Emotiv SDK.  <a href="#a81986c97801633c62f69b5f4564fcaf5">More...</a><br /></td></tr>
 <tr class="separator:a81986c97801633c62f69b5f4564fcaf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f8a4747c295b02d4bc97288dbd809a3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a6f8a4747c295b02d4bc97288dbd809a3">IEE_HeadsetGetSerialNumber</a> (unsigned int userId, char **pHwSerialOut)</td></tr>
+<tr class="memitem:a6f8a4747c295b02d4bc97288dbd809a3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a6f8a4747c295b02d4bc97288dbd809a3">IEE_HeadsetGetSerialNumber</a> (unsigned int userId, char **pHwSerialOut)</td></tr>
 <tr class="memdesc:a6f8a4747c295b02d4bc97288dbd809a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the current serial number of the headset (if available).  <a href="#a6f8a4747c295b02d4bc97288dbd809a3">More...</a><br /></td></tr>
 <tr class="separator:a6f8a4747c295b02d4bc97288dbd809a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1bede7d811176ed262c41595be0ef933"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a1bede7d811176ed262c41595be0ef933">IEE_HeadsetGetGyroDelta</a> (unsigned int userId, int *pXOut, int *pYOut)</td></tr>
+<tr class="memitem:a1bede7d811176ed262c41595be0ef933"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a1bede7d811176ed262c41595be0ef933">IEE_HeadsetGetGyroDelta</a> (unsigned int userId, int *pXOut, int *pYOut)</td></tr>
 <tr class="memdesc:a1bede7d811176ed262c41595be0ef933"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the delta of the movement of the gyro since the previous call for a particular user.  <a href="#a1bede7d811176ed262c41595be0ef933">More...</a><br /></td></tr>
 <tr class="separator:a1bede7d811176ed262c41595be0ef933"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c456827f98b3d0718e380cb9d0a1ebb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a4c456827f98b3d0718e380cb9d0a1ebb">IEE_HeadsetGyroRezero</a> (unsigned int userId)</td></tr>
+<tr class="memitem:a4c456827f98b3d0718e380cb9d0a1ebb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a4c456827f98b3d0718e380cb9d0a1ebb">IEE_HeadsetGyroRezero</a> (unsigned int userId)</td></tr>
 <tr class="memdesc:a4c456827f98b3d0718e380cb9d0a1ebb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Re-zero the gyro for a particular user.  <a href="#a4c456827f98b3d0718e380cb9d0a1ebb">More...</a><br /></td></tr>
 <tr class="separator:a4c456827f98b3d0718e380cb9d0a1ebb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99d0b4dccf58bd31e973db657fd068d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> <a class="el" href="_iedk_8h.html#a69d0eae028ac31f9b30316927bc7db50">DataHandle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a99d0b4dccf58bd31e973db657fd068d7">IEE_MotionDataCreate</a> ()</td></tr>
+<tr class="memitem:a99d0b4dccf58bd31e973db657fd068d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> <a class="el" href="_iedk_8h.html#a69d0eae028ac31f9b30316927bc7db50">DataHandle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a99d0b4dccf58bd31e973db657fd068d7">IEE_MotionDataCreate</a> ()</td></tr>
 <tr class="memdesc:a99d0b4dccf58bd31e973db657fd068d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a handle to memory that can hold motion data.  <a href="#a99d0b4dccf58bd31e973db657fd068d7">More...</a><br /></td></tr>
 <tr class="separator:a99d0b4dccf58bd31e973db657fd068d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49cea42ee588bd073a8862f715e1b9d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a49cea42ee588bd073a8862f715e1b9d6">IEE_MotionDataFree</a> (<a class="el" href="_iedk_8h.html#a69d0eae028ac31f9b30316927bc7db50">DataHandle</a> hData)</td></tr>
+<tr class="memitem:a49cea42ee588bd073a8862f715e1b9d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a49cea42ee588bd073a8862f715e1b9d6">IEE_MotionDataFree</a> (<a class="el" href="_iedk_8h.html#a69d0eae028ac31f9b30316927bc7db50">DataHandle</a> hData)</td></tr>
 <tr class="memdesc:a49cea42ee588bd073a8862f715e1b9d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free memory referenced by a data handle.  <a href="#a49cea42ee588bd073a8862f715e1b9d6">More...</a><br /></td></tr>
 <tr class="separator:a49cea42ee588bd073a8862f715e1b9d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef7c1378d813e75ad95a83872aee9504"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#aef7c1378d813e75ad95a83872aee9504">IEE_MotionDataUpdateHandle</a> (unsigned int userId, <a class="el" href="_iedk_8h.html#a69d0eae028ac31f9b30316927bc7db50">DataHandle</a> hData)</td></tr>
+<tr class="memitem:aef7c1378d813e75ad95a83872aee9504"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#aef7c1378d813e75ad95a83872aee9504">IEE_MotionDataUpdateHandle</a> (unsigned int userId, <a class="el" href="_iedk_8h.html#a69d0eae028ac31f9b30316927bc7db50">DataHandle</a> hData)</td></tr>
 <tr class="memdesc:aef7c1378d813e75ad95a83872aee9504"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the content of the data handle to point to new data since the last call.  <a href="#aef7c1378d813e75ad95a83872aee9504">More...</a><br /></td></tr>
 <tr class="separator:aef7c1378d813e75ad95a83872aee9504"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab64edb22a7f4a8141e3322c97fedffe9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#ab64edb22a7f4a8141e3322c97fedffe9">IEE_MotionDataGet</a> (<a class="el" href="_iedk_8h.html#a69d0eae028ac31f9b30316927bc7db50">DataHandle</a> hData, <a class="el" href="_iedk_8h.html#abdf7c7034f5d83b0cfc37dedafd4044b">IEE_MotionDataChannel_t</a> channel, double buffer[], unsigned int bufferSizeInSample)</td></tr>
+<tr class="memitem:ab64edb22a7f4a8141e3322c97fedffe9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#ab64edb22a7f4a8141e3322c97fedffe9">IEE_MotionDataGet</a> (<a class="el" href="_iedk_8h.html#a69d0eae028ac31f9b30316927bc7db50">DataHandle</a> hData, <a class="el" href="_iedk_8h.html#abdf7c7034f5d83b0cfc37dedafd4044b">IEE_MotionDataChannel_t</a> channel, double buffer[], unsigned int bufferSizeInSample)</td></tr>
 <tr class="memdesc:ab64edb22a7f4a8141e3322c97fedffe9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract data of a particular channel from the data handle.  <a href="#ab64edb22a7f4a8141e3322c97fedffe9">More...</a><br /></td></tr>
 <tr class="separator:ab64edb22a7f4a8141e3322c97fedffe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af2bf36128f41060f11182f4eda766bb8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#af2bf36128f41060f11182f4eda766bb8">IEE_MotionDataGetMultiChannels</a> (<a class="el" href="_iedk_8h.html#a69d0eae028ac31f9b30316927bc7db50">DataHandle</a> hData, <a class="el" href="_iedk_8h.html#abdf7c7034f5d83b0cfc37dedafd4044b">IEE_MotionDataChannel_t</a> channels[], unsigned int nChannels, double *buffer[], unsigned int bufferSizeInSample)</td></tr>
+<tr class="memitem:af2bf36128f41060f11182f4eda766bb8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#af2bf36128f41060f11182f4eda766bb8">IEE_MotionDataGetMultiChannels</a> (<a class="el" href="_iedk_8h.html#a69d0eae028ac31f9b30316927bc7db50">DataHandle</a> hData, <a class="el" href="_iedk_8h.html#abdf7c7034f5d83b0cfc37dedafd4044b">IEE_MotionDataChannel_t</a> channels[], unsigned int nChannels, double *buffer[], unsigned int bufferSizeInSample)</td></tr>
 <tr class="memdesc:af2bf36128f41060f11182f4eda766bb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract data of a list of channels from the data handle.  <a href="#af2bf36128f41060f11182f4eda766bb8">More...</a><br /></td></tr>
 <tr class="separator:af2bf36128f41060f11182f4eda766bb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81fdc149de4aa614bad5187fa8de4d75"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a81fdc149de4aa614bad5187fa8de4d75">IEE_MotionDataGetNumberOfSample</a> (<a class="el" href="_iedk_8h.html#a69d0eae028ac31f9b30316927bc7db50">DataHandle</a> hData, unsigned int *nSampleOut)</td></tr>
+<tr class="memitem:a81fdc149de4aa614bad5187fa8de4d75"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a81fdc149de4aa614bad5187fa8de4d75">IEE_MotionDataGetNumberOfSample</a> (<a class="el" href="_iedk_8h.html#a69d0eae028ac31f9b30316927bc7db50">DataHandle</a> hData, unsigned int *nSampleOut)</td></tr>
 <tr class="memdesc:a81fdc149de4aa614bad5187fa8de4d75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return number of sample of motion data stored in the data handle.  <a href="#a81fdc149de4aa614bad5187fa8de4d75">More...</a><br /></td></tr>
 <tr class="separator:a81fdc149de4aa614bad5187fa8de4d75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1bb4ef30f3fb3dfdd819b9020cb1e0d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a1bb4ef30f3fb3dfdd819b9020cb1e0d6">IEE_MotionDataSetBufferSizeInSec</a> (float bufferSizeInSec)</td></tr>
+<tr class="memitem:a1bb4ef30f3fb3dfdd819b9020cb1e0d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a1bb4ef30f3fb3dfdd819b9020cb1e0d6">IEE_MotionDataSetBufferSizeInSec</a> (float bufferSizeInSec)</td></tr>
 <tr class="memdesc:a1bb4ef30f3fb3dfdd819b9020cb1e0d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the size of the motion data buffer.  <a href="#a1bb4ef30f3fb3dfdd819b9020cb1e0d6">More...</a><br /></td></tr>
 <tr class="separator:a1bb4ef30f3fb3dfdd819b9020cb1e0d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1dbc783058ba4f53636162fa6da64571"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a1dbc783058ba4f53636162fa6da64571">IEE_MotionDataGetBufferSizeInSec</a> (float *pBufferSizeInSecOut)</td></tr>
+<tr class="memitem:a1dbc783058ba4f53636162fa6da64571"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a1dbc783058ba4f53636162fa6da64571">IEE_MotionDataGetBufferSizeInSec</a> (float *pBufferSizeInSecOut)</td></tr>
 <tr class="memdesc:a1dbc783058ba4f53636162fa6da64571"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the size of the motion data buffer.  <a href="#a1dbc783058ba4f53636162fa6da64571">More...</a><br /></td></tr>
 <tr class="separator:a1dbc783058ba4f53636162fa6da64571"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c16fe514748757a565ca45ac56d17d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a5c16fe514748757a565ca45ac56d17d7">IEE_MotionDataGetSamplingRate</a> (unsigned int userId, unsigned int *samplingRateOut)</td></tr>
+<tr class="memitem:a5c16fe514748757a565ca45ac56d17d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a5c16fe514748757a565ca45ac56d17d7">IEE_MotionDataGetSamplingRate</a> (unsigned int userId, unsigned int *samplingRateOut)</td></tr>
 <tr class="memdesc:a5c16fe514748757a565ca45ac56d17d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get sampling rate of the motion data stream.  <a href="#a5c16fe514748757a565ca45ac56d17d7">More...</a><br /></td></tr>
 <tr class="separator:a5c16fe514748757a565ca45ac56d17d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95ac5692400bb7e6caad3cce31a38034"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a95ac5692400bb7e6caad3cce31a38034">IEE_EnableDetections</a> (unsigned long value)</td></tr>
+<tr class="memitem:a95ac5692400bb7e6caad3cce31a38034"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a95ac5692400bb7e6caad3cce31a38034">IEE_EnableDetections</a> (unsigned long value)</td></tr>
 <tr class="memdesc:a95ac5692400bb7e6caad3cce31a38034"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable/disable particular detections.  <a href="#a95ac5692400bb7e6caad3cce31a38034">More...</a><br /></td></tr>
 <tr class="separator:a95ac5692400bb7e6caad3cce31a38034"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef05ac5b1cf239e1e693436d46b0a9a7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#aef05ac5b1cf239e1e693436d46b0a9a7">IEE_CheckDetectionsEnabled</a> (unsigned long *result)</td></tr>
+<tr class="memitem:aef05ac5b1cf239e1e693436d46b0a9a7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#aef05ac5b1cf239e1e693436d46b0a9a7">IEE_CheckDetectionsEnabled</a> (unsigned long *result)</td></tr>
 <tr class="memdesc:aef05ac5b1cf239e1e693436d46b0a9a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if particular detections are enabled.  <a href="#aef05ac5b1cf239e1e693436d46b0a9a7">More...</a><br /></td></tr>
 <tr class="separator:aef05ac5b1cf239e1e693436d46b0a9a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adca76c66323f250713e4e1f44e80aabe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#adca76c66323f250713e4e1f44e80aabe">IEE_GetAverageBandPowers</a> (unsigned int userId, <a class="el" href="_iedk_8h.html#aa63b56ae1fe316af47816df13b00d646">IEE_DataChannel_t</a> channel, double *theta, double *alpha, double *low_beta, double *high_beta, double *gamma)</td></tr>
+<tr class="memitem:adca76c66323f250713e4e1f44e80aabe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#adca76c66323f250713e4e1f44e80aabe">IEE_GetAverageBandPowers</a> (unsigned int userId, <a class="el" href="_iedk_8h.html#aa63b56ae1fe316af47816df13b00d646">IEE_DataChannel_t</a> channel, double *theta, double *alpha, double *low_beta, double *high_beta, double *gamma)</td></tr>
 <tr class="memdesc:adca76c66323f250713e4e1f44e80aabe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get averge band power values for a channel.  <a href="#adca76c66323f250713e4e1f44e80aabe">More...</a><br /></td></tr>
 <tr class="separator:adca76c66323f250713e4e1f44e80aabe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a6eeb2c5404e464736138fe90c13fc4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a0a6eeb2c5404e464736138fe90c13fc4">IEE_FFTSetWindowingType</a> (unsigned int userId, <a class="el" href="_iedk_8h.html#a040e05ba8944d688a77033d1d3248294">IEE_WindowingTypes</a> type)</td></tr>
+<tr class="memitem:a0a6eeb2c5404e464736138fe90c13fc4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a0a6eeb2c5404e464736138fe90c13fc4">IEE_FFTSetWindowingType</a> (unsigned int userId, <a class="el" href="_iedk_8h.html#a040e05ba8944d688a77033d1d3248294">IEE_WindowingTypes</a> type)</td></tr>
 <tr class="memdesc:a0a6eeb2c5404e464736138fe90c13fc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the current windowing type for band power calculation.  <a href="#a0a6eeb2c5404e464736138fe90c13fc4">More...</a><br /></td></tr>
 <tr class="separator:a0a6eeb2c5404e464736138fe90c13fc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42d44998991b8faf8651677b5a47fd91"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a42d44998991b8faf8651677b5a47fd91">IEE_FFTGetWindowingType</a> (unsigned int userId, <a class="el" href="_iedk_8h.html#a040e05ba8944d688a77033d1d3248294">IEE_WindowingTypes</a> *type)</td></tr>
+<tr class="memitem:a42d44998991b8faf8651677b5a47fd91"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a42d44998991b8faf8651677b5a47fd91">IEE_FFTGetWindowingType</a> (unsigned int userId, <a class="el" href="_iedk_8h.html#a040e05ba8944d688a77033d1d3248294">IEE_WindowingTypes</a> *type)</td></tr>
 <tr class="memdesc:a42d44998991b8faf8651677b5a47fd91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current windowing type for band power calculation.  <a href="#a42d44998991b8faf8651677b5a47fd91">More...</a><br /></td></tr>
 <tr class="separator:a42d44998991b8faf8651677b5a47fd91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ea1ea26e1d344128549131c209f6327"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a9ea1ea26e1d344128549131c209f6327">IEE_GetEditionName</a> (char **editionName)</td></tr>
+<tr class="memdesc:a9ea1ea26e1d344128549131c209f6327"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Edition name of Edk library.  <a href="#a9ea1ea26e1d344128549131c209f6327">More...</a><br /></td></tr>
+<tr class="separator:a9ea1ea26e1d344128549131c209f6327"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a class="anchor" id="a71f2f924934ca9d7f770bc458493c4a8"></a>
@@ -368,7 +374,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void* <a class="el" href="_facial_expression_detection_8h.html#a767bdae20508ff7c51b743472dde5b7f">EmoEngineEventHandle</a></td>
+          <td class="memname">typedef void* <a class="el" href="_iedk_8h.html#a767bdae20508ff7c51b743472dde5b7f">EmoEngineEventHandle</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -552,6 +558,9 @@ Functions</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="a79def4ace871855da2d7249a730041b3aa0a24ec4ed5cbc5c3b8bbfecc85098c0"></a>IED_TIMESTAMP&#160;</td><td class="fielddoc">
 <p>System timestamp. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a79def4ace871855da2d7249a730041b3ab6f65f0930715d15fb47c3f447b3780b"></a>IED_MARKER_HARDWARE&#160;</td><td class="fielddoc">
+<p>Marker from extender. </p>
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="a79def4ace871855da2d7249a730041b3a0253ecd89e20e3e6d377f8471d684b32"></a>IED_ES_TIMESTAMP&#160;</td><td class="fielddoc">
 <p>EmoState timestamp. </p>
@@ -755,7 +764,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> void IEE_CheckDetectionsEnabled </td>
+          <td class="memname"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> void IEE_CheckDetectionsEnabled </td>
           <td>(</td>
           <td class="paramtype">unsigned long *&#160;</td>
           <td class="paramname"><em>result</em></td><td>)</td>
@@ -780,7 +789,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> <a class="el" href="_facial_expression_detection_8h.html#a767bdae20508ff7c51b743472dde5b7f">EmoEngineEventHandle</a> IEE_EmoEngineEventCreate </td>
+          <td class="memname"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> <a class="el" href="_iedk_8h.html#a767bdae20508ff7c51b743472dde5b7f">EmoEngineEventHandle</a> IEE_EmoEngineEventCreate </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -799,9 +808,9 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> void IEE_EmoEngineEventFree </td>
+          <td class="memname"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> void IEE_EmoEngineEventFree </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="_facial_expression_detection_8h.html#a767bdae20508ff7c51b743472dde5b7f">EmoEngineEventHandle</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_iedk_8h.html#a767bdae20508ff7c51b743472dde5b7f">EmoEngineEventHandle</a>&#160;</td>
           <td class="paramname"><em>hEvent</em></td><td>)</td>
           <td></td>
         </tr>
@@ -811,7 +820,7 @@ Functions</h2></td></tr>
 <p>Free memory referenced by an event handle. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">hEvent</td><td>- a handle returned by <a class="el" href="_iedk_8h.html#af07c8036b9a7959012f70e4f997f0972" title="Return a handle to memory that can hold an EmoEngine event. ">IEE_EmoEngineEventCreate()</a> or IEE_ProfileEventCreate() </td></tr>
+    <tr><td class="paramname">hEvent</td><td>- a handle returned by <a class="el" href="_iedk_8h.html#af07c8036b9a7959012f70e4f997f0972" title="Return a handle to memory that can hold an EmoEngine event. ">IEE_EmoEngineEventCreate()</a> or <a class="el" href="_i_emotiv_profile_8h.html#acd616fed0ee370811ec9cdc95d935f31" title="Return a handle to memory that can hold a profile byte stream. ">IEE_ProfileEventCreate()</a> </td></tr>
   </table>
   </dd>
 </dl>
@@ -823,9 +832,9 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_EmoEngineEventGetEmoState </td>
+          <td class="memname"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_EmoEngineEventGetEmoState </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="_facial_expression_detection_8h.html#a767bdae20508ff7c51b743472dde5b7f">EmoEngineEventHandle</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_iedk_8h.html#a767bdae20508ff7c51b743472dde5b7f">EmoEngineEventHandle</a>&#160;</td>
           <td class="paramname"><em>hEvent</em>, </td>
         </tr>
         <tr>
@@ -863,9 +872,9 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> <a class="el" href="_iedk_8h.html#a576a9219e35f06a2aba1fe99f0ca97a6">IEE_Event_t</a> IEE_EmoEngineEventGetType </td>
+          <td class="memname"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> <a class="el" href="_iedk_8h.html#a576a9219e35f06a2aba1fe99f0ca97a6">IEE_Event_t</a> IEE_EmoEngineEventGetType </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="_facial_expression_detection_8h.html#a767bdae20508ff7c51b743472dde5b7f">EmoEngineEventHandle</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_iedk_8h.html#a767bdae20508ff7c51b743472dde5b7f">EmoEngineEventHandle</a>&#160;</td>
           <td class="paramname"><em>hEvent</em></td><td>)</td>
           <td></td>
         </tr>
@@ -888,9 +897,9 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_EmoEngineEventGetUserId </td>
+          <td class="memname"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_EmoEngineEventGetUserId </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="_facial_expression_detection_8h.html#a767bdae20508ff7c51b743472dde5b7f">EmoEngineEventHandle</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_iedk_8h.html#a767bdae20508ff7c51b743472dde5b7f">EmoEngineEventHandle</a>&#160;</td>
           <td class="paramname"><em>hEvent</em>, </td>
         </tr>
         <tr>
@@ -928,7 +937,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> <a class="el" href="_iedk_8h.html#a3641d4839966271cf3d2e375d4cbf12f">EmoStateHandle</a> IEE_EmoStateCreate </td>
+          <td class="memname"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> <a class="el" href="_iedk_8h.html#a3641d4839966271cf3d2e375d4cbf12f">EmoStateHandle</a> IEE_EmoStateCreate </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -947,7 +956,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> void IEE_EmoStateFree </td>
+          <td class="memname"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> void IEE_EmoStateFree </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="_iedk_8h.html#a3641d4839966271cf3d2e375d4cbf12f">EmoStateHandle</a>&#160;</td>
           <td class="paramname"><em>hState</em></td><td>)</td>
@@ -971,7 +980,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> void IEE_EnableDetections </td>
+          <td class="memname"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> void IEE_EnableDetections </td>
           <td>(</td>
           <td class="paramtype">unsigned long&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
@@ -997,7 +1006,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_EnableDiagnostics </td>
+          <td class="memname"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_EnableDiagnostics </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>szFilename</em>, </td>
@@ -1044,7 +1053,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_EngineClearEventQueue </td>
+          <td class="memname"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_EngineClearEventQueue </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>eventTypes</em></td><td>)</td>
@@ -1075,7 +1084,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_EngineConnect </td>
+          <td class="memname"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_EngineConnect </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>strDevID</em> = <code>&quot;Emotiv&#160;Systems-5&quot;</code></td><td>)</td>
@@ -1099,7 +1108,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_EngineDisconnect </td>
+          <td class="memname"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_EngineDisconnect </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1122,9 +1131,9 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_EngineGetNextEvent </td>
+          <td class="memname"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_EngineGetNextEvent </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="_facial_expression_detection_8h.html#a767bdae20508ff7c51b743472dde5b7f">EmoEngineEventHandle</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="_iedk_8h.html#a767bdae20508ff7c51b743472dde5b7f">EmoEngineEventHandle</a>&#160;</td>
           <td class="paramname"><em>hEvent</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1153,7 +1162,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_EngineGetNumUser </td>
+          <td class="memname"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_EngineGetNumUser </td>
           <td>(</td>
           <td class="paramtype">unsigned int *&#160;</td>
           <td class="paramname"><em>pNumUserOut</em></td><td>)</td>
@@ -1182,7 +1191,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_EngineRemoteConnect </td>
+          <td class="memname"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_EngineRemoteConnect </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>szHost</em>, </td>
@@ -1227,7 +1236,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_FFTGetWindowingType </td>
+          <td class="memname"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_FFTGetWindowingType </td>
           <td>(</td>
           <td class="paramtype">unsigned int&#160;</td>
           <td class="paramname"><em>userId</em>, </td>
@@ -1267,7 +1276,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_FFTSetWindowingType </td>
+          <td class="memname"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_FFTSetWindowingType </td>
           <td>(</td>
           <td class="paramtype">unsigned int&#160;</td>
           <td class="paramname"><em>userId</em>, </td>
@@ -1307,7 +1316,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_GetAverageBandPowers </td>
+          <td class="memname"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_GetAverageBandPowers </td>
           <td>(</td>
           <td class="paramtype">unsigned int&#160;</td>
           <td class="paramname"><em>userId</em>, </td>
@@ -1378,12 +1387,40 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a9ea1ea26e1d344128549131c209f6327"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_GetEditionName </td>
+          <td>(</td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>editionName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the Edition name of Edk library. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">editionName</td><td>- Edition Name</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
+<li>EDK_OK if successful </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a18f92eb37087dd5ef36503a08625e7d1"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_GetHeadsetSettings </td>
+          <td class="memname"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_GetHeadsetSettings </td>
           <td>(</td>
           <td class="paramtype">unsigned int&#160;</td>
           <td class="paramname"><em>userId</em>, </td>
@@ -1472,7 +1509,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_HardwareGetVersion </td>
+          <td class="memname"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_HardwareGetVersion </td>
           <td>(</td>
           <td class="paramtype">unsigned int&#160;</td>
           <td class="paramname"><em>userId</em>, </td>
@@ -1524,7 +1561,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_HeadsetGetGyroDelta </td>
+          <td class="memname"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_HeadsetGetGyroDelta </td>
           <td>(</td>
           <td class="paramtype">unsigned int&#160;</td>
           <td class="paramname"><em>userId</em>, </td>
@@ -1571,7 +1608,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_HeadsetGetSensorDetails </td>
+          <td class="memname"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_HeadsetGetSensorDetails </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="_i_emo_state_d_l_l_8h.html#ac21f3c245327198455d68b8ff45beef6">IEE_InputChannels_t</a>&#160;</td>
           <td class="paramname"><em>channelId</em>, </td>
@@ -1611,7 +1648,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_HeadsetGetSerialNumber </td>
+          <td class="memname"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_HeadsetGetSerialNumber </td>
           <td>(</td>
           <td class="paramtype">unsigned int&#160;</td>
           <td class="paramname"><em>userId</em>, </td>
@@ -1651,7 +1688,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_HeadsetGyroRezero </td>
+          <td class="memname"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_HeadsetGyroRezero </td>
           <td>(</td>
           <td class="paramtype">unsigned int&#160;</td>
           <td class="paramname"><em>userId</em></td><td>)</td>
@@ -1680,7 +1717,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> <a class="el" href="_iedk_8h.html#a69d0eae028ac31f9b30316927bc7db50">DataHandle</a> IEE_MotionDataCreate </td>
+          <td class="memname"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> <a class="el" href="_iedk_8h.html#a69d0eae028ac31f9b30316927bc7db50">DataHandle</a> IEE_MotionDataCreate </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1698,7 +1735,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> void IEE_MotionDataFree </td>
+          <td class="memname"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> void IEE_MotionDataFree </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="_iedk_8h.html#a69d0eae028ac31f9b30316927bc7db50">DataHandle</a>&#160;</td>
           <td class="paramname"><em>hData</em></td><td>)</td>
@@ -1722,7 +1759,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_MotionDataGet </td>
+          <td class="memname"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_MotionDataGet </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="_iedk_8h.html#a69d0eae028ac31f9b30316927bc7db50">DataHandle</a>&#160;</td>
           <td class="paramname"><em>hData</em>, </td>
@@ -1775,7 +1812,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_MotionDataGetBufferSizeInSec </td>
+          <td class="memname"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_MotionDataGetBufferSizeInSec </td>
           <td>(</td>
           <td class="paramtype">float *&#160;</td>
           <td class="paramname"><em>pBufferSizeInSecOut</em></td><td>)</td>
@@ -1803,7 +1840,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_MotionDataGetMultiChannels </td>
+          <td class="memname"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_MotionDataGetMultiChannels </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="_iedk_8h.html#a69d0eae028ac31f9b30316927bc7db50">DataHandle</a>&#160;</td>
           <td class="paramname"><em>hData</em>, </td>
@@ -1863,7 +1900,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_MotionDataGetNumberOfSample </td>
+          <td class="memname"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_MotionDataGetNumberOfSample </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="_iedk_8h.html#a69d0eae028ac31f9b30316927bc7db50">DataHandle</a>&#160;</td>
           <td class="paramname"><em>hData</em>, </td>
@@ -1902,7 +1939,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_MotionDataGetSamplingRate </td>
+          <td class="memname"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_MotionDataGetSamplingRate </td>
           <td>(</td>
           <td class="paramtype">unsigned int&#160;</td>
           <td class="paramname"><em>userId</em>, </td>
@@ -1941,7 +1978,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_MotionDataSetBufferSizeInSec </td>
+          <td class="memname"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_MotionDataSetBufferSizeInSec </td>
           <td>(</td>
           <td class="paramtype">float&#160;</td>
           <td class="paramname"><em>bufferSizeInSec</em></td><td>)</td>
@@ -1970,7 +2007,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_MotionDataUpdateHandle </td>
+          <td class="memname"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_MotionDataUpdateHandle </td>
           <td>(</td>
           <td class="paramtype">unsigned int&#160;</td>
           <td class="paramname"><em>userId</em>, </td>
@@ -2009,7 +2046,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_SetHardwarePlayerDisplay </td>
+          <td class="memname"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_SetHardwarePlayerDisplay </td>
           <td>(</td>
           <td class="paramtype">unsigned int&#160;</td>
           <td class="paramname"><em>userId</em>, </td>
@@ -2050,7 +2087,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_SetHeadsetSettings </td>
+          <td class="memname"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_SetHeadsetSettings </td>
           <td>(</td>
           <td class="paramtype">unsigned int&#160;</td>
           <td class="paramname"><em>userId</em>, </td>
@@ -2106,21 +2143,14 @@ Functions</h2></td></tr>
 <li>If 1, then EEG sample rate is 256Hz. </li>
 </ul>
 </td></tr>
-    <tr><td class="paramname">eegRes</td><td>- If 0, then EEG resolution is 14bit.<ul>
-<li>If 1, then EEG resolution is 16bit. </li>
-</ul>
-</td></tr>
+    <tr><td class="paramname">eegRes</td><td>- If 1, then EEG resolution is 16bit. on EPOC+ mode </td></tr>
     <tr><td class="paramname">memsRate</td><td>- If 0, then motion sample rate is OFF.<ul>
 <li>If 1, then motion sample rate is 32Hz.</li>
 <li>If 2, then motion sample rate is 64Hz.</li>
 <li>If 3, then motion sample rate is 128Hz. </li>
 </ul>
 </td></tr>
-    <tr><td class="paramname">memsRes</td><td>- If 0, then motion resolution is 12bit.<ul>
-<li>If 1, then motion resolution is 14bit.</li>
-<li>If 2, then motion resolution is 16bit.</li>
-</ul>
-</td></tr>
+    <tr><td class="paramname">memsRes</td><td>- If 2, then motion resolution is 16bit.</td></tr>
   </table>
   </dd>
 </dl>
@@ -2136,7 +2166,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_mental_command_detection_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_SoftwareGetVersion </td>
+          <td class="memname"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_SoftwareGetVersion </td>
           <td>(</td>
           <td class="paramtype">char *&#160;</td>
           <td class="paramname"><em>pszVersionOut</em>, </td>
@@ -2187,7 +2217,7 @@ Functions</h2></td></tr>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri May 27 2016 13:37:44 for Emotiv SDK Community Edition by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Dec 22 2016 15:08:36 for Emotiv SDK Community Edition by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>
