@@ -79,10 +79,8 @@ void showCurrentActionPower(EmoStateHandle);
 void trainMentalCommandActions(int headsetID);
 void setActiveActions(int userID);
 void setMentalCommandActions(int, IEE_MentalCommandAction_t);
-int actionTraining;
+ulong listAction = 0; //list Action
 
-std::string profileNameForLoading = "C:/1/161.emu";
-std::string profileNameForSaving = "C:/1/161.emu";
 
 int main(int argc, char** argv) {
 
@@ -94,7 +92,6 @@ int main(int argc, char** argv) {
 	int state  = 0;
 	bool isUserAdded = false;
 	std::string input;
-	actionTraining = 0;
 
     std::cout << "===================================================================" << "\n";
     std::cout << "   Example to use MentalCommand for training with profile functions" << "\n";
@@ -157,7 +154,6 @@ int main(int argc, char** argv) {
 				case IEE_MentalCommandEvent:
 				{
 					handleMentalCommandEvent(std::cout, eEvent);
-					//trainMentalCommandActions(userID);
 					break;
 				}
 				default:
@@ -210,9 +206,9 @@ void showCurrentActionPower(EmoStateHandle eState)
 
 	switch (eeAction)
 	{
-    case MC_NEUTRAL: { std::cout << "Neutral" << " : " << actionPower << "; \n"; break; }
-    case MC_PUSH:    { std::cout << "Push" << " : " << actionPower << "; \n"; break; }
-    case MC_PULL:    { std::cout << "Pull" << " : " << actionPower << "; \n"; break; }
+        case MC_NEUTRAL: { std::cout << "Neutral" << " : " << actionPower << "; \n"; break; }
+        case MC_PUSH:    { std::cout << "Push" << " : " << actionPower << "; \n"; break; }
+        case MC_PULL:    { std::cout << "Pull" << " : " << actionPower << "; \n"; break; }
 	}	
 }
 
@@ -220,7 +216,7 @@ void setActiveActions(int userID)
 {
     ulong action1 = (ulong)IEE_MentalCommandAction_t::MC_PUSH;
     ulong action2 = (ulong)IEE_MentalCommandAction_t::MC_PULL;
-    ulong listAction = action1 | action2;
+    listAction = action1 | action2;
 
     int errorCode = EDK_OK;
     errorCode = IEE_MentalCommandSetActiveActions(userID, listAction);
@@ -247,13 +243,18 @@ void setMentalCommandActions(int headsetID,IEE_MentalCommandAction_t action)
 
 void trainMentalCommandActions(int headsetID)
 {
-	if (actionTraining == 1)
-	{
-		setMentalCommandActions(headsetID, MC_PUSH);
-
-		actionTraining ++;
-		return;
-	}
+    if (listAction & MC_PUSH)
+    {
+        setMentalCommandActions(headsetID, MC_PUSH);
+        listAction ^= MC_PUSH; //remove push action from list action
+        return;
+    }
+    if (listAction & MC_PULL)
+    {
+        setMentalCommandActions(headsetID, MC_PULL);
+        listAction ^= MC_PULL; //remove pull action from list action
+        return;
+    }
 
     if (IEE_SaveUserProfile(headsetID, profileNameForSaving.c_str()) == EDK_OK)
 	{
@@ -299,7 +300,6 @@ void handleMentalCommandEvent(std::ostream& os, EmoEngineEventHandle MentalComma
 		case IEE_MentalCommandTrainingCompleted:
 		{
 			os << std::endl << "MentalCommand training for user " << userID << " COMPLETED!" << std::endl;
-			actionTraining ++;
 			trainMentalCommandActions(userID);
 			break;
 		}
