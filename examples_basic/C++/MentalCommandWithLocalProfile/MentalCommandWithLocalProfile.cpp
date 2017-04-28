@@ -81,6 +81,8 @@ void setActiveActions(int userID);
 void setMentalCommandActions(int, IEE_MentalCommandAction_t);
 ulong listAction = 0; //list Action
 
+std::string profileNameForLoading = "C:/1/profile1.emu";
+std::string profileNameForSaving = "C:/1/profile2.emu";
 
 int main(int argc, char** argv) {
 
