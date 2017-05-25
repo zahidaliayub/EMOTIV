@@ -44,33 +44,48 @@ extern "C" {
     } IEE_LicenseType_t;
 
     typedef struct IEE_LicenseInfos_struct {
-        unsigned int scopes;       // license type
-        unsigned int date_from;    // epoch time 
-        unsigned int date_to;      // epoch time
-        int     seat_count;        // number of seat
+        unsigned int scopes;            // license type
+        unsigned int date_from;         // epoch time 
+        unsigned int date_to;           // epoch time
 
-        int     quotaDayLimit;     // session limit in day
-        int     usedQuotaDay;      // session used in day
-        int     quotaMonthLimit;   // session limit in month
-        int     usedQuotaMonth;    // session used in month
-        int     usedQuota;         // total session used
-        int     quota;             // total session in the license
+        // need authorize the license, then your current quota will be reset to the debit number.
+        // if not, you can still use current quota to hard_limit_date. 
+        unsigned int soft_limit_date;   
+
+        // After this date. Your current quota will be reset to 0 and stop using the library.
+        unsigned int hard_limit_date;
+        unsigned int seat_count;        // number of seat
+        unsigned int usedQuota;         // total number of session used.
+        unsigned int quota;             // total number of session got for this PC.
+
     } IEE_LicenseInfos_t;
 
+    typedef struct IEE_DebitInfos_struct {
+        unsigned int remainingSessions;   // remaining session number of the license.
+        unsigned int daily_debit_limit;   // the max of session debit number per day.
+        unsigned int total_debit_today;   // the number of session debited today.
+        unsigned int time_reset;          // time to reset daily debit (seconds). 
+    } IEE_DebitInfos_t;
 
-    //! Check infos of the license
+    //! Check information of the license
+    /*!
+        \param remainingSessions -  
+        \return EDK_ERROR_CODE
+                                 - EDK_OK if the command succeeded
+
+        \sa IedkErrorCode.h
+    */
+    EDK_API int
+        IEE_GetDebitInformation(const char* licenseID, 
+                                IEE_DebitInfos_t * debit_info);
+
+
+    //! Check information of the license
     /*!    
-
+        \param licenseID   - License key
         \param licenseInfo - License Information    
-        \return    EDK_ERROR_CODE
-                   EDK_OVER_QUOTA_IN_DAY
-                   EDK_OVER_QUOTA_IN_MONTH
-                   EDK_LICENSE_EXPIRED
-                   EDK_OVER_QUOTA
-                   EDK_ACCESS_DENIED
-                   EDK_LICENSE_ERROR
-                   EDK_NO_ACTIVE_LICENSE
-                   EDK_OK
+        \return EDK_ERROR_CODE
+                           - EDK_OK if the command succeeded
 
         \sa IedkErrorCode.h
     */
@@ -78,17 +93,32 @@ extern "C" {
         IEE_LicenseInformation(IEE_LicenseInfos_t * licenseInfo);
 
 
-    //! Activate a license with license ID
+    //! Authorize a license with a session debit number
     /*!
-
-        \param licenseID - License ID
+        \param licenseID - License key
+        \param debitNum  - Indicates number of sessions will be deducted from license
+        
         \return EDK_ERROR_CODE
-                     - EDK_OK if the command succeeded
+                         - EDK_OK if the command succeeded
 
         \sa IedkErrorCode.h
     */
     EDK_API int 
-        IEE_ActivateLicense(const char* licenseID);
+        IEE_AuthorizeLicense(const char* licenseID, 
+                             unsigned int debitNum);
+
+
+    //! Set a license to be active
+    /*!
+        \param licenseID - License key
+
+        \return EDK_ERROR_CODE
+                         - EDK_OK if the command succeeded
+
+        \sa IedkErrorCode.h
+    */
+    EDK_API int
+        IEE_SetActiveLicense(const char* licenseID);
 
 
 #ifdef __cplusplus

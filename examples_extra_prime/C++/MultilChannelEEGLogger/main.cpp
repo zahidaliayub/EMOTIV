@@ -71,10 +71,10 @@ int main(int argc, char** argv) {
 
 	try {
 
-		if (argc != 2) {
+		/*if (argc != 2) {
             throw std::runtime_error("Please supply the log file name.\n"
                                      "Usage: MultiChannelIEEGLogger [log_file_name].");
-		}
+		}*/
 
         std::cout << "==================================================================="
                   << std::endl;
@@ -125,7 +125,7 @@ int main(int argc, char** argv) {
 		
         std::cout << "Start receiving IEEG Data! Press any key to stop logging...\n"
                   << std::endl;
-    	std::ofstream ofs(argv[1],std::ios::trunc);
+        std::ofstream ofs("MultiChannelEEGLogger.csv", std::ios::trunc);
 		ofs << header << std::endl;
 		
 		DataHandle hData = IEE_DataCreate();
@@ -152,40 +152,41 @@ int main(int argc, char** argv) {
 
 			if (readytocollect) {
 
-                IEE_DataUpdateHandle(0, hData);
+                int result = IEE_DataUpdateHandle(userID, hData);
 
-                unsigned int nSamplesTaken=0;
-                IEE_DataGetNumberOfSample(hData,&nSamplesTaken);
+                if (result == EDK_OK)
+                {
+                    unsigned int nSamplesTaken = 0;
+                    IEE_DataGetNumberOfSample(hData, &nSamplesTaken);
 
-                std::cout << "Updated " << nSamplesTaken << std::endl;
+                    if (nSamplesTaken != 0) {
+                        std::cout << "Received number of sample: " << nSamplesTaken << std::endl;
+                        unsigned int channelCount = sizeof(targetChannelList) /
+                            sizeof(IEE_DataChannel_t);
+                        double ** buffer = new double*[channelCount];
+                        for (int i = 0; i<channelCount; i++)
+                            buffer[i] = new double[nSamplesTaken];
 
-                if (nSamplesTaken != 0) {
-                    unsigned int channelCount = sizeof(targetChannelList)/
-                                                sizeof(IEE_DataChannel_t);
-                    double ** buffer = new double*[channelCount];
-                    for (int i=0; i<channelCount; i++)
-                        buffer[i] = new double[nSamplesTaken];
+                        result = IEE_DataGetMultiChannels(hData, targetChannelList,
+                            channelCount, buffer, nSamplesTaken);
 
-                    IEE_DataGetMultiChannels(hData, targetChannelList,
-                                             channelCount, buffer, nSamplesTaken);
+                        for (int sampleIdx = 0; sampleIdx<(int)nSamplesTaken;
+                            ++sampleIdx) {
+                            for (int i = 0; i<sizeof(targetChannelList) /
+                                sizeof(IEE_DataChannel_t); i++) {
 
-                    for (int sampleIdx=0 ; sampleIdx<(int)nSamplesTaken ;
-                         ++ sampleIdx) {
-                        for (int i = 0 ; i<sizeof(targetChannelList)/
-                                           sizeof(IEE_DataChannel_t) ; i++) {
-
-                            ofs << buffer[i][sampleIdx] << ",";
+                                ofs << buffer[i][sampleIdx] << ",";
+                            }
+                            ofs << std::endl;
                         }
-                        ofs << std::endl;
+                        for (int i = 0; i<channelCount; i++)
+                            delete buffer[i];
+                        delete buffer;
                     }
-                    for (int i=0; i<channelCount; i++)
-                        delete buffer[i];
-                    delete buffer;
-                }
 
+                }               
 			}
-
-            std::this_thread::sleep_for(std::chrono::milliseconds(500));
+            std::this_thread::sleep_for(std::chrono::milliseconds(50));
 		}
 
 		ofs.close();

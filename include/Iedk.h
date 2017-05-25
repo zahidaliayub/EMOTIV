@@ -50,6 +50,7 @@ extern "C" {
 #include "MentalCommandDetection.h"
 #include "IEmotivProfile.h"
 #include "EmotivLicense.h"
+#include "EdfData.h"
 
 
     //! Handle to EmoState structure allocated by IEE_EmoStateCreate.
@@ -686,7 +687,7 @@ extern "C" {
     //! Get averge band power values for a channel
     /*!
         Return the average band power for a specific channel from the latest epoch with
-        0.5 seconds step size and 2 seconds window size.
+        0.125 seconds (8 Hz) step size and 2 seconds window size.
      
         \param userId    - user ID
         \param channel   - channel that is interested in

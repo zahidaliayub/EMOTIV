@@ -216,6 +216,19 @@ extern "C" {
 		IEE_DataSetMarker(unsigned int userId,
 		                  int marker);
 
+    //! Insert marker to the data stream with new model
+    /*!
+        \remark Only available in SDK Premium Edition.
+
+        \param userId - user ID
+        \param marker - value of the marker colum and marker hardware colum
+        \return EDK_ERROR_CODE
+            - EDK_OK if the command succeeded
+    */
+    EDK_API int
+        IEE_DataSetNewModelMarker(unsigned int userId,
+                          unsigned int markerColum, float markerHardwareColum);
+
 
 	//! Get sampling rate of the EEG data stream.
 	/*!

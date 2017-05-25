@@ -35,9 +35,9 @@ int _kbhit(void);
 
 
 int  main() {
-	std::string userName = "EmotivID";
-	std::string password = "Password";
-	std::string profileName = "EmotivProfile";
+	std::string userName = "tung123";
+	std::string password = "Tung0407";
+	std::string profileName = "test";
     std::string pathOfProfile;
 
     int version = -1; // Lastest version
@@ -48,11 +48,11 @@ int  main() {
 
     EmoEngineEventHandle eEvent = IEE_EmoEngineEventCreate();
     EmoStateHandle eState = IEE_EmoStateCreate();
-    unsigned int engineUserID = -1;
+    unsigned int engineUserID = 0;
     int userCloudID = -1;
     int state = 0;
 
-    int result = EDK_OK;
+    int result = -1;
 
     result = IEE_EngineConnect();
     if (result != EDK_OK) {
@@ -202,15 +202,27 @@ int  main() {
             {
                 std::cout << "profile name: " << std::endl;
                 std::getline(std::cin, profileName);
-                // E:/profile.emu
-                std::cout << "profile path to save: " << std::endl;
-                std::getline(std::cin, pathOfProfile);
 
+                result = -1; //reset result
                 int profileID = -1;
                 result = EC_GetProfileId(userCloudID, profileName.c_str(), &profileID);
+                if (result == EDK_OK && profileID >= 0)
+                {
+                    std::cout << "Absolute profile path (included your profile name) to save: " << std::endl; //E:/profile_1.emu
+                    std::getline(std::cin, pathOfProfile);
 
-                if (profileID >= 0)
                     result = EC_DownloadProfileFile(userCloudID, profileID, pathOfProfile.c_str());
+                    if (result == EDK_OK)
+                        std::cout << "Download the profile successfully" << std::endl;
+                    else
+                    {
+                        std::cout << "Download the profile unsuccessfully" << std::endl;
+                    }                                            
+                }
+                else
+                {
+                    std::cout << "Can not get the profile. Please make sure the correct profile name." << std::endl;
+                }                             
 
 #ifdef _WIN32
                 _getch();
