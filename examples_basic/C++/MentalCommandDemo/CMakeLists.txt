@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.0.0)
 project (meta_comand)
 
-set(META_COMMAND_EXE MetaComand)
+set(META_COMMAND_EXE MentalCommandDemo)
 
 add_executable(${META_COMMAND_EXE} Socket.cpp MentalCommandControl.cpp MentalCommandDemo.cpp)
 target_link_libraries(${META_COMMAND_EXE} ${PROJECT_LINK_LIBS})

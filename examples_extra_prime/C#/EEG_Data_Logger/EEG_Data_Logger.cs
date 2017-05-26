@@ -92,16 +92,17 @@ namespace EEG_Data_Logger
 
             EEG_Logger p = new EEG_Logger();
 
-            for (int i = 0; i < 5000; i++)
+            while(true)
             {
+                if (Console.KeyAvailable)
+                    break;
                 //Example for set marker to data stream and set sychronization signal
                 //if (i % 37 == 0)
                 //{
                 //    p.engine.DataSetMarker((uint)p.userID, i);
                 //    p.engine.DataSetSychronizationSignal((uint)p.userID, i);
-                   
+
                 //}
-                
                 p.Run();
                 Thread.Sleep(10);
             }
