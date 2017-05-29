@@ -70,7 +70,7 @@ public class EEGLogger {
 			}
 
 			if (readytocollect) {
-				IEegData.INSTANCE.IEE_DataUpdateHandle(0, hData);
+				IEegData.INSTANCE.IEE_DataUpdateHandle(userID.getValue(), hData);
 
 				IEegData.INSTANCE.IEE_DataGetNumberOfSample(hData, nSamplesTaken);
 
