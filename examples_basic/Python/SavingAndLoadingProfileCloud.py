@@ -53,8 +53,8 @@ def kbhit():
 
 # -------------------------------------------------------------------------
 
-#userName    = "Your account name"
-#password    = "Your password"
+userName    = "your_username"
+password    = "your_password"
 
 profileName = "EmotivProfile"
 version     = -1    # Lastest version

@@ -63,11 +63,11 @@ void printLicenseInformation(IEE_LicenseInfos_t& licenseInfos)
     std::cout << "Hard Limit Date   : " << convertEpochToTime(licenseInfos.hard_limit_date) << std::endl;
     std::cout << std::endl;
 
-    std::cout << "Seat number       : " << licenseInfos.seat_count << std::endl;
+    std::cout << "Number of Seat    : " << licenseInfos.seat_count << std::endl;
     std::cout << std::endl;
 
     std::cout << "Total Quota       : " << licenseInfos.quota << std::endl;
-    std::cout << "Total quota used  : " << licenseInfos.usedQuota << std::endl;
+    std::cout << "Total used Quota  : " << licenseInfos.usedQuota << std::endl;
     std::cout << std::endl;
 
     switch (licenseInfos.scopes)
