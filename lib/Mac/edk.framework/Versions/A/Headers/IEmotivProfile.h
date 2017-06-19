@@ -168,6 +168,8 @@ extern "C" {
         IEE_SaveUserProfile(unsigned int userID,
                             const char * szOutputFilename);
 
+#ifdef __cplusplus
 };
+#endif
 
 #endif // IEMOTIVPROFILE_H
