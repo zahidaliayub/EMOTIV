@@ -75,13 +75,11 @@ int main(int argc,char** argv)
 	unsigned int userID = 0;
     std::vector<std::pair<unsigned int, std::string>> userLists;
 
-    std::cout << "==================================================================="
-        << std::endl;
+    std::cout << "===================================================================" << std::endl;
     std::cout << "Example to show how to log the EEG data from multi dongles. \n";
     std::cout << "This example is used for single headset connection.\n";
     std::cout << "Please remove all obsolete output files(.csv) before starting.\n";
-    std::cout << "==================================================================="
-        << std::endl;
+    std::cout << "===================================================================" << std::endl;
 	// Make sure we're connect
     if (IEE_EngineConnect() != EDK_OK) {
         throw std::runtime_error("Emotiv Driver start up failed.");
