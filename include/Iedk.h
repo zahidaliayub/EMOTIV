@@ -148,10 +148,11 @@ extern "C" {
         DT_Stress           = 0x0080,   //!< Stress detection (deprecated)
         DT_Focus            = 0x0100,   //!< Focus detection (deprecated)
         DT_MentalCommand    = 0x0200,   //!< Mental command detection
+        DT_FFTDetection     = 0x0400,   //!< FFTDataDection
         DT_AllDetections    = (DT_BlinkAndWink | DT_FacialExpression | DT_EyeMovement |
                                DT_Excitement | DT_Engagement | DT_Relaxation |
                                DT_Interest | DT_Stress | DT_Focus |
-                               DT_MentalCommand)
+                               DT_MentalCommand | DT_FFTDetection)
 
     } IEE_Detection_t;
 
@@ -233,7 +234,7 @@ extern "C" {
         This should only be enabled if instructed to do so by Emotiv support for the purposes of collecting diagnostic information.
      
         \param szFilename - The path of the logfile
-        \param fEnable - Write diagnostic information to logfile if enabled
+        \param fEnable - Write diagnostic information to logfile if enabled, write to console defaultly
         \param nReserved - Reserved for future use.
 
         \return EDK_ERROR_CODE
@@ -382,31 +383,30 @@ extern "C" {
                                      unsigned int playerNum);
 
 
-	//! Get headset settings from EPOC+ headset.
-	/*!
-	    \remark Available for EPOC+ headset only. Headset settings can only be retrieved via USB connection.
+    //! Get headset settings from EPOC+ headset.
+    /*!
+        \remark Available for EPOC+ headset only. Headset settings can only be retrieved via USB connection.
      
-	    \param userId       - user ID
-	    \param EPOCmode	    - If 0, EPOC mode is EPOC.
-	                        - If 1, EPOC mode is EPOC+.
-	    \param eegRate      - If 0, EEG sample rate is 128Hz.
-	                        - If 1, EEG sample rate is 256Hz.
-	                        - If 2, no signal.
-	    \param eegRes       - If 0, EEG resolution is 14bit.
-	                        - If 1, EEG resolution is 16bit.
-	                        - If 2, no signal.
-	    \param memsRate     - If 0, motion sample rate is OFF.
-	                        - If 1, motion sample rate is 32Hz.
-	                        - If 2, motion sample rate is 64Hz.
-	                        - If 3, motion sample rate is 128Hz.
-	   \param memsRes       - If 0, motion resolution is 12bit.
-	                        - If 1, motion resolution is 14bit.
-	                        - If 2, motion resolution is 16bit.
-	                        - If 3, no signal.
+        \param userId       - user ID
+        \param EPOCmode        - If 0, EPOC mode is EPOC.
+                            - If 1, EPOC mode is EPOC+.
+        \param eegRate      - If 0, EEG sample rate is 128Hz.
+                            - If 1, EEG sample rate is 256Hz.
+        \param eegRes       - If 0, EEG resolution is 14bit.
+                            - If 1, EEG resolution is 16bit.
+                            - If 2, no signal.
+        \param memsRate     - If 0, motion sample rate is OFF.
+                            - If 1, motion sample rate is 32Hz.
+                            - If 2, motion sample rate is 64Hz.
+                            - If 3, motion sample rate is 128Hz.
+       \param memsRes       - If 0, motion resolution is 12bit.
+                            - If 1, motion resolution is 14bit.
+                            - If 2, motion resolution is 16bit.
+                            - If 3, no signal.
 
-	    \return EDK_ERROR_CODE
+        \return EDK_ERROR_CODE
                 - EDK_OK if successful
-	*/
+    */
     EDK_API int 
         IEE_GetHeadsetSettings(unsigned int userId, 
                                unsigned int* EPOCmode, 
@@ -415,26 +415,56 @@ extern "C" {
                                unsigned int* memsRate, 
                                unsigned int* memsRes);
 
+    //! Get headset settings from EPOC+ headset for Cortex
+    /*!
+        \remark Available for EPOC+ headset only. Headset settings can only be retrieved via USB connection.
 
-	//! Set headset setting for EPOC+ headset
-	/*!
-	    \remark Available for EPOC+ headset only. Headset settings can only be set via USB connection.
+        \param userId       - user ID
+        \param EPOCmode     - If 0, EPOC mode is EPOC.
+                            - If 1, EPOC mode is EPOC+.
+        \param eegRate      - If 128, EEG sample rate is 128Hz.
+                            - If 256, EEG sample rate is 256Hz.
+        \param eegRes       - If 14, EEG resolution is 14bit.
+                            - If 16, EEG resolution is 16bit.
+        \param memsRate     - If 0, motion sample rate is OFF.
+                            - If 32, motion sample rate is 32Hz.
+                            - If 64, motion sample rate is 64Hz.
+                            - If 128, motion sample rate is 128Hz.
+        \param memsRes      - If 0, motion resolution is off.
+                            - If 14, motion resolution is 14bit.
+                            - If 16, motion resolution is 16bit.
+
+        \return EDK_ERROR_CODE
+        - EDK_OK if successful
+    */
+    EDK_API int
+        IEE_GetHeadsetSettingsCortex(unsigned int userId,
+            unsigned int* EPOCmode,
+            unsigned int* eegRate,
+            unsigned int* eegRes,
+            unsigned int* memsRate,
+            unsigned int* memsRes);
+
+
+    //! Set headset setting for EPOC+ headset
+    /*!
+        \remark Available for EPOC+ headset only. Headset settings can only be set via USB connection.
      
-	    \param userId       - user ID
-	    \param EPOCmode     - If 0, then EPOC mode is EPOC.
-	                        - If 1, then EPOC mode is EPOC+.
-	    \param eegRate      - If 0, then EEG sample rate is 128Hz.
-	                        - If 1, then EEG sample rate is 256Hz.
-	    \param eegRes       - If 1, then EEG resolution is 16bit. on EPOC+ mode
-	    \param memsRate     - If 0, then motion sample rate is OFF.
-	                        - If 1, then motion sample rate is 32Hz.
-	                        - If 2, then motion sample rate is 64Hz.
-	                        - If 3, then motion sample rate is 128Hz.
-	    \param memsRes      - If 2, then motion resolution is 16bit.
+        \param userId       - user ID
+        \param EPOCmode     - If 0, then EPOC mode is EPOC.
+                            - If 1, then EPOC mode is EPOC+.
+        \param eegRate      - If 0, then EEG sample rate is 128Hz.
+                            - If 1, then EEG sample rate is 256Hz.
+        \param eegRes       - If 1, then EEG resolution is 16bit. on EPOC+ mode
+        \param memsRate     - If 0, then motion sample rate is OFF.
+                            - If 1, then motion sample rate is 32Hz.
+                            - If 2, then motion sample rate is 64Hz.
+                            - If 3, then motion sample rate is 128Hz.
+        \param memsRes      - If 2, then motion resolution is 16bit.
 
-	    \return EDK_ERROR_CODE
-	            - EDK_OK if successful
-	*/
+        \return EDK_ERROR_CODE
+                - EDK_OK if successful
+    */
     EDK_API int 
         IEE_SetHeadsetSettings(unsigned int userId, 
                                unsigned int EPOCmode, 
@@ -502,16 +532,16 @@ extern "C" {
     //! Return the current serial number of the headset (if available).
     /*!
         \param userId - user ID for query
-        \param pHwSerialOut - serial number for the headset pair.
+        \param pHwSerialOut - serial number for the paired headset.
        
         \return EDK_ERROR_CODE
             - EDK_OK if successful
 
         \sa IedkErrorCode.h
     */
-	EDK_API int
-		IEE_HeadsetGetSerialNumber(unsigned int userId, 
-			                        char** pHwSerialOut);
+    EDK_API int
+        IEE_HeadsetGetSerialNumber(unsigned int userId, 
+                                    char** pHwSerialOut);
 
 
     //! Return the delta of the movement of the gyro since the previous call for a particular user
@@ -553,7 +583,7 @@ extern "C" {
         IEE_MotionDataCreate();
 
 
-    //! Free memory referenced by a data handle.
+    //! Free memory referenced by a motion data handle.
     /*!
         \param hData - a handle returned by IEE_MotionDataCreate()
     */
@@ -564,7 +594,7 @@ extern "C" {
     //! Update the content of the data handle to point to new data since the last call
     /*!
         \param userId - user ID
-        \param hData - a handle returned by IEE_MotionDataCreate()
+        \param hData  - a handle returned by IEE_MotionDataCreate()
 
         \return EDK_ERROR_CODE
             - EDK_OK if successful
@@ -576,9 +606,9 @@ extern "C" {
 
     //! Extract data of a particular channel from the data handle
     /*!
-        \param hData - a handle returned by IEE_MotionDataCreate()
-        \param channel - channel that you are interested in
-        \param buffer - pre-allocated buffer
+        \param hData    - a handle returned by IEE_MotionDataCreate()
+        \param channel  - channel that you are interested in
+        \param buffer   - pre-allocated buffer
         \param bufferSizeInSample - size of the pre-allocated buffer
 
         \return EDK_ERROR_CODE
@@ -591,12 +621,12 @@ extern "C" {
                           unsigned int bufferSizeInSample);
 
 
-    //! Extract data of a list of channels from the data handle
+    //! Extract motion data of a list of channels from the data handle
     /*!
-        \param hData - a handle returned by IEE_MotionDataCreate()
-        \param channels - a list of channel that you are interested in
-        \param nChannels - number of channels in the channel list
-        \param buffer - pre-allocated 2 dimensional buffer, has to be nChannels x bufferSizeInSample
+        \param hData        - a handle returned by IEE_MotionDataCreate()
+        \param channels     - a list of channel that you are interested in
+        \param nChannels    - number of channels in the channel list
+        \param buffer       - pre-allocated 2 dimensional buffer, has to be nChannels x bufferSizeInSample
         \param bufferSizeInSample - size of the pre-allocated buffer for each channel
 
         \return EDK_ERROR_CODE
@@ -612,8 +642,8 @@ extern "C" {
 
     //! Return number of sample of motion data stored in the data handle
     /*!
-        \param hData - a handle returned by IEE_MotionDataCreate()
-        \param nSampleOut - receives the number of sample of data stored in the data handle
+        \param hData         - a handle returned by IEE_MotionDataCreate()
+        \param nSampleOut    - receives the number of sample of data stored in the data handle
 
         \return EDK_ERROR_CODE
             - EDK_OK if successful
@@ -684,7 +714,7 @@ extern "C" {
         IEE_CheckDetectionsEnabled(unsigned long* result);
 
     
-    //! Get averge band power values for a channel
+    //! Get average band power values for a channel
     /*!
         Return the average band power for a specific channel from the latest epoch with
         0.125 seconds (8 Hz) step size and 2 seconds window size.
@@ -703,8 +733,14 @@ extern "C" {
         \sa IedkErrorCode.h, IEE_FFTSetWindowingType
     */
     EDK_API int
-        IEE_GetAverageBandPowers(unsigned int userId, IEE_DataChannel_t channel,
-                                 double* theta, double* alpha, double* low_beta, double* high_beta, double* gamma);
+        IEE_GetAverageBandPowers(unsigned int userId, 
+                                 IEE_DataChannel_t channel,
+                                 double* theta, 
+                                 double* alpha, 
+                                 double* low_beta, 
+                                 double* high_beta, 
+                                 double* gamma);
+
 
     //! Set the current windowing type for band power calculation
     /*!
@@ -717,7 +753,8 @@ extern "C" {
         \sa IedkErrorCode.h, IEE_FFTGetWindowingType, IEE_GetAverageBandPowers
     */
     EDK_API int
-        IEE_FFTSetWindowingType(unsigned int userId, IEE_WindowingTypes type);
+        IEE_FFTSetWindowingType(unsigned int userId, 
+                                IEE_WindowingTypes type);
     
 
     //! Get the current windowing type for band power calculation
@@ -731,7 +768,8 @@ extern "C" {
         \sa IedkErrorCode.h, IEE_FFTSetWindowingType, IEE_GetAverageBandPowers
     */
     EDK_API int
-        IEE_FFTGetWindowingType(unsigned int userId, IEE_WindowingTypes *type);
+        IEE_FFTGetWindowingType(unsigned int userId, 
+                                IEE_WindowingTypes *type);
 
 
     //! Get the Edition name of Edk library. 
@@ -867,6 +905,10 @@ extern "C" {
      */
     EDK_API void
         IEE_GetEpocPlusDeviceState(int* state, int index);
+
+    //! Get Mac OS version
+    EDK_API const char*
+        IEE_GetMacOSVersion();
     
 #endif
     

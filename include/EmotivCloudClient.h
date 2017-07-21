@@ -138,7 +138,8 @@ extern "C" {
 
     EMOTIVCLOUD_API int
         EC_LoginEx(const char * username,
-                 const char * password, int* cloudID);
+                   const char * password, 
+                   int* cloudID);
 
     //! Logout Emotiv Cloud
     /*
@@ -311,7 +312,7 @@ extern "C" {
 		                      int index);
 
 
-    //! Donwload file Profile
+    //! Download file Profile
     /*!
         \param cloudUserID  - id of user
         \param profileId
@@ -345,7 +346,7 @@ extern "C" {
                                  bool overwrite_if_exists = false);
    
 
-    //! get lastest version of profile
+    //! Get lastest version of profile
     /*
         \param profileID    - profileID
         \param pVersionInfo - receives array of version Informations

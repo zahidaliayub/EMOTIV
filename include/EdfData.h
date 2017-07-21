@@ -43,7 +43,7 @@ extern "C" {
         EPOC, 
         EPOCPLUS
     } FileType_t;
-
+    //! eeg data file information
     typedef struct FileInfos {
         char* eegFilePath;            // eeg file path
         unsigned int EEGSampleRate;    // eeg sample rate
@@ -54,7 +54,6 @@ extern "C" {
 
     //! Start saving EEG to EDF file for a particular user.
     /*!
-        \remark Only available in SDK Advanced Edition.
 
         \param userID    - engine user ID
         \param filename  - name of EDF file
@@ -78,7 +77,6 @@ extern "C" {
 
     //! Stop saving EEG for a particular user.
     /*!
-        \remark Only available in SDK Advanced Edition.
 
         \param userID    - engine user ID
         \return EDK_ERROR_CODE
@@ -92,7 +90,6 @@ extern "C" {
 
     //! Stop saving EEG from all user.
     /*!
-        \remark Only available in SDK Advanced Edition.
 
         \param userID    - engine user ID
         \return EDK_ERROR_CODE
@@ -106,7 +103,6 @@ extern "C" {
 
     //! Initializes file stream which reads data from a pre-recorded session file.
     /*!
-        \remark Only available in SDK Advanced Edition.
 
         \param userID            - engine user ID
         \param strFilePath       - File path to the pre-recorded EEG data file.
@@ -124,7 +120,6 @@ extern "C" {
 
     //! Remove the file stream out of stream list.
     /*!
-        \remark Only available in SDK Advanced Edition.
 
         \param userID   - engine user ID
         
@@ -141,8 +136,6 @@ extern "C" {
     /*!
         This function should only be involved after calling IEE_EngineLocalConnect() successfully.
 
-        \remark Only available in SDK Advanced Edition.
-
         \param userID    - engine user ID
         \return EDK_ERROR_CODE
                          - EDK_OK if the command succeeded
@@ -155,7 +148,6 @@ extern "C" {
 
     //! Stop playback of EDF.
     /*!
-        \remark Only available in SDK Advanced Edition.
 
         \param userID    - engine user ID
         \return EDK_ERROR_CODE
@@ -169,7 +161,6 @@ extern "C" {
 
     //! Seek current EDF file.
     /*!
-        \remark Only available in SDK Advanced Edition.
 
         \param userID    - engine user ID
         \param sec       - time position to seek in seconds
@@ -185,7 +176,6 @@ extern "C" {
 
     //! Seek current EDF file.
     /*!
-        \remark Only available in SDK Advanced Edition.
 
         \param userID      - engine user ID
         \param sampleIndex - sample index position to seek in sample
@@ -201,7 +191,6 @@ extern "C" {
 
     //! Get total time of EDF file.
     /*!
-        \remark Only available in SDK Advanced Edition.
 
         \param userID        - engine user ID
         \param pTotalTimeOut - received total time of EDF File in seconds
@@ -216,7 +205,6 @@ extern "C" {
 
     //! Get information of the file
     /*!
-        \remark Only available in SDK Advanced Edition.
 
         \param userID        - engine user ID
         \param fileType      - type of the file

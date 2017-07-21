@@ -164,7 +164,7 @@
 //! Application register device number is exceeded. 
 #define EDK_LICENSE_DEVICE_LIMITED          0x2019  
 
-//! The license registered with the device. 
+//! The license has registered with the device. 
 #define EDK_LICENSE_REGISTERED              0x2020
 
 //! No license is activated
@@ -192,5 +192,7 @@
 
 //! An authentication error has occurred. Need to relogin. 
 #define EDK_AUTHENTICATION_ERROR            0x2101
+
+#define EDK_LOGIN_ERROR                     0x2102
 
 #endif
