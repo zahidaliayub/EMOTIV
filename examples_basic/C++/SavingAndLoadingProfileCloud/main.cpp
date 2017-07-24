@@ -25,7 +25,7 @@ extern "C"
 #endif
 
 #if __linux__ || __APPLE__
-int _kbhit(void);
+    int _kbhit(void);
 #endif
 
 #include "IEmoStateDLL.h"
@@ -34,74 +34,135 @@ int _kbhit(void);
 #include "EmotivCloudClient.h"
 
 
-int  main() {
-	std::string userName = "EmotivID";
-	std::string password = "Password";
-	std::string profileName = "EmotivProfile";
-    std::string pathOfProfile;
+    int  main() {
+        std::string userName = "EmotivID";
+        std::string password = "Password";
+        std::string profileName = "";
+        std::string pathOfProfile;
 
-    int version = -1; // Lastest version
+        int version = -1; // Lastest version
 
-    int option = 0;
-    std::string input;
-    bool ready = false;
+        int option = 0;
+        std::string input;
+        bool ready = false;
 
-    EmoEngineEventHandle eEvent = IEE_EmoEngineEventCreate();
-    EmoStateHandle eState = IEE_EmoStateCreate();
-    unsigned int engineUserID = 0;
-    int userCloudID = -1;
-    int state = 0;
+        EmoEngineEventHandle eEvent = IEE_EmoEngineEventCreate();
+        EmoStateHandle eState = IEE_EmoStateCreate();
+        unsigned int engineUserID = 0;
+        int userCloudID = -1;
+        int state = 0;
 
-    int result = -1;
+        int result = -1;
 
-    result = IEE_EngineConnect();
-    if (result != EDK_OK) {
-        std::cout << "Emotiv Driver start up failed.";
-        return result;
-    }
+        result = IEE_EngineConnect();
+        if (result != EDK_OK) {
+            std::cout << "Emotiv Driver start up failed.";
+            return result;
+        }
 
-    std::cout << "==================================================================="
-        << std::endl;
-    std::cout << "Example to saving and loading profile from Emotiv Cloud. "
-        << std::endl;
-    std::cout << "==================================================================="
-        << std::endl;
-    std::cout << "Press '1' to saving profile to Emotiv Cloud "
-        << std::endl;
-    std::cout << "Press '2' to loading profile from Emotiv Cloud "
-        << std::endl;
-    std::cout << "Press '3' to upload a local profile to Emotiv Cloud "
-        << std::endl;
-    std::cout << "Press '4' to download a profile from Emotiv Cloud"
-        << std::endl;
-    std::cout << ">> ";
+        result = EC_Connect();
+        if (result != EDK_OK)
+        {
+            std::cout << "Cannot connect to Emotiv Cloud";
+            return result;
+        }
 
-    std::cout << "Option: " << std::endl;
-    std::getline(std::cin, input, '\n');
-    option = atoi(input.c_str());
-
-    result = EC_Connect();
-    if (result != EDK_OK)
-    {
-        std::cout << "Cannot connect to Emotiv Cloud";
-        return result;
-    }
-
-    result = EC_Login(userName.c_str(), password.c_str());
-    if (result != EDK_OK)
-    {
-        std::cout << "Your login attempt has failed. The username or password may be incorrect";
+        result = EC_Login(userName.c_str(), password.c_str());
+        if (result != EDK_OK)
+        {
+            std::cout << "Your login attempt has failed. The username or password may be incorrect";
 #ifdef _WIN32
-        _getch();
+            _getch();
 #endif
-        return result;
-    }
+            return result;
+        }
 
-    std::cout << "Logged in as " << userName << std::endl;
+        std::cout << "Logged in as " << userName << std::endl;
 
-    result = EC_GetUserDetail(&userCloudID);
-    if (result != EDK_OK)
-        return result;
+        result = EC_GetUserDetail(&userCloudID);
+        if (result != EDK_OK)
+        {
+            std::cout << "Can not get the cloud ID of user" << std::endl;
+            return result;
+        }
+
+
+        std::cout << "==================================================================="
+            << std::endl;
+        std::cout << "Example for saving and loading profile from Emotiv Cloud. "
+            << std::endl;
+        std::cout << "==================================================================="
+            << std::endl;
+        std::cout << "Press '1' to update or save a profile to Emotiv Cloud "
+            << std::endl;
+        std::cout << "Press '2' to load all profiles from Emotiv Cloud "
+            << std::endl;
+        std::cout << "Press '3' to upload a local profile to Emotiv Cloud "
+            << std::endl;
+        std::cout << "Press '4' to download a profile from Emotiv Cloud and save to local "
+            << std::endl;
+        std::cout << ">> ";
+
+        //get option
+        std::cout << "Option: " << std::endl;
+
+        std::getline(std::cin, input, '\n');
+        option = atoi(input.c_str());
+        switch (option)
+        {
+            case 1:
+            case 2:
+                std::cout << "Please connect to headset..." << std::endl;
+                break;
+            case 3:
+            {            
+                std::cout << "Please enter the absolute local profile path: " << std::endl; //example //E:/profile_1.emu
+                std::getline(std::cin, pathOfProfile);
+
+                std::cout << "Please enter the name of profile: " << std::endl; //name of profile will be shown on Emotiv Cloud
+                std::getline(std::cin, profileName);
+
+                bool overwrite_if_exists = true;
+                result = EC_UploadProfileFile(userCloudID, profileName.c_str(), pathOfProfile.c_str(), TRAINING, overwrite_if_exists);
+
+                if (result == EDK_OK)
+                    std::cout << "The profile is uploaded successfully\n";
+                else
+                    std::cout << "Uploaded unsuccessfully\n";
+
+                goto END;
+            }
+            case 4:
+            {
+                std::cout << "Please enter the profile name: " << std::endl;
+                std::getline(std::cin, profileName);
+
+                result = -1; //reset result
+                int profileID = -1;
+                result = EC_GetProfileId(userCloudID, profileName.c_str(), &profileID);
+                if (result == EDK_OK && profileID >= 0)
+                {
+                    std::cout << "Absolute destination profile path (profile name included) to save: " << std::endl; //Example E:/profile_1.emu
+                    std::getline(std::cin, pathOfProfile);
+
+                    result = EC_DownloadProfileFile(userCloudID, profileID, pathOfProfile.c_str());
+                    if (result == EDK_OK)
+                        std::cout << "Download the profile successfully\n" << std::endl;
+                    else
+                    {
+                        std::cout << "Download the profile unsuccessfully\n" << std::endl;
+                    }
+                }
+                else
+                {
+                    std::cout << "Can not get the profile. Please make sure the correct profile name.\n" << std::endl;
+                }
+
+                goto END;
+            }
+            default:
+                break;
+        }
 
     while (!_kbhit())
     {
@@ -116,123 +177,77 @@ int  main() {
                 std::cout << "User added" << std::endl;
                 ready = true;
             }
-        }
 
+        }
         if (ready)
         {
-            int getNumberProfile = EC_GetAllProfileName(userCloudID);
-
-            std::cout << "Number of profiles: " << getNumberProfile << "\n";
-
-            for (int i = 0; i < getNumberProfile; i++)
+            //option 1
+            if (option == 1)
             {
-                std::cout << "Profile Name: " << EC_ProfileNameAtIndex(userCloudID, i) << ", ";
-
-                std::cout << "Profile ID: " << EC_ProfileIDAtIndex(userCloudID, i) << ", ";
-                std::cout << "Profile type: " <<
-                    ((EC_ProfileTypeAtIndex(userCloudID, i) == profileFileType::TRAINING) ? "TRAINING" : "EMOKEY") << ", ";
-
-                std::cout << EC_ProfileLastModifiedAtIndex(userCloudID, i) << ",\r\n";
-            }
-
-            switch (option) {
-            case 1:{
                 int profileID = -1;
+                std::cout << "Please enter the profile name: " << std::endl;
+                std::getline(std::cin, profileName);
+
                 result = EC_GetProfileId(userCloudID, profileName.c_str(), &profileID);
 
                 if (profileID >= 0) {
-                    std::cout << "Profile with " << profileName << " is existed" << std::endl;
+                    std::cout << "Profile " << profileName << " is existed" << std::endl;
                     result = EC_UpdateUserProfile(userCloudID, engineUserID, profileID);
 
                     if (result == EDK_OK) {
-                        std::cout << "Updating finished";
+                        std::cout << "The profile has updated successfully\n";
                     }
-                    else std::cout << "Updating failed";
+                    else std::cout << "The profile has updated unsuccessfully\n";
                 }
                 else {
+                    std::cout << "Profile " << profileName << " is non-existed" << std::endl;
                     result = EC_SaveUserProfile(userCloudID, (int)engineUserID, profileName.c_str(), TRAINING);
 
                     if (result == EDK_OK)
                     {
-                        std::cout << "Saving finished";
+                        std::cout << "The profile has saved successfully \n";
                     }
-                    else std::cout << "Saving failed";
+                    else std::cout << "The profile has saved unsuccessfully\n";
                 }
-
-#ifdef _WIN32
-                _getch();
-#endif                    
-                return result;
-            }
-            case 2:{
-                if (getNumberProfile > 0){
-                    result = EC_LoadUserProfile(userCloudID, (int)engineUserID, EC_ProfileIDAtIndex(userCloudID, 0));
-
-                    if (result == EDK_OK)
-                        std::cout << "Loading finished";
-                    else
-                        std::cout << "Loading failed";
-                }
-#ifdef _WIN32
-                _getch();
-#endif
-                return result;
-            }
-            case 3:
-            {
-                std::cout << "profile name: " << std::endl;
-                std::getline(std::cin, profileName);
-                std::cout << "profile path: " << std::endl;
-                std::getline(std::cin, pathOfProfile);
-
-                bool overwrite_if_exists = true;
-                result = EC_UploadProfileFile(userCloudID, profileName.c_str(), pathOfProfile.c_str(), TRAINING, overwrite_if_exists);
-
-                if (result == EDK_OK)
-                    std::cout << "Upload finished";
-                else
-                    std::cout << "Upload failed";
-
-#ifdef _WIN32
-                _getch();
-#endif
-                return result;
-            }            
-            case 4:
-            {
-                std::cout << "profile name: " << std::endl;
-                std::getline(std::cin, profileName);
-
-                result = -1; //reset result
-                int profileID = -1;
-                result = EC_GetProfileId(userCloudID, profileName.c_str(), &profileID);
-                if (result == EDK_OK && profileID >= 0)
-                {
-                    std::cout << "Absolute profile path (included your profile name) to save: " << std::endl; //E:/profile_1.emu
-                    std::getline(std::cin, pathOfProfile);
-
-                    result = EC_DownloadProfileFile(userCloudID, profileID, pathOfProfile.c_str());
-                    if (result == EDK_OK)
-                        std::cout << "Download the profile successfully" << std::endl;
-                    else
-                    {
-                        std::cout << "Download the profile unsuccessfully" << std::endl;
-                    }                                            
-                }
-                else
-                {
-                    std::cout << "Can not get the profile. Please make sure the correct profile name." << std::endl;
-                }                             
-
-#ifdef _WIN32
-                _getch();
-#endif
-                return result;
-            }            
-            default:
-                std::cout << "Invalid option...";
                 break;
             }
+            else if (option == 2)
+            {
+                //Get all profiles from Emotiv Cloud
+                int getNumberProfile = EC_GetAllProfileName(userCloudID);
+
+                std::cout << "Number of profiles: " << getNumberProfile << "\n";
+
+                if (getNumberProfile > 0){
+                    for (int i = 0; i < getNumberProfile; i++)
+                    {
+                        std::string profileName(EC_ProfileNameAtIndex(userCloudID, i));
+                        int profileID = EC_ProfileIDAtIndex(userCloudID, i);
+                        std::cout << "Profile Name: " << profileName << ", ";
+
+                        std::cout << "Profile ID: " << profileID << ", ";
+                        std::cout << "Profile type: " <<
+                            ((EC_ProfileTypeAtIndex(userCloudID, i) == profileFileType::TRAINING) ? "TRAINING" : "EMOKEY") << ", ";
+
+                        std::cout << EC_ProfileLastModifiedAtIndex(userCloudID, i) << ",\r\n";
+
+                        //Load profile
+                        result = EC_LoadUserProfile(userCloudID, (int)engineUserID, profileID);
+
+                        if (result == EDK_OK)
+                            std::cout << "Profile: " << profileName << " loaded successfully\n";
+                        else
+                            std::cout << "Profile: " << profileName << " loaded unsuccessfully\n";
+                    }
+                }
+                break;
+            }
+            else
+            {
+                std::cout << "Invalid option..." << std::endl;
+                break;
+            }
+            
         }
 
 #ifdef _WIN32
@@ -242,10 +257,14 @@ int  main() {
         usleep(10000);
 #endif
     }
-
+    
+END:
     IEE_EngineDisconnect();
     IEE_EmoStateFree(eState);
     IEE_EmoEngineEventFree(eEvent);
+#ifdef _WIN32
+    _getch();
+#endif
     return 0;
 }
 
