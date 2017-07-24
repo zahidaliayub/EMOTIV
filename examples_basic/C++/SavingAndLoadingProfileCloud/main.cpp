@@ -35,9 +35,9 @@ int _kbhit(void);
 
 
 int  main() {
-	std::string userName = "tung123";
-	std::string password = "Tung0407";
-	std::string profileName = "test";
+	std::string userName = "EmotivID";
+	std::string password = "Password";
+	std::string profileName = "EmotivProfile";
     std::string pathOfProfile;
 
     int version = -1; // Lastest version
