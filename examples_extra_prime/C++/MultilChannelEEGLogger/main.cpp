@@ -78,15 +78,12 @@ int main(int argc, char** argv) {
 
         std::cout << "==================================================================="
                   << std::endl;
-        std::cout << "Example to show how to log IEEG Data from "
-                  << "EmoDriver/EmoComposer."
+        std::cout << "Example to show how to log IEEG Data from EmoDriver/EmoComposer."
                   << std::endl;
         std::cout << "==================================================================="
                   << std::endl;
-        std::cout << "Press '1' to start and connect to the Emotiv Driver "
-                  << std::endl;
-        std::cout << "Press '2' to connect to the EmoComposer         "
-                  << std::endl;
+        std::cout << "Press '1' to start and connect to the Emotiv Driver "<< std::endl;
+        std::cout << "Press '2' to connect to the EmoComposer         " << std::endl;
 		std::cout << ">> ";
 
 		std::getline(std::cin, input, '\n');
@@ -96,8 +93,7 @@ int main(int argc, char** argv) {
 			case 1:
 			{
 				if (IEE_EngineConnect() != EDK_OK) {
-                    throw std::runtime_error(
-                                "Emotiv Driver start up failed.");
+                    throw std::runtime_error("Emotiv Driver start up failed.");
 				}
 				break;
 			}
@@ -160,7 +156,7 @@ int main(int argc, char** argv) {
                     IEE_DataGetNumberOfSample(hData, &nSamplesTaken);
 
                     if (nSamplesTaken != 0) {
-                        std::cout << "Received number of sample: " << nSamplesTaken << std::endl;
+                        std::cout << "Number of received samples: " << nSamplesTaken << std::endl;
                         unsigned int channelCount = sizeof(targetChannelList) /
                             sizeof(IEE_DataChannel_t);
                         double ** buffer = new double*[channelCount];

@@ -54,8 +54,8 @@ void printLicenseInformation(IEE_LicenseInfos_t& licenseInfos)
     int licenseType = 0;
 
     std::cout << std::endl;
-    std::cout << "Date From         : " << convertEpochToTime(licenseInfos.date_from) << std::endl;
-    std::cout << "Date To           : " << convertEpochToTime(licenseInfos.date_to) << std::endl;
+    std::cout << "From Date         : " << convertEpochToTime(licenseInfos.date_from) << std::endl;
+    std::cout << "To   Date         : " << convertEpochToTime(licenseInfos.date_to) << std::endl;
     std::cout << std::endl;
 
     std::cout << std::endl;
@@ -63,7 +63,7 @@ void printLicenseInformation(IEE_LicenseInfos_t& licenseInfos)
     std::cout << "Hard Limit Date   : " << convertEpochToTime(licenseInfos.hard_limit_date) << std::endl;
     std::cout << std::endl;
 
-    std::cout << "Number of Seat    : " << licenseInfos.seat_count << std::endl;
+    std::cout << "Number of Seats   : " << licenseInfos.seat_count << std::endl;
     std::cout << std::endl;
 
     std::cout << "Total Quota       : " << licenseInfos.quota << std::endl;
@@ -130,13 +130,13 @@ int main(int argc, char** argv)
     result = IEE_GetDebitInformation(LICENSE_KEY.c_str(), &debitInfos);
 
     std::cout << std::endl;
-    std::cout << "Remain Session    : " << debitInfos.remainingSessions << std::endl;
-    std::cout << "Daily debit limit : " << debitInfos.daily_debit_limit << std::endl;
+    std::cout << "Remaining Sessions     : " << debitInfos.remainingSessions << std::endl;
+    std::cout << "Daily debit limitation : " << debitInfos.daily_debit_limit << std::endl;
     std::cout << std::endl;
 
     std::cout << std::endl;
-    std::cout << "Total debit a day : " << debitInfos.total_debit_today << std::endl;
-    std::cout << "Remained time before resetting debit limitation a day: " << debitInfos.time_reset << "(seconds)" << std::endl;
+    std::cout << "Total debit today      : " << debitInfos.total_debit_today << std::endl;
+    std::cout << "Remaining time before resetting daily debit limitation: " << debitInfos.time_reset << "(seconds)" << std::endl;
     std::cout << std::endl;
 
 
@@ -145,7 +145,7 @@ int main(int argc, char** argv)
 
     //Get number of debit as input
     std::string input;
-    std::cout << "Please give number of debit : " << std::endl;
+    std::cout << "Please give number of debits : " << std::endl;
 
     std::getline(std::cin, input, '\n');
     debitNum = atoi(input.c_str());
@@ -157,22 +157,22 @@ int main(int argc, char** argv)
     {
     case EDK_INVALID_DEBIT_NUMBER:
     case EDK_INVALID_DEBIT_ERROR:
-        std::cout << "Invalid number of Debit" << std::endl;
+        std::cout << "Invalid number of Debits" << std::endl;
         break;
     case EDK_INVALID_PARAMETER:
-        std::cout << "Invalid user info" << std::endl;
+        std::cout << "Invalid user information" << std::endl;
         break;
     case EDK_NO_INTERNET_CONNECTION:
         std::cout << "No Internet Connection" << std::endl;
         break;
     case EDK_LICENSE_EXPIRED:
-        std::cout << "License expired" << std::endl;
+        std::cout << "Expired license" << std::endl;
         break;
     case EDK_OVER_DEVICE_LIST:
         std::cout << "Over device list" << std::endl;
         break;  
     case EDK_DAILY_DEBIT_LIMITED:
-        std::cout << "Over daily debit number" << std::endl;
+        std::cout << "Over daily number of debits" << std::endl;
         break;
     case EDK_ACCESS_DENIED:
         std::cout << "Access denied" << std::endl;
@@ -205,7 +205,7 @@ int main(int argc, char** argv)
     switch (result)
     {
         case EDK_LICENSE_EXPIRED:
-            std::cout << "License expired" << std::endl;
+            std::cout << "Expired license" << std::endl;
             break;
         case EDK_OVER_QUOTA:
             std::cout << "Over quota" << std::endl;
@@ -218,9 +218,6 @@ int main(int argc, char** argv)
             break;
         case EDK_NO_ACTIVE_LICENSE:
             std::cout << "No active license" << std::endl;
-            break;
-        case EDK_OK:
-            std::cout << "A good license" << std::endl;
             break;
         default:
             break;

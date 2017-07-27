@@ -162,6 +162,7 @@ static bool handleUserInput()
 {
 	static std::string inputBuffer;
 	char key = _getch();
+    std::cout << key << " pressed"<< std::endl;
 
 	switch (key)
 	{

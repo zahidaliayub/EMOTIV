@@ -116,7 +116,7 @@ int main()
 				IEE_DataGetNumberOfSample(hData, &nSamplesTaken);							
 				
 				if (nSamplesTaken != 0) {
-                    std::cout << "Received number of sample: " << nSamplesTaken << std::endl;
+                    std::cout << "Number of received samples: " << nSamplesTaken << std::endl;
 
 					double* data = new double[nSamplesTaken];
 					for (int sampleIdx = 0; sampleIdx < (int)nSamplesTaken; ++sampleIdx) {

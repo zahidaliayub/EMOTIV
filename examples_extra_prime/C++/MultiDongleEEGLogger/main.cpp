@@ -76,8 +76,7 @@ int main(int argc,char** argv)
     std::vector<std::pair<unsigned int, std::string>> userLists;
 
     std::cout << "===================================================================" << std::endl;
-    std::cout << "Example to show how to log the EEG data from multi dongles. \n";
-    std::cout << "This example is used for single headset connection.\n";
+    std::cout << "Example to show how to log the EEG data from maximum 2 dongles. \n";
     std::cout << "Please remove all obsolete output files(.csv) before starting.\n";
     std::cout << "===================================================================" << std::endl;
 	// Make sure we're connect
@@ -135,7 +134,7 @@ int main(int argc,char** argv)
                 IEE_DataGetNumberOfSample(eData, &nSamplesTaken);
 
                 if (nSamplesTaken != 0) {
-                    std::cout << "Received number of sample: " << nSamplesTaken << std::endl;
+                    std::cout << "Number of received samples: " << nSamplesTaken << std::endl;
                     
                     std::ofstream ofs(iter->second, std::ios::app);
                     ofs.seekp(0, std::ios::end);
