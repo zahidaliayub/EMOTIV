@@ -58,7 +58,7 @@ int  main()
 	EmoEngineEventHandle eEvent	= IEE_EmoEngineEventCreate();
 	EmoStateHandle eState       = IEE_EmoStateCreate();
 
-	unsigned int engineUserID   = -1;
+	unsigned int userID   = 0;
 	bool ready = false;
 	int state  = 0;
 
@@ -96,12 +96,11 @@ int  main()
 		if (state == EDK_OK) 
 		{
 		    IEE_Event_t eventType = IEE_EmoEngineEventGetType(eEvent);
-		    IEE_EmoEngineEventGetUserId(eEvent, &engineUserID);
+		    IEE_EmoEngineEventGetUserId(eEvent, &userID);
 
 			if (eventType == IEE_UserAdded) {
 		         std::cout << "User added" << std::endl;
-				 engineUserID = 0;
-				 IEE_FFTSetWindowingType(engineUserID, IEE_HAMMING);
+				 IEE_FFTSetWindowingType(userID, IEE_HAMMING);
 
 				 std::cout << header << std::endl;
 		         ready = true;
@@ -115,7 +114,7 @@ int  main()
 
             for(int i=0 ; i< sizeof(channelList)/sizeof(channelList[0]) ; ++i)
             {
-                int result = IEE_GetAverageBandPowers(engineUserID, channelList[i], &theta, &alpha, 
+                int result = IEE_GetAverageBandPowers(userID, channelList[i], &theta, &alpha, 
 					                                     &low_beta, &high_beta, &gamma);
                 if(result == EDK_OK){
                     ofs << theta << ",";

@@ -232,7 +232,7 @@ extern "C" {
     //! Query the contact quality of a specific EEG electrode
     /*!
         \param state - EmoStateHandle
-        \param electroIdx - The index of the electrode for query
+        \param electroIdx - The index of the electrode for querying
 
         \return IEE_EEG_ContactQuality_t - Enumerated value that characterizes the EEG electrode contact for the specified input channel
 
@@ -243,7 +243,7 @@ extern "C" {
                              IEE_InputChannels_t electroIdx);
 
 
-    //! Query the contact quality of all the electrodes in one single call
+    //! Get the contact quality of all the electrodes in one single call
     /*!
         The contact quality will be stored in the array, contactQuality, passed to the function.
         The value stored in contactQuality[0] is identical to the result returned by
@@ -267,7 +267,7 @@ extern "C" {
                                             size_t numChannels);
 
 
-    //! Query of the current wireless signal strength
+    //! Get the current wireless signal strength
     /*!
         \param state - EmoStateHandle
 

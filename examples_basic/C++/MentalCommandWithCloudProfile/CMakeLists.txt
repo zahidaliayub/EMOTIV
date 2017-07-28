@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.0.0)
 project (meta_command_with_cloud_profile)
 
-set(META_COMMAND_WITH_CLOUD_PROFILE_EXE MetaCommandWithCloudProfile)
+set(META_COMMAND_WITH_CLOUD_PROFILE_EXE MentalCommandWithCloudProfile)
 
 add_executable(${META_COMMAND_WITH_CLOUD_PROFILE_EXE} MentalCommandWithCloudProfile.cpp)
 target_link_libraries(${META_COMMAND_WITH_CLOUD_PROFILE_EXE} ${PROJECT_LINK_LIBS})

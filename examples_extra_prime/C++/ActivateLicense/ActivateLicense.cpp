@@ -25,6 +25,7 @@ int _getch(void);
 
 #include "Iedk.h"
 #include "IedkErrorCode.h"
+#include "EmotivCloudClient.h"
 
 std::string convertEpochToTime(time_t epochTime, std::string format = "%Y-%m-%d %H:%M:%S");
 std::string convertEpochToTime(time_t epochTime, std::string format)
@@ -53,23 +54,20 @@ void printLicenseInformation(IEE_LicenseInfos_t& licenseInfos)
     int licenseType = 0;
 
     std::cout << std::endl;
-    std::cout << "Date From  : " << convertEpochToTime(licenseInfos.date_from) << std::endl;
-    std::cout << "Date To    : " << convertEpochToTime(licenseInfos.date_to) << std::endl;
+    std::cout << "From Date         : " << convertEpochToTime(licenseInfos.date_from) << std::endl;
+    std::cout << "To   Date         : " << convertEpochToTime(licenseInfos.date_to) << std::endl;
     std::cout << std::endl;
 
-    std::cout << "Seat number: " << licenseInfos.seat_count << std::endl;
+    std::cout << std::endl;
+    std::cout << "Soft Limit Date   : " << convertEpochToTime(licenseInfos.soft_limit_date) << std::endl;
+    std::cout << "Hard Limit Date   : " << convertEpochToTime(licenseInfos.hard_limit_date) << std::endl;
     std::cout << std::endl;
 
-    std::cout << "Total Quota: " << licenseInfos.quota << std::endl;
-    std::cout << "Total quota used    : " << licenseInfos.usedQuota << std::endl;
+    std::cout << "Number of Seats   : " << licenseInfos.seat_count << std::endl;
     std::cout << std::endl;
 
-    std::cout << "Quota limit in day  : " << licenseInfos.quotaDayLimit << std::endl;
-    std::cout << "Quota used in day   : " << licenseInfos.usedQuotaDay << std::endl;
-    std::cout << std::endl;
-
-    std::cout << "Quota limit in month: " << licenseInfos.quotaMonthLimit << std::endl;
-    std::cout << "Quota used in month : " << licenseInfos.usedQuotaMonth << std::endl;
+    std::cout << "Total Quota       : " << licenseInfos.quota << std::endl;
+    std::cout << "Total used Quota  : " << licenseInfos.usedQuota << std::endl;
     std::cout << std::endl;
 
     switch (licenseInfos.scopes)
@@ -77,49 +75,121 @@ void printLicenseInformation(IEE_LicenseInfos_t& licenseInfos)
     case IEE_EEG:
         licenseType = IEE_LicenseType_t::IEE_EEG;
 
-        std::cout << "License type : " << "EEG" << std::endl;
+        std::cout << "License type  : " << "EEG" << std::endl;
         std::cout << std::endl;
         break;
     case IEE_EEG_PM:
         licenseType = IEE_LicenseType_t::IEE_EEG_PM;
 
-        std::cout << "License type : " << "EEG + PM" << std::endl;
+        std::cout << "License type  : " << "EEG + PM" << std::endl;
         std::cout << std::endl;
         break;
     case IEE_PM:
         licenseType = IEE_LicenseType_t::IEE_PM;
-        std::cout << "License type : " << "PM" << std::endl;
+        std::cout << "License type  : " << "PM" << std::endl;
         std::cout << std::endl;
         break;
     default:
-        std::cout << "License type : " << "No type" << std::endl;
+        std::cout << "License type  : " << "No type" << std::endl;
         std::cout << std::endl;
         break;
     }
 }
 
 std::string const LICENSE_KEY = "";
+                                 
 
 int main(int argc, char** argv)
 {
 
-    int result = EDK_OK;
+    //Login request
+    std::string userName = "";
+    std::string password = "";
+    int result = 0;
 
-    // Need only 1 time to call with the internet connection
-    result = IEE_ActivateLicense(LICENSE_KEY.c_str());    
+    if (IEE_EngineConnect() != EDK_OK) {
+        std::cout << "Emotiv Driver start up failed.";
+        return -1;
+    }
 
+    if (EC_Connect() != EDK_OK)
+    {
+        std::cout << "Cannot connect to Emotiv Cloud";
+        return -1;
+    }
+    //Login
+    if (EC_Login(userName.c_str(), password.c_str()) != EDK_OK)
+    {
+        std::cout << "Login failed. The username or password may be incorrect" << std::endl;
+        return -1;
+    }
+
+    //get Debit info
+    IEE_DebitInfos_t debitInfos;
+    debitInfos.remainingSessions = 0;
+    result = IEE_GetDebitInformation(LICENSE_KEY.c_str(), &debitInfos);
+
+    std::cout << std::endl;
+    std::cout << "Remaining Sessions     : " << debitInfos.remainingSessions << std::endl;
+    std::cout << "Daily debit limitation : " << debitInfos.daily_debit_limit << std::endl;
+    std::cout << std::endl;
+
+    std::cout << std::endl;
+    std::cout << "Total debit today      : " << debitInfos.total_debit_today << std::endl;
+    std::cout << "Remaining time before resetting daily debit limitation: " << debitInfos.time_reset << "(seconds)" << std::endl;
+    std::cout << std::endl;
+
+
+    //Active license with debit
+    unsigned int debitNum = 0; //default value
+
+    //Get number of debit as input
+    std::string input;
+    std::cout << "Please give number of debits : " << std::endl;
+
+    std::getline(std::cin, input, '\n');
+    debitNum = atoi(input.c_str());
+
+    result = IEE_AuthorizeLicense(LICENSE_KEY.c_str(), debitNum);
+
+    //show result after authorizing
     switch (result)
     {
-        case EDK_LICENSE_NOT_FOUND:
-        case EDK_LICENSE_ERROR:
-        case EDK_LICENSE_EXPIRED:
-        case EDK_LICENSE_REGISTERED:
-        case EDK_LICENSE_DEVICE_LIMITED:
-        case EDK_UNKNOWN_ERROR:
-            break;
-
-        default:
-            break;
+    case EDK_INVALID_DEBIT_NUMBER:
+    case EDK_INVALID_DEBIT_ERROR:
+        std::cout << "Invalid number of Debits" << std::endl;
+        break;
+    case EDK_INVALID_PARAMETER:
+        std::cout << "Invalid user information" << std::endl;
+        break;
+    case EDK_NO_INTERNET_CONNECTION:
+        std::cout << "No Internet Connection" << std::endl;
+        break;
+    case EDK_LICENSE_EXPIRED:
+        std::cout << "Expired license" << std::endl;
+        break;
+    case EDK_OVER_DEVICE_LIST:
+        std::cout << "Over device list" << std::endl;
+        break;  
+    case EDK_DAILY_DEBIT_LIMITED:
+        std::cout << "Over daily number of debits" << std::endl;
+        break;
+    case EDK_ACCESS_DENIED:
+        std::cout << "Access denied" << std::endl;
+        break;
+    case EDK_LICENSE_REGISTERED:
+        std::cout << "The License has registered" << std::endl;
+        break;
+    case EDK_LICENSE_ERROR:
+        std::cout << "Error License" << std::endl;
+        break;
+    case EDK_LICENSE_NOT_FOUND:
+        std::cout << "License not found" << std::endl;
+        break;
+    case EDK_UNKNOWN_ERROR:
+        break;
+    default:
+        break;
     }
 
     if (!(result == EDK_OK || result == EDK_LICENSE_REGISTERED))
@@ -134,21 +204,24 @@ int main(int argc, char** argv)
 
     switch (result)
     {
-        case EDK_OVER_QUOTA_IN_DAY:
-        case EDK_OVER_QUOTA_IN_MONTH:
         case EDK_LICENSE_EXPIRED:
+            std::cout << "Expired license" << std::endl;
+            break;
         case EDK_OVER_QUOTA:
+            std::cout << "Over quota" << std::endl;
+            break;
         case EDK_ACCESS_DENIED:
+            std::cout << "Access denined" << std::endl;
+            break;
         case EDK_LICENSE_ERROR:
+            std::cout << "Error License" << std::endl;
             break;
         case EDK_NO_ACTIVE_LICENSE:
-            break;
-        case EDK_OK:
+            std::cout << "No active license" << std::endl;
             break;
         default:
             break;
     }
-
     printLicenseInformation(licenseInfos);
 
     _getch();

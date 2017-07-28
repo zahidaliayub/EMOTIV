@@ -75,6 +75,18 @@
 //! The API was unable to establish a connection with a remote instance of the EmoEngine.
 #define EDK_EMOENGINE_PROXY_ERROR           0x0502
 
+//! There is no data stream with the userID
+#define EDK_STREAM_UNINITIALIZED            0x0503
+
+//! The stream is not file stream
+#define EDK_FILESTREAM_ERROR                0x0504
+
+//! The stream is not supported
+#define EDK_STREAM_NOT_SUPPORTED            0x0505
+
+//! The file error
+#define EDK_FILE_ERROR                      0x0506
+
 //! There are no new EmoEngine events at this time.
 #define EDK_NO_EVENT                        0x0600
 
@@ -94,8 +106,10 @@
 
 #define EDK_COULDNT_CONNECT                 0x1003
 
-//! Profile created by EDK_SaveUserProfile() is existed in Emotiv Cloud.
-#define EDK_PROFILE_CLOUD_EXISTED           0x1010
+#define EDK_OPERATION_TIMEDOUT              0x1004
+
+//! Profile created by EDK_SaveUserProfile() already exists in Emotiv Cloud.
+#define EDK_CLOUD_PROFILE_EXISTS            0x1010
 
 //! The file uploaded to cloud is failed
 #define EDK_UPLOAD_FAILED                   0x1011
@@ -111,7 +125,6 @@
 
 //! The Emotiv Cloud needs to be initialized via EDK_Connect()
 #define EDK_EMOTIVCLOUD_UNINITIALIZED       0x1023
-
 
 #define EDK_FILE_EXISTS                     0x2000	
 
@@ -138,22 +151,20 @@
 //! The license is over quota
 #define EDK_OVER_QUOTA                      0x2013
 
-//! The license is over quota in day
-#define EDK_OVER_QUOTA_IN_DAY               0x2014
+//! Debit number is invalid
+#define EDK_INVALID_DEBIT_ERROR             0x2014
 
-//! The license is over quota in month
-#define EDK_OVER_QUOTA_IN_MONTH             0x2015
-
+//! Device list of the license is over
+#define EDK_OVER_DEVICE_LIST                0x2015
 
 #define EDK_APP_QUOTA_EXCEEDED              0x2016
-
 
 #define EDK_APP_INVALID_DATE                0x2017
 
 //! Application register device number is exceeded. 
 #define EDK_LICENSE_DEVICE_LIMITED          0x2019  
 
-//! The license registered with the device. 
+//! The license has registered with the device. 
 #define EDK_LICENSE_REGISTERED              0x2020
 
 //! No license is activated
@@ -165,9 +176,23 @@
 //! The license is updated
 #define EDK_UPDATE_LICENSE                  0x2023
 
+//! Session debit number is more then max of remaining session number
+#define EDK_INVALID_DEBIT_NUMBER            0x2024
+
+//! Session debit is limited today
+#define EDK_DAILY_DEBIT_LIMITED             0x2025
+
 //! The file was not found
 #define EDK_FILE_NOT_FOUND                  0x2030
 
 #define EDK_ACCESS_DENIED                   0x2031
+
+//! Could not connect to internet
+#define EDK_NO_INTERNET_CONNECTION          0x2100
+
+//! An authentication error has occurred. Need to relogin. 
+#define EDK_AUTHENTICATION_ERROR            0x2101
+
+#define EDK_LOGIN_ERROR                     0x2102
 
 #endif

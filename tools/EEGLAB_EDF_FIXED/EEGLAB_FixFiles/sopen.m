@@ -256,13 +256,13 @@ if strcmp(HDR.TYPE,'EDF') || strcmp(HDR.TYPE,'GDF') || strcmp(HDR.TYPE,'BDF'),
                 end;
                 
                 HDR.VERSION=char(H1(1:8));                     % 8 Byte  Versionsnummer 
-                if ~(strcmp(HDR.VERSION,'0       ') || strcmp(HDR.VERSION,'20160817') || all(abs(HDR.VERSION)==[255,abs('BIOSEMI')]) || strcmp(HDR.VERSION(1:3),'GDF'))
+                if ~(strcmp(HDR.VERSION,'0       ') || strcmp(HDR.VERSION,'20160817') || strcmp(HDR.VERSION,'20170703') || all(abs(HDR.VERSION)==[255,abs('BIOSEMI')]) || strcmp(HDR.VERSION(1:3),'GDF'))
                         HDR.ErrNum = [1,HDR.ErrNum];
                         if ~strcmp(HDR.VERSION(1:3),'   '); % if not a scoring file, 
                                 %	    return; 
                         end;
                 end;
-                if (strcmp(char(H1(1:8)),'0       ') || strcmp(char(H1(1:8)),'20160817'))
+                if (strcmp(char(H1(1:8)),'0       ') || strcmp(char(H1(1:8)),'20160817') || strcmp(char(H1(1:8)),'20170703'))
                         HDR.VERSION = 0; 
                 elseif all(abs(H1(1:8))==[255,abs('BIOSEMI')]), 
                         HDR.VERSION = -1; 

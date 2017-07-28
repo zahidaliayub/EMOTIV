@@ -106,7 +106,7 @@ int main(int argc, char** argv) {
                   << "Press any key to stop logging..."
                   << std::endl;
 
-		std::ofstream ofs("performanceMetricData.csv");
+        std::ofstream ofs("PerformanceMetricData.csv", std::ios::trunc);
 		bool writeHeader = true;
 
 		while (!_kbhit()) {

@@ -40,18 +40,10 @@ namespace MultiDongles
         }
 
         void engine_EmoStateUpdated(object sender, EmoStateUpdatedEventArgs e)
-        {            
-            if (e.userId == 0)
-            {
-                EmoState es = e.emoState;
+        {
+            EmoState es = e.emoState;
 
-                Console.WriteLine("User " + e.userId, ":  " + es.GetTimeFromStart());                
-            }
-            else if( e.userId == 1)
-            {
-                EmoState es = e.emoState;
-                Console.WriteLine("User " + e.userId, ":  " + es.GetTimeFromStart());                
-            }
+            Console.WriteLine("User " + e.userId + "  Time :  " + es.GetTimeFromStart());               
         }
     }
 }

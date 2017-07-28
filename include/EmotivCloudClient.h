@@ -122,6 +122,24 @@ extern "C" {
 		EC_Login(const char * username, 
 		         const char * password);
 
+    //! Login Emotiv Cloud with EmotivID
+    /*!
+        To register a new EmotivID please visit https://id.emotivcloud.com/ .
+
+        \param username  - username
+        \param password  - password
+
+        \return EDK_ERROR_CODE
+            - EDK_OK if login successfully
+            - CloudId
+
+        \sa EC_Logout()
+    */
+
+    EMOTIVCLOUD_API int
+        EC_LoginEx(const char * username,
+                   const char * password, 
+                   int* cloudID);
 
     //! Logout Emotiv Cloud
     /*
@@ -146,6 +164,8 @@ extern "C" {
 	EMOTIVCLOUD_API int
 		EC_GetUserDetail(int * userCloudID);
 
+    EMOTIVCLOUD_API int
+        EC_GetCurrentUserName(int userCloudID, char * nameBuffer, int * size);
 
     //! Save user profile to Emotiv Cloud
     /*!
@@ -292,7 +312,7 @@ extern "C" {
 		                      int index);
 
 
-    //! Donwload file Profile
+    //! Download file Profile
     /*!
         \param cloudUserID  - id of user
         \param profileId
@@ -326,7 +346,7 @@ extern "C" {
                                  bool overwrite_if_exists = false);
    
 
-    //! get lastest version of profile
+    //! Get lastest version of profile
     /*
         \param profileID    - profileID
         \param pVersionInfo - receives array of version Informations

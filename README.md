@@ -79,7 +79,7 @@ Table below describe examples indetail :
 | SavingAndLoadingProfileCloud | Yes | C++, C#, Java, Python |Win, Mac, Ubuntu|
 | ProfileCloudExample | Yes | Objective-C, Java | Mac, Android, iOS|
 | RollingBall  | Yes | Unity | Win, Mac |
-| ActivateLicense  | No | C++, C#, Java, Python, Matlab | Win, Mac |
+| ActivateLicense  | No | C++, C#, Objective-C, Java, Python, Matlab | Win, Mac |
 | EEGLogger  | No | C++, C#, Objective-C, Java, Python, Matlab | Win, Mac |
 | MultiDongleEEGLogger  | No | C++ | Win, Mac |
 | MultilChannelEEGLogger  | No | C++ | Win, Mac |

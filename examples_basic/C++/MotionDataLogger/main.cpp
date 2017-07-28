@@ -63,6 +63,7 @@ int main(int argc, char** argv) {
     float secs            = 1;
     bool readytocollect   = false;
     char const * filename = "motionData.csv";
+    unsigned int userID;
 
     try {
         cout << "===================================================================\n";
@@ -90,7 +91,7 @@ int main(int argc, char** argv) {
             if (state == EDK_OK) {
 
                 IEE_Event_t eventType = IEE_EmoEngineEventGetType(eEvent.get());
-
+                IEE_EmoEngineEventGetUserId(eEvent.get(), &userID);
                 // Log the EmoState if it has been updated
                 if (eventType == IEE_UserAdded) {
                     cout << "User added";
@@ -99,7 +100,7 @@ int main(int argc, char** argv) {
             }
 
             if (readytocollect) {
-                IEE_MotionDataUpdateHandle(0, hMotionData.get());
+                IEE_MotionDataUpdateHandle(userID, hMotionData.get());
                 unsigned int nSamplesTaken=0;
                 IEE_MotionDataGetNumberOfSample(hMotionData.get(), &nSamplesTaken);
                 

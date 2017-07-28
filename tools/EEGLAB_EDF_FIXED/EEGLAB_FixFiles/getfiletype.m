@@ -170,7 +170,7 @@ else
                         HDR.TYPE='BioSig';
                 elseif strncmp(ss,'#BIOSIG BINARY]',14); 
                         HDR.TYPE='BIN';
-                elseif strncmp(ss,'0       ',8) || strncmp(ss,'20160817',8); 
+                elseif strncmp(ss,'0       ',8) || strncmp(ss,'20160817',8) || strncmp(ss,'20170703',8); 
                         HDR.TYPE='EDF';
                 elseif all(s(1:8)==[255,abs('BIOSEMI')]); 
                         HDR.TYPE='BDF';

@@ -48,6 +48,7 @@
 using std::cout;
 using std::cerr;
 using std::unique_ptr;
+unsigned int userID = 0;
 
 #define PI 3.1418
 
@@ -216,7 +217,7 @@ void updateDisplay(void)
     showGyro(false);
 
    int gyroX = 0, gyroY = 0;
-   IEE_HeadsetGetGyroDelta(0, &gyroX, &gyroY);
+   int result = IEE_HeadsetGetGyroDelta(userID, &gyroX, &gyroY);
    xmax += gyroX;
    ymax += gyroY;
 
@@ -328,7 +329,6 @@ int main(int argc, char** argv)
 	EmoEngineEventHandle hEvent = IEE_EmoEngineEventCreate();
 	EmoStateHandle eState = IEE_EmoStateCreate();
 
-	unsigned int userID = -1;
 	int state           = 0;
 	bool ready          = false;
 	
@@ -356,7 +356,6 @@ int main(int argc, char** argv)
 
 			if (eventType == IEE_UserAdded) {
 		         std::cout << "User added" << std::endl << std::endl;
-				 userID = 0;
 		         ready = true;
 			}
 		}

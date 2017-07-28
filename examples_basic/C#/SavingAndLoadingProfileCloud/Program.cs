@@ -52,7 +52,7 @@ namespace SavingAndLoadingProfileCloud
             else{
                 Console.WriteLine("Saving...");
 
-                if (EmotivCloudClient.EC_SaveUserProfile(cloudUserID, 0, profileName,
+                if (EmotivCloudClient.EC_SaveUserProfile(cloudUserID, engineUserID, profileName,
                 EmotivCloudClient.profileFileType.TRAINING) == EdkDll.EDK_OK)
                 {
                     Console.WriteLine("Saving finished");
@@ -72,7 +72,7 @@ namespace SavingAndLoadingProfileCloud
             int profileID = -1;
             EmotivCloudClient.EC_GetProfileId(cloudUserID, profileName, ref profileID);
 
-            if (EmotivCloudClient.EC_LoadUserProfile(cloudUserID, 0, profileID, version) == EdkDll.EDK_OK)
+            if (EmotivCloudClient.EC_LoadUserProfile(cloudUserID, engineUserID, profileID, version) == EdkDll.EDK_OK)
                 Console.WriteLine("Loading finished");
             else
                 Console.WriteLine("Loading failed");

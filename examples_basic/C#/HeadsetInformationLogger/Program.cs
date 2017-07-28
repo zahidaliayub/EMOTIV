@@ -34,7 +34,6 @@ namespace HeadsetInformationLogger
 
             EmoState es = e.emoState;
 
-            if (e.userId != 0) return;      // Get info from UserID 0
 
             float timeFromStart = es.GetTimeFromStart();
             file.Write(timeFromStart + ",");

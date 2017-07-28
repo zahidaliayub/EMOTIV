@@ -86,7 +86,7 @@ else :
 print "Start receiving EEG Data! Press any key to stop logging...\n"
 f = file('EEG.csv', 'w')
 f = open('EEG.csv', 'w')
-print >> f,header
+print >> f, ', '.join(header)
     
 hData = libEDK.IEE_DataCreate()
 libEDK.IEE_DataSetBufferSizeInSec(secs)
@@ -103,7 +103,7 @@ while (1):
             readytocollect = True
 
     if readytocollect==True:    
-        libEDK.IEE_DataUpdateHandle(0, hData)
+        libEDK.IEE_DataUpdateHandle(userID, hData)
         libEDK.IEE_DataGetNumberOfSample(hData,nSamplesTaken)
         print "Updated :",nSamplesTaken[0]
         if nSamplesTaken[0] != 0:

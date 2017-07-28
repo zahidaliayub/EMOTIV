@@ -49,7 +49,7 @@ namespace Emotiv
         public const Int32 EDK_COULDNT_CONNECT              = 0x1003;
 
         //! Profile created by EDK_SaveUserProfile() is existed in Emotiv Cloud.
-        public const Int32 EDK_PROFILE_CLOUD_EXISTED        = 0x1010;
+        public const Int32 EDK_CLOUD_PROFILE_EXISTS         = 0x1010;
 
         //! The file uploaded to cloud is failed
         public const Int32 EDK_UPLOAD_FAILED                = 0x1011;
@@ -92,11 +92,11 @@ namespace Emotiv
         //! The license is over quota
         public const Int32 EDK_OVER_QUOTA                   = 0x2013;
 
-        //! The license is over quota in day
-        public const Int32 EDK_OVER_QUOTA_IN_DAY            = 0x2014;
+        //! Debit number is invalid
+        public const Int32 EDK_INVALID_DEBIT_ERROR          = 0x2014;
 
-        //! The license is over quota in month
-        public const Int32 EDK_OVER_QUOTA_IN_MONTH          = 0x2015;
+        //! Device list of the license is over
+        public const Int32 EDK_OVER_DEVICE_LIST             = 0x2015;
 
 
         public const Int32 EDK_APP_QUOTA_EXCEEDED           = 0x2016;
@@ -354,18 +354,29 @@ namespace Emotiv
 
         [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)] 
         public class IEE_LicenseInfos_t 
-        {
-            public UInt32 scopes;          // license type
-            public UInt32 date_from;       // epoch time 
-            public UInt32 date_to;         // epoch time
-            public Int32  seat_count;      // number of seat
+        {           
+            public UInt32 scopes;            // license type
+            public UInt32 date_from;         // epoch time 
+            public UInt32 date_to;           // epoch time
 
-            public Int32 quotaDayLimit;    // session limit in day
-            public Int32 usedQuotaDay;     // session used in day
-            public Int32 quotaMonthLimit;  // session limit in month
-            public Int32 usedQuotaMonth;   // session used in month
-            public Int32 usedQuota;        // total session used
-            public Int32 quota;            // total session in the license
+            // need authorize the license, then your current quota will be reset to the debit number.
+            // if not, you can still use current quota to hard_limit_date. 
+            public UInt32 soft_limit_date;   
+
+            // After this date. Your current quota will be reset to 0 and stop using the library.
+            public UInt32 hard_limit_date;
+            public UInt32 seat_count;        // number of seat
+            public UInt32 usedQuota;         // total number of session used.
+            public UInt32 quota;             // total number of session got for this PC.
+        };
+
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
+        public class IEE_DebitInfos_t
+        {
+            public UInt32 remainingSessions;   // remaining session number of the license.
+            public UInt32 daily_debit_limit;   // the max of session debit number per day. 
+            public UInt32 total_debit_today;   // the number of session debited today.
+            public UInt32 time_reset;          // time to reset daily debit (seconds).
         };
 
 
@@ -373,8 +384,11 @@ namespace Emotiv
         [DllImport("edk.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "IEE_LicenseInformation")]        
         static extern Int32 Unmanged_IEE_LicenseInformation(IntPtr licenseInfo);
 
-        [DllImport("edk.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "IEE_ActivateLicense")]
-        static extern Int32 Unmanged_IEE_ActivateLicense(String licenseID);        
+        [DllImport("edk.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "IEE_AuthorizeLicense")]
+        static extern Int32 Unmanged_IEE_AuthorizeLicense(String licenseID, Int32 debitNum);
+
+        [DllImport("edk.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "IEE_GetDebitInformation")]
+        static extern Int32 Unmanged_IEE_GetDebitInformation(String licenseID, IntPtr debitInfos);
 
         [DllImport("edk.dll", CallingConvention = CallingConvention.Cdecl, EntryPoint = "IEE_EngineConnect")]
         static extern Int32 Unmanged_IEE_EngineConnect(String security);
@@ -724,10 +738,20 @@ namespace Emotiv
             return result;
         }
 
-
-        public static Int32 IEE_ActivateLicense(String licenseID)
+        public static Int32 IEE_GetDebitInformation(String licenseID, ref IEE_DebitInfos_t debitInfoOut)
         {
-            return Unmanged_IEE_ActivateLicense(licenseID);
+            IEE_DebitInfos_t debitInfos = new IEE_DebitInfos_t();
+            int size = Marshal.SizeOf(debitInfos);
+            IntPtr ptr = Marshal.AllocHGlobal(size);
+            int result = Unmanged_IEE_GetDebitInformation(licenseID, ptr);
+
+            debitInfoOut = (IEE_DebitInfos_t)Marshal.PtrToStructure(ptr, typeof(IEE_DebitInfos_t));
+            return result;
+        }
+
+        public static Int32 IEE_AuthorizeLicense(String licenseID, Int32 debitNum)
+        {
+            return Unmanged_IEE_AuthorizeLicense(licenseID, debitNum);
         }
 
 
