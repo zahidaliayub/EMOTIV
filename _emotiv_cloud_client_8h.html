@@ -8,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
         <meta name="generator" content="Doxygen 1.8.11"/>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <title>Emotiv SDK Community Edition: EmotivCloudClient.h File Reference</title>
+        <title>Emotiv SDK Advanced Edition: EmotivCloudClient.h File Reference</title>
         <!--<link href="tabs.css" rel="stylesheet" type="text/css"/>-->
         <script type="text/javascript" src="dynsections.js"></script>
         <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -21,7 +21,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">Emotiv SDK Community Edition 3.4.0</a>
+                    <a class="navbar-brand">Emotiv SDK Advanced Edition 3.5.0</a>
                 </div>
             </div>
         </nav>
@@ -112,12 +112,17 @@ Functions</h2></td></tr>
 <tr class="memitem:a760b473dcd6746c9a38ed80dfe68974f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_cloud_client_8h.html#a3de8838840d8e7b1a14792aeaa6b2b0e">EMOTIVCLOUD_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_emotiv_cloud_client_8h.html#a760b473dcd6746c9a38ed80dfe68974f">EC_Login</a> (const char *username, const char *password)</td></tr>
 <tr class="memdesc:a760b473dcd6746c9a38ed80dfe68974f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Login Emotiv Cloud with EmotivID.  <a href="#a760b473dcd6746c9a38ed80dfe68974f">More...</a><br /></td></tr>
 <tr class="separator:a760b473dcd6746c9a38ed80dfe68974f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c8c16f5db4bbb86d4f94ec68719a94d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_cloud_client_8h.html#a3de8838840d8e7b1a14792aeaa6b2b0e">EMOTIVCLOUD_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_emotiv_cloud_client_8h.html#a6c8c16f5db4bbb86d4f94ec68719a94d">EC_LoginEx</a> (const char *username, const char *password, int *cloudID)</td></tr>
+<tr class="memdesc:a6c8c16f5db4bbb86d4f94ec68719a94d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Login Emotiv Cloud with EmotivID.  <a href="#a6c8c16f5db4bbb86d4f94ec68719a94d">More...</a><br /></td></tr>
+<tr class="separator:a6c8c16f5db4bbb86d4f94ec68719a94d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf4df43820d0c4cfceaa7affb4e1ba9d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_cloud_client_8h.html#a3de8838840d8e7b1a14792aeaa6b2b0e">EMOTIVCLOUD_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_emotiv_cloud_client_8h.html#abf4df43820d0c4cfceaa7affb4e1ba9d">EC_Logout</a> (int userCloudID)</td></tr>
 <tr class="memdesc:abf4df43820d0c4cfceaa7affb4e1ba9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logout Emotiv Cloud.  <a href="#abf4df43820d0c4cfceaa7affb4e1ba9d">More...</a><br /></td></tr>
 <tr class="separator:abf4df43820d0c4cfceaa7affb4e1ba9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad774774fbc4209c4041520920af86d23"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_cloud_client_8h.html#a3de8838840d8e7b1a14792aeaa6b2b0e">EMOTIVCLOUD_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_emotiv_cloud_client_8h.html#ad774774fbc4209c4041520920af86d23">EC_GetUserDetail</a> (int *userCloudID)</td></tr>
 <tr class="memdesc:ad774774fbc4209c4041520920af86d23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get user ID after login.  <a href="#ad774774fbc4209c4041520920af86d23">More...</a><br /></td></tr>
 <tr class="separator:ad774774fbc4209c4041520920af86d23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4744bab0253c2122ab1bd70213280f78"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_cloud_client_8h.html#a3de8838840d8e7b1a14792aeaa6b2b0e">EMOTIVCLOUD_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_emotiv_cloud_client_8h.html#a4744bab0253c2122ab1bd70213280f78">EC_GetCurrentUserName</a> (int userCloudID, char *nameBuffer, int *size)</td></tr>
+<tr class="separator:a4744bab0253c2122ab1bd70213280f78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b6d48820d630b6edb4aff02a74cdd03"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_cloud_client_8h.html#a3de8838840d8e7b1a14792aeaa6b2b0e">EMOTIVCLOUD_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_emotiv_cloud_client_8h.html#a0b6d48820d630b6edb4aff02a74cdd03">EC_SaveUserProfile</a> (int userCloudID, int engineUserID, const char *profileName, <a class="el" href="_emotiv_cloud_client_8h.html#aec68ad2b217427dac9995d6bfac4258a">profileFileType</a> ptype)</td></tr>
 <tr class="memdesc:a0b6d48820d630b6edb4aff02a74cdd03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save user profile to Emotiv Cloud.  <a href="#a0b6d48820d630b6edb4aff02a74cdd03">More...</a><br /></td></tr>
 <tr class="separator:a0b6d48820d630b6edb4aff02a74cdd03"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -149,13 +154,13 @@ Functions</h2></td></tr>
 <tr class="memdesc:af407c38c829dacafc1b010f77dd5a3d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the type of a profile in cache.  <a href="#af407c38c829dacafc1b010f77dd5a3d3">More...</a><br /></td></tr>
 <tr class="separator:af407c38c829dacafc1b010f77dd5a3d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1904a7a7fada58831753999f9dd6a6e2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_cloud_client_8h.html#a3de8838840d8e7b1a14792aeaa6b2b0e">EMOTIVCLOUD_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_emotiv_cloud_client_8h.html#a1904a7a7fada58831753999f9dd6a6e2">EC_DownloadProfileFile</a> (int cloudUserId, int profileId, const char *destPath, int version=-1)</td></tr>
-<tr class="memdesc:a1904a7a7fada58831753999f9dd6a6e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Donwload file Profile.  <a href="#a1904a7a7fada58831753999f9dd6a6e2">More...</a><br /></td></tr>
+<tr class="memdesc:a1904a7a7fada58831753999f9dd6a6e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Download file Profile.  <a href="#a1904a7a7fada58831753999f9dd6a6e2">More...</a><br /></td></tr>
 <tr class="separator:a1904a7a7fada58831753999f9dd6a6e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a9c6afa8fbe4cae1144ccff479b7aae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_cloud_client_8h.html#a3de8838840d8e7b1a14792aeaa6b2b0e">EMOTIVCLOUD_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_emotiv_cloud_client_8h.html#a6a9c6afa8fbe4cae1144ccff479b7aae">EC_UploadProfileFile</a> (int cloudUserId, const char *profileName, const char *filePath, <a class="el" href="_emotiv_cloud_client_8h.html#aec68ad2b217427dac9995d6bfac4258a">profileFileType</a> ptype, bool overwrite_if_exists=false)</td></tr>
 <tr class="memdesc:a6a9c6afa8fbe4cae1144ccff479b7aae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Upload file profile of user.  <a href="#a6a9c6afa8fbe4cae1144ccff479b7aae">More...</a><br /></td></tr>
 <tr class="separator:a6a9c6afa8fbe4cae1144ccff479b7aae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3476697bf63f529fe15507fd052125d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_cloud_client_8h.html#a3de8838840d8e7b1a14792aeaa6b2b0e">EMOTIVCLOUD_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_emotiv_cloud_client_8h.html#a3476697bf63f529fe15507fd052125d4">EC_GetLastestProfileVersions</a> (int cloudUserId, int profileID, int *nVersion)</td></tr>
-<tr class="memdesc:a3476697bf63f529fe15507fd052125d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">get lastest version of profile  <a href="#a3476697bf63f529fe15507fd052125d4">More...</a><br /></td></tr>
+<tr class="memdesc:a3476697bf63f529fe15507fd052125d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get lastest version of profile.  <a href="#a3476697bf63f529fe15507fd052125d4">More...</a><br /></td></tr>
 <tr class="separator:a3476697bf63f529fe15507fd052125d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -382,7 +387,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Donwload file Profile. </p>
+<p>Download file Profile. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">cloudUserID</td><td>- id of user </td></tr>
@@ -425,6 +430,38 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a4744bab0253c2122ab1bd70213280f78"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_emotiv_cloud_client_8h.html#a3de8838840d8e7b1a14792aeaa6b2b0e">EMOTIVCLOUD_API</a> int EC_GetCurrentUserName </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>userCloudID</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>nameBuffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a3476697bf63f529fe15507fd052125d4"></a>
 <div class="memitem">
 <div class="memproto">
@@ -455,7 +492,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>get lastest version of profile </p>
+<p>Get lastest version of profile. </p>
 
 </div>
 </div>
@@ -623,6 +660,54 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
 <li>EDK_OK if login successfully</li>
+</ul>
+</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_emotiv_cloud_client_8h.html#abf4df43820d0c4cfceaa7affb4e1ba9d" title="Logout Emotiv Cloud. ">EC_Logout()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6c8c16f5db4bbb86d4f94ec68719a94d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_emotiv_cloud_client_8h.html#a3de8838840d8e7b1a14792aeaa6b2b0e">EMOTIVCLOUD_API</a> int EC_LoginEx </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>username</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>password</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>cloudID</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Login Emotiv Cloud with EmotivID. </p>
+<p>To register a new EmotivID please visit <a href="https://id.emotivcloud.com/">https://id.emotivcloud.com/</a> .</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">username</td><td>- username </td></tr>
+    <tr><td class="paramname">password</td><td>- password</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
+<li>EDK_OK if login successfully</li>
+<li>CloudId</li>
 </ul>
 </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="_emotiv_cloud_client_8h.html#abf4df43820d0c4cfceaa7affb4e1ba9d" title="Logout Emotiv Cloud. ">EC_Logout()</a> </dd></dl>
@@ -982,7 +1067,7 @@ Functions</h2></td></tr>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Dec 22 2016 15:08:36 for Emotiv SDK Community Edition by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jul 21 2017 16:56:14 for Emotiv SDK Advanced Edition by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

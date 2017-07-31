@@ -8,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
         <meta name="generator" content="Doxygen 1.8.11"/>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <title>Emotiv SDK Advanced Edition: profileVerInfo Struct Reference</title>
+        <title>Emotiv SDK Advanced Edition: IEE_DebitInfos_struct Struct Reference</title>
         <!--<link href="tabs.css" rel="stylesheet" type="text/css"/>-->
         <script type="text/javascript" src="dynsections.js"></script>
         <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -52,43 +52,71 @@
   <div class="summary">
 <a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
-<div class="title">profileVerInfo Struct Reference</div>  </div>
+<div class="title">IEE_DebitInfos_struct Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Profile version.  
- <a href="structprofile_ver_info.html#details">More...</a></p>
+<p>Debit information structure.  
+ <a href="struct_i_e_e___debit_infos__struct.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="_emotiv_cloud_client_8h_source.html">EmotivCloudClient.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="_emotiv_license_8h_source.html">EmotivLicense.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:a54f3f06971a7fc9862c2fd0a8bec8084"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprofile_ver_info.html#a54f3f06971a7fc9862c2fd0a8bec8084">version</a></td></tr>
-<tr class="separator:a54f3f06971a7fc9862c2fd0a8bec8084"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a244417c461fb9fa112488e58ebbf4185"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprofile_ver_info.html#a244417c461fb9fa112488e58ebbf4185">last_modified</a> [30]</td></tr>
-<tr class="separator:a244417c461fb9fa112488e58ebbf4185"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea489a452f50149eb92d764b3ca4309b"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_i_e_e___debit_infos__struct.html#aea489a452f50149eb92d764b3ca4309b">remainingSessions</a></td></tr>
+<tr class="separator:aea489a452f50149eb92d764b3ca4309b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2e4a70d7489a1c7d64e76a38dabcc26"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_i_e_e___debit_infos__struct.html#ab2e4a70d7489a1c7d64e76a38dabcc26">daily_debit_limit</a></td></tr>
+<tr class="separator:ab2e4a70d7489a1c7d64e76a38dabcc26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58d3b7e5c7eb292eefbf20bf79160495"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_i_e_e___debit_infos__struct.html#a58d3b7e5c7eb292eefbf20bf79160495">total_debit_today</a></td></tr>
+<tr class="separator:a58d3b7e5c7eb292eefbf20bf79160495"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea83bc1ac73d2ca503d2ba5b084ec5ff"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_i_e_e___debit_infos__struct.html#aea83bc1ac73d2ca503d2ba5b084ec5ff">time_reset</a></td></tr>
+<tr class="separator:aea83bc1ac73d2ca503d2ba5b084ec5ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Profile version. </p>
+<div class="textblock"><p>Debit information structure. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
-<a class="anchor" id="a244417c461fb9fa112488e58ebbf4185"></a>
+<a class="anchor" id="ab2e4a70d7489a1c7d64e76a38dabcc26"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char profileVerInfo::last_modified[30]</td>
+          <td class="memname">unsigned int IEE_DebitInfos_struct::daily_debit_limit</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a54f3f06971a7fc9862c2fd0a8bec8084"></a>
+<a class="anchor" id="aea489a452f50149eb92d764b3ca4309b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int profileVerInfo::version</td>
+          <td class="memname">unsigned int IEE_DebitInfos_struct::remainingSessions</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aea83bc1ac73d2ca503d2ba5b084ec5ff"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int IEE_DebitInfos_struct::time_reset</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a58d3b7e5c7eb292eefbf20bf79160495"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int IEE_DebitInfos_struct::total_debit_today</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -96,7 +124,7 @@ Data Fields</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li><a class="el" href="_emotiv_cloud_client_8h_source.html">EmotivCloudClient.h</a></li>
+<li><a class="el" href="_emotiv_license_8h_source.html">EmotivLicense.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.8-->

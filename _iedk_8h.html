@@ -8,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
         <meta name="generator" content="Doxygen 1.8.11"/>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <title>Emotiv SDK Community Edition: Iedk.h File Reference</title>
+        <title>Emotiv SDK Advanced Edition: Iedk.h File Reference</title>
         <!--<link href="tabs.css" rel="stylesheet" type="text/css"/>-->
         <script type="text/javascript" src="dynsections.js"></script>
         <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -21,7 +21,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">Emotiv SDK Community Edition 3.4.0</a>
+                    <a class="navbar-brand">Emotiv SDK Advanced Edition 3.5.0</a>
                 </div>
             </div>
         </nav>
@@ -68,6 +68,7 @@
 <code>#include &quot;<a class="el" href="_mental_command_detection_8h_source.html">MentalCommandDetection.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_i_emotiv_profile_8h_source.html">IEmotivProfile.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_emotiv_license_8h_source.html">EmotivLicense.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_edf_data_8h_source.html">EdfData.h</a>&quot;</code><br />
 </div>
 <p><a href="_iedk_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -183,6 +184,7 @@ Enumerations</h2></td></tr>
 <br />
 &#160;&#160;<a class="el" href="_iedk_8h.html#ad4d6758212bdf84ec610ee7832127eaea590e81a74f28111b01cc9c09171923ee">DT_Focus</a> = 0x0100, 
 <a class="el" href="_iedk_8h.html#ad4d6758212bdf84ec610ee7832127eaea488b0aa8464f396ea626a21b4a35a16d">DT_MentalCommand</a> = 0x0200, 
+<a class="el" href="_iedk_8h.html#ad4d6758212bdf84ec610ee7832127eaeace0ba60106799de97a4e8f7a410efea8">DT_FFTDetection</a> = 0x0400, 
 <a class="el" href="_iedk_8h.html#ad4d6758212bdf84ec610ee7832127eaea5ec14b42f8961edd703f44fc5a2247d8">DT_AllDetections</a>
 <br />
  }<tr class="memdesc:ad4d6758212bdf84ec610ee7832127eae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detection type enumerator.  <a href="_iedk_8h.html#ad4d6758212bdf84ec610ee7832127eae">More...</a><br /></td></tr>
@@ -268,6 +270,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a18f92eb37087dd5ef36503a08625e7d1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a18f92eb37087dd5ef36503a08625e7d1">IEE_GetHeadsetSettings</a> (unsigned int userId, unsigned int *EPOCmode, unsigned int *eegRate, unsigned int *eegRes, unsigned int *memsRate, unsigned int *memsRes)</td></tr>
 <tr class="memdesc:a18f92eb37087dd5ef36503a08625e7d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get headset settings from EPOC+ headset.  <a href="#a18f92eb37087dd5ef36503a08625e7d1">More...</a><br /></td></tr>
 <tr class="separator:a18f92eb37087dd5ef36503a08625e7d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3c9460b83e3c372df24b8a425d3ed16"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#ae3c9460b83e3c372df24b8a425d3ed16">IEE_GetHeadsetSettingsCortex</a> (unsigned int userId, unsigned int *EPOCmode, unsigned int *eegRate, unsigned int *eegRes, unsigned int *memsRate, unsigned int *memsRes)</td></tr>
+<tr class="memdesc:ae3c9460b83e3c372df24b8a425d3ed16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get headset settings from EPOC+ headset for Cortex.  <a href="#ae3c9460b83e3c372df24b8a425d3ed16">More...</a><br /></td></tr>
+<tr class="separator:ae3c9460b83e3c372df24b8a425d3ed16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a01a8835ce6d12e9bf96e5653c31552"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a3a01a8835ce6d12e9bf96e5653c31552">IEE_SetHeadsetSettings</a> (unsigned int userId, unsigned int EPOCmode, unsigned int eegRate, unsigned int eegRes, unsigned int memsRate, unsigned int memsRes)</td></tr>
 <tr class="memdesc:a3a01a8835ce6d12e9bf96e5653c31552"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set headset setting for EPOC+ headset.  <a href="#a3a01a8835ce6d12e9bf96e5653c31552">More...</a><br /></td></tr>
 <tr class="separator:a3a01a8835ce6d12e9bf96e5653c31552"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -293,7 +298,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a99d0b4dccf58bd31e973db657fd068d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a handle to memory that can hold motion data.  <a href="#a99d0b4dccf58bd31e973db657fd068d7">More...</a><br /></td></tr>
 <tr class="separator:a99d0b4dccf58bd31e973db657fd068d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a49cea42ee588bd073a8862f715e1b9d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a49cea42ee588bd073a8862f715e1b9d6">IEE_MotionDataFree</a> (<a class="el" href="_iedk_8h.html#a69d0eae028ac31f9b30316927bc7db50">DataHandle</a> hData)</td></tr>
-<tr class="memdesc:a49cea42ee588bd073a8862f715e1b9d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free memory referenced by a data handle.  <a href="#a49cea42ee588bd073a8862f715e1b9d6">More...</a><br /></td></tr>
+<tr class="memdesc:a49cea42ee588bd073a8862f715e1b9d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free memory referenced by a motion data handle.  <a href="#a49cea42ee588bd073a8862f715e1b9d6">More...</a><br /></td></tr>
 <tr class="separator:a49cea42ee588bd073a8862f715e1b9d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef7c1378d813e75ad95a83872aee9504"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#aef7c1378d813e75ad95a83872aee9504">IEE_MotionDataUpdateHandle</a> (unsigned int userId, <a class="el" href="_iedk_8h.html#a69d0eae028ac31f9b30316927bc7db50">DataHandle</a> hData)</td></tr>
 <tr class="memdesc:aef7c1378d813e75ad95a83872aee9504"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the content of the data handle to point to new data since the last call.  <a href="#aef7c1378d813e75ad95a83872aee9504">More...</a><br /></td></tr>
@@ -302,7 +307,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:ab64edb22a7f4a8141e3322c97fedffe9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract data of a particular channel from the data handle.  <a href="#ab64edb22a7f4a8141e3322c97fedffe9">More...</a><br /></td></tr>
 <tr class="separator:ab64edb22a7f4a8141e3322c97fedffe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af2bf36128f41060f11182f4eda766bb8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#af2bf36128f41060f11182f4eda766bb8">IEE_MotionDataGetMultiChannels</a> (<a class="el" href="_iedk_8h.html#a69d0eae028ac31f9b30316927bc7db50">DataHandle</a> hData, <a class="el" href="_iedk_8h.html#abdf7c7034f5d83b0cfc37dedafd4044b">IEE_MotionDataChannel_t</a> channels[], unsigned int nChannels, double *buffer[], unsigned int bufferSizeInSample)</td></tr>
-<tr class="memdesc:af2bf36128f41060f11182f4eda766bb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract data of a list of channels from the data handle.  <a href="#af2bf36128f41060f11182f4eda766bb8">More...</a><br /></td></tr>
+<tr class="memdesc:af2bf36128f41060f11182f4eda766bb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract motion data of a list of channels from the data handle.  <a href="#af2bf36128f41060f11182f4eda766bb8">More...</a><br /></td></tr>
 <tr class="separator:af2bf36128f41060f11182f4eda766bb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81fdc149de4aa614bad5187fa8de4d75"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a81fdc149de4aa614bad5187fa8de4d75">IEE_MotionDataGetNumberOfSample</a> (<a class="el" href="_iedk_8h.html#a69d0eae028ac31f9b30316927bc7db50">DataHandle</a> hData, unsigned int *nSampleOut)</td></tr>
 <tr class="memdesc:a81fdc149de4aa614bad5187fa8de4d75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return number of sample of motion data stored in the data handle.  <a href="#a81fdc149de4aa614bad5187fa8de4d75">More...</a><br /></td></tr>
@@ -323,7 +328,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:aef05ac5b1cf239e1e693436d46b0a9a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if particular detections are enabled.  <a href="#aef05ac5b1cf239e1e693436d46b0a9a7">More...</a><br /></td></tr>
 <tr class="separator:aef05ac5b1cf239e1e693436d46b0a9a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adca76c66323f250713e4e1f44e80aabe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#adca76c66323f250713e4e1f44e80aabe">IEE_GetAverageBandPowers</a> (unsigned int userId, <a class="el" href="_iedk_8h.html#aa63b56ae1fe316af47816df13b00d646">IEE_DataChannel_t</a> channel, double *theta, double *alpha, double *low_beta, double *high_beta, double *gamma)</td></tr>
-<tr class="memdesc:adca76c66323f250713e4e1f44e80aabe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get averge band power values for a channel.  <a href="#adca76c66323f250713e4e1f44e80aabe">More...</a><br /></td></tr>
+<tr class="memdesc:adca76c66323f250713e4e1f44e80aabe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get average band power values for a channel.  <a href="#adca76c66323f250713e4e1f44e80aabe">More...</a><br /></td></tr>
 <tr class="separator:adca76c66323f250713e4e1f44e80aabe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a6eeb2c5404e464736138fe90c13fc4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_iedk_8h.html#a0a6eeb2c5404e464736138fe90c13fc4">IEE_FFTSetWindowingType</a> (unsigned int userId, <a class="el" href="_iedk_8h.html#a040e05ba8944d688a77033d1d3248294">IEE_WindowingTypes</a> type)</td></tr>
 <tr class="memdesc:a0a6eeb2c5404e464736138fe90c13fc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the current windowing type for band power calculation.  <a href="#a0a6eeb2c5404e464736138fe90c13fc4">More...</a><br /></td></tr>
@@ -622,6 +627,9 @@ Functions</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="ad4d6758212bdf84ec610ee7832127eaea488b0aa8464f396ea626a21b4a35a16d"></a>DT_MentalCommand&#160;</td><td class="fielddoc">
 <p>Mental command detection. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="ad4d6758212bdf84ec610ee7832127eaeace0ba60106799de97a4e8f7a410efea8"></a>DT_FFTDetection&#160;</td><td class="fielddoc">
+<p>FFTDataDection. </p>
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="ad4d6758212bdf84ec610ee7832127eaea5ec14b42f8961edd703f44fc5a2247d8"></a>DT_AllDetections&#160;</td><td class="fielddoc">
 </td></tr>
@@ -1036,7 +1044,7 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">szFilename</td><td>- The path of the logfile </td></tr>
-    <tr><td class="paramname">fEnable</td><td>- Write diagnostic information to logfile if enabled </td></tr>
+    <tr><td class="paramname">fEnable</td><td>- Write diagnostic information to logfile if enabled, write to console defaultly </td></tr>
     <tr><td class="paramname">nReserved</td><td>- Reserved for future use.</td></tr>
   </table>
   </dd>
@@ -1267,7 +1275,7 @@ Functions</h2></td></tr>
 <li>EDK_OK if successful</li>
 </ul>
 </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="_iedk_error_code_8h.html">IedkErrorCode.h</a>, <a class="el" href="_iedk_8h.html#a0a6eeb2c5404e464736138fe90c13fc4" title="Set the current windowing type for band power calculation. ">IEE_FFTSetWindowingType</a>, <a class="el" href="_iedk_8h.html#adca76c66323f250713e4e1f44e80aabe" title="Get averge band power values for a channel. ">IEE_GetAverageBandPowers</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_iedk_error_code_8h.html">IedkErrorCode.h</a>, <a class="el" href="_iedk_8h.html#a0a6eeb2c5404e464736138fe90c13fc4" title="Set the current windowing type for band power calculation. ">IEE_FFTSetWindowingType</a>, <a class="el" href="_iedk_8h.html#adca76c66323f250713e4e1f44e80aabe" title="Get average band power values for a channel. ">IEE_GetAverageBandPowers</a> </dd></dl>
 
 </div>
 </div>
@@ -1307,7 +1315,7 @@ Functions</h2></td></tr>
 <li>EDK_OK if successful</li>
 </ul>
 </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="_iedk_error_code_8h.html">IedkErrorCode.h</a>, <a class="el" href="_iedk_8h.html#a42d44998991b8faf8651677b5a47fd91" title="Get the current windowing type for band power calculation. ">IEE_FFTGetWindowingType</a>, <a class="el" href="_iedk_8h.html#adca76c66323f250713e4e1f44e80aabe" title="Get averge band power values for a channel. ">IEE_GetAverageBandPowers</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_iedk_error_code_8h.html">IedkErrorCode.h</a>, <a class="el" href="_iedk_8h.html#a42d44998991b8faf8651677b5a47fd91" title="Get the current windowing type for band power calculation. ">IEE_FFTGetWindowingType</a>, <a class="el" href="_iedk_8h.html#adca76c66323f250713e4e1f44e80aabe" title="Get average band power values for a channel. ">IEE_GetAverageBandPowers</a> </dd></dl>
 
 </div>
 </div>
@@ -1365,8 +1373,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get averge band power values for a channel. </p>
-<p>Return the average band power for a specific channel from the latest epoch with 0.5 seconds step size and 2 seconds window size.</p>
+<p>Get average band power values for a channel. </p>
+<p>Return the average band power for a specific channel from the latest epoch with 0.125 seconds (8 Hz) step size and 2 seconds window size.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">userId</td><td>- user ID </td></tr>
@@ -1473,8 +1481,7 @@ Functions</h2></td></tr>
 </ul>
 </td></tr>
     <tr><td class="paramname">eegRate</td><td>- If 0, EEG sample rate is 128Hz.<ul>
-<li>If 1, EEG sample rate is 256Hz.</li>
-<li>If 2, no signal. </li>
+<li>If 1, EEG sample rate is 256Hz. </li>
 </ul>
 </td></tr>
     <tr><td class="paramname">eegRes</td><td>- If 0, EEG resolution is 14bit.<ul>
@@ -1492,6 +1499,92 @@ Functions</h2></td></tr>
 <li>If 1, motion resolution is 14bit.</li>
 <li>If 2, motion resolution is 16bit.</li>
 <li>If 3, no signal.</li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
+<li>EDK_OK if successful </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae3c9460b83e3c372df24b8a425d3ed16"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_GetHeadsetSettingsCortex </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>userId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int *&#160;</td>
+          <td class="paramname"><em>EPOCmode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int *&#160;</td>
+          <td class="paramname"><em>eegRate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int *&#160;</td>
+          <td class="paramname"><em>eegRes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int *&#160;</td>
+          <td class="paramname"><em>memsRate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int *&#160;</td>
+          <td class="paramname"><em>memsRes</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get headset settings from EPOC+ headset for Cortex. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>Available for EPOC+ headset only. Headset settings can only be retrieved via USB connection.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">userId</td><td>- user ID </td></tr>
+    <tr><td class="paramname">EPOCmode</td><td>- If 0, EPOC mode is EPOC.<ul>
+<li>If 1, EPOC mode is EPOC+. </li>
+</ul>
+</td></tr>
+    <tr><td class="paramname">eegRate</td><td>- If 128, EEG sample rate is 128Hz.<ul>
+<li>If 256, EEG sample rate is 256Hz. </li>
+</ul>
+</td></tr>
+    <tr><td class="paramname">eegRes</td><td>- If 14, EEG resolution is 14bit.<ul>
+<li>If 16, EEG resolution is 16bit. </li>
+</ul>
+</td></tr>
+    <tr><td class="paramname">memsRate</td><td>- If 0, motion sample rate is OFF.<ul>
+<li>If 32, motion sample rate is 32Hz.</li>
+<li>If 64, motion sample rate is 64Hz.</li>
+<li>If 128, motion sample rate is 128Hz. </li>
+</ul>
+</td></tr>
+    <tr><td class="paramname">memsRes</td><td>- If 0, motion resolution is off.<ul>
+<li>If 14, motion resolution is 14bit.</li>
+<li>If 16, motion resolution is 16bit.</li>
 </ul>
 </td></tr>
   </table>
@@ -1671,7 +1764,7 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">userId</td><td>- user ID for query </td></tr>
-    <tr><td class="paramname">pHwSerialOut</td><td>- serial number for the headset pair.</td></tr>
+    <tr><td class="paramname">pHwSerialOut</td><td>- serial number for the paired headset.</td></tr>
   </table>
   </dd>
 </dl>
@@ -1744,7 +1837,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Free memory referenced by a data handle. </p>
+<p>Free memory referenced by a motion data handle. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">hData</td><td>- a handle returned by <a class="el" href="_iedk_8h.html#a99d0b4dccf58bd31e973db657fd068d7" title="Return a handle to memory that can hold motion data. ">IEE_MotionDataCreate()</a> </td></tr>
@@ -1877,7 +1970,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Extract data of a list of channels from the data handle. </p>
+<p>Extract motion data of a list of channels from the data handle. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">hData</td><td>- a handle returned by <a class="el" href="_iedk_8h.html#a99d0b4dccf58bd31e973db657fd068d7" title="Return a handle to memory that can hold motion data. ">IEE_MotionDataCreate()</a> </td></tr>
@@ -2217,7 +2310,7 @@ Functions</h2></td></tr>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Dec 22 2016 15:08:36 for Emotiv SDK Community Edition by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jul 21 2017 16:56:15 for Emotiv SDK Advanced Edition by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

@@ -8,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
         <meta name="generator" content="Doxygen 1.8.11"/>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <title>Emotiv SDK Community Edition: IEegData.h File Reference</title>
+        <title>Emotiv SDK Advanced Edition: IEegData.h File Reference</title>
         <!--<link href="tabs.css" rel="stylesheet" type="text/css"/>-->
         <script type="text/javascript" src="dynsections.js"></script>
         <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -21,7 +21,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">Emotiv SDK Community Edition 3.4.0</a>
+                    <a class="navbar-brand">Emotiv SDK Advanced Edition 3.5.0</a>
                 </div>
             </div>
         </nav>
@@ -87,7 +87,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:ab2e3abbc834c31b16a324c5854007a10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the content of the data handle to point to new data since the last call.  <a href="#ab2e3abbc834c31b16a324c5854007a10">More...</a><br /></td></tr>
 <tr class="separator:ab2e3abbc834c31b16a324c5854007a10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7fd94414cd4910d4755e3442e5223798"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_eeg_data_8h.html#a7fd94414cd4910d4755e3442e5223798">IEE_DataGet</a> (<a class="el" href="_iedk_8h.html#a69d0eae028ac31f9b30316927bc7db50">DataHandle</a> hData, <a class="el" href="_iedk_8h.html#aa63b56ae1fe316af47816df13b00d646">IEE_DataChannel_t</a> channel, double buffer[], unsigned int bufferSizeInSample)</td></tr>
-<tr class="memdesc:a7fd94414cd4910d4755e3442e5223798"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract data of a particulat channel from the data handle.  <a href="#a7fd94414cd4910d4755e3442e5223798">More...</a><br /></td></tr>
+<tr class="memdesc:a7fd94414cd4910d4755e3442e5223798"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract data of a particular channel from the data handle.  <a href="#a7fd94414cd4910d4755e3442e5223798">More...</a><br /></td></tr>
 <tr class="separator:a7fd94414cd4910d4755e3442e5223798"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b9efb94d7bad88bf8fa010e3eb278be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_eeg_data_8h.html#a7b9efb94d7bad88bf8fa010e3eb278be">IEE_DataGetMultiChannels</a> (<a class="el" href="_iedk_8h.html#a69d0eae028ac31f9b30316927bc7db50">DataHandle</a> hData, <a class="el" href="_iedk_8h.html#aa63b56ae1fe316af47816df13b00d646">IEE_DataChannel_t</a> channels[], unsigned int nChannels, double *buffer[], unsigned int bufferSizeInSample)</td></tr>
 <tr class="memdesc:a7b9efb94d7bad88bf8fa010e3eb278be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract data of a list of channels from the data handle.  <a href="#a7b9efb94d7bad88bf8fa010e3eb278be">More...</a><br /></td></tr>
@@ -111,8 +111,17 @@ Functions</h2></td></tr>
 <tr class="memdesc:abd14221e5d662700e085fc9079ede427"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert sychronization signal to the data stream.  <a href="#abd14221e5d662700e085fc9079ede427">More...</a><br /></td></tr>
 <tr class="separator:abd14221e5d662700e085fc9079ede427"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b417a8e3070e6370635471c26e62fa9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_eeg_data_8h.html#a5b417a8e3070e6370635471c26e62fa9">IEE_DataSetMarker</a> (unsigned int userId, int marker)</td></tr>
-<tr class="memdesc:a5b417a8e3070e6370635471c26e62fa9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert marker to the data stream.  <a href="#a5b417a8e3070e6370635471c26e62fa9">More...</a><br /></td></tr>
+<tr class="memdesc:a5b417a8e3070e6370635471c26e62fa9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert marker to the eeg stream.  <a href="#a5b417a8e3070e6370635471c26e62fa9">More...</a><br /></td></tr>
 <tr class="separator:a5b417a8e3070e6370635471c26e62fa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a394b6bbcd95f956cb279531599677a1d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_eeg_data_8h.html#a394b6bbcd95f956cb279531599677a1d">IEE_DataEnableBufferForMarker</a> (unsigned int userId, bool enable, float bufferSizeInSec)</td></tr>
+<tr class="memdesc:a394b6bbcd95f956cb279531599677a1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable EEG buffer to improve setting marker.  <a href="#a394b6bbcd95f956cb279531599677a1d">More...</a><br /></td></tr>
+<tr class="separator:a394b6bbcd95f956cb279531599677a1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a000dc2e45480f1535c582bff9a135deb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_eeg_data_8h.html#a000dc2e45480f1535c582bff9a135deb">IEE_DataSetMarkerWithEpoch</a> (unsigned int userId, unsigned int markerColum, float markerHardwareColum=0, double epoch=0)</td></tr>
+<tr class="memdesc:a000dc2e45480f1535c582bff9a135deb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert marker to the eeg stream.  <a href="#a000dc2e45480f1535c582bff9a135deb">More...</a><br /></td></tr>
+<tr class="separator:a000dc2e45480f1535c582bff9a135deb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f22090276ff413f793cc7334b5fedd7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_eeg_data_8h.html#a9f22090276ff413f793cc7334b5fedd7">IEE_DataSetNewModelMarker</a> (unsigned int userId, unsigned int markerColum, float markerHardwareColum, double epoch=0)</td></tr>
+<tr class="memdesc:a9f22090276ff413f793cc7334b5fedd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert marker to the data stream with new model.  <a href="#a9f22090276ff413f793cc7334b5fedd7">More...</a><br /></td></tr>
+<tr class="separator:a9f22090276ff413f793cc7334b5fedd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5df597eb66a20c87e99b0e106d9d9a3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_eeg_data_8h.html#ae5df597eb66a20c87e99b0e106d9d9a3">IEE_DataGetSamplingRate</a> (unsigned int userId, unsigned int *samplingRateOut)</td></tr>
 <tr class="memdesc:ae5df597eb66a20c87e99b0e106d9d9a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get sampling rate of the EEG data stream.  <a href="#ae5df597eb66a20c87e99b0e106d9d9a3">More...</a><br /></td></tr>
 <tr class="separator:ae5df597eb66a20c87e99b0e106d9d9a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -175,7 +184,6 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Control data acquisition inside EmoEngine (disabled by default). </p>
-<dl class="section remark"><dt>Remarks</dt><dd>Only available in SDK Premium Edition.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">userId</td><td>- user ID </td></tr>
@@ -215,7 +223,6 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Check if data acquisition is enabled. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>Only available in SDK Premium Edition.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">userId</td><td>- user ID </td></tr>
@@ -245,8 +252,53 @@ Functions</h2></td></tr>
 
 <p>Return a handle to memory that can hold EEG data. </p>
 <p>This handle can be reused by the caller to retrieve subsequent data.</p>
-<dl class="section remark"><dt>Remarks</dt><dd>Only available in SDK Premium Edition.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>DataHandle </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a394b6bbcd95f956cb279531599677a1d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_DataEnableBufferForMarker </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>userId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enable</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>bufferSizeInSec</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enable EEG buffer to improve setting marker. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">userId</td><td>- user ID </td></tr>
+    <tr><td class="paramname">enable</td><td>- enable if true </td></tr>
+    <tr><td class="paramname">bufferSizeInSec</td><td>- buffer size in second </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
+<li>EDK_OK if the command succeeded </li>
+</ul>
+</dd></dl>
 
 </div>
 </div>
@@ -265,7 +317,6 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Free memory referenced by a data handle. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>Only available in SDK Premium Edition.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">hData</td><td>- a handle returned by <a class="el" href="_i_eeg_data_8h.html#aa81b403f89833a626cf72a741bb87ed7" title="Return a handle to memory that can hold EEG data. ">IEE_DataCreate()</a> </td></tr>
@@ -311,8 +362,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Extract data of a particulat channel from the data handle. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>Only available in SDK Premium Edition.</dd></dl>
+<p>Extract data of a particular channel from the data handle. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">hData</td><td>- a handle returned by <a class="el" href="_i_eeg_data_8h.html#aa81b403f89833a626cf72a741bb87ed7" title="Return a handle to memory that can hold EEG data. ">IEE_DataCreate()</a> </td></tr>
@@ -344,10 +394,9 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Return the size of the data buffer. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>Only available in SDK Premium Edition.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pBufferSizeInSecOut</td><td>- receives the size of the data buffer </td></tr>
+    <tr><td class="paramname">pBufferSizeInSecOut</td><td>- the size of received the data buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -401,7 +450,6 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Extract data of a list of channels from the data handle. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>Only available in SDK Premium Edition.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">hData</td><td>- a handle returned by <a class="el" href="_i_eeg_data_8h.html#aa81b403f89833a626cf72a741bb87ed7" title="Return a handle to memory that can hold EEG data. ">IEE_DataCreate()</a> </td></tr>
@@ -444,11 +492,10 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Return number of sample of data stored in the data handle. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>Only available in SDK Premium Edition.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">hData</td><td>- a handle returned by <a class="el" href="_i_eeg_data_8h.html#aa81b403f89833a626cf72a741bb87ed7" title="Return a handle to memory that can hold EEG data. ">IEE_DataCreate()</a> </td></tr>
-    <tr><td class="paramname">nSampleOut</td><td>- receives the number of sample of data stored in the data handle </td></tr>
+    <tr><td class="paramname">nSampleOut</td><td>- the number of received sample of data stored in the data handle </td></tr>
   </table>
   </dd>
 </dl>
@@ -484,7 +531,6 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get sampling rate of the EEG data stream. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>Only available in SDK Premium Edition.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">userId</td><td>- user ID </td></tr>
@@ -514,9 +560,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set the size of the data buffer. </p>
-<p>The size of the buffer affects how frequent <a class="el" href="_i_eeg_data_8h.html#ab2e3abbc834c31b16a324c5854007a10" title="Update the content of the data handle to point to new data since the last call. ">IEE_DataUpdateHandle()</a> needs to be called to prevent data loss.</p>
-<dl class="section remark"><dt>Remarks</dt><dd>Only available in SDK Premium Edition.</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>The size of the buffer affects how frequent <a class="el" href="_i_eeg_data_8h.html#ab2e3abbc834c31b16a324c5854007a10" title="Update the content of the data handle to point to new data since the last call. ">IEE_DataUpdateHandle()</a> needs to be called to prevent data loss. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">bufferSizeInSec</td><td>- buffer size in second </td></tr>
   </table>
@@ -553,12 +597,115 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Insert marker to the data stream. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>Only available in SDK Premium Edition.</dd></dl>
+<p>Insert marker to the eeg stream. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">userId</td><td>- user ID </td></tr>
     <tr><td class="paramname">marker</td><td>- value of the marker </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
+<li>EDK_OK if the command succeeded </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a000dc2e45480f1535c582bff9a135deb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_DataSetMarkerWithEpoch </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>userId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>markerColum</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>markerHardwareColum</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>epoch</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Insert marker to the eeg stream. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">userId</td><td>- user ID </td></tr>
+    <tr><td class="paramname">marker</td><td>- value of the marker colum and marker hardware colum </td></tr>
+    <tr><td class="paramname">epoch</td><td>- epoch time as millisecond of the marker </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>EDK_ERROR_CODE<ul>
+<li>EDK_OK if the command succeeded </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9f22090276ff413f793cc7334b5fedd7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_emotiv_license_8h.html#a71f2f924934ca9d7f770bc458493c4a8">EDK_API</a> int IEE_DataSetNewModelMarker </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>userId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>markerColum</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>markerHardwareColum</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>epoch</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Insert marker to the data stream with new model. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">userId</td><td>- user ID </td></tr>
+    <tr><td class="paramname">marker</td><td>- value of the marker colum and marker hardware colum </td></tr>
+    <tr><td class="paramname">epoch</td><td>- epoch time of the marker </td></tr>
   </table>
   </dd>
 </dl>
@@ -594,7 +741,6 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Insert sychronization signal to the data stream. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>Only available in SDK Premium Edition.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">userId</td><td>- user ID </td></tr>
@@ -634,7 +780,6 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Update the content of the data handle to point to new data since the last call. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>Only available in SDK Premium Edition.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">userId</td><td>- user ID </td></tr>
@@ -658,7 +803,7 @@ Functions</h2></td></tr>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Dec 22 2016 15:08:37 for Emotiv SDK Community Edition by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jul 21 2017 16:56:15 for Emotiv SDK Advanced Edition by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

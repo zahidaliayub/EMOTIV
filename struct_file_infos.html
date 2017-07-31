@@ -8,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
         <meta name="generator" content="Doxygen 1.8.11"/>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <title>Emotiv SDK Advanced Edition: profileVerInfo Struct Reference</title>
+        <title>Emotiv SDK Advanced Edition: FileInfos Struct Reference</title>
         <!--<link href="tabs.css" rel="stylesheet" type="text/css"/>-->
         <script type="text/javascript" src="dynsections.js"></script>
         <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -52,43 +52,71 @@
   <div class="summary">
 <a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
-<div class="title">profileVerInfo Struct Reference</div>  </div>
+<div class="title">FileInfos Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Profile version.  
- <a href="structprofile_ver_info.html#details">More...</a></p>
+<p>eeg data file information  
+ <a href="struct_file_infos.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="_emotiv_cloud_client_8h_source.html">EmotivCloudClient.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="_edf_data_8h_source.html">EdfData.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:a54f3f06971a7fc9862c2fd0a8bec8084"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprofile_ver_info.html#a54f3f06971a7fc9862c2fd0a8bec8084">version</a></td></tr>
-<tr class="separator:a54f3f06971a7fc9862c2fd0a8bec8084"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a244417c461fb9fa112488e58ebbf4185"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprofile_ver_info.html#a244417c461fb9fa112488e58ebbf4185">last_modified</a> [30]</td></tr>
-<tr class="separator:a244417c461fb9fa112488e58ebbf4185"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22fed752abb7d761112af37826408b16"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_file_infos.html#a22fed752abb7d761112af37826408b16">eegFilePath</a></td></tr>
+<tr class="separator:a22fed752abb7d761112af37826408b16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a580d7fc526805c5fd047f8b85a50bdec"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_file_infos.html#a580d7fc526805c5fd047f8b85a50bdec">EEGSampleRate</a></td></tr>
+<tr class="separator:a580d7fc526805c5fd047f8b85a50bdec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70c02b6dd5783e55222062215f136b22"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_file_infos.html#a70c02b6dd5783e55222062215f136b22">motionSampleRate</a></td></tr>
+<tr class="separator:a70c02b6dd5783e55222062215f136b22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1939bc268b7f1ef4f7a26ca8ca23bf0"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_file_infos.html#aa1939bc268b7f1ef4f7a26ca8ca23bf0">duration</a></td></tr>
+<tr class="separator:aa1939bc268b7f1ef4f7a26ca8ca23bf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Profile version. </p>
+<div class="textblock"><p>eeg data file information </p>
 </div><h2 class="groupheader">Field Documentation</h2>
-<a class="anchor" id="a244417c461fb9fa112488e58ebbf4185"></a>
+<a class="anchor" id="aa1939bc268b7f1ef4f7a26ca8ca23bf0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char profileVerInfo::last_modified[30]</td>
+          <td class="memname">unsigned int FileInfos::duration</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a54f3f06971a7fc9862c2fd0a8bec8084"></a>
+<a class="anchor" id="a22fed752abb7d761112af37826408b16"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int profileVerInfo::version</td>
+          <td class="memname">char* FileInfos::eegFilePath</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a580d7fc526805c5fd047f8b85a50bdec"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int FileInfos::EEGSampleRate</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a70c02b6dd5783e55222062215f136b22"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int FileInfos::motionSampleRate</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -96,7 +124,7 @@ Data Fields</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li><a class="el" href="_emotiv_cloud_client_8h_source.html">EmotivCloudClient.h</a></li>
+<li><a class="el" href="_edf_data_8h_source.html">EdfData.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.8-->

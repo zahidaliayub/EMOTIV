@@ -13,6 +13,7 @@ Title=Emotiv SDK Advanced Edition
 main="Emotiv SDK Advanced Edition","index.hhc","index.hhk","index.html","index.html",,,,,0x23520,,0x70387e,,,,,,,,0
 
 [FILES]
+_edf_data_8h_source.html
 _emotiv_cloud_client_8h_source.html
 _emotiv_license_8h_source.html
 _facial_expression_detection_8h_source.html
@@ -23,6 +24,7 @@ _i_emo_state_d_l_l_8h_source.html
 _i_emo_state_performance_metric_8h_source.html
 _i_emotiv_profile_8h_source.html
 _mental_command_detection_8h_source.html
+_edf_data_8h.html
 _emotiv_cloud_client_8h.html
 _emotiv_license_8h.html
 _facial_expression_detection_8h.html
@@ -34,6 +36,8 @@ _i_emo_state_performance_metric_8h.html
 _i_emotiv_profile_8h.html
 mainpage_8md.html
 _mental_command_detection_8h.html
+struct_file_infos.html
+struct_i_e_e___debit_infos__struct.html
 struct_i_e_e___license_infos__struct.html
 struct_i_input_sensor_descriptor__struct.html
 structprofile_ver_info.html
@@ -54,6 +58,7 @@ globals_m.html
 globals_n.html
 globals_p.html
 globals_t.html
+globals_u.html
 globals_func.html
 globals_type.html
 globals_enum.html

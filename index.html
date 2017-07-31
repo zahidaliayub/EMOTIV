@@ -8,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
         <meta name="generator" content="Doxygen 1.8.11"/>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <title>Emotiv SDK Community Edition: Welcome</title>
+        <title>Emotiv SDK Advanced Edition: Welcome</title>
         <!--<link href="tabs.css" rel="stylesheet" type="text/css"/>-->
         <script type="text/javascript" src="dynsections.js"></script>
         <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -21,7 +21,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">Emotiv SDK Community Edition 3.4.0</a>
+                    <a class="navbar-brand">Emotiv SDK Advanced Edition 3.5.0</a>
                 </div>
             </div>
         </nav>
@@ -49,7 +49,7 @@
 <div class="textblock"><p>This API document will help you to use the Emotiv SDK to build software that is compatible with Emotiv headsets.</p>
 <p>For examples and latest releases please check out the <a href="https://github.com/Emotiv">Github repository</a>. There are some sample programs that demonstrate these concepts and serve as a tutorial to help you get started with the Emotiv API.</p>
 <h2>Introduction to the Emotiv SDK and EmoEngine</h2>
-<p>The Emotiv SDK is exposed as an ANSI C interface that is declared in 5 header files (<a class="el" href="_iedk_8h.html">Iedk.h</a>, <a class="el" href="_i_emo_state_d_l_l_8h.html">IEmoStateDLL.h</a>, <a class="el" href="_iedk_error_code_8h.html">IedkErrorCode.h</a>, <a class="el" href="_facial_expression_detection_8h.html">FacialExpressionDetection.h</a>, <a class="el" href="_mental_command_detection_8h.html">MentalCommandDetection.h</a>). Applications that use the Emotiv API simply include <a class="el" href="_iedk_8h.html">Iedk.h</a> and link with platform dependent library files.</p>
+<p>The Emotiv SDK is exposed as an ANSI C interface that is declared in 11 header files (<a class="el" href="_iedk_8h.html">Iedk.h</a>, <a class="el" href="_i_emo_state_d_l_l_8h.html">IEmoStateDLL.h</a>, <a class="el" href="_iedk_error_code_8h.html">IedkErrorCode.h</a>, <a class="el" href="_facial_expression_detection_8h.html">FacialExpressionDetection.h</a>, <a class="el" href="_mental_command_detection_8h.html">MentalCommandDetection.h</a>, <a class="el" href="_edf_data_8h.html">EdfData.h</a>, <a class="el" href="_emotiv_cloud_client_8h.html">EmotivCloudClient.h</a>, <a class="el" href="_emotiv_license_8h.html">EmotivLicense.h</a>, <a class="el" href="_i_eeg_data_8h.html">IEegData.h</a>, <a class="el" href="_i_emo_state_performance_metric_8h.html">IEmoStatePerformanceMetric.h</a>,<a class="el" href="_i_emotiv_profile_8h.html">IEmotivProfile.h</a>). Applications that use the Emotiv API simply include <a class="el" href="_iedk_8h.html">Iedk.h</a> and link with platform dependent library files.</p>
 <p>The Emotiv EmoEngine refers to the logical abstraction of the functionality that Emotiv provides in the run-time library. The EmoEngine communicates with the Emotiv headset, receives preprocessed EEG and gyroscope data, manages user-specific or application-specific settings, performs post-processing, and translates the Emotiv detection results into an easy-to-use structure called an EmoState. Emotiv API functions that modify or retrieve EmoEngine settings are prefixed with <b>IEE_</b>.</p>
 <h2>Integrating the Emotiv SDK with an application</h2>
 <p>An EmoState is an opaque data structure that contains the current state of the Emotiv detections, which, in turn, reflect the user’s facial, emotional and cognitive state. EmoState data is retrieved by Emotiv API functions that are prefixed with <b>IS_</b>. EmoStates and other Emotiv API data structures are typically referenced through opaque handles (e.g. EmoStateHandle and EmoEngineEventHandle). These data structures and their handles are allocated and freed using the appropriate Emotiv API functions (i.e. <a class="el" href="_iedk_8h.html#af07c8036b9a7959012f70e4f997f0972" title="Return a handle to memory that can hold an EmoEngine event. ">IEE_EmoEngineEventCreate()</a> and <a class="el" href="_iedk_8h.html#ade9ee08b3b9056d987959c1d8fc9323a" title="Free memory referenced by an event handle. ">IEE_EmoEngineEventFree()</a>).</p>
@@ -80,7 +80,7 @@
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Dec 22 2016 15:08:37 for Emotiv SDK Community Edition by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jul 21 2017 16:56:15 for Emotiv SDK Advanced Edition by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

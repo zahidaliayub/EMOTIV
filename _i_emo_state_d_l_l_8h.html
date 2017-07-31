@@ -8,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
         <meta name="generator" content="Doxygen 1.8.11"/>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <title>Emotiv SDK Community Edition: IEmoStateDLL.h File Reference</title>
+        <title>Emotiv SDK Advanced Edition: IEmoStateDLL.h File Reference</title>
         <!--<link href="tabs.css" rel="stylesheet" type="text/css"/>-->
         <script type="text/javascript" src="dynsections.js"></script>
         <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -21,7 +21,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand">Emotiv SDK Community Edition 3.4.0</a>
+                    <a class="navbar-brand">Emotiv SDK Advanced Edition 3.5.0</a>
                 </div>
             </div>
         </nav>
@@ -213,10 +213,10 @@ Functions</h2></td></tr>
 <tr class="memdesc:ae4d83aa79acb7274a0f63fd2b7f053d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query the contact quality of a specific EEG electrode.  <a href="#ae4d83aa79acb7274a0f63fd2b7f053d3">More...</a><br /></td></tr>
 <tr class="separator:ae4d83aa79acb7274a0f63fd2b7f053d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16738742f662bb7ff33d7a7a14b60683"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_i_emo_state_performance_metric_8h.html#a801cd768cc0c7b20d80bef123302443f">EMOSTATE_DLL_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_emo_state_d_l_l_8h.html#a16738742f662bb7ff33d7a7a14b60683">IS_GetContactQualityFromAllChannels</a> (<a class="el" href="_iedk_8h.html#a3641d4839966271cf3d2e375d4cbf12f">EmoStateHandle</a> state, <a class="el" href="_i_emo_state_d_l_l_8h.html#a0c87623c2ad0489689ab16b350bbedbf">IEE_EEG_ContactQuality_t</a> *contactQuality, size_t numChannels)</td></tr>
-<tr class="memdesc:a16738742f662bb7ff33d7a7a14b60683"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query the contact quality of all the electrodes in one single call.  <a href="#a16738742f662bb7ff33d7a7a14b60683">More...</a><br /></td></tr>
+<tr class="memdesc:a16738742f662bb7ff33d7a7a14b60683"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the contact quality of all the electrodes in one single call.  <a href="#a16738742f662bb7ff33d7a7a14b60683">More...</a><br /></td></tr>
 <tr class="separator:a16738742f662bb7ff33d7a7a14b60683"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abac6dfe9fbbe9f959432c59dd39b056b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_i_emo_state_performance_metric_8h.html#a801cd768cc0c7b20d80bef123302443f">EMOSTATE_DLL_API</a> <a class="el" href="_i_emo_state_d_l_l_8h.html#a69daa3afd0de059df769983e1955fe97">IEE_SignalStrength_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_emo_state_d_l_l_8h.html#abac6dfe9fbbe9f959432c59dd39b056b">IS_GetWirelessSignalStatus</a> (<a class="el" href="_iedk_8h.html#a3641d4839966271cf3d2e375d4cbf12f">EmoStateHandle</a> state)</td></tr>
-<tr class="memdesc:abac6dfe9fbbe9f959432c59dd39b056b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query of the current wireless signal strength.  <a href="#abac6dfe9fbbe9f959432c59dd39b056b">More...</a><br /></td></tr>
+<tr class="memdesc:abac6dfe9fbbe9f959432c59dd39b056b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current wireless signal strength.  <a href="#abac6dfe9fbbe9f959432c59dd39b056b">More...</a><br /></td></tr>
 <tr class="separator:abac6dfe9fbbe9f959432c59dd39b056b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaee78abaa1dd794fd581dd8101e8db0f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_i_emo_state_performance_metric_8h.html#a801cd768cc0c7b20d80bef123302443f">EMOSTATE_DLL_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_emo_state_d_l_l_8h.html#aaee78abaa1dd794fd581dd8101e8db0f">IS_GetBatteryChargeLevel</a> (<a class="el" href="_iedk_8h.html#a3641d4839966271cf3d2e375d4cbf12f">EmoStateHandle</a> state, int *chargeLevel, int *maxChargeLevel)</td></tr>
 <tr class="memdesc:aaee78abaa1dd794fd581dd8101e8db0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the level of charge remaining in the headset battery.  <a href="#aaee78abaa1dd794fd581dd8101e8db0f">More...</a><br /></td></tr>
@@ -1415,7 +1415,7 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">state</td><td>- EmoStateHandle </td></tr>
-    <tr><td class="paramname">electroIdx</td><td>- The index of the electrode for query</td></tr>
+    <tr><td class="paramname">electroIdx</td><td>- The index of the electrode for querying</td></tr>
   </table>
   </dd>
 </dl>
@@ -1454,7 +1454,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Query the contact quality of all the electrodes in one single call. </p>
+<p>Get the contact quality of all the electrodes in one single call. </p>
 <p>The contact quality will be stored in the array, contactQuality, passed to the function. The value stored in contactQuality[0] is identical to the result returned by IS_GetContactQuality(state, 0) The value stored in contactQuality[1] is identical to the result returned by IS_GetContactQuality(state, 1). etc. The ordering of the array is consistent with the ordering of the logical input channels in IEE_InputChannels_enum.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1465,7 +1465,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Number of signal quality values copied to the contactQuality array.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="_i_emo_state_d_l_l_8h.html#a16738742f662bb7ff33d7a7a14b60683" title="Query the contact quality of all the electrodes in one single call. ">IS_GetContactQualityFromAllChannels</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_i_emo_state_d_l_l_8h.html#a16738742f662bb7ff33d7a7a14b60683" title="Get the contact quality of all the electrodes in one single call. ">IS_GetContactQualityFromAllChannels</a> </dd></dl>
 
 </div>
 </div>
@@ -1561,7 +1561,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Query of the current wireless signal strength. </p>
+<p>Get the current wireless signal strength. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">state</td><td>- EmoStateHandle</td></tr>
@@ -1721,7 +1721,7 @@ Functions</h2></td></tr>
 </div>
 </div>
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Dec 22 2016 15:08:37 for Emotiv SDK Community Edition by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jul 21 2017 16:56:15 for Emotiv SDK Advanced Edition by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>
