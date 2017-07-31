@@ -142,7 +142,7 @@ extern "C" {
     //! Load a user profile from disk and assigns it to the specified user
     /*!
         \param userID - a valid user ID
-        \param szInputFilename - platform-dependent filesystem path of saved user profile
+        \param szInputFilename - filename path of saved user profile (platform-dependent)
 
         \return EDK_ERROR_CODE
                 - EDK_OK if successful
@@ -157,7 +157,7 @@ extern "C" {
     //!  Save a user profile for specified user to disk
     /*!
         \param userID - a valid user ID
-        \param szOutputFilename - platform-dependent filesystem path for output file
+        \param szOutputFilename - filename path for output file  (platform-dependent)
 
         \return EDK_ERROR_CODE
                 - EDK_OK if successful

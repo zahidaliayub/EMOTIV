@@ -105,8 +105,9 @@ int main()
 				}
 			}
 
+
             if (readytocollect) {
-                int result = IEE_DataUpdateHandle(0, hData);
+                int result = IEE_DataUpdateHandle(userID, hData);
 
                 if (result != EDK_OK)
                     continue;
@@ -115,12 +116,12 @@ int main()
 				IEE_DataGetNumberOfSample(hData, &nSamplesTaken);							
 				
 				if (nSamplesTaken != 0) {
-                    std::cout << "Updated " << nSamplesTaken << std::endl;
+                    std::cout << "Number of received samples: " << nSamplesTaken << std::endl;
 
 					double* data = new double[nSamplesTaken];
 					for (int sampleIdx = 0; sampleIdx < (int)nSamplesTaken; ++sampleIdx) {
-						for (int i = 0; i < sizeof(EpocChannelList) / sizeof(IEE_DataChannel_t); i++) {
-							IEE_DataGet(hData, EpocChannelList[i], data, nSamplesTaken);
+                        for (int i = 0; i < sizeof(EpocChannelList) / sizeof(IEE_DataChannel_t); i++) {
+                            IEE_DataGet(hData, EpocChannelList[i], data, nSamplesTaken);
 							ofs << data[sampleIdx] << ",";
 						}
 						
@@ -129,7 +130,7 @@ int main()
 					
 					delete[] data;
 				}
-                std::this_thread::sleep_for(std::chrono::milliseconds(10));
+                std::this_thread::sleep_for(std::chrono::milliseconds(50));
 			}			
 		}
 

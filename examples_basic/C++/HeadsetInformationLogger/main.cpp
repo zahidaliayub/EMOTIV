@@ -84,7 +84,7 @@ int main(int argc, char** argv)
 	std::ofstream ofs;
     std::string filePath;
 #ifndef __APPLE__
-    filePath = "test.csv";
+    filePath = "HeadsetInformationLog.csv";
 #else
     std::string home_path;
     const char* home = getenv("HOME");

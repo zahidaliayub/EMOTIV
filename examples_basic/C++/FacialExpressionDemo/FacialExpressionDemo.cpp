@@ -312,7 +312,7 @@ void handleFacialExpressionEvent(std::ostream& os,
     case IEE_FacialExpressionTrainingSucceeded:
     {
         os << std::endl << "FacialExpression training for user " << userID
-           << " SUCCIEEDED!" << std::endl;
+           << " SUCCEEDED!" << std::endl;
         break;
     }
 

@@ -31,8 +31,9 @@ int main(int argc,char* argv[])
 {
 	EmoEngineEventHandle hEvent = IEE_EmoEngineEventCreate();
 	EmoStateHandle eState = IEE_EmoStateCreate();
-	unsigned int userID = -1;
+	unsigned int userID = 0;
 	list<int> listUser;
+    
 
 	if( IEE_EngineConnect() == EDK_OK )
 	{
@@ -42,14 +43,12 @@ int main(int argc,char* argv[])
 			if( state == EDK_OK )
 			{
 				IEE_Event_t eventType = IEE_EmoEngineEventGetType(hEvent);				
-				IEE_EmoEngineEventGetUserId(hEvent, &userID);
-				if(userID==-1)
-					continue;			
+				IEE_EmoEngineEventGetUserId(hEvent, &userID);		
 
 				if(eventType == IEE_EmoStateUpdated  )
 				{								
 					IEE_EmoEngineEventGetEmoState(hEvent, eState);
-					cout<< "User " << userID << ": " << IS_GetTimeFromStart(eState);										
+					cout<< "User " << userID << ": " << IS_GetTimeFromStart(eState) << endl;										
 				}
 				// userremoved event
 				else if( eventType == IEE_UserRemoved )
@@ -63,7 +62,6 @@ int main(int argc,char* argv[])
 					listUser.push_back(userID);
 					cout <<"user ID: "<<userID<<" have added" << endl;
 				}		
-				userID=-1;
 			}			
 		}
 	}

@@ -49,9 +49,7 @@ extern "C" {
 
 	//! Return a handle to memory that can hold EEG data.
 	/*!
-	    This handle can be reused by the caller to retrieve subsequent data.
-
-	    \remark Only available in SDK Premium Edition.
+	    This handle can be reused by the caller to retrieve subsequent data.    
 
 		\return DataHandle
     */
@@ -61,8 +59,6 @@ extern "C" {
 
 	//! Free memory referenced by a data handle.
 	/*!
-	    \remark Only available in SDK Premium Edition.
-
 		\param hData - a handle returned by IEE_DataCreate()
     */
 	EDK_API void
@@ -70,9 +66,7 @@ extern "C" {
 
 
 	//! Update the content of the data handle to point to new data since the last call.
-	/*!
-	    \remark Only available in SDK Premium Edition.
-
+	/*!	    
 		\param userId - user ID
 		\param hData - a handle returned by IEE_DataCreate()
 		\return EDK_ERROR_CODE
@@ -83,13 +77,11 @@ extern "C" {
 		                     DataHandle hData);
 
 
-	//! Extract data of a particulat channel from the data handle.
-	/*!
-	    \remark Only available in SDK Premium Edition.
-
-		\param hData - a handle returned by IEE_DataCreate()
+	//! Extract data of a particular channel from the data handle.
+	/*!    
+		\param hData   - a handle returned by IEE_DataCreate()
 		\param channel - channel that you are interested in
-		\param buffer - pre-allocated buffer
+		\param buffer  - pre-allocated buffer
 		\param bufferSizeInSample - size of the pre-allocated buffer
 		\return EDK_ERROR_CODE
 		         - EDK_OK if successful
@@ -102,13 +94,11 @@ extern "C" {
 
 
 	//! Extract data of a list of channels from the data handle.
-	/*!
-	   \remark Only available in SDK Premium Edition.
-
-	   \param hData - a handle returned by IEE_DataCreate()
-	   \param channels - a list of channel that you are interested in
+	/*!	   
+	   \param hData     - a handle returned by IEE_DataCreate()
+	   \param channels  - a list of channel that you are interested in
 	   \param nChannels - number of channels in the channel list
-	   \param buffer - pre-allocated 2 dimensional buffer, has to be nChannels x bufferSizeInSample
+	   \param buffer    - pre-allocated 2 dimensional buffer, has to be nChannels x bufferSizeInSample
 	   \param bufferSizeInSample - size of the pre-allocated buffer for each channel
 	   \return EDK_ERROR_CODE
 	           - EDK_OK if successful
@@ -122,11 +112,9 @@ extern "C" {
 
 
 	//! Return number of sample of data stored in the data handle.
-	/*!
-	    \remark Only available in SDK Premium Edition.
-
-		\param hData - a handle returned by IEE_DataCreate()
-		\param nSampleOut - receives the number of sample of data stored in the data handle
+	/*!	   
+		\param hData      - a handle returned by IEE_DataCreate()
+		\param nSampleOut - the number of received sample of data stored in the data handle
 		\return EDK_ERROR_CODE
 		    - EDK_OK if successful
     */
@@ -137,10 +125,7 @@ extern "C" {
 
 	//! Set the size of the data buffer.
 	/*!
-	    The size of the buffer affects how frequent IEE_DataUpdateHandle() needs to be called to prevent data loss.
-
-		\remark Only available in SDK Premium Edition.
-
+	    The size of the buffer affects how frequent IEE_DataUpdateHandle() needs to be called to prevent data loss.	
 		\param bufferSizeInSec - buffer size in second
 		\return EDK_ERROR_CODE
 		    - EDK_OK if successful
@@ -151,9 +136,7 @@ extern "C" {
 
 	//! Return the size of the data buffer.
 	/*!
-        \remark Only available in SDK Premium Edition.
-
-		\param pBufferSizeInSecOut - receives the size of the data buffer
+		\param pBufferSizeInSecOut - the size of received the data buffer
 		\return EDK_ERROR_CODE
 		    - EDK_OK if successful
     */
@@ -162,9 +145,7 @@ extern "C" {
 
 
 	//! Control data acquisition inside EmoEngine (disabled by default).
-	/*!
-        \remark Only available in SDK Premium Edition.
-
+	/*!       
 		\param userId - user ID
 		\param enable - enable if true
 		\return EDK_ERROR_CODE
@@ -176,10 +157,8 @@ extern "C" {
 
 
 	//! Check if data acquisition is enabled.
-	/*!
-	    \remark Only available in SDK Premium Edition.
-
-		\param userId - user ID
+	/*!	   
+		\param userId     - user ID
 		\param pEnableOut - get whether data acquisition is enabled
 		\return EDK_ERROR_CODE
 		    - EDK_OK if the command succeeded
@@ -190,9 +169,7 @@ extern "C" {
 
 
 	//! Insert sychronization signal to the data stream.
-	/*!
-        \remark Only available in SDK Premium Edition.
-
+	/*!       
 		\param userId - user ID
 		\param signal - value of the sychronization signal
 		\return EDK_ERROR_CODE
@@ -203,10 +180,8 @@ extern "C" {
 		                                int signal);
 
 
-	//! Insert marker to the data stream.
-	/*!
-        \remark Only available in SDK Premium Edition.
-
+	//! Insert marker to the eeg stream.
+	/*!       
 		\param userId - user ID
 		\param marker - value of the marker
 		\return EDK_ERROR_CODE
@@ -217,10 +192,52 @@ extern "C" {
 		                  int marker);
 
 
-	//! Get sampling rate of the EEG data stream.
-	/*!
-        \remark Only available in SDK Premium Edition.
+    //! Enable EEG buffer to improve setting marker
+    /*!        
+        \param userId - user ID
+        \param enable - enable if true
+        \param bufferSizeInSec - buffer size in second
+        \return EDK_ERROR_CODE
+                      - EDK_OK if the command succeeded
+    */
+    EDK_API int
+        IEE_DataEnableBufferForMarker(unsigned int userId,
+                                      bool enable,
+                                      float bufferSizeInSec);
 
+
+    //! Insert marker to the eeg stream
+    /*!        
+        \param userId - user ID
+        \param marker - value of the marker colum and marker hardware colum
+        \param epoch  - epoch time as millisecond of the marker
+        \return EDK_ERROR_CODE
+                      - EDK_OK if the command succeeded
+    */
+    EDK_API int
+        IEE_DataSetMarkerWithEpoch(unsigned int userId,
+                                   unsigned int markerColum,
+                                   float markerHardwareColum = 0,
+                                   double epoch = 0);
+
+
+    //! Insert marker to the data stream with new model
+    /*!        
+        \param userId - user ID
+        \param marker - value of the marker colum and marker hardware colum
+        \param epoch  - epoch time of the marker
+        \return EDK_ERROR_CODE
+            - EDK_OK if the command succeeded
+    */
+    EDK_API int
+        IEE_DataSetNewModelMarker(unsigned int userId,
+                                  unsigned int markerColum, 
+                                  float markerHardwareColum,
+                                  double epoch = 0);
+
+
+	//! Get sampling rate of the EEG data stream.
+	/*!        
 		\param userId - user ID
 		\param samplingRateOut - receives the sampling rate
 		\return EDK_ERROR_CODE

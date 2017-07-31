@@ -15,6 +15,7 @@
 #include <stdexcept>
 #include <thread>
 #include <chrono>
+#include <vector>
 
 #ifdef _WIN32
 #include <windows.h>
@@ -69,182 +70,98 @@ int main(int argc,char** argv)
 	EmoEngineEventHandle eEvent = IEE_EmoEngineEventCreate();
 	EmoStateHandle eState = IEE_EmoStateCreate();
 
-    std::ofstream ofs1("data1.csv",std::ios::trunc);
-	ofs1 << header << std::endl;
-    std::ofstream ofs2("data2.csv",std::ios::trunc);
-	ofs2 << header << std::endl;
-
 	// Initialize the users
 	// NOTE: Only expecting two for now
-	unsigned int userID = -1;
-	int userList[2]     = {-1,-1};
-	int totalSamples[2] = {0,0};		
-	int fileNumbers[2]  = {1,1};
-	int numUsers        = 0;
+	unsigned int userID = 0;
+    std::vector<std::pair<unsigned int, std::string>> userLists;
 
-	std::ofstream ofs[2];
-
-	// Initialize some parameter
-	float secs            = 1;
-	unsigned int datarate = 0;
-	bool readytocollect   = false;
-	int option            = 0;
-	int state             = 0;
-
+    std::cout << "===================================================================" << std::endl;
+    std::cout << "Example to show how to log the EEG data from maximum 2 dongles. \n";
+    std::cout << "Please remove all obsolete output files(.csv) before starting.\n";
+    std::cout << "===================================================================" << std::endl;
 	// Make sure we're connect
-	if( IEE_EngineConnect() == EDK_OK )
+    if (IEE_EngineConnect() != EDK_OK) {
+        throw std::runtime_error("Emotiv Driver start up failed.");
+    }
+
+	while(!_kbhit()) 
 	{
-
-		// Create the data holder
-		DataHandle eData = IEE_DataCreate();
-		IEE_DataSetBufferSizeInSec(secs);
-
-		// Let them know about it
-		std::cout << "Buffer size in secs:" << secs << std::endl;
-
-		// How many samples per file?
-		int samples_per_file = 1000;		// 3 seconds
-
-		// Presumably this will fail when we no longer
-		//	receive data...
-		while(!_kbhit()) 
+		// Grab the next event.
+		// We seem to mainly care about user adds and removes
+		int state = IEE_EngineGetNextEvent(eEvent); 
+		if( state == EDK_OK ) 
 		{
-			// Grab the next event.
-			// We seem to mainly care about user adds and removes
-			int state = IEE_EngineGetNextEvent(eEvent); 
-			if( state == EDK_OK ) 
+			// Grab some info about the event
+			IEE_Event_t eventType = IEE_EmoEngineEventGetType(eEvent);			
+			IEE_EmoEngineEventGetUserId(eEvent, &userID);
+				
+			// Add the user to the list, if necessary				
+			if (eventType == IEE_UserAdded)	
 			{
-				// Grab some info about the event
-				IEE_Event_t eventType = IEE_EmoEngineEventGetType(eEvent); // same				
-				IEE_EmoEngineEventGetUserId(eEvent, &userID); // same
+				std::cout << "User added: " << userID << endl;
+				IEE_DataAcquisitionEnable(userID,true);
+                //add to list
+                userLists.push_back(std::make_pair(userID, std::to_string(userID).append("_data.csv")));
 
-				// Do nothing if no user...
-				if(userID==-1) {
-					continue;	
-				}
-				
-				// Add the user to the list, if necessary				
-				if (eventType == IEE_UserAdded)	
-				{
-					std::cout << "User added: " << userID << endl;
-					IEE_DataAcquisitionEnable(userID,true);
-					userList[numUsers++] = userID;
+                if (userLists.size() > 2)
+                {
+                    throw std::runtime_error("Too many users on demo!");
+                }				
+			} 
+			else if (eventType == IEE_UserRemoved)
+			{
+				cout << "User removed: " << userID << endl;
 
-					if (numUsers > 2)
-					{
-                        throw std::runtime_error("Too many users on demo!");
-					}					
-				} 
-				else if (eventType == IEE_UserRemoved)
-				{
-					cout << "User removed: " << userID << endl;
-					if (userList[0] == userID)
-					{
-						userList[0] = userList[1];
-						userList[1] = -1;
-						numUsers--;
-					}
-					else if (userList[1] == userID)
-					{
-						userList[1] = -1;
-						numUsers--;
-					} 
-				}
-				
-				// Might be ready to get going.
-				if (numUsers == 2) {
-					readytocollect = true;
-				} else {
-					readytocollect = false;
-				}
-			}	
-
-			//IEE_DataUpdateHandle(userID, eData);
-
-			// If we've got both, then start collecting
-			if (readytocollect && (state==EDK_OK)) 
-			{		
-				int check = IEE_DataUpdateHandle(userID, eData);
-				unsigned int nSamplesTaken=0;
-				IEE_DataGetNumberOfSample(eData,&nSamplesTaken);
-
-				if( userID == 0 )
-				{
-					if( nSamplesTaken != 0) 
-					{
-						IsHeadset1On = true;
-                        if( onetime) {
-                            onetime = false;
-                        }
-                        for (int c = 0 ;
-                             c < sizeof(targetChannelList)/sizeof(IEE_DataChannel_t) ;
-                             c++)
-						{							
-							data1[c] = new double[nSamplesTaken];
-                            IEE_DataGet(eData, targetChannelList[c],
-                                        data1[c], nSamplesTaken);
-							numberOfSample1 = nSamplesTaken;
-						}
-					}
-					else IsHeadset1On = false;
-				}
-
-				if( userID == 1  )
-				{  
-					if(nSamplesTaken != 0) 
-					{
-						IsHeadset2On = true;
-                        if( onetime) {
-                            onetime = false;
-                        }
-                        for (int c = 0 ;
-                             c < sizeof(targetChannelList)/sizeof(IEE_DataChannel_t) ;
-                             c++)
-						{
-							data2[c] = new double[nSamplesTaken];
-                            IEE_DataGet(eData, targetChannelList[c],
-                                        data2[c], nSamplesTaken);
-							numberOfSample2 = nSamplesTaken;
-						}
-					}
-					else 
-						IsHeadset2On = false;  									
-				}
-								
-				if( IsHeadset1On && IsHeadset2On) 
-				{ 
-					cout <<"Update " << 0 <<" : " << numberOfSample1 << endl;
-					for (int c = 0 ; c < numberOfSample1  ; c++)
-					{
-                        for (int i = 0 ;
-                             i<sizeof(targetChannelList)/sizeof(IEE_DataChannel_t) ;
-                             i++)
-						{
-							ofs1 << data1[i][c] <<",";
-						}
-						ofs1 << std::endl;
-					}
-					cout <<"Update " << 1 <<" : " << numberOfSample2 << endl;
-					for (int c = 0 ; c < numberOfSample2  ; c++)
-					{
-                        for (int i = 0 ;
-                             i<sizeof(targetChannelList)/sizeof(IEE_DataChannel_t) ;
-                             i++)
-						{ 
-							ofs2 << data2[i][c] << ",";
-						}
-						ofs2 << std::endl;
-					}
-
-					// Don't overload */
-					IsHeadset1On = false;
-					IsHeadset2On = false;
-				}
+                for (auto iter = userLists.begin(); iter != userLists.end(); ++iter)
+                {
+                    if (iter->first == userID)
+                    {
+                        userLists.erase(iter);
+                        break;
+                    }
+                }
 			}
 		}
+        //if user_added received -> datahandle
+        for (auto iter = userLists.begin(); iter != userLists.end(); ++iter)
+        {
+            DataHandle eData = IEE_DataCreate();
+            int result = IEE_DataUpdateHandle(iter->first, eData);           
+
+            if (result == EDK_OK)
+            {
+                unsigned int nSamplesTaken = 0;
+                IEE_DataGetNumberOfSample(eData, &nSamplesTaken);
+
+                if (nSamplesTaken != 0) {
+                    std::cout << "Number of received samples: " << nSamplesTaken << std::endl;
+                    
+                    std::ofstream ofs(iter->second, std::ios::app);
+                    ofs.seekp(0, std::ios::end);
+                    if (!ofs.tellp())
+                        ofs << header << std::endl; //write header
+
+                    if (ofs.is_open())
+                    {
+                        
+                        double* data = new double[nSamplesTaken];
+                        for (int sampleIdx = 0; sampleIdx < (int)nSamplesTaken; ++sampleIdx) {
+                            for (int i = 0; i < sizeof(targetChannelList) / sizeof(IEE_DataChannel_t); i++) {
+                                IEE_DataGet(eData, targetChannelList[i], data, nSamplesTaken);
+                                ofs << data[sampleIdx] << ",";
+                            }
+
+                            ofs << std::endl;
+                        }
+                        ofs.close();
+                        delete[] data;
+                    }
+                }
+            }
+            IEE_DataFree(eData);            
+        }
+        std::this_thread::sleep_for(std::chrono::milliseconds(50));
 	}
-	ofs1.close();
-	ofs2.close();
 
 	IEE_EngineDisconnect();
 	IEE_EmoStateFree(eState);

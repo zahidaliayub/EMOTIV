@@ -221,7 +221,7 @@ void handleMentalCommandEvent(std::ostream& os,
     case IEE_MentalCommandTrainingSucceeded:
     {
         os << std::endl << "MentalCommand training for user " << userID
-           << " SUCCIEEDED!" << std::endl;
+           << " SUCCEEDED!" << std::endl;
         break;
     }
 

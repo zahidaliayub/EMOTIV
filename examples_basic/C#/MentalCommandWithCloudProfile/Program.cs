@@ -20,6 +20,7 @@ namespace MentalCommandWithCloudProfile
         static System.IO.StreamWriter cogLog = new System.IO.StreamWriter("MentalCommand.log");
 
         static int userCloudID = 0;
+        static int userID = -1;
         static string userName = "Your account name";
         static string password = "Your password";        
         static string profileName = "Profile_1";
@@ -39,6 +40,7 @@ namespace MentalCommandWithCloudProfile
         static void engine_UserAdded(object sender, EmoEngineEventArgs e)
         {
             Console.WriteLine("user added ({0})", e.userId);
+            userID = (int)e.userId;
         }
         static void engine_UserRemoved(object sender, EmoEngineEventArgs e)
         {
@@ -94,22 +96,24 @@ namespace MentalCommandWithCloudProfile
             if (cki.Key == ConsoleKey.A)
             {
                 Console.WriteLine("Accept!!!");
-                EmoEngine.Instance.MentalCommandSetTrainingControl(0, EdkDll.IEE_MentalCommandTrainingControl_t.MC_ACCEPT);
+                EmoEngine.Instance.MentalCommandSetTrainingControl((uint)userID, EdkDll.IEE_MentalCommandTrainingControl_t.MC_ACCEPT);
             }
             else
             {
-                EmoEngine.Instance.MentalCommandSetTrainingControl(0, EdkDll.IEE_MentalCommandTrainingControl_t.MC_REJECT);
+                EmoEngine.Instance.MentalCommandSetTrainingControl((uint)userID, EdkDll.IEE_MentalCommandTrainingControl_t.MC_REJECT);
             }
         }
 
         static void engine_MentalCommandTrainingCompleted(object sender, EmoEngineEventArgs e)
         {
-            Console.WriteLine("MentalCommand Training Completed.");
+            Console.WriteLine("MentalCommand Training Completed");
+            //Console.WriteLine("");
         }
 
         static void engine_MentalCommandTrainingRejected(object sender, EmoEngineEventArgs e)
         {
-            Console.WriteLine("MentalCommand Training Rejected.");
+            Console.WriteLine("MentalCommand Training Rejected");
+            //Console.WriteLine("");
         }
 
         static void SavingLoadingFunction(int mode)
@@ -125,7 +129,7 @@ namespace MentalCommandWithCloudProfile
                 {
                     Console.WriteLine("Profile with " + profileName + " is existed");
                     Console.WriteLine("Updating....");
-                    if (EmotivCloudClient.EC_UpdateUserProfile(userCloudID, 0, profileID) == EdkDll.EDK_OK)
+                    if (EmotivCloudClient.EC_UpdateUserProfile(userCloudID, (int)userID, profileID) == EdkDll.EDK_OK)
                     {
                         Console.WriteLine("Updating finished");
                     }
@@ -135,7 +139,7 @@ namespace MentalCommandWithCloudProfile
                 {
                     Console.WriteLine("Saving...");
 
-                    if (EmotivCloudClient.EC_SaveUserProfile(userCloudID, (int)0, profileName,
+                    if (EmotivCloudClient.EC_SaveUserProfile(userCloudID, (int)userID, profileName,
                     EmotivCloudClient.profileFileType.TRAINING) == EdkDll.EDK_OK)
                     {
                         Console.WriteLine("Saving finished");
@@ -154,7 +158,7 @@ namespace MentalCommandWithCloudProfile
                     int profileID = -1;
                     EmotivCloudClient.EC_GetProfileId(userCloudID, profileName, ref profileID);
 
-                    if (EmotivCloudClient.EC_LoadUserProfile(userCloudID, 0, profileID, version) == EdkDll.EDK_OK)
+                    if (EmotivCloudClient.EC_LoadUserProfile(userCloudID, (int)userID, profileID, version) == EdkDll.EDK_OK)
                         Console.WriteLine("Loading finished");
                     else
                         Console.WriteLine("Loading failed");
@@ -174,31 +178,31 @@ namespace MentalCommandWithCloudProfile
                         ulong action1 = (ulong)EdkDll.IEE_MentalCommandAction_t.MC_LEFT;
                         ulong action2 = (ulong)EdkDll.IEE_MentalCommandAction_t.MC_RIGHT;
                         ulong listAction = action1 | action2;
-                        EmoEngine.Instance.MentalCommandSetActiveActions(0, listAction);
+                        EmoEngine.Instance.MentalCommandSetActiveActions((uint)userID, listAction);
                         Console.WriteLine("Setting MentalCommand active actions for user");
                         break;
                     }
                 case ConsoleKey.F2:
-                    EmoEngine.Instance.MentalCommandSetTrainingAction(0, EdkDll.IEE_MentalCommandAction_t.MC_NEUTRAL);
-                    EmoEngine.Instance.MentalCommandSetTrainingControl(0, EdkDll.IEE_MentalCommandTrainingControl_t.MC_START);
+                    EmoEngine.Instance.MentalCommandSetTrainingAction((uint)userID, EdkDll.IEE_MentalCommandAction_t.MC_NEUTRAL);
+                    EmoEngine.Instance.MentalCommandSetTrainingControl((uint)userID, EdkDll.IEE_MentalCommandTrainingControl_t.MC_START);
                     break;
                 case ConsoleKey.F3:
-                    EmoEngine.Instance.MentalCommandSetTrainingAction(0, EdkDll.IEE_MentalCommandAction_t.MC_RIGHT);
-                    EmoEngine.Instance.MentalCommandSetTrainingControl(0, EdkDll.IEE_MentalCommandTrainingControl_t.MC_START);
+                    EmoEngine.Instance.MentalCommandSetTrainingAction((uint)userID, EdkDll.IEE_MentalCommandAction_t.MC_RIGHT);
+                    EmoEngine.Instance.MentalCommandSetTrainingControl((uint)userID, EdkDll.IEE_MentalCommandTrainingControl_t.MC_START);
                     break;
                 case ConsoleKey.F4:
-                    EmoEngine.Instance.MentalCommandSetTrainingAction(0, EdkDll.IEE_MentalCommandAction_t.MC_LEFT);
-                    EmoEngine.Instance.MentalCommandSetTrainingControl(0, EdkDll.IEE_MentalCommandTrainingControl_t.MC_START);
+                    EmoEngine.Instance.MentalCommandSetTrainingAction((uint)userID, EdkDll.IEE_MentalCommandAction_t.MC_LEFT);
+                    EmoEngine.Instance.MentalCommandSetTrainingControl((uint)userID, EdkDll.IEE_MentalCommandTrainingControl_t.MC_START);
                     break;
                 case ConsoleKey.F5:
-                    EmoEngine.Instance.MentalCommandSetActivationLevel(0, 2);
-                    Console.WriteLine("MentalCommand Activateion level set to {0}", EmoEngine.Instance.MentalCommandGetActivationLevel(0));
+                    EmoEngine.Instance.MentalCommandSetActivationLevel((uint)userID, 2);
+                    Console.WriteLine("MentalCommand Activation level set to {0}", EmoEngine.Instance.MentalCommandGetActivationLevel((uint)userID));
                     break;
                 case ConsoleKey.F6:
-                    Console.WriteLine("MentalCommand Activateion level is {0}", EmoEngine.Instance.MentalCommandGetActivationLevel(0));
+                    Console.WriteLine("MentalCommand Activation level is {0}", EmoEngine.Instance.MentalCommandGetActivationLevel((uint)userID));
                     break;
                 case ConsoleKey.F7:
-                    Console.WriteLine("Get the current overall skill rating: {0}", EmoEngine.Instance.MentalCommandGetOverallSkillRating(0));
+                    Console.WriteLine("Get the current overall skill rating: {0}", EmoEngine.Instance.MentalCommandGetOverallSkillRating((uint)userID));
                     break;
                 case ConsoleKey.F8:
                     SavingLoadingFunction(0);
@@ -248,6 +252,17 @@ namespace MentalCommandWithCloudProfile
 
             Console.WriteLine("===========================================================================");
             Console.WriteLine("Example to show how to detect mental command detection with a profile.");
+            Console.WriteLine("Please use hotkeys for training.");
+            Console.WriteLine("F1: MetalCommand: Set Active Action - LEFT and RIGHT");
+            Console.WriteLine("F2: MetalCommand: Training Action   - NEUTRAL");
+            Console.WriteLine("F3: MetalCommand: Training Action   - RIGHT");
+            Console.WriteLine("F4: MetalCommand: Training Action   - LEFT");
+            Console.WriteLine("F5: MetalCommand: Set Active Level  - 2");
+            Console.WriteLine("F6: MetalCommand: Get Active Level");
+            Console.WriteLine("F7: MetalCommand: Get OverSkills Rating");
+            Console.WriteLine("F8: Update profile");
+            Console.WriteLine("F9: Load profile");
+            Console.WriteLine("F10:Enable Logger");
             Console.WriteLine("===========================================================================");
 
             ConsoleKeyInfo cki = new ConsoleKeyInfo();

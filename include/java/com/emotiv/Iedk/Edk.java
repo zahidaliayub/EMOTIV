@@ -236,26 +236,52 @@ public interface Edk extends Library {
 		public int scopes;            // license type
         public int date_from;         // epoch time  //maximum date : 07 Feb 2106
         public int date_to;           // epoch time
-        public int seat_count;        // number of seat
+        public int soft_limit_date;   // need authorize the license, then your current quota will be reset to the debit number
+        							  // if not, you can still use current quota to hard_limit_date
 
-        public int  quotaDayLimit;     // session limit in day
-        public int  usedQuotaDay;      // session used in day
-        public int  quotaMonthLimit;   // session limit in month
-        public int  usedQuotaMonth;    // session used in month
-        public int  usedQuota;         // total session used
-        public int  quota;             // total session in the license
+        public int  hard_limit_date;  // After this date. Your current quota will be reset to 0 and stop using the library
+        public int  seat_count;       // number of seat
+        public int  usedQuota;        // total session used
+        public int  quota;            // total session in the license
         
 		//@Override
 		@Override
 		protected List<String> getFieldOrder() {
 			// TODO Auto-generated method stub
-			return Arrays.asList(new String[] { "scopes", "date_from", "date_to", "seat_count","quotaDayLimit", "usedQuotaDay" , "quotaMonthLimit", 
-					"usedQuotaMonth","usedQuota","quota" });
+			return Arrays.asList(new String[] { "scopes", "date_from", "date_to", "soft_limit_date","hard_limit_date", "seat_count" , "usedQuota", 
+					"quota"});
+		}
+	}
+	
+public static class DebitInfos_t extends Structure {
+		
+		public static class ByReference extends DebitInfos_t implements Structure.ByReference {}
+		
+		public int remainingSessions; 	// remaining session number of the license
+        public int daily_debit_limit; 	// the max of session debit number per day
+        public int total_debit_today; 	// the number of session debited today
+        public int time_reset;   		// time to reset daily debit (seconds)
+        
+		//@Override
+		@Override
+		protected List<String> getFieldOrder() {
+			// TODO Auto-generated method stub
+			return Arrays.asList(new String[] { "remainingSessions", "daily_debit_limit", "total_debit_today", "time_reset"});
 		}
 	}
 	
 	
-	//! Check infos of the license
+	//! Check infos of the debit
+    /*!    
+     * \param licenseID - License key
+     * \param debitInfo - debit information    
+     * \return    EDK_ERROR_CODE
+     *            EDK_OK
+     * \sa IedkErrorCode.h
+    */
+    public int IEE_GetDebitInformation(String licenseID, DebitInfos_t.ByReference debitInfo);
+    
+    //! Check infos of the license
     /*!    
      * \param licenseInfo - License Information    
      * \return    EDK_ERROR_CODE
@@ -271,15 +297,17 @@ public interface Edk extends Library {
     */
     public int IEE_LicenseInformation(LicenseInfos_t.ByReference licenseInfo);
 
+  //! Authorize a license with a session debit number
+    /*!
+        \param licenseID - License key
+        \param debitNum  - Indicates number of sessions will be deducted from license
+        
+        \return EDK_ERROR_CODE
+                         - EDK_OK if the command succeeded
 
-    //! Activate a license with license ID    
-    /*
-     * \param licenseID - License ID
-     * \return EDK_ERROR_CODE
-     *                        - EDK_OK if the command succeeded
-     * \sa IedkErrorCode.h
+        \sa IedkErrorCode.h
     */
-    int IEE_ActivateLicense(String licenseID);
+    int IEE_AuthorizeLicense(String licenseID, int debitNum);
     
 
 	// ! Initializes the connection to EmoEngine. This function should be called

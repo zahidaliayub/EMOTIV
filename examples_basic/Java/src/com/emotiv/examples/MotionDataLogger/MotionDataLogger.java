@@ -51,7 +51,7 @@ public class MotionDataLogger {
 			}
 
 			if (readytocollect) {
-				Edk.INSTANCE.IEE_MotionDataUpdateHandle(0, hMotionData);
+				Edk.INSTANCE.IEE_MotionDataUpdateHandle(userID.getValue(), hMotionData);
 
 				Edk.INSTANCE.IEE_MotionDataGetNumberOfSample(hMotionData, nSamplesTaken);
 

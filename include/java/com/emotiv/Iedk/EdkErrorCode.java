@@ -76,7 +76,7 @@ public enum EdkErrorCode {
 	EDK_COULDNT_CONNECT(0x1003),
 
 	//! Profile created by EDK_SaveUserProfile() is existed in Emotiv Cloud.
-	EDK_PROFILE_CLOUD_EXISTED(0x1010),
+	EDK_CLOUD_PROFILE_EXISTS(0x1010),
 
 	//! The file uploaded to cloud is failed
 	EDK_UPLOAD_FAILED(0x1011),
@@ -119,11 +119,11 @@ public enum EdkErrorCode {
 	//! The license is over quota
 	EDK_OVER_QUOTA(0x2013),
 
-	//! The license is over quota in day
-	EDK_OVER_QUOTA_IN_DAY(0x2014),
+	//! Debit number is invalid
+	EDK_INVALID_DEBIT_ERROR(0x2014),
 
-	//! The license is over quota in month
-	EDK_OVER_QUOTA_IN_MONTH(0x2015),
+	//! Device list of the license is over
+	EDK_OVER_DEVICE_LIST(0x2015),
 
 
 	EDK_APP_QUOTA_EXCEEDED(0x2016),

@@ -313,7 +313,7 @@ else:
 print "Start receiving Emostate! Press any key to stop logging...\n"
 f = file('ES.csv', 'w')
 f = open('ES.csv', 'w')
-print >> f, header
+print >> f, ', '.join(header)
 
 while (1):
     

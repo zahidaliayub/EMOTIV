@@ -104,7 +104,7 @@ int main(int argc, char** argv) {
         std::cout << "Start receiving EmoState! Press any key to stop logging...\n"
                   << std::endl;
 
-        std::ofstream ofs(filename.c_str());
+        std::ofstream ofs(filename.c_str(), std::ios::trunc);
 		bool writeHeader = true;
 		
 		while (!_kbhit()) {
