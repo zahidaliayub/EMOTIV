@@ -192,8 +192,13 @@ extern "C" {
 
         \sa IedkErrorCode.h
     */
+#ifdef __cplusplus
     EDK_API int
         IEE_EngineConnect(const char* strDevID = "Emotiv Systems-5");
+#else
+    EDK_API int
+        IEE_EngineConnect(const char* strDevID);
+#endif
 
     
     //! Initialize the connection to a remote instance of EmoEngine.
