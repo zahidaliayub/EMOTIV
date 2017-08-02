@@ -2,6 +2,27 @@
 
 SDK CHANGELOGS
 
+#### Version 3.5.0
+* New features and improvement:
+    * Renamed error code `EDK_PROFILE_CLOUD_EXISTED` to `EDK_CLOUD_PROFILE_EXISTS`
+    * Removed `EDK_OVER_QUOTA_IN_DAY` and `EDK_OVER_QUOTA_IN_MONTH` error codes
+    * Improved interpolation during packet lost
+    * Improved noise handling in Performance Metric detections with Insight headset
+    * Updated results of `IEE_GetAverageBandPowers()` from 2Hz to 8Hz
+    * Improved accuracy of timestamp in EEG / EmoState data streams
+    * New API: `IEE_DataEnableBufferForMarker()` which enables EEG/Motion buffer and allows user to set marker with a specific timestamp
+    * Fixed EdfHeaderConverter tool to work with new EDF version (20170703)
+      https://github.com/Emotiv/community-sdk/tree/master/tools/EEGLAB_EDF_FIXED
+    * Data stream type now included in `userID` as a bit mask:
+    ```
+      DONGLE_STREAM_MASK   = 0x1000;
+      BTLE_STREAM_MASK     = 0x2000;
+      EDF_STREAM_MASK      = 0x3000;
+      CSV_STREAM_MASK      = 0x4000;
+      MEM_STREAM_MASK      = 0x5000;       
+      EXTENDER_STREAM_MASK = 0x6000;
+     ```
+    * Support new licensing model - for details https://www.emotiv.com/developer/
 
 #### Version 3.4.0
 * Bug fixes:
