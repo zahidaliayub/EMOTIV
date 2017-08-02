@@ -7,7 +7,7 @@ import ctypes
 
 if sys.platform.startswith('win32'):
     import msvcrt
-elif sys.platform.startswith('linux'):
+elif sys.platform.startswith('linux') or sys.platform.startswith('darwin'):
     import atexit
     from select import select
 
@@ -23,6 +23,8 @@ try:
         else:
             libPath = srcDir + "/../../bin/linux64/libedk.so"
         libEDK = CDLL(libPath)
+    elif sys.platform.startswith('darwin'):
+        libEDK = cdll.LoadLibrary("/Library/Frameworks/edk.framework/edk")
     else:
         raise Exception('System not supported.')
 except Exception as e:
@@ -83,11 +85,11 @@ IS_FacialExpressionGetLowerFaceActionPower.restype = c_float
 IS_FacialExpressionGetLowerFaceActionPower.argtypes = [c_void_p]
 
 IS_FacialExpressionGetEyeLocation = libEDK.IS_FacialExpressionGetEyeLocation
-IS_FacialExpressionGetEyeLocation.restype = c_float
+IS_FacialExpressionGetEyeLocation.restype = c_void_p
 IS_FacialExpressionGetEyeLocation.argtype = [c_void_p]
 
 IS_FacialExpressionGetEyelidState = libEDK.IS_FacialExpressionGetEyelidState
-IS_FacialExpressionGetEyelidState.restype = c_float
+IS_FacialExpressionGetEyelidState.restype = c_void_p
 IS_FacialExpressionGetEyelidState.argtype = [c_void_p]
 
 EyeX = c_float(0)
@@ -178,6 +180,22 @@ IS_PerformanceMetricGetFocusScore = libEDK.IS_PerformanceMetricGetFocusScore
 IS_PerformanceMetricGetFocusScore.restype = c_float
 IS_PerformanceMetricGetFocusScore.argtypes = [c_void_p]
 
+# Engine Functions
+EngineGetNextEvent = libEDK.IEE_EngineGetNextEvent
+EngineGetNextEvent.restype = c_int
+EngineGetNextEvent.argtypes = [c_void_p]
+
+EmoEngineEventGetType = libEDK.IEE_EmoEngineEventGetType
+EmoEngineEventGetType.restype = c_int
+EmoEngineEventGetType.argtypes = [c_void_p]
+
+EmoEngineEventGetUserId = libEDK.IEE_EmoEngineEventGetUserId
+EmoEngineEventGetUserId.restype = c_int
+EmoEngineEventGetUserId.argtypes = [c_void_p]
+
+EmoEngineEventGetEmoState = libEDK.IEE_EmoEngineEventGetEmoState
+EmoEngineEventGetEmoState.restype = c_int
+EmoEngineEventGetEmoState.argtypes = [c_void_p, c_void_p]
 # -------------------------------------------------------------------------
 
 def logEmoState(userID, eState):
@@ -206,12 +224,12 @@ def logEmoState(userID, eState):
     print >>f, FacialExpressionStates[FE_SMILE], ",",
     print >>f, FacialExpressionStates[FE_CLENCH], ",",
 
-    IS_FacialExpressionGetEyeLocation(eState,X,Y)
-    print >>f, EyeX.value, ",",
-    print >>f, EyeY.value, ",",
-    IS_FacialExpressionGetEyeLocation(eState,Left,Right)
-    print >>f, EyeLidLeft.value, ",",
-    print >>f, EyeLidRight.value, ",",
+    # IS_FacialExpressionGetEyeLocation(eState,X,Y)
+    # print >>f, EyeX.value, ",",
+    # print >>f, EyeY.value, ",",
+    # IS_FacialExpressionGetEyelidState(eState,Left,Right)
+    # print >>f, EyeLidLeft.value, ",",
+    # print >>f, EyeLidRight.value, ",",
 
     # Performance metrics Suite results
     print >>f, IS_PerformanceMetricGetExcitementLongTermScore(eState), ",",
@@ -281,7 +299,8 @@ PM_FOCUS      = 0x0020
 # -------------------------------------------------------------------------
 header = ['Time', 'UserID', 'Wireless Signal Status', 'Blink', 'Wink Left', 'Wink Right',
           'Surprise', 'Furrow', 'Smile', 'Clench',
-          'EyeLocationHoriz', 'EyeLocationVert','EyelidStateLeft', 'EyelidStateRight', 'LongTermExcitementRawNorm', 
+          # 'EyeLocationHoriz', 'EyeLocationVert','EyelidStateLeft', 'EyelidStateRight', 
+          'LongTermExcitementRawNorm', 
           'ShortTermExcitementRawNorm','ShortTermExcitementRaw', 'ShortTermExcitementMin', 'ShortTermExcitementMax',
           'RelaxationRawNorm','RelaxationRaw','RelaxationMin','RelaxationMax',
           'StressRawNorm','StressRaw','StressMin','StressMax', 'EngagementRawNorm','EngagementRaw', 'EngagementMin','EngagementMax',
@@ -320,12 +339,12 @@ while (1):
     if kbhit():
         break
     
-    state = libEDK.IEE_EngineGetNextEvent(eEvent)
+    state = EngineGetNextEvent(eEvent)
     if state == 0:
-        eventType = libEDK.IEE_EmoEngineEventGetType(eEvent)
-        libEDK.IEE_EmoEngineEventGetUserId(eEvent, user)
+        eventType = EmoEngineEventGetType(eEvent)
+        EmoEngineEventGetUserId(eEvent, user)
         if eventType == 64:  # libEDK.IEE_Event_enum.IEE_EmoStateUpdated
-            libEDK.IEE_EmoEngineEventGetEmoState(eEvent, eState)
+            EmoEngineEventGetEmoState(eEvent, eState)
             timestamp = IS_GetTimeFromStart(eState)
             print "%10.3f New EmoState from user %d ...\r" % (timestamp,
                                                               userID.value)
