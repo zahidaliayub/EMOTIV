@@ -6,7 +6,7 @@ SDK CHANGELOGS
 * New features and improvement:
     * Renamed error code `EDK_PROFILE_CLOUD_EXISTED` to `EDK_CLOUD_PROFILE_EXISTS`
     * Removed `EDK_OVER_QUOTA_IN_DAY` and `EDK_OVER_QUOTA_IN_MONTH` error codes
-    * Improved interpolation during packet lost
+    * Improved samples interpolation during packet lost
     * Improved noise handling in Performance Metric detections with Insight headset
     * Updated results of `IEE_GetAverageBandPowers()` from 2Hz to 8Hz
     * Improved accuracy of timestamp in EEG / EmoState data streams
