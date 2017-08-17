@@ -1,6 +1,6 @@
 /****************************************************************************
 **
-** Copyright 2016 by Emotiv. All rights reserved
+** Copyright 2017 by Emotiv. All rights reserved
 ** Example - ActivateLicense
 ** How to activate a license key and Get infomation of that license 
 **
@@ -129,15 +129,24 @@ int main(int argc, char** argv)
     debitInfos.remainingSessions = 0;
     result = IEE_GetDebitInformation(LICENSE_KEY.c_str(), &debitInfos);
 
-    std::cout << std::endl;
-    std::cout << "Remaining Sessions     : " << debitInfos.remainingSessions << std::endl;
-    std::cout << "Daily debit limitation : " << debitInfos.daily_debit_limit << std::endl;
-    std::cout << std::endl;
+    if (debitInfos.total_session_inYear == 0)
+    {
+        std::cout << std::endl;
+        std::cout << "Remaining Sessions in month : " << debitInfos.remainingSessions << std::endl;
+        std::cout << "Daily debit limitation      : " << debitInfos.daily_debit_limit << std::endl;
+        std::cout << std::endl;
 
-    std::cout << std::endl;
-    std::cout << "Total debit today      : " << debitInfos.total_debit_today << std::endl;
-    std::cout << "Remaining time before resetting daily debit limitation: " << debitInfos.time_reset << "(seconds)" << std::endl;
-    std::cout << std::endl;
+        std::cout << std::endl;
+        std::cout << "Total debit today           : " << debitInfos.total_debit_today << std::endl;
+        std::cout << "Remaining time before resetting daily debit limitation: " << debitInfos.time_reset << "(seconds)" << std::endl;
+        std::cout << std::endl;
+    }    
+    else {
+        std::cout << std::endl;
+        std::cout << "Remaining Sessions in year : " << debitInfos.remainingSessions << std::endl;
+        std::cout << "the total number of session can be debitable in year : " << debitInfos.total_session_inYear << std::endl;
+        std::cout << std::endl;
+    }
 
 
     //Active license with debit

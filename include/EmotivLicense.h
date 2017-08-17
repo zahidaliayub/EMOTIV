@@ -61,10 +61,11 @@ extern "C" {
     } IEE_LicenseInfos_t;
     //! Debit information structure
     typedef struct IEE_DebitInfos_struct {
-        unsigned int remainingSessions;   // number of remain session of the license.
-        unsigned int daily_debit_limit;   // the maximum session can be debitable per day.
-        unsigned int total_debit_today;   // the number of debited session today.
-        unsigned int time_reset;          // the remain time to reset number of daily limit debit (seconds) to 0. 
+        unsigned int remainingSessions;    // number of remain session of the license in month/year
+        unsigned int daily_debit_limit;    // the maximum session can be debitable per day.
+        unsigned int total_debit_today;    // the number of debited session today.
+        unsigned int total_session_inYear; // the total number of session can be debitable in year.
+        unsigned int time_reset;           // the remain time to reset number of daily limit debit (seconds) to 0. 
     } IEE_DebitInfos_t;
 
     //! Get Debit information of the license
