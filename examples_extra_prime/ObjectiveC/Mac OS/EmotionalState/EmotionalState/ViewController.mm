@@ -18,26 +18,7 @@
 
 #include <string>
 #include <iostream>
-#include <iomanip>
-#include <ctime>
-#include <chrono>
-#include <sstream>
-#include <map>
-#define secondsepoch(x) (std::chrono::duration_cast<std::chrono::seconds>(x.time_since_epoch()).count())
-#define secondsdiff(x,y)(std::chrono::duration_cast<std::chrono::seconds>(x - y).count())
 
-#if !(defined __linux__ || defined __APPLE__)
-inline char* strptime(const char* s, const char* f, struct tm* tm)
-{
-    std::istringstream input(s);
-    input.imbue(std::locale(setlocale(LC_ALL, nullptr)));
-    input >> std::get_time(tm, f);
-    if (input.fail()) {
-        return nullptr;
-    }
-    return (char*)(s + input.tellg());
-}
-#endif
 @implementation ViewController
 
 EmoEngineEventHandle eEvent;
@@ -46,70 +27,8 @@ NSMutableArray *arrayView;
 BOOL isConnected = false;
 int licenseType = 0;
 
-/**
- * Set your license
- */
-std::string license = "Put-your-license-here";
-
-std::string convertEpochToTime(time_t epochTime)
-{
-    char timestamp[64] = { 0 };
-    strftime(timestamp, sizeof(timestamp), "%Y-%m-%d %H:%M:%S", localtime(&epochTime));
-    return timestamp;
-}
-
-void printLicenseInformation(IEE_LicenseInfos_t& licenseInfos)
-{
-    std::cout << std::endl;
-    std::cout << "Date From  : " << convertEpochToTime(licenseInfos.date_from) << std::endl;
-    std::cout << "Date To    : " << convertEpochToTime(licenseInfos.date_to) << std::endl;
-    std::cout << std::endl;
-    
-    std::cout << "Seat number: " << licenseInfos.seat_count << std::endl;
-    std::cout << std::endl;
-    
-    std::cout << "Total Quota: " << licenseInfos.quota << std::endl;
-    std::cout << "Total quota used    : " << licenseInfos.usedQuota << std::endl;
-    std::cout << std::endl;
-    
-    std::cout << "Quota limit in day  : " << licenseInfos.quotaDayLimit << std::endl;
-    std::cout << "Quota used in day   : " << licenseInfos.usedQuotaDay << std::endl;
-    std::cout << std::endl;
-    
-    std::cout << "Quota limit in month: " << licenseInfos.quotaMonthLimit << std::endl;
-    std::cout << "Quota used in month : " << licenseInfos.usedQuotaMonth << std::endl;
-    std::cout << std::endl;
-    
-    switch (licenseInfos.scopes)
-    {
-        case IEE_EEG:
-            licenseType = IEE_LicenseType_t::IEE_EEG;
-            
-            std::cout << "License type : " << "EEG" << std::endl;
-            std::cout << std::endl;
-            break;
-        case IEE_EEG_PM:
-            licenseType = IEE_LicenseType_t::IEE_EEG_PM;
-            
-            std::cout << "License type : " << "EEG + PM" << std::endl;
-            std::cout << std::endl;
-            break;
-        case IEE_PM:
-            licenseType = IEE_LicenseType_t::IEE_PM;
-            std::cout << "License type : " << "PM" << std::endl;
-            std::cout << std::endl;
-            break;
-        default:
-            std::cout << "License type : " << "No type" << std::endl;
-            std::cout << std::endl;
-            break;
-    }
-}
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [NSThread detachNewThreadSelector:@selector(startTheBackgroundJob) toTarget:self withObject:nil];
     arrayView = [[NSMutableArray alloc] init];
     
     for(int i = 0; i < 5; i++)
@@ -122,6 +41,7 @@ void printLicenseInformation(IEE_LicenseInfos_t& licenseInfos)
     eState	= IEE_EmoStateCreate();
     isRecording = false;
     
+    IEE_EngineConnect();
     IEE_EmoInitDevice();
     
     [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(getNextEvent) userInfo:nil repeats:YES];
@@ -223,61 +143,5 @@ void printLicenseInformation(IEE_LicenseInfos_t& licenseInfos)
         [fh closeFile];
     }
 }
-
-- (void)startTheBackgroundJob {
-    [self performSelectorInBackground:@selector(CallFunc) withObject:nil];
-}
-
--(void)CallFunc{
-    /**
-     * Call this fucntion first time run app
-     * from second time, no need call it
-     * If you have many license on your computer.Call this function to active license you want to use
-     */
-    int result ;
-    result = IEE_ActivateLicense(license.c_str());
-    if(result == EDK_OK || result == EDK_LICENSE_REGISTERED)
-        NSLog(@"Active license success");
-    else
-        NSLog(@"License error code: %x",result);
-    /******************************************************/
-    if( IEE_EngineConnect() != EDK_OK ) {
-        NSLog(@"Engine connect failed");
-    }
-    IEE_LicenseInfos_t licenseInfos;
-    memset(&licenseInfos, 0, sizeof(IEE_LicenseInfos_t));
-    result = IEE_LicenseInformation(&licenseInfos);
-    switch (result)
-    {
-        case EDK_OVER_QUOTA_IN_DAY:
-            NSLog(@"Over quota in day");
-            break;
-        case EDK_OVER_QUOTA_IN_MONTH:
-            NSLog(@"Over quota in month");
-            break;
-        case EDK_LICENSE_EXPIRED:
-            NSLog(@"License is expired");
-            break;
-        case EDK_OVER_QUOTA:
-            NSLog(@"Over quota ");
-            break;
-        case EDK_ACCESS_DENIED:
-            NSLog(@"Access denied");
-            break;
-        case EDK_LICENSE_ERROR:
-            NSLog(@"Licens error");
-            break;
-        case EDK_NO_ACTIVE_LICENSE:
-            NSLog(@"Haven't been active license");
-            break;
-        case EDK_OK:
-            NSLog(@"License is ok");
-            break;
-        default:
-            break;
-    }
-    printLicenseInformation(licenseInfos);
-}
-
 
 @end

@@ -14,7 +14,6 @@
 		9E97E8821C634D9300C7EEF2 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9E97E8811C634D9300C7EEF2 /* ViewController.mm */; };
 		9E97E8841C634D9300C7EEF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E97E8831C634D9300C7EEF2 /* Assets.xcassets */; };
 		9E97E8871C634D9300C7EEF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E97E8851C634D9300C7EEF2 /* Main.storyboard */; };
-		9E97E8961C63764A00C7EEF2 /* edk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E97E8951C63764A00C7EEF2 /* edk.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,7 +41,6 @@
 		9E97E8831C634D9300C7EEF2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9E97E8861C634D9300C7EEF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9E97E8881C634D9300C7EEF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9E97E8951C63764A00C7EEF2 /* edk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = edk.framework; path = "/Users/Emotiv/community-sdk/examples/ObjectiveC/Framework/edk.framework"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +48,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E97E8961C63764A00C7EEF2 /* edk.framework in Frameworks */,
 				9E623A8A1E0CDD4300B337EE /* edk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,10 +270,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/../../Framework",
-					"$(PROJECT_DIR)/../../../../lib/Mac",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../../../../lib/Mac";
 				INFOPLIST_FILE = EEGLogger/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.emotiv.EEGLogger;
@@ -290,10 +284,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/../../Framework",
-					"$(PROJECT_DIR)/../../../../lib/Mac",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../../../../lib/Mac";
 				INFOPLIST_FILE = EEGLogger/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.emotiv.EEGLogger;
