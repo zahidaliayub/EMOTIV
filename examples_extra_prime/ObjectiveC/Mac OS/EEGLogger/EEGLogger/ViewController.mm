@@ -41,7 +41,6 @@ EmoEngineEventHandle eEvent;
 EmoStateHandle eState;
 DataHandle hData;
 
-unsigned int userID					= 0;
 float secs							= 1;
 bool readytocollect					= false;
 int state                           = 0;
@@ -95,28 +94,29 @@ std::ofstream ofs;
                 self.labelStatus.stringValue = @"Disconnected";
                 readytocollect = FALSE;
             }
-        }
-        if (readytocollect)
-        {
-            IEE_DataUpdateHandle(0, hData);
-        
-            unsigned int nSamplesTaken=0;
-            IEE_DataGetNumberOfSample(hData,&nSamplesTaken);
-        
-            std::cout << " Updated " << nSamplesTaken << "\n";
-            if (nSamplesTaken != 0)
+            if (readytocollect)
             {
+                IEE_DataUpdateHandle(userID, hData);
             
-                std::unique_ptr<double> ddata(new double[nSamplesTaken]);
-                for (int sampleIdx=0 ; sampleIdx<(int)nSamplesTaken ; ++sampleIdx) {
-                    for (int i = 0 ; i<sizeof(targetChannelList)/sizeof(IEE_DataChannel_t) ; i++) {
-                        IEE_DataGet(hData, targetChannelList[i], ddata.get(), nSamplesTaken);
-                        ofs << ddata.get()[sampleIdx] << ",";
+                unsigned int nSamplesTaken=0;
+                IEE_DataGetNumberOfSample(hData,&nSamplesTaken);
+            
+                std::cout << " Updated " << nSamplesTaken << "\n";
+                if (nSamplesTaken != 0)
+                {
+                
+                    std::unique_ptr<double> ddata(new double[nSamplesTaken]);
+                    for (int sampleIdx=0 ; sampleIdx<(int)nSamplesTaken ; ++sampleIdx) {
+                        for (int i = 0 ; i<sizeof(targetChannelList)/sizeof(IEE_DataChannel_t) ; i++) {
+                            IEE_DataGet(hData, targetChannelList[i], ddata.get(), nSamplesTaken);
+                            ofs << ddata.get()[sampleIdx] << ",";
+                        }
+                        ofs << std::endl;
                     }
-                    ofs << std::endl;
                 }
             }
         }
+        
     }
 }
 
