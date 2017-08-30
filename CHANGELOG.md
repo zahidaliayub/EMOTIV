@@ -23,7 +23,10 @@ SDK CHANGELOGS
       EXTENDER_STREAM_MASK = 0x6000;
      ```
     * Support new licensing model - for details https://www.emotiv.com/developer/
-
+* Platforms: 
+    * SDK v3.5.0 support Windows, MAC OS
+    * Linux, Android, IOS: still use SDK version 3.3.3
+    
 #### Version 3.4.0
 * Bug fixes:
     * Fixed bug: cannot login with special symbol in EmotivID or password
