@@ -4,8 +4,8 @@ import com.emotiv.sdk.*;
 import com.emotiv.bluetooth.*;
 
 import android.os.Build;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.app.ActivityCompat;
+//import android.support.v4.content.ContextCompat;
+//import android.support.v4.app.ActivityCompat;
 import android.content.pm.PackageManager;
 import android.Manifest;
 import android.widget.Toast;
@@ -53,26 +53,26 @@ public class MainActivity extends Activity {
 		final BluetoothManager bluetoothManager =
 				(BluetoothManager) getSystemService(Context.BLUETOOTH_SERVICE);
 		mBluetoothAdapter = bluetoothManager.getAdapter();
-		if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-			/***Android 6.0 and higher need to request permission*****/
-			if (ContextCompat.checkSelfPermission(this,
-					Manifest.permission.ACCESS_FINE_LOCATION)
-					!= PackageManager.PERMISSION_GRANTED) {
-
-				ActivityCompat.requestPermissions(this,
-						new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-						MY_PERMISSIONS_REQUEST_BLUETOOTH);
-			}
-			else{
-				checkConnect();
-			}
-		}
-		else {
+//		if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//			/***Android 6.0 and higher need to request permission*****/
+//			if (ContextCompat.checkSelfPermission(this,
+//					Manifest.permission.ACCESS_FINE_LOCATION)
+//					!= PackageManager.PERMISSION_GRANTED) {
+//
+//				ActivityCompat.requestPermissions(this,
+//						new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+//						MY_PERMISSIONS_REQUEST_BLUETOOTH);
+//			}
+//			else{
+//				checkConnect();
+//			}
+//		}
+//		else {
 			checkConnect();
-		}
+//		}
 
 		Emotiv.IEE_EmoInitDevice(this);
-		edkJava.IEE_EngineConnect("");
+		edkJava.IEE_EngineConnect("Emotiv Systems-5");
 		handleEvent = edkJava.IEE_EmoEngineEventCreate();
 		emoState = edkJava.IEE_EmoStateCreate();
 
@@ -176,9 +176,11 @@ public class MainActivity extends Activity {
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
 				if(!cloudConnected) {
-			        cloudConnected = (edkJava.EC_Connect() == edkJava.EDK_OK);
+					int connectResult = edkJava.EC_Connect();
+			        cloudConnected = ( connectResult == edkJava.EDK_OK);
 			        if(!cloudConnected) {
 			            status.setText("Please check internet connection and connect again");
+						Log.e("EmoProfile", "EC_Connect error:" + connectResult);
 			            return;
 			        }
 			    }
@@ -348,11 +350,6 @@ public class MainActivity extends Activity {
 			/****Request turn on Bluetooth***************/
 			Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
 			startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
-		}
-		else
-		{
-			//Connect to emoEngine
-			edkJava.IEE_EngineConnect("");
 		}
 	}
 

@@ -44,10 +44,9 @@ public class MainActivity extends Activity {
 	private SWIGTYPE_p_void handleEvent;
 	private SWIGTYPE_p_void emoState;
 
-	private BufferedWriter motion_writer;
+	private BufferedWriter bp_writer;
 	Button Start_button,Stop_button;
-	IEE_DataChannel_t[] Channel_list = {IEE_DataChannel_t.IED_AF3, IEE_DataChannel_t.IED_T7,IEE_DataChannel_t.IED_Pz,
-			IEE_DataChannel_t.IED_T8,IEE_DataChannel_t.IED_AF4};
+	IEE_DataChannel_t[] Channel_list;
 	String[] Name_Channel = {"AF3","T7","Pz","T8","AF4"};
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -57,23 +56,30 @@ public class MainActivity extends Activity {
 		final BluetoothManager bluetoothManager =
 				(BluetoothManager) getSystemService(Context.BLUETOOTH_SERVICE);
 		mBluetoothAdapter = bluetoothManager.getAdapter();
-		if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-			/***Android 6.0 and higher need to request permission*****/
-			if (ContextCompat.checkSelfPermission(this,
-					Manifest.permission.ACCESS_FINE_LOCATION)
-					!= PackageManager.PERMISSION_GRANTED) {
-
-				ActivityCompat.requestPermissions(this,
-						new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-						MY_PERMISSIONS_REQUEST_BLUETOOTH);
-			}
-			else{
-				checkConnect();
-			}
-		}
-		else {
+//		if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//			/***Android 6.0 and higher need to request permission*****/
+//			if (ContextCompat.checkSelfPermission(this,
+//					Manifest.permission.ACCESS_FINE_LOCATION)
+//					!= PackageManager.PERMISSION_GRANTED) {
+//
+//				ActivityCompat.requestPermissions(this,
+//						new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+//						MY_PERMISSIONS_REQUEST_BLUETOOTH);
+//			}
+//			else{
+//				checkConnect();
+//			}
+//		}
+//		else {
 			checkConnect();
-		}
+//		}
+
+		Emotiv.IEE_EmoInitDevice(this);
+		edkJava.IEE_EngineConnect("Emotiv Systems-5");
+		IEE_DataChannel_t[] ChannelListTmp = {IEE_DataChannel_t.IED_AF3, IEE_DataChannel_t.IED_T7,IEE_DataChannel_t.IED_Pz,
+				IEE_DataChannel_t.IED_T8,IEE_DataChannel_t.IED_AF4};
+
+		Channel_list = ChannelListTmp;
 
 		handleEvent = edkJava.IEE_EmoEngineEventCreate();
 		emoState = edkJava.IEE_EmoStateCreate();
@@ -178,7 +184,7 @@ public class MainActivity extends Activity {
 				}
 				break;
 			case 2:
-				if(motion_writer == null) return;
+				if(bp_writer == null) return;
 				for(int i=0; i < Channel_list.length; i++)
 				{
 					SWIGTYPE_p_double ptheta = edkJava.new_double_p();
@@ -186,16 +192,18 @@ public class MainActivity extends Activity {
 					SWIGTYPE_p_double plow_beta = edkJava.new_double_p();
 					SWIGTYPE_p_double phigh_beta = edkJava.new_double_p();
 					SWIGTYPE_p_double pgamma = edkJava.new_double_p();
-					int result = edkJava.IEE_GetAverageBandPowers(userId, Channel_list[i], ptheta, palpha, plow_beta, phigh_beta, pgamma);
+					int result = -1;
+                    result = edkJava.IEE_GetAverageBandPowers(userId, Channel_list[i], ptheta, palpha, plow_beta, phigh_beta, pgamma);
 					if(result == edkJava.EDK_OK){
+						Log.e("FFT", "GetAverageBandPowers");
 						try {
-							motion_writer.write(Name_Channel[i] + ",");
+							bp_writer.write(Name_Channel[i] + ",");
 							addData(edkJava.double_p_value(ptheta));
 							addData(edkJava.double_p_value(palpha));
 							addData(edkJava.double_p_value(plow_beta));
 							addData(edkJava.double_p_value(phigh_beta));
 							addData(edkJava.double_p_value(pgamma));
-							motion_writer.newLine();
+							bp_writer.newLine();
 						} catch (IOException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -263,18 +271,18 @@ public class MainActivity extends Activity {
 			{
 				folder.mkdirs();
 			}
-			motion_writer = new BufferedWriter(new FileWriter(file_path+"bandpowerValue.csv"));
-			motion_writer.write(eeg_header);
-			motion_writer.newLine();
+			bp_writer = new BufferedWriter(new FileWriter(file_path+"bandpowerValue.csv"));
+			bp_writer.write(eeg_header);
+			bp_writer.newLine();
 		} catch (Exception e) {
 			Log.e("","Exception"+ e.getMessage());
 		}
 	}
 	private void StopWriteFile(){
 		try {
-			motion_writer.flush();
-			motion_writer.close();
-			motion_writer = null;
+			bp_writer.flush();
+			bp_writer.close();
+			bp_writer = null;
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
@@ -288,14 +296,14 @@ public class MainActivity extends Activity {
 	 */
 	public void addData(double data) {
 
-		if (motion_writer == null) {
+		if (bp_writer == null) {
 			return;
 		}
 
 			String input = "";
 				input += (String.valueOf(data) + ",");
 			try {
-				motion_writer.write(input);
+				bp_writer.write(input);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -308,11 +316,6 @@ public class MainActivity extends Activity {
 			/****Request turn on Bluetooth***************/
 			Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
 			startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
-		}
-		else
-		{
-			//Connect to emoEngine
-			edkJava.IEE_EngineConnect("");
 		}
 	}
 

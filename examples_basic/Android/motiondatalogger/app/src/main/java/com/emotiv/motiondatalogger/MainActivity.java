@@ -48,9 +48,7 @@ public class MainActivity extends Activity {
 
 	private BufferedWriter motion_writer;
 	Button Start_button,Stop_button;
-	IEE_MotionDataChannel_t[] Channel_list = {IEE_MotionDataChannel_t.IMD_COUNTER, IEE_MotionDataChannel_t.IMD_GYROX,IEE_MotionDataChannel_t.IMD_GYROY,
-			IEE_MotionDataChannel_t.IMD_GYROZ, IEE_MotionDataChannel_t.IMD_ACCX, IEE_MotionDataChannel_t.IMD_ACCY, IEE_MotionDataChannel_t.IMD_ACCZ,
-			IEE_MotionDataChannel_t.IMD_MAGX, IEE_MotionDataChannel_t.IMD_MAGY, IEE_MotionDataChannel_t.IMD_MAGZ, IEE_MotionDataChannel_t.IMD_TIMESTAMP};
+	IEE_MotionDataChannel_t[] Channel_list;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -101,7 +99,11 @@ public class MainActivity extends Activity {
 
 
         Emotiv.IEE_EmoInitDevice(this);
-        edkJava.IEE_EngineConnect("");
+        edkJava.IEE_EngineConnect("Emotiv Systems-5");
+		IEE_MotionDataChannel_t[] ChannelTmp = {IEE_MotionDataChannel_t.IMD_COUNTER, IEE_MotionDataChannel_t.IMD_GYROX,IEE_MotionDataChannel_t.IMD_GYROY,
+				IEE_MotionDataChannel_t.IMD_GYROZ, IEE_MotionDataChannel_t.IMD_ACCX, IEE_MotionDataChannel_t.IMD_ACCY, IEE_MotionDataChannel_t.IMD_ACCZ,
+				IEE_MotionDataChannel_t.IMD_MAGX, IEE_MotionDataChannel_t.IMD_MAGY, IEE_MotionDataChannel_t.IMD_MAGZ, IEE_MotionDataChannel_t.IMD_TIMESTAMP};
+		Channel_list = ChannelTmp;
         handleEvent = edkJava.IEE_EmoEngineEventCreate();
         emoState = edkJava.IEE_EmoStateCreate();
         motionDataHandle = edkJava.IEE_MotionDataCreate();
@@ -235,6 +237,7 @@ public class MainActivity extends Activity {
                         // Get motion data by channel
                         SWIGTYPE_p_double motion_array = edkJava.new_double_array(sample);
                         edkJava.IEE_MotionDataGet(motionDataHandle, Channel_list[j], motion_array, sample);
+						Log.e("Motion", "Samples Count:" + sample + ", col:" + Channel_list.length);
                         for (int sampleIdx = 0; sampleIdx < sample; sampleIdx++) {
                             data[sampleIdx][j] = edkJava.double_array_getitem(motion_array, sampleIdx);
                         }
@@ -243,11 +246,11 @@ public class MainActivity extends Activity {
                     // Save matrix to file
                     for (int row = 0; row < sample; row++) {
                         for (int col = 0; col < Channel_list.length; col++) {
-                            addData(data[col][row]);
+                            addData(data[row][col]);
                         }
                         try {
                             motion_writer.newLine();
-                        } catch (IOException e) {
+                        } catch (Exception e) {
                             // TODO Auto-generated catch block
                             e.printStackTrace();
                         }

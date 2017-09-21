@@ -70,7 +70,7 @@ public class EngineConnector {
 
 	private void connectEngine(){
 		Emotiv.IEE_EmoInitDevice(EngineConnector.context);
-		edkJava.IEE_EngineConnect("");
+		edkJava.IEE_EngineConnect("Emotiv Systems-5");
 		handleEvent = edkJava.IEE_EmoEngineEventCreate();
 		emoState = edkJava.IEE_EmoStateCreate();
 
@@ -193,6 +193,7 @@ public class EngineConnector {
 						if (!isConnected)
 							break;
 							edkJava.IEE_EmoEngineEventGetEmoState(handleEvent, emoState);
+						Log.e("MentalCommand", "EmoStateUpdated");
 						hander.sendMessage(hander
 								.obtainMessage(HANDLER_ACTION_CURRENT));
 

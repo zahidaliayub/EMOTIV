@@ -60,12 +60,9 @@ public class EngineConnector {
     protected static final int HANDLER_EEG_DATA         = 42;
     protected static final int HANDLER_BAND_POWER_DATA  = 43;
 
-    IEE_MotionDataChannel_t[] motionChannel_list = {IEE_MotionDataChannel_t.IMD_COUNTER, IEE_MotionDataChannel_t.IMD_GYROX,IEE_MotionDataChannel_t.IMD_GYROY,
-            IEE_MotionDataChannel_t.IMD_GYROZ, IEE_MotionDataChannel_t.IMD_ACCX, IEE_MotionDataChannel_t.IMD_ACCY, IEE_MotionDataChannel_t.IMD_ACCZ,
-            IEE_MotionDataChannel_t.IMD_MAGX, IEE_MotionDataChannel_t.IMD_MAGY, IEE_MotionDataChannel_t.IMD_MAGZ, IEE_MotionDataChannel_t.IMD_TIMESTAMP};
+    IEE_MotionDataChannel_t[]motionChannel_list;
 
-    IEE_DataChannel_t[] dataChannel_list = {IEE_DataChannel_t.IED_AF3, IEE_DataChannel_t.IED_T7,IEE_DataChannel_t.IED_Pz,
-            IEE_DataChannel_t.IED_T8,IEE_DataChannel_t.IED_AF4};
+    IEE_DataChannel_t[] dataChannel_list;
 
     String[] dataName_Channel = {"AF3","T7","Pz","T8","AF4"};
 
@@ -88,11 +85,19 @@ public class EngineConnector {
 
 	private void connectEngine(){
         Emotiv.IEE_EmoInitDevice(EngineConnector.context);
-        edkJava.IEE_EngineConnect("");
+        edkJava.IEE_EngineConnect("Emotiv Systems-5");
         handleEvent = edkJava.IEE_EmoEngineEventCreate();
         emoState = edkJava.IEE_EmoStateCreate();
         motionDataHandle = edkJava.IEE_MotionDataCreate();
 
+        IEE_MotionDataChannel_t []motionChannelTmp = {IEE_MotionDataChannel_t.IMD_COUNTER, IEE_MotionDataChannel_t.IMD_GYROX,IEE_MotionDataChannel_t.IMD_GYROY,
+                IEE_MotionDataChannel_t.IMD_GYROZ, IEE_MotionDataChannel_t.IMD_ACCX, IEE_MotionDataChannel_t.IMD_ACCY, IEE_MotionDataChannel_t.IMD_ACCZ,
+                IEE_MotionDataChannel_t.IMD_MAGX, IEE_MotionDataChannel_t.IMD_MAGY, IEE_MotionDataChannel_t.IMD_MAGZ, IEE_MotionDataChannel_t.IMD_TIMESTAMP};
+        IEE_DataChannel_t []dataChannelTmp = {IEE_DataChannel_t.IED_AF3, IEE_DataChannel_t.IED_T7,IEE_DataChannel_t.IED_Pz,
+            IEE_DataChannel_t.IED_T8,IEE_DataChannel_t.IED_AF4};
+
+        motionChannel_list = motionChannelTmp;
+        dataChannel_list = dataChannelTmp;
         timer = new Timer();
         intTimerTask();
         timer.schedule(timerTask , 10, 10);
@@ -158,124 +163,111 @@ public class EngineConnector {
 	   timerTask = new TimerTask() {
 		@Override
 		public void run() {
-			// TODO Auto-generated method stub`
+            // TODO Auto-generated method stub`
 			/*Connect device with Insight headset*/
-			int numberDevice = Emotiv.IEE_GetInsightDeviceCount();
-			if (numberDevice != 0) {
-				if (!bleInUse) {
-					Emotiv.IEE_ConnectInsightDevice(0);
-					bleInUse = true;
-				}
-			}
-			else {
-				numberDevice = Emotiv.IEE_GetEpocPlusDeviceCount();
-				if (numberDevice != 0){
-					if (!bleInUse) {
-						Emotiv.IEE_ConnectEpocPlusDevice(0, false);
-						bleInUse = true;
-					}
-				}
-			}
+            int numberDevice = Emotiv.IEE_GetInsightDeviceCount();
+            if (numberDevice != 0) {
+                if (!bleInUse) {
+                    Emotiv.IEE_ConnectInsightDevice(0);
+                    bleInUse = true;
+                }
+            } else {
+                numberDevice = Emotiv.IEE_GetEpocPlusDeviceCount();
+                if (numberDevice != 0) {
+                    if (!bleInUse) {
+                        Emotiv.IEE_ConnectEpocPlusDevice(0, false);
+                        bleInUse = true;
+                    }
+                }
+            }
             int state = edkJava.IEE_EngineGetNextEvent(handleEvent);
             if (state == edkJava.EDK_OK) {
-                   IEE_Event_t eventType = edkJava.IEE_EmoEngineEventGetType(handleEvent);
-                   SWIGTYPE_p_unsigned_int pEngineId = edkJava.new_uint_p();
-                   int result = edkJava.IEE_EmoEngineEventGetUserId(handleEvent, pEngineId);
-                   int tmpUserId = (int)edkJava.uint_p_value(pEngineId);
-                   edkJava.delete_uint_p(pEngineId);
-                   switch (eventType) {
-                       case IEE_UserAdded:
-                            Log.e("FacialExpression", "User Added");
-                            isConnected = true;
-                            bleInUse = true;
-                            userId = tmpUserId;
-                            mHandler.sendMessage(mHandler.obtainMessage(HANDLER_USER_ADDED));
-                             break;
-                       case IEE_UserRemoved:
-                            Log.e("FacialExpression", "User Removed");
-                            isConnected = false;
-                            bleInUse = false;
-                            userId=-1;
-                            mHandler.sendMessage(mHandler.obtainMessage(HANDLER_USER_REMOVED));
-                            break;
-                       case IEE_EmoStateUpdated:
-                            if (!isConnected) break;
-                            edkJava.IEE_EmoEngineEventGetEmoState(handleEvent, emoState);
-                            mHandler.sendMessage(mHandler.obtainMessage(HANDLER_EMOSTATE_UPDATE));
-                            mHandler.sendMessage(mHandler.obtainMessage(HANDLER_FACIAL_EVENT));
-                            mHandler.sendMessage(mHandler.obtainMessage(HANDLER_MENTAL_EVENT));
-                            mHandler.sendMessage(mHandler.obtainMessage(HANDLER_PM_EVENT));
+                IEE_Event_t eventType = edkJava.IEE_EmoEngineEventGetType(handleEvent);
+                SWIGTYPE_p_unsigned_int pEngineId = edkJava.new_uint_p();
+                int result = edkJava.IEE_EmoEngineEventGetUserId(handleEvent, pEngineId);
+                int tmpUserId = (int) edkJava.uint_p_value(pEngineId);
+                edkJava.delete_uint_p(pEngineId);
+                switch (eventType) {
+                    case IEE_UserAdded:
+                        Log.e("FacialExpression", "User Added");
+                        isConnected = true;
+                        bleInUse = true;
+                        userId = tmpUserId;
+                        mHandler.sendMessage(mHandler.obtainMessage(HANDLER_USER_ADDED));
+                        break;
+                    case IEE_UserRemoved:
+                        Log.e("FacialExpression", "User Removed");
+                        isConnected = false;
+                        bleInUse = false;
+                        userId = -1;
+                        mHandler.sendMessage(mHandler.obtainMessage(HANDLER_USER_REMOVED));
+                        break;
+                    case IEE_EmoStateUpdated:
+                        if (!isConnected) break;
+                        edkJava.IEE_EmoEngineEventGetEmoState(handleEvent, emoState);
+                        mHandler.sendMessage(mHandler.obtainMessage(HANDLER_EMOSTATE_UPDATE));
+                        mHandler.sendMessage(mHandler.obtainMessage(HANDLER_FACIAL_EVENT));
+                        mHandler.sendMessage(mHandler.obtainMessage(HANDLER_MENTAL_EVENT));
+                        mHandler.sendMessage(mHandler.obtainMessage(HANDLER_PM_EVENT));
 
-                         break;
-                       case IEE_FacialExpressionEvent:
-                            IEE_FacialExpressionEvent_t feType = edkJava.IEE_FacialExpressionEventGetType(handleEvent);
-                            if (feType == IEE_FacialExpressionEvent_t.IEE_FacialExpressionTrainingStarted){
-                               Log.e("FacialExpression", "training started");
-                               mHandler.sendMessage(mHandler.obtainMessage(HANDLER_FETRAIN_START));
-                            }
-                            else
-                            if (feType == IEE_FacialExpressionEvent_t.IEE_FacialExpressionTrainingCompleted){
-                                Log.e("FacialExpression", "training completed");
-                                mHandler.sendMessage(mHandler.obtainMessage(HANDLER_FETRAIN_COMPLETE));
-                            }
-                            else
-                            if (feType == IEE_FacialExpressionEvent_t.IEE_FacialExpressionTrainingDataErased){
-                                    Log.e("FacialExpression", "training erased");
-                                    mHandler.sendMessage(mHandler.obtainMessage(HANDLER_FETRAIN_ERASED));
-                            }
-                            else
-                            if (feType == IEE_FacialExpressionEvent_t.IEE_FacialExpressionTrainingFailed){
-                                Log.e("FacialExpression", "training failed");
-                                mHandler.sendMessage(mHandler.obtainMessage(HANDLER_FETRAIN_FAILURED));
-                            }
-                            else
-                            if (feType == IEE_FacialExpressionEvent_t.IEE_FacialExpressionTrainingRejected){
-                                    Log.e("FacialExpression", "training rejected");
-                                    mHandler.sendMessage(mHandler.obtainMessage(HANDLER_FETRAIN_REJECT));
-                            }
-                            else
-                            if (feType == IEE_FacialExpressionEvent_t.IEE_FacialExpressionTrainingReset){
-                                Log.e("FacialExpression", "training reseted");
-                                mHandler.sendMessage(mHandler.obtainMessage(HANDLER_FETRAIN_RESET));
-                            }
-                            else
-                            if (feType == IEE_FacialExpressionEvent_t.IEE_FacialExpressionTrainingSucceeded){
-                                Log.e("FacialExpression", "training succeeded");
-                                mHandler.sendMessage(mHandler.obtainMessage(HANDLER_FETRAIN_SUCCEED));
-                            }
-                            break;
-                       case IEE_MentalCommandEvent:
-                            IEE_MentalCommandEvent_t mcType = edkJava.IEE_MentalCommandEventGetType(handleEvent);
-                            if (mcType == IEE_MentalCommandEvent_t.IEE_MentalCommandTrainingStarted) {
-                               Log.e("MentalCommand", "training started");
-                                mHandler.sendEmptyMessage(HANDLER_MCTRAIN_STARTED);
-                           } else if (mcType == IEE_MentalCommandEvent_t.IEE_MentalCommandTrainingSucceeded) {
-                               Log.e("MentalCommand", "training Succeeded");
-                                mHandler.sendEmptyMessage(HANDLER_MCTRAIN_SUCCEED);
-                           } else if (mcType == IEE_MentalCommandEvent_t.IEE_MentalCommandTrainingCompleted) {
-                               Log.e("MentalCommand", "training Completed");
-                                mHandler.sendEmptyMessage(HANDLER_MCTRAIN_COMPLETED);
-                           } else if (mcType == IEE_MentalCommandEvent_t.IEE_MentalCommandTrainingDataErased) {
-                               Log.e("MentalCommand", "training erased");
-                                mHandler.sendEmptyMessage(HANDLER_MCTRAIN_ERASED);
-                           } else if (mcType == IEE_MentalCommandEvent_t.IEE_MentalCommandTrainingFailed) {
-                               Log.e("MentalCommand", "training failed");
-                                mHandler.sendEmptyMessage(HANDLER_MCTRAIN_FAILURED);
-                           } else if (mcType == IEE_MentalCommandEvent_t.IEE_MentalCommandTrainingRejected) {
-                               Log.e("MentalCommand", "training rejected");
-                                mHandler.sendEmptyMessage(HANDLER_MCTRAIN_REJECTED);
-                           } else if (mcType == IEE_MentalCommandEvent_t.IEE_MentalCommandTrainingReset) {
-                               Log.e("MentalCommand", "training Reset");
-                                mHandler.sendEmptyMessage(HANDLER_MCTRAIN_RESET);
-                           } else if ( mcType == IEE_MentalCommandEvent_t.IEE_MentalCommandAutoSamplingNeutralCompleted) {
-                                mHandler.sendEmptyMessage(HANDLER_MCTRAIN_AUTO_SAMPLING);
-                           } else if ( mcType == IEE_MentalCommandEvent_t.IEE_MentalCommandSignatureUpdated) {
-                                mHandler.sendEmptyMessage(HANDLER_MCTRAIN_SIGN_UPDATE);
-                           }
-                           break;
-                       default:
-                           break;
-                   }
+                        break;
+                    case IEE_FacialExpressionEvent:
+                        IEE_FacialExpressionEvent_t feType = edkJava.IEE_FacialExpressionEventGetType(handleEvent);
+                        if (feType == IEE_FacialExpressionEvent_t.IEE_FacialExpressionTrainingStarted) {
+                            Log.e("FacialExpression", "training started");
+                            mHandler.sendMessage(mHandler.obtainMessage(HANDLER_FETRAIN_START));
+                        } else if (feType == IEE_FacialExpressionEvent_t.IEE_FacialExpressionTrainingCompleted) {
+                            Log.e("FacialExpression", "training completed");
+                            mHandler.sendMessage(mHandler.obtainMessage(HANDLER_FETRAIN_COMPLETE));
+                        } else if (feType == IEE_FacialExpressionEvent_t.IEE_FacialExpressionTrainingDataErased) {
+                            Log.e("FacialExpression", "training erased");
+                            mHandler.sendMessage(mHandler.obtainMessage(HANDLER_FETRAIN_ERASED));
+                        } else if (feType == IEE_FacialExpressionEvent_t.IEE_FacialExpressionTrainingFailed) {
+                            Log.e("FacialExpression", "training failed");
+                            mHandler.sendMessage(mHandler.obtainMessage(HANDLER_FETRAIN_FAILURED));
+                        } else if (feType == IEE_FacialExpressionEvent_t.IEE_FacialExpressionTrainingRejected) {
+                            Log.e("FacialExpression", "training rejected");
+                            mHandler.sendMessage(mHandler.obtainMessage(HANDLER_FETRAIN_REJECT));
+                        } else if (feType == IEE_FacialExpressionEvent_t.IEE_FacialExpressionTrainingReset) {
+                            Log.e("FacialExpression", "training reseted");
+                            mHandler.sendMessage(mHandler.obtainMessage(HANDLER_FETRAIN_RESET));
+                        } else if (feType == IEE_FacialExpressionEvent_t.IEE_FacialExpressionTrainingSucceeded) {
+                            Log.e("FacialExpression", "training succeeded");
+                            mHandler.sendMessage(mHandler.obtainMessage(HANDLER_FETRAIN_SUCCEED));
+                        }
+                        break;
+                    case IEE_MentalCommandEvent:
+                        IEE_MentalCommandEvent_t mcType = edkJava.IEE_MentalCommandEventGetType(handleEvent);
+                        if (mcType == IEE_MentalCommandEvent_t.IEE_MentalCommandTrainingStarted) {
+                            Log.e("MentalCommand", "training started");
+                            mHandler.sendEmptyMessage(HANDLER_MCTRAIN_STARTED);
+                        } else if (mcType == IEE_MentalCommandEvent_t.IEE_MentalCommandTrainingSucceeded) {
+                            Log.e("MentalCommand", "training Succeeded");
+                            mHandler.sendEmptyMessage(HANDLER_MCTRAIN_SUCCEED);
+                        } else if (mcType == IEE_MentalCommandEvent_t.IEE_MentalCommandTrainingCompleted) {
+                            Log.e("MentalCommand", "training Completed");
+                            mHandler.sendEmptyMessage(HANDLER_MCTRAIN_COMPLETED);
+                        } else if (mcType == IEE_MentalCommandEvent_t.IEE_MentalCommandTrainingDataErased) {
+                            Log.e("MentalCommand", "training erased");
+                            mHandler.sendEmptyMessage(HANDLER_MCTRAIN_ERASED);
+                        } else if (mcType == IEE_MentalCommandEvent_t.IEE_MentalCommandTrainingFailed) {
+                            Log.e("MentalCommand", "training failed");
+                            mHandler.sendEmptyMessage(HANDLER_MCTRAIN_FAILURED);
+                        } else if (mcType == IEE_MentalCommandEvent_t.IEE_MentalCommandTrainingRejected) {
+                            Log.e("MentalCommand", "training rejected");
+                            mHandler.sendEmptyMessage(HANDLER_MCTRAIN_REJECTED);
+                        } else if (mcType == IEE_MentalCommandEvent_t.IEE_MentalCommandTrainingReset) {
+                            Log.e("MentalCommand", "training Reset");
+                            mHandler.sendEmptyMessage(HANDLER_MCTRAIN_RESET);
+                        } else if (mcType == IEE_MentalCommandEvent_t.IEE_MentalCommandAutoSamplingNeutralCompleted) {
+                            mHandler.sendEmptyMessage(HANDLER_MCTRAIN_AUTO_SAMPLING);
+                        } else if (mcType == IEE_MentalCommandEvent_t.IEE_MentalCommandSignatureUpdated) {
+                            mHandler.sendEmptyMessage(HANDLER_MCTRAIN_SIGN_UPDATE);
+                        }
+                        break;
+                    default:
+                        break;
+                }
 
             }// End IEE_EngineGetNextEvent
 
@@ -304,7 +296,8 @@ public class EngineConnector {
                 // See motiondatalogger example
                 for (int row = 0; row < sample; ++row) {
                     for (int col = 0; col < motionChannel_list.length; ++col) {
-                        //addData(motionData[col][row]);
+                        double value = motionData[row][col];
+                        //addData(motionData[row][col]);
                     }
                     try {
                         //motion_writer.newLine();
@@ -316,20 +309,23 @@ public class EngineConnector {
                 mHandler.sendEmptyMessage(HANDLER_MOTION_DATA);
                 motionData = null;
             }
-
-            // Band Power Data
-            // See FFTSample example
-            boolean bpDataAvailable = false;
-            SWIGTYPE_p_double ptheta = edkJava.new_double_p();
-            SWIGTYPE_p_double palpha = edkJava.new_double_p();
-            SWIGTYPE_p_double plow_beta = edkJava.new_double_p();
-            SWIGTYPE_p_double phigh_beta = edkJava.new_double_p();
-            SWIGTYPE_p_double pgamma = edkJava.new_double_p();
-            for(int i=0; i < dataChannel_list.length; i++)
-            {
-                int resultBandPower = edkJava.IEE_GetAverageBandPowers(userId, dataChannel_list[i], ptheta, palpha, plow_beta, phigh_beta, pgamma);
-                if(resultBandPower == edkJava.EDK_OK){
-                    try {
+            try {
+                if (dataChannel_list == null) return;
+                if (dataChannel_list.length == 0) return;
+                // Band Power Data
+                // See FFTSample example
+                boolean bpDataAvailable = false;
+                SWIGTYPE_p_double ptheta = edkJava.new_double_p();
+                SWIGTYPE_p_double palpha = edkJava.new_double_p();
+                SWIGTYPE_p_double plow_beta = edkJava.new_double_p();
+                SWIGTYPE_p_double phigh_beta = edkJava.new_double_p();
+                SWIGTYPE_p_double pgamma = edkJava.new_double_p();
+                for (int i = 0; i < dataChannel_list.length; ++i) {
+                    int resultBandPower = -1;
+                    //resultBandPower = edkJava.IEE_GetAverageBandPowers(userId, dataChannel_list[i], ptheta, palpha, plow_beta, phigh_beta, pgamma);
+                    if (resultBandPower == edkJava.EDK_OK) {
+                        bpDataAvailable = true;
+                        try {
 //                        bp_writer.write(dataName_Channel[i] + ",");
 //                        addData(edkJava.double_p_value(ptheta));
 //                        addData(edkJava.double_p_value(palpha));
@@ -337,24 +333,26 @@ public class EngineConnector {
 //                        addData(edkJava.double_p_value(phigh_beta));
 //                        addData(edkJava.double_p_value(pgamma));
 //                        bp_writer.newLine();
-                        // TODO: Save band power data
-                        bpDataAvailable = true;
-                    } catch (Exception e) {
-                        e.printStackTrace();
+                            // TODO: Save band power data
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                     }
                 }
-            }
-            if (bpDataAvailable) {
-                // Notify delegate -> new band power data
-                mHandler.sendEmptyMessage(HANDLER_BAND_POWER_DATA);
-            }
-            edkJava.delete_double_p(ptheta);
-            edkJava.delete_double_p(palpha);
-            edkJava.delete_double_p(plow_beta);
-            edkJava.delete_double_p(phigh_beta);
-            edkJava.delete_double_p(pgamma);
+                if (bpDataAvailable) {
+                    // Notify delegate -> new band power data
+                    mHandler.sendEmptyMessage(HANDLER_BAND_POWER_DATA);
+                }
+                edkJava.delete_double_p(ptheta);
+                edkJava.delete_double_p(palpha);
+                edkJava.delete_double_p(plow_beta);
+                edkJava.delete_double_p(phigh_beta);
+                edkJava.delete_double_p(pgamma);
 
-		}
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
 	};
 
    }
@@ -379,6 +377,7 @@ public class EngineConnector {
             case HANDLER_EMOSTATE_UPDATE:
                 if (delegate!= null) {
                    // Do nothing
+                    Log.e("FacialExpression", "EmoStateUpdate");
                 }
                 break;
             case HANDLER_FACIAL_EVENT:
