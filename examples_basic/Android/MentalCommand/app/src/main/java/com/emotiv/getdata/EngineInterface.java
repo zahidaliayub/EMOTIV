@@ -1,5 +1,5 @@
 package com.emotiv.getdata;
-
+import com.emotiv.sdk.*;
 public interface EngineInterface {
 	//train
 	public void trainStarted();
@@ -11,9 +11,8 @@ public interface EngineInterface {
 	public void trainErased();
 	public void userAdd(int userId);
 	public void userRemoved();
-	
+
 	//action
-	public void currentAction(int typeAction,float power);
-	
-	
+	public void currentAction(IEE_MentalCommandAction_t typeAction,float power);
+
 }

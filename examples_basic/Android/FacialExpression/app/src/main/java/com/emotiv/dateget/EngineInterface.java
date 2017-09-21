@@ -1,5 +1,5 @@
 package com.emotiv.dateget;
-
+import com.emotiv.sdk.*;
 public interface EngineInterface {
 	
 	//train
@@ -14,5 +14,5 @@ public interface EngineInterface {
 	
 	
 	// detection
-	public void detectedActionLowerFace(int typeAction,float power);
+	public void detectedActionLowerFace(IEE_FacialExpressionAlgo_t typeAction,float power);
 }

@@ -4,6 +4,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import com.example.com.emotiv.eeglogger.R;
 
@@ -27,9 +28,8 @@ import android.content.pm.PackageManager;
 import android.Manifest;
 import android.widget.Toast;
 
-import com.emotiv.insight.IEdk;
-import com.emotiv.insight.IEdkErrorCode;
-import com.emotiv.insight.IEdk.IEE_Event_t;;
+import com.emotiv.sdk.*;
+import com.emotiv.bluetooth.*;
 
 public class MainActivity extends Activity {
 
@@ -41,11 +41,16 @@ public class MainActivity extends Activity {
 	private boolean isEnablGetData = false;
 	private boolean isEnableWriteFile = false;
 	int userId;
+
+	private SWIGTYPE_p_void handleEvent;
+	private SWIGTYPE_p_void emoState;
+    private SWIGTYPE_p_void motionDataHandle;
+
 	private BufferedWriter motion_writer;
 	Button Start_button,Stop_button;
-	IEdk.IEE_MotionDataChannel_t[] Channel_list = {IEdk.IEE_MotionDataChannel_t.IMD_COUNTER, IEdk.IEE_MotionDataChannel_t.IMD_GYROX,IEdk.IEE_MotionDataChannel_t.IMD_GYROY,
-			IEdk.IEE_MotionDataChannel_t.IMD_GYROZ,IEdk.IEE_MotionDataChannel_t.IMD_ACCX,IEdk.IEE_MotionDataChannel_t.IMD_ACCY,IEdk.IEE_MotionDataChannel_t.IMD_ACCZ,
-			IEdk.IEE_MotionDataChannel_t.IMD_MAGX,IEdk.IEE_MotionDataChannel_t.IMD_MAGY,IEdk.IEE_MotionDataChannel_t.IMD_MAGZ,IEdk.IEE_MotionDataChannel_t.IMD_TIMESTAMP};
+	IEE_MotionDataChannel_t[] Channel_list = {IEE_MotionDataChannel_t.IMD_COUNTER, IEE_MotionDataChannel_t.IMD_GYROX,IEE_MotionDataChannel_t.IMD_GYROY,
+			IEE_MotionDataChannel_t.IMD_GYROZ, IEE_MotionDataChannel_t.IMD_ACCX, IEE_MotionDataChannel_t.IMD_ACCY, IEE_MotionDataChannel_t.IMD_ACCZ,
+			IEE_MotionDataChannel_t.IMD_MAGX, IEE_MotionDataChannel_t.IMD_MAGY, IEE_MotionDataChannel_t.IMD_MAGZ, IEE_MotionDataChannel_t.IMD_TIMESTAMP};
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -72,9 +77,9 @@ public class MainActivity extends Activity {
 		}
 		Start_button = (Button)findViewById(R.id.startbutton);
 		Stop_button  = (Button)findViewById(R.id.stopbutton);
-		
+
 		Start_button.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
@@ -84,7 +89,7 @@ public class MainActivity extends Activity {
 			}
 		});
 		Stop_button.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
@@ -93,6 +98,13 @@ public class MainActivity extends Activity {
 				isEnableWriteFile = false;
 			}
 		});
+
+
+        Emotiv.IEE_EmoInitDevice(this);
+        edkJava.IEE_EngineConnect("");
+        handleEvent = edkJava.IEE_EmoEngineEventCreate();
+        emoState = edkJava.IEE_EmoStateCreate();
+        motionDataHandle = edkJava.IEE_MotionDataCreate();
 
 		processingThread=new Thread()
 		{
@@ -109,7 +121,7 @@ public class MainActivity extends Activity {
 						if(isEnablGetData && isEnableWriteFile)handler.sendEmptyMessage(2);
 						Thread.sleep(5);
 					}
-					
+
 					catch (Exception ex)
 					{
 						ex.printStackTrace();
@@ -148,8 +160,8 @@ public class MainActivity extends Activity {
 		if (requestCode == REQUEST_ENABLE_BT) {
 			if(resultCode == Activity.RESULT_OK){
 				//Connect to emoEngine
-				IEdk.IEE_EngineConnect(this,"");
-				IEdk.IEE_MotionDataCreate();
+				//IEdk.IEE_EngineConnect(this,"");
+				//IEdk.IEE_MotionDataCreate();
 			}
 			if (resultCode == Activity.RESULT_CANCELED) {
 				Toast.makeText(this, "You must be turn on bluetooth to connect with Emotiv devices"
@@ -163,70 +175,92 @@ public class MainActivity extends Activity {
 		public void handleMessage(Message msg) {
 			switch (msg.what) {
 
-			case 0:
-				int state = IEdk.IEE_EngineGetNextEvent();
-				if (state == IEdkErrorCode.EDK_OK.ToInt()) {
-					int eventType = IEdk.IEE_EmoEngineEventGetType();
-				    userId = IEdk.IEE_EmoEngineEventGetUserId();
-					if(eventType == IEE_Event_t.IEE_UserAdded.ToInt()){
-						Log.e("SDK","User added");
-						isEnablGetData = true;
-					}
-					if(eventType == IEE_Event_t.IEE_UserRemoved.ToInt()){
-						Log.e("SDK","User removed");		
-						isEnablGetData = false;
-					}
-				}
-				
-				break;
+			case 0: {
+                int state = edkJava.IEE_EngineGetNextEvent(handleEvent);
+                if (state == edkJava.EDK_OK) {
+                    IEE_Event_t eventType = edkJava.IEE_EmoEngineEventGetType(handleEvent);
+                    //userId = IEdk.IEE_EmoEngineEventGetUserId();
+                    SWIGTYPE_p_unsigned_int pEngineId = edkJava.new_uint_p();
+                    int result = edkJava.IEE_EmoEngineEventGetUserId(handleEvent, pEngineId);
+                    int tmpUserId = (int) edkJava.uint_p_value(pEngineId);
+                    edkJava.delete_uint_p(pEngineId);
+                    userId = tmpUserId;
+                    switch (eventType) {
+                        case IEE_UserAdded: {
+                            Log.e("SDK", "User added");
+                            isEnablGetData = true;
+                        }
+                        break;
+                        case IEE_UserRemoved: {
+                            Log.e("SDK", "User removed");
+                            isEnablGetData = false;
+                        }
+                        break;
+                    }
+                }
+                break;
+            }
 			case 1:
+            {
 				/*Connect device with Insight headset*/
-				int number = IEdk.IEE_GetInsightDeviceCount();
-				if(number != 0) {
-					if(!lock){
-						lock = true;
-						IEdk.IEE_ConnectInsightDevice(0);
-					}
-				}
-				/**************************************/
+                int number = Emotiv.IEE_GetInsightDeviceCount();
+                if (number != 0) {
+                    if (!lock) {
+                        lock = true;
+                        Emotiv.IEE_ConnectInsightDevice(0);
+                    }
+                } else {
+                    /**************************************/
 				/*Connect device with EPOC Plus headset*/
-//				int number = IEdk.IEE_GetEpocPlusDeviceCount();
-//				if(number != 0) {
-//					if(!lock){
-//						lock = true;
-//						IEdk.IEE_ConnectEpocPlusDevice(0,false);
-//					}
-//				}
-				/**************************************/
-				else lock = false;
-				break;
-			case 2:
-				if(motion_writer == null) return;
-				IEdk.IEE_MotionDataUpdateHandle(userId);
-				int sample = IEdk.IEE_MotionDataGetNumberOfSample(userId);
-				if(sample > 0){
-					for(int sampleIdx =0; sampleIdx < sample; sampleIdx++)
-					{
-						for(int j=0;j< Channel_list.length;j++){
-							double[] eeg_data = IEdk.IEE_MotionDataGet(Channel_list[j]);
-							addData(eeg_data[sampleIdx]);
-						}
-						try {
-							motion_writer.newLine();
-						} catch (IOException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
-					}
-				}
-				
-				break;
+                    number = Emotiv.IEE_GetEpocPlusDeviceCount();
+                    if (number != 0) {
+                        if (!lock) {
+                            lock = true;
+                            Emotiv.IEE_ConnectEpocPlusDevice(0, false);
+                        } else lock = false;
+                    }
+                    /**************************************/
+                }
+            }
+			break;
+			case 2: {
+                if (motion_writer == null) return;
+                edkJava.IEE_MotionDataUpdateHandle(userId, motionDataHandle);
+                SWIGTYPE_p_unsigned_int pSamplesCount = edkJava.new_uint_p();
+                int result = edkJava.IEE_MotionDataGetNumberOfSample(motionDataHandle, pSamplesCount);
+                int sample = (int) edkJava.uint_p_value(pSamplesCount);
+                if (sample > 0) {
+                    double[][] data = new double[sample][Channel_list.length];
+                    for (int j = 0; j < Channel_list.length; j++) {
+                        // Get motion data by channel
+                        SWIGTYPE_p_double motion_array = edkJava.new_double_array(sample);
+                        edkJava.IEE_MotionDataGet(motionDataHandle, Channel_list[j], motion_array, sample);
+                        for (int sampleIdx = 0; sampleIdx < sample; sampleIdx++) {
+                            data[sampleIdx][j] = edkJava.double_array_getitem(motion_array, sampleIdx);
+                        }
+                        edkJava.delete_double_array(motion_array);
+                    }
+                    // Save matrix to file
+                    for (int row = 0; row < sample; row++) {
+                        for (int col = 0; col < Channel_list.length; col++) {
+                            addData(data[col][row]);
+                        }
+                        try {
+                            motion_writer.newLine();
+                        } catch (IOException e) {
+                            // TODO Auto-generated catch block
+                            e.printStackTrace();
+                        }
+                    }
+                    data = null;
+                }
+            }
+			break;
 			}
-
 		}
 
 	};
-	
+
 	private void setDataFile() {
 		try {
 			String eeg_header = "COUNTER_MEMS,GYROX,GYROY,GYROZ,ACCX,ACCY,ACCZ,MAGX,MAGY,MAGZ,TimeStamp";
@@ -236,7 +270,7 @@ public class MainActivity extends Activity {
 			if(!folder.exists())
 			{
 				folder.mkdirs();
-			}		
+			}
 			motion_writer = new BufferedWriter(new FileWriter(file_path+"raw_motion.csv"));
 			motion_writer.write(eeg_header);
 			motion_writer.newLine();
@@ -256,7 +290,7 @@ public class MainActivity extends Activity {
 	/**
 	 * public void addData(double data) Add  Data for write int the
 	 * Motion File
-	 * 
+	 *
 	 * @param
 	 *            - double motion data
 	 */
@@ -266,15 +300,14 @@ public class MainActivity extends Activity {
 			return;
 		}
 
-			String input = "";
-				input += (String.valueOf(data) + ",");
-			try {
-				motion_writer.write(input);
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-
+        String input = "";
+        input += (String.valueOf(data) + ",");
+        try {
+            motion_writer.write(input);
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
 	}
 
 	private void checkConnect(){
@@ -286,8 +319,8 @@ public class MainActivity extends Activity {
 		else
 		{
 			//Connect to emoEngine
-			IEdk.IEE_EngineConnect(this,"");
-			IEdk.IEE_MotionDataCreate();
+			//IEdk.IEE_EngineConnect(this,"");
+			//IEdk.IEE_MotionDataCreate();
 		}
 	}
 

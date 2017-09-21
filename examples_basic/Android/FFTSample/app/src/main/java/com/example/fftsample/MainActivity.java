@@ -27,10 +27,8 @@ import android.bluetooth.BluetoothManager;
 import android.content.Context;
 import android.content.Intent;
 
-import com.emotiv.insight.IEdk;
-import com.emotiv.insight.IEdkErrorCode;
-import com.emotiv.insight.IEdk.IEE_DataChannel_t;
-import com.emotiv.insight.IEdk.IEE_Event_t;;
+import com.emotiv.sdk.*;
+import com.emotiv.bluetooth.*;
 
 public class MainActivity extends Activity {
 
@@ -42,6 +40,10 @@ public class MainActivity extends Activity {
 	private boolean isEnablGetData = false;
 	private boolean isEnableWriteFile = false;
 	int userId;
+
+	private SWIGTYPE_p_void handleEvent;
+	private SWIGTYPE_p_void emoState;
+
 	private BufferedWriter motion_writer;
 	Button Start_button,Stop_button;
 	IEE_DataChannel_t[] Channel_list = {IEE_DataChannel_t.IED_AF3, IEE_DataChannel_t.IED_T7,IEE_DataChannel_t.IED_Pz,
@@ -51,7 +53,7 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
+
 		final BluetoothManager bluetoothManager =
 				(BluetoothManager) getSystemService(Context.BLUETOOTH_SERVICE);
 		mBluetoothAdapter = bluetoothManager.getAdapter();
@@ -73,11 +75,14 @@ public class MainActivity extends Activity {
 			checkConnect();
 		}
 
+		handleEvent = edkJava.IEE_EmoEngineEventCreate();
+		emoState = edkJava.IEE_EmoStateCreate();
+
 		Start_button = (Button)findViewById(R.id.startbutton);
 		Stop_button  = (Button)findViewById(R.id.stopbutton);
-		
+
 		Start_button.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
@@ -87,7 +92,7 @@ public class MainActivity extends Activity {
 			}
 		});
 		Stop_button.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
@@ -112,7 +117,7 @@ public class MainActivity extends Activity {
 						if(isEnablGetData && isEnableWriteFile)handler.sendEmptyMessage(2);
 						Thread.sleep(5);
 					}
-					
+
 					catch (Exception ex)
 					{
 						ex.printStackTrace();
@@ -123,68 +128,85 @@ public class MainActivity extends Activity {
 		processingThread.start();
 
 	}
-	
+
 	Handler handler = new Handler() {
 		@Override
 		public void handleMessage(Message msg) {
 			switch (msg.what) {
 
 			case 0:
-				int state = IEdk.IEE_EngineGetNextEvent();
-				if (state == IEdkErrorCode.EDK_OK.ToInt()) {
-					int eventType = IEdk.IEE_EmoEngineEventGetType();
-				    userId = IEdk.IEE_EmoEngineEventGetUserId();
-					if(eventType == IEE_Event_t.IEE_UserAdded.ToInt()){
-						Log.e("SDK","User added");
-						IEdk.IEE_FFTSetWindowingType(userId, IEdk.IEE_WindowsType_t.IEE_BLACKMAN);
-						isEnablGetData = true;
-					}
-					if(eventType == IEE_Event_t.IEE_UserRemoved.ToInt()){
-						Log.e("SDK","User removed");		
-						isEnablGetData = false;
+				int state = edkJava.IEE_EngineGetNextEvent(handleEvent);
+				if (state == edkJava.EDK_OK) {
+					IEE_Event_t eventType = edkJava.IEE_EmoEngineEventGetType(handleEvent);
+
+					SWIGTYPE_p_unsigned_int pEngineId = edkJava.new_uint_p();
+					int result = edkJava.IEE_EmoEngineEventGetUserId(handleEvent, pEngineId);
+					int tmpUserId = (int)edkJava.uint_p_value(pEngineId);
+					edkJava.delete_uint_p(pEngineId);
+				    switch (eventType) {
+						case IEE_UserAdded:
+						{
+							Log.e("SDK", "User added");
+							edkJava.IEE_FFTSetWindowingType(userId, IEE_WindowingTypes.IEE_BLACKMAN);
+							isEnablGetData = true;
+						}
+						case IEE_UserRemoved:
+						{
+							Log.e("SDK", "User removed");
+							isEnablGetData = false;
+						}
 					}
 				}
-				
 				break;
 			case 1:
 				/*Connect device with Insight headset*/
-				int number = IEdk.IEE_GetInsightDeviceCount();
+				int number = Emotiv.IEE_GetInsightDeviceCount();
 				if(number != 0) {
 					if(!lock){
 						lock = true;
-						IEdk.IEE_ConnectInsightDevice(0);
+						Emotiv.IEE_ConnectInsightDevice(0);
 					}
+				} else {
+					number = Emotiv.IEE_GetEpocPlusDeviceCount();
+					if(number != 0) {
+						if(!lock){
+							lock = true;
+							Emotiv.IEE_ConnectEpocPlusDevice(0,false);
+						}
+					}
+					else lock = false;
 				}
-				/**************************************/
-				/*Connect device with Epoc Plus headset*/
-//				int number = IEdk.IEE_GetEpocPlusDeviceCount();
-//				if(number != 0) {
-//					if(!lock){
-//						lock = true;
-//						IEdk.IEE_ConnectEpocPlusDevice(0,false);
-//					}
-//				}
-				/**************************************/
-				else lock = false;
 				break;
 			case 2:
 				if(motion_writer == null) return;
 				for(int i=0; i < Channel_list.length; i++)
 				{
-					double[] data = IEdk.IEE_GetAverageBandPowers(Channel_list[i]);
-					if(data.length == 5){
+					SWIGTYPE_p_double ptheta = edkJava.new_double_p();
+					SWIGTYPE_p_double palpha = edkJava.new_double_p();
+					SWIGTYPE_p_double plow_beta = edkJava.new_double_p();
+					SWIGTYPE_p_double phigh_beta = edkJava.new_double_p();
+					SWIGTYPE_p_double pgamma = edkJava.new_double_p();
+					int result = edkJava.IEE_GetAverageBandPowers(userId, Channel_list[i], ptheta, palpha, plow_beta, phigh_beta, pgamma);
+					if(result == edkJava.EDK_OK){
 						try {
 							motion_writer.write(Name_Channel[i] + ",");
-							for(int j=0; j < data.length;j++)
-								addData(data[j]);
+							addData(edkJava.double_p_value(ptheta));
+							addData(edkJava.double_p_value(palpha));
+							addData(edkJava.double_p_value(plow_beta));
+							addData(edkJava.double_p_value(phigh_beta));
+							addData(edkJava.double_p_value(pgamma));
 							motion_writer.newLine();
 						} catch (IOException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
 					}
+					edkJava.delete_double_p(ptheta);
+					edkJava.delete_double_p(palpha);
+					edkJava.delete_double_p(plow_beta);
+					edkJava.delete_double_p(phigh_beta);
+					edkJava.delete_double_p(pgamma);
 				}
-				
 				break;
 			}
 
@@ -220,7 +242,7 @@ public class MainActivity extends Activity {
 		if (requestCode == REQUEST_ENABLE_BT) {
 			if(resultCode == Activity.RESULT_OK){
 				//Connect to emoEngine
-				IEdk.IEE_EngineConnect(this,"");
+				edkJava.IEE_EngineConnect("");
 			}
 			if (resultCode == Activity.RESULT_CANCELED) {
 				Toast.makeText(this, "You must be turn on bluetooth to connect with Emotiv devices"
@@ -240,7 +262,7 @@ public class MainActivity extends Activity {
 			if(!folder.exists())
 			{
 				folder.mkdirs();
-			}		
+			}
 			motion_writer = new BufferedWriter(new FileWriter(file_path+"bandpowerValue.csv"));
 			motion_writer.write(eeg_header);
 			motion_writer.newLine();
@@ -260,7 +282,7 @@ public class MainActivity extends Activity {
 	/**
 	 * public void addEEGData(Double[][] eegs) Add EEG Data for write int the
 	 * EEG File
-	 * 
+	 *
 	 * @param eegs
 	 *            - double array of eeg data
 	 */
@@ -290,7 +312,7 @@ public class MainActivity extends Activity {
 		else
 		{
 			//Connect to emoEngine
-			IEdk.IEE_EngineConnect(this,"");
+			edkJava.IEE_EngineConnect("");
 		}
 	}
 

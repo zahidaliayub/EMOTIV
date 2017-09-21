@@ -5,14 +5,9 @@ import java.util.HashMap;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import com.emotiv.sdk.*;
 import com.emotiv.getdata.EngineConnector;
 import com.emotiv.getdata.EngineInterface;
-import com.emotiv.insight.IEdk;
-import com.emotiv.insight.IEdkErrorCode;
-import com.emotiv.insight.MentalCommandDetection.IEE_MentalCommandTrainingControl_t;
-import com.emotiv.insight.IEmoStateDLL.IEE_FacialExpressionAlgo_t;
-import com.emotiv.insight.IEmoStateDLL.IEE_MentalCommandAction_t;
-import com.emotiv.insight.MentalCommandDetection;
 import com.emotiv.spinner.AdapterSpinner;
 import com.emotiv.spinner.DataSpinner;
 
@@ -39,25 +34,25 @@ import android.widget.SpinnerAdapter;
 import android.widget.Toast;
 
 public class ActivityTrainning extends Activity implements EngineInterface {
-	
+
 	EngineConnector engineConnector;
-	
+
 	 Spinner spinAction;
-	 Button btnTrain,btnClear; 
+	 Button btnTrain,btnClear;
 	 ProgressBar progressBarTime,progressPower;
 	 AdapterSpinner spinAdapter;
 	 ImageView imgBox;
 	 ArrayList<DataSpinner> model = new ArrayList<DataSpinner>();
-	 int indexAction, _currentAction,userId=0,count=0;
-	 
+	 int indexAction, userId=0,count=0;
+	 IEE_MentalCommandAction_t _currentAction;
 	 Timer timer;
 	 TimerTask timerTask;
-	 
+
 	 float _currentPower = 0;
 	 float startLeft     = -1;
 	 float startRight    = 0;
 	 float widthScreen   = 0;
-	  
+
 	 boolean isTrainning = false;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -73,25 +68,25 @@ public class ActivityTrainning extends Activity implements EngineInterface {
 			btnTrain=(Button)findViewById(R.id.btstartTraing);
 			btnClear=(Button)findViewById(R.id.btClearData);
 			btnClear.setOnClickListener(new OnClickListener() {
-				
+
 				@Override
 				public void onClick(View arg0) {
 					// TODO Auto-generated method stub
 					switch (indexAction) {
 					case 0:
-						engineConnector.trainningClear(IEE_MentalCommandAction_t.MC_NEUTRAL.ToInt());
+						engineConnector.trainningClear(IEE_MentalCommandAction_t.MC_NEUTRAL);
 						break;
 					case 1:
-						engineConnector.trainningClear(IEE_MentalCommandAction_t.MC_PUSH.ToInt());
+						engineConnector.trainningClear(IEE_MentalCommandAction_t.MC_PUSH);
 						break;
 					case 2:
-						engineConnector.trainningClear(IEE_MentalCommandAction_t.MC_PULL.ToInt());
+						engineConnector.trainningClear(IEE_MentalCommandAction_t.MC_PULL);
 						break;
 					case 3:
-						engineConnector.trainningClear(IEE_MentalCommandAction_t.MC_LEFT.ToInt());
+						engineConnector.trainningClear(IEE_MentalCommandAction_t.MC_LEFT);
 						break;
 					case 4:
-						engineConnector.trainningClear(IEE_MentalCommandAction_t.MC_RIGHT.ToInt());
+						engineConnector.trainningClear(IEE_MentalCommandAction_t.MC_RIGHT);
 						break;
 					default:
 						break;
@@ -102,7 +97,7 @@ public class ActivityTrainning extends Activity implements EngineInterface {
 			progressBarTime.setVisibility(View.INVISIBLE);
 			progressPower=(ProgressBar)findViewById(R.id.ProgressBarpower);
 			imgBox=(ImageView)findViewById(R.id.imgBox);
-			
+
 			setDataSpinner();
 			spinAction.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 				public void onItemSelected(AdapterView<?> arg0, View arg1,
@@ -114,7 +109,7 @@ public class ActivityTrainning extends Activity implements EngineInterface {
 				}
 			});
 			btnTrain.setOnClickListener(new OnClickListener() {
-				
+
 				@Override
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
@@ -155,15 +150,19 @@ public class ActivityTrainning extends Activity implements EngineInterface {
 			    	handlerUpdateUI.sendEmptyMessage(1);
 			    }
 			},
-			0, 20);	
-			
+			0, 20);
+
 	}
 	Handler handlerUpdateUI=new Handler(){
 		public void handleMessage(Message msg) {
 			switch (msg.what) {
 			case 0:
 				count ++;
-				int trainningTime=(int)MentalCommandDetection.IEE_MentalCommandGetTrainingTime(userId)[1]/1000;
+				SWIGTYPE_p_unsigned_int pValue = edkJava.new_uint_p();
+				edkJava.IEE_MentalCommandGetTrainingTime(userId, pValue);
+				int trainningTime=(int)edkJava.uint_p_value(pValue);
+				edkJava.delete_uint_p(pValue);
+				trainningTime=trainningTime/1000;
 				if(trainningTime > 0)
 					progressBarTime.setProgress(count / trainningTime);
 				if (progressBarTime.getProgress() >= 100) {
@@ -184,41 +183,41 @@ public class ActivityTrainning extends Activity implements EngineInterface {
 		isTrainning = engineConnector.startTrainingMetalcommand(isTrainning, MentalCommandAction);
 		btnTrain.setText((isTrainning) ? "Abort Trainning" : "Train");
 	}
-	
+
 	public void setDataSpinner()
 	{
 		model.clear();
 		DataSpinner data = new DataSpinner();
 		data.setTvName("Neutral");
-		data.setChecked(engineConnector.checkTrained(IEE_MentalCommandAction_t.MC_NEUTRAL.ToInt()));
+		data.setChecked(engineConnector.checkTrained(IEE_MentalCommandAction_t.MC_NEUTRAL));
 		model.add(data);
-		
+
 		data=new DataSpinner();
 		data.setTvName("Push");
-		data.setChecked(engineConnector.checkTrained(IEE_MentalCommandAction_t.MC_PUSH.ToInt()));
+		data.setChecked(engineConnector.checkTrained(IEE_MentalCommandAction_t.MC_PUSH));
 		model.add(data);
-		
+
 		data=new DataSpinner();
 		data.setTvName("Pull");
-		data.setChecked(engineConnector.checkTrained(IEE_MentalCommandAction_t.MC_PULL.ToInt()));
+		data.setChecked(engineConnector.checkTrained(IEE_MentalCommandAction_t.MC_PULL));
 		model.add(data);
-		
+
 		data=new DataSpinner();
 		data.setTvName("Left");
-		data.setChecked(engineConnector.checkTrained(IEE_MentalCommandAction_t.MC_LEFT.ToInt()));
+		data.setChecked(engineConnector.checkTrained(IEE_MentalCommandAction_t.MC_LEFT));
 		model.add(data);
-		
-		
+
+
 		data=new DataSpinner();
 		data.setTvName("Right");
-		data.setChecked(engineConnector.checkTrained(IEE_MentalCommandAction_t.MC_RIGHT.ToInt()));
+		data.setChecked(engineConnector.checkTrained(IEE_MentalCommandAction_t.MC_RIGHT));
 		model.add(data);
-		
+
 		spinAdapter = new AdapterSpinner(this, R.layout.row, model);
 		spinAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spinAction.setAdapter(spinAdapter);
 	}
-	
+
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -246,7 +245,7 @@ public class ActivityTrainning extends Activity implements EngineInterface {
 			startLeft = imgBox.getLeft();
 			startRight = imgBox.getRight();
 	}
-	
+
 	private void moveImage() {
 			float power = _currentPower;
 			if(isTrainning){
@@ -255,11 +254,11 @@ public class ActivityTrainning extends Activity implements EngineInterface {
 				imgBox.setScaleX(1.0f);
 				imgBox.setScaleY(1.0f);
 			}
-			if(( _currentAction == IEE_MentalCommandAction_t.MC_LEFT.ToInt())  || (_currentAction == IEE_MentalCommandAction_t.MC_RIGHT.ToInt()) && power > 0) {
+			if(( _currentAction == IEE_MentalCommandAction_t.MC_LEFT)  || (_currentAction == IEE_MentalCommandAction_t.MC_RIGHT) && power > 0) {
 
 				if(imgBox.getScaleX() == 1.0f && startLeft > 0) {
 					imgBox.setRight((int) widthScreen);
-					power = (_currentAction == IEE_MentalCommandAction_t.MC_LEFT.ToInt()) ? power*3 : power*-3;
+					power = (_currentAction == IEE_MentalCommandAction_t.MC_LEFT) ? power*3 : power*-3;
 					imgBox.setLeft((int) (power > 0 ? Math.max(0, (int)(imgBox.getLeft() - power)) : Math.min(widthScreen - imgBox.getMeasuredWidth(), (int)(imgBox.getLeft() - power))));
 				}
 			}
@@ -267,18 +266,18 @@ public class ActivityTrainning extends Activity implements EngineInterface {
 				power = (imgBox.getLeft() > startLeft) ? 6 : -6;
 				imgBox.setLeft(power > 0  ? Math.max((int)startLeft, (int)(imgBox.getLeft() - power)) : Math.min((int)startLeft, (int)(imgBox.getLeft() - power)));
 			}
-			if(((_currentAction == IEE_MentalCommandAction_t.MC_PULL.ToInt()) || (_currentAction == IEE_MentalCommandAction_t.MC_PUSH.ToInt())) && power > 0) {
+			if(((_currentAction == IEE_MentalCommandAction_t.MC_PULL) || (_currentAction == IEE_MentalCommandAction_t.MC_PUSH)) && power > 0) {
 				if(imgBox.getLeft() != startLeft)
 					return;
 				imgBox.setRight((int) startRight);
-				power = (_currentAction == IEE_MentalCommandAction_t.MC_PUSH.ToInt()) ? power / 20 : power/-20;
+				power = (_currentAction == IEE_MentalCommandAction_t.MC_PUSH) ? power / 20 : power/-20;
 				imgBox.setScaleX((float) (power > 0 ? Math.max(0.1, (imgBox.getScaleX() - power)) : Math.min(2, (imgBox.getScaleX() - power))));
 				imgBox.setScaleY((float) (power > 0 ? Math.max(0.1, (imgBox.getScaleY() - power)) : Math.min(2, (imgBox.getScaleY() - power))));
-			} 
+			}
 			else if(imgBox.getScaleX() != 1.0f){
 				power = (imgBox.getScaleX() < 1.0f) ? 0.03f : -0.03f;
 				imgBox.setScaleX((float) (power > 0 ? Math.min(1, (imgBox.getScaleX() + power)) : Math.max(1, (imgBox.getScaleX() + power))));
-				imgBox.setScaleY((float) (power > 0 ? Math.min(1, (imgBox.getScaleY() + power)) : Math.max(1, (imgBox.getScaleY() + power))));		
+				imgBox.setScaleY((float) (power > 0 ? Math.min(1, (imgBox.getScaleY() + power)) : Math.max(1, (imgBox.getScaleY() + power))));
 			}
 		}
 	public void enableClick()
@@ -292,7 +291,7 @@ public class ActivityTrainning extends Activity implements EngineInterface {
 		this.userId=userId;
 	}
 	@Override
-	public void currentAction(int typeAction, float power) {
+	public void currentAction(IEE_MentalCommandAction_t typeAction, float power) {
 		// TODO Auto-generated method stub
 		progressPower.setProgress((int)(power*100));
 		_currentAction = typeAction;
@@ -303,7 +302,7 @@ public class ActivityTrainning extends Activity implements EngineInterface {
 	public void userRemoved() {
 		// TODO Auto-generated method stub
 	}
-	
+
 	@Override
 	public void trainStarted() {
 		// TODO Auto-generated method stub
@@ -334,13 +333,13 @@ public class ActivityTrainning extends Activity implements EngineInterface {
 						new DialogInterface.OnClickListener() {
 							public void onClick(
 									DialogInterface dialog,int which) {
-								engineConnector.setTrainControl(IEE_MentalCommandTrainingControl_t.MC_ACCEPT.getType());
+								engineConnector.setTrainControl(IEE_MentalCommandTrainingControl_t.MC_ACCEPT);
 							}
 						})
 				.setNegativeButton("No",
 						new DialogInterface.OnClickListener() {
 							public void onClick(DialogInterface dialog, int id) {
-								engineConnector.setTrainControl(IEE_MentalCommandTrainingControl_t.MC_REJECT.getType());
+								engineConnector.setTrainControl(IEE_MentalCommandTrainingControl_t.MC_REJECT);
 							}
 						});
 
@@ -403,7 +402,7 @@ public class ActivityTrainning extends Activity implements EngineInterface {
 	    .setTitle("Training Erased")
 	    .setMessage("")
 	    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-	     public void onClick(DialogInterface dialog, int which) { 
+	     public void onClick(DialogInterface dialog, int which) {
 	        }
 	     })
 	    .setIcon(android.R.drawable.ic_dialog_alert)
@@ -415,7 +414,7 @@ public class ActivityTrainning extends Activity implements EngineInterface {
 		enableClick();
 		isTrainning = false;
 	}
-	
+
 	@Override
 	public void trainReset() {
 		// TODO Auto-generated method stub
@@ -428,9 +427,9 @@ public class ActivityTrainning extends Activity implements EngineInterface {
 		progressBarTime.setProgress(0);
 		enableClick();
 	};
-	
+
 	public void onBackPressed() {
 		 android.os.Process.killProcess(android.os.Process.myPid());
-		  finish(); 
+		  finish();
 	 }
 }

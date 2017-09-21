@@ -12,13 +12,12 @@ import com.emotiv.customspinner.CustomSpinner;
 import com.emotiv.customspinner.SpinnerModel;
 import com.emotiv.dateget.EngineConnector;
 import com.emotiv.dateget.EngineInterface;
-import com.emotiv.insight.IEdk;
-import com.emotiv.insight.FacialExpressionDetection;
-import com.emotiv.insight.FacialExpressionDetection.IEE_FacialExpressionEvent_t;
-import com.emotiv.insight.FacialExpressionDetection.IEE_FacialExpressionThreshold_t;
-import com.emotiv.insight.FacialExpressionDetection.IEE_FacialExpressionTrainingControl_t;
-import com.emotiv.insight.IEmoStateDLL.IEE_FacialExpressionAlgo_t;
-import com.emotiv.insight.IEmoStateDLL.IEE_MentalCommandAction_t;
+import com.emotiv.sdk.*;
+//import com.emotiv.insight.FacialExpressionDetection.IEE_FacialExpressionEvent_t;
+//import com.emotiv.insight.FacialExpressionDetection.IEE_FacialExpressionThreshold_t;
+//import com.emotiv.insight.FacialExpressionDetection.IEE_FacialExpressionTrainingControl_t;
+//import com.emotiv.insight.IEmoStateDLL.IEE_FacialExpressionAlgo_t;
+//import com.emotiv.insight.IEmoStateDLL.IEE_MentalCommandAction_t;
 
 import android.R.bool;
 import android.R.color;
@@ -60,29 +59,29 @@ public class ContentActivity extends Activity implements EngineInterface{
     Timer timer;
     boolean mapping= false;
     int indexActionSellected = 0;
-    
+
     private Vector<String> mappingAction;
     int userId = 0,count = 0;
     EngineConnector engineConnector;
     Button btStartTrainning,btClear;
-    
+
 	 public static float _currentPower = 0;
 	 boolean isTrainning = false;
 	 String currentRunningAction="";
-	 
+
 	 float startLeft 	= -1;
 	 float startRight 	= 0;
 	 float widthScreen 	= 0;
-	  
+
 	 public  ArrayList<SpinnerModel> CustomListViewValuesArr  = new ArrayList<SpinnerModel>();
 	 public  ArrayList<SpinnerModel> CustomListViewValuesArr2 = new ArrayList<SpinnerModel>();
 	 public  ArrayList<SpinnerModel> CustomListViewValuesArr3 = new ArrayList<SpinnerModel>();
-	 
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.content);
-		engineConnector =EngineConnector.shareInstance();
+		engineConnector = EngineConnector.shareInstance();
 		engineConnector.delegate = this;
 		mappingAction = new Vector<String>();
 		mappingAction.add("Neutral");
@@ -94,7 +93,7 @@ public class ContentActivity extends Activity implements EngineInterface{
 		spinner = (Spinner) this.findViewById(R.id.spinner1);
 		spinner2 = (CustomSpinner) this.findViewById(R.id.spinner2);
 		spinnerSensitive = (Spinner) this.findViewById(R.id.spinner3);
-		
+
 		barTime = (ProgressBar) this.findViewById(R.id.progressTimer);
 		powerBar = (ProgressBar) this.findViewById(R.id.ProgressBarpower);
 		imgBox = (ImageView) this.findViewById(R.id.imgBox);
@@ -123,11 +122,11 @@ public class ContentActivity extends Activity implements EngineInterface{
 					case 3:
 						//frown
 						startTrainingFacialExpression(IEE_FacialExpressionAlgo_t.FE_FROWN);
-						break;	
+						break;
 					case 4:
 						//suprise
 						startTrainingFacialExpression(IEE_FacialExpressionAlgo_t.FE_SURPRISE);
-						break;		
+						break;
 					default:
 						break;
 					}
@@ -135,7 +134,7 @@ public class ContentActivity extends Activity implements EngineInterface{
 			}
 		});
 		btClear.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
@@ -144,7 +143,7 @@ public class ContentActivity extends Activity implements EngineInterface{
 		});
 		barTime.setVisibility(View.INVISIBLE);
 		setListData();
-		Resources res = getResources(); 
+		Resources res = getResources();
 		adapterSpinnerAction = new CustomAdapter(getApplicationContext(), R.layout.spinner, CustomListViewValuesArr,res);
 	        // Set adapter to spinner
 		spinner.setAdapter(adapterSpinnerAction);
@@ -158,19 +157,19 @@ public class ContentActivity extends Activity implements EngineInterface{
 				mapping = true;
 				spinner2.setSelection(indexActionSellected);
 			}
-			
+
 			@Override
 			public void onNothingSelected(AdapterView<?> arg0) {
 				// TODO Auto-generated method stub
-				
+
 			}
 		});
-		
+
 		adapter = new CustomAdapter(getApplicationContext(), R.layout.spinner, CustomListViewValuesArr2,res);
 		adapter.headerData = mappingAction;
 		spinner2.setAdapter(adapter);
 		spinner2.setOnItemSelectedListener(new OnItemSelectedListener() {
-		  
+
 			@Override
 			public void onItemSelected(AdapterView<?> arg0, View arg1,
 					int arg2, long arg3) {
@@ -195,13 +194,13 @@ public class ContentActivity extends Activity implements EngineInterface{
 			   			break;
 			   		case 4:
 			   			mappingAction.setElementAt("Right", indexActionSellected);
-			   			break;	
+			   			break;
 			   	}
-			 
+
 			   	spinner2.setSelection(indexActionSellected);
-			   	adapter.notifyDataSetChanged();				
+			   	adapter.notifyDataSetChanged();
 			}
-			
+
 			@Override
 			public void onNothingSelected(AdapterView<?> arg0) {
 				// TODO Auto-generated method stub
@@ -217,24 +216,24 @@ public class ContentActivity extends Activity implements EngineInterface{
 				switch (indexActionSellected) {
 				case 0:
 					// neutral
-					FacialExpressionDetection.IEE_FacialExpressionSetThreshold(userId,IEE_FacialExpressionAlgo_t.FE_NEUTRAL.ToInt(), IEE_FacialExpressionThreshold_t.FE_SENSITIVITY.toInt(), arg2*100);
+					edkJava.IEE_FacialExpressionSetThreshold(userId,IEE_FacialExpressionAlgo_t.FE_NEUTRAL, IEE_FacialExpressionThreshold_t.FE_SENSITIVITY, arg2*100);
 					break;
 				case 1:
 					//smile
-					FacialExpressionDetection.IEE_FacialExpressionSetThreshold(userId,IEE_FacialExpressionAlgo_t.FE_SMILE.ToInt(), IEE_FacialExpressionThreshold_t.FE_SENSITIVITY.toInt(), arg2*100);
+					edkJava.IEE_FacialExpressionSetThreshold(userId,IEE_FacialExpressionAlgo_t.FE_SMILE, IEE_FacialExpressionThreshold_t.FE_SENSITIVITY, arg2*100);
 					break;
 				case 2:
 					//clench
-					FacialExpressionDetection.IEE_FacialExpressionSetThreshold(userId,IEE_FacialExpressionAlgo_t.FE_CLENCH.ToInt(), IEE_FacialExpressionThreshold_t.FE_SENSITIVITY.toInt(), arg2*100);
+					edkJava.IEE_FacialExpressionSetThreshold(userId,IEE_FacialExpressionAlgo_t.FE_CLENCH, IEE_FacialExpressionThreshold_t.FE_SENSITIVITY, arg2*100);
 					break;
 				case 3:
 					//frown
-					FacialExpressionDetection.IEE_FacialExpressionSetThreshold(userId,IEE_FacialExpressionAlgo_t.FE_FROWN.ToInt(), IEE_FacialExpressionThreshold_t.FE_SENSITIVITY.toInt(), arg2*100);
-					break;	
+					edkJava.IEE_FacialExpressionSetThreshold(userId,IEE_FacialExpressionAlgo_t.FE_FROWN, IEE_FacialExpressionThreshold_t.FE_SENSITIVITY, arg2*100);
+					break;
 				case 4:
 					//suprise
-					FacialExpressionDetection.IEE_FacialExpressionSetThreshold(userId,IEE_FacialExpressionAlgo_t.FE_SURPRISE.ToInt(), IEE_FacialExpressionThreshold_t.FE_SENSITIVITY.toInt(), arg2*100);
-					break;		
+					edkJava.IEE_FacialExpressionSetThreshold(userId,IEE_FacialExpressionAlgo_t.FE_SURPRISE, IEE_FacialExpressionThreshold_t.FE_SENSITIVITY, arg2*100);
+					break;
 				default:
 					break;
 				}
@@ -253,9 +252,9 @@ public class ContentActivity extends Activity implements EngineInterface{
 		    	mHandlerUpdateUI.sendEmptyMessage(1);
 		    }
 		},
-		0, 20);	
+		0, 20);
 	}
-	
+
 	 @Override
 	  public void onWindowFocusChanged(boolean hasFocus) {
 		    Display display = getWindowManager().getDefaultDisplay();
@@ -266,42 +265,42 @@ public class ContentActivity extends Activity implements EngineInterface{
 			startRight = imgBox.getRight();
 	 }
 
-	
+
 	  public void setListData()
 	    {
-	         
+
 	        // Now i have taken static values by loop.
 	        // For further inhancement we can take data by webservice / json / xml;
 	            SpinnerModel sched = new SpinnerModel();
 	            sched.setLabel("Neutral");
-	            sched.setChecked(engineConnector.checkTrained(IEE_FacialExpressionAlgo_t.FE_NEUTRAL.ToInt()));
+	            sched.setChecked(engineConnector.checkTrained(IEE_FacialExpressionAlgo_t.FE_NEUTRAL));
 	            CustomListViewValuesArr.add(sched);
 	            sched= new SpinnerModel();
 	            sched.setLabel("Smile");
-	            sched.setChecked(engineConnector.checkTrained(IEE_FacialExpressionAlgo_t.FE_SMILE.ToInt()));
+	            sched.setChecked(engineConnector.checkTrained(IEE_FacialExpressionAlgo_t.FE_SMILE));
 
 	            CustomListViewValuesArr.add(sched);
-	            
+
 	            sched= new SpinnerModel();
 	            sched.setLabel("Clench");
-	            sched.setChecked(engineConnector.checkTrained(IEE_FacialExpressionAlgo_t.FE_CLENCH.ToInt()));
+	            sched.setChecked(engineConnector.checkTrained(IEE_FacialExpressionAlgo_t.FE_CLENCH));
 
 	            CustomListViewValuesArr.add(sched);
-	            
+
 	            sched= new SpinnerModel();
 	            sched.setLabel("Frown");
-	            sched.setChecked(engineConnector.checkTrained(IEE_FacialExpressionAlgo_t.FE_FROWN.ToInt()));
+	            sched.setChecked(engineConnector.checkTrained(IEE_FacialExpressionAlgo_t.FE_FROWN));
 	            sched.setChecked(false);
 	            CustomListViewValuesArr.add(sched);
-	            
+
 	            sched= new SpinnerModel();
 	            sched.setLabel("Surprise");
-	            sched.setChecked(engineConnector.checkTrained(IEE_FacialExpressionAlgo_t.FE_SURPRISE.ToInt()));
+	            sched.setChecked(engineConnector.checkTrained(IEE_FacialExpressionAlgo_t.FE_SURPRISE));
 	            sched.setChecked(false);
 	            CustomListViewValuesArr.add(sched);
-	            
-	          
-	            
+
+
+
 	            //////////
 	            for (int i = 0 ;i < mappingAction.size() ;i ++){
 	            	  sched = new SpinnerModel();
@@ -316,7 +315,7 @@ public class ContentActivity extends Activity implements EngineInterface{
 		            CustomListViewValuesArr3.add(sched);
 	            }
 	}
-	
+
 	private void intTimerTask(){
 			count=0;
 		   timerTask = new TimerTask() {
@@ -345,24 +344,24 @@ public class ContentActivity extends Activity implements EngineInterface{
 		switch (indexActionSellected) {
 		case 0:
 			// neutral
-			engineConnector.trainningClear(IEE_FacialExpressionAlgo_t.FE_NEUTRAL.ToInt());
+			engineConnector.trainningClear(IEE_FacialExpressionAlgo_t.FE_NEUTRAL);
 			break;
 		case 1:
 			//smile
-			engineConnector.trainningClear(IEE_FacialExpressionAlgo_t.FE_SMILE.ToInt());
+			engineConnector.trainningClear(IEE_FacialExpressionAlgo_t.FE_SMILE);
 			break;
 		case 2:
 			//clench
-			engineConnector.trainningClear(IEE_FacialExpressionAlgo_t.FE_CLENCH.ToInt());
+			engineConnector.trainningClear(IEE_FacialExpressionAlgo_t.FE_CLENCH);
 			break;
 		case 3:
 			//furrow
-			engineConnector.trainningClear(IEE_FacialExpressionAlgo_t.FE_FROWN.ToInt());
-			break;	
+			engineConnector.trainningClear(IEE_FacialExpressionAlgo_t.FE_FROWN);
+			break;
 		case 4:
 			//furrow
-			engineConnector.trainningClear(IEE_FacialExpressionAlgo_t.FE_SURPRISE.ToInt());
-			break;		
+			engineConnector.trainningClear(IEE_FacialExpressionAlgo_t.FE_SURPRISE);
+			break;
 		default:
 			break;
 		}
@@ -373,15 +372,15 @@ public class ContentActivity extends Activity implements EngineInterface{
 	public void userAdded(int userId) {
 		// TODO Auto-generated method stub
 		this.userId=userId;
-	}; 
+	};
 	@Override
-	public void detectedActionLowerFace(int typeAction, float power) {
+	public void detectedActionLowerFace(IEE_FacialExpressionAlgo_t typeAction, float power) {
 		// TODO Auto-generated method stub
 		_currentPower=power;
-		if (typeAction == IEE_FacialExpressionAlgo_t.FE_SMILE.ToInt()) {
+		if (typeAction == IEE_FacialExpressionAlgo_t.FE_SMILE) {
 			runAnimation(indexActionSellected,power);
 		}
-		else if (typeAction == IEE_FacialExpressionAlgo_t.FE_CLENCH.ToInt())
+		else if (typeAction == IEE_FacialExpressionAlgo_t.FE_CLENCH)
 			runAnimation(indexActionSellected,power);
 	}
 
@@ -412,22 +411,22 @@ public class ContentActivity extends Activity implements EngineInterface{
 	    .setTitle("Training Succeeded")
 	    .setMessage("Training is successful. Accept this training?")
 	    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-	     public void onClick(DialogInterface dialog, int which) { 
+	     public void onClick(DialogInterface dialog, int which) {
 	            // continue with delete
-	        	engineConnector.setTrainControl(IEE_FacialExpressionTrainingControl_t.FE_ACCEPT.getType());
+	        	engineConnector.setTrainControl(IEE_FacialExpressionTrainingControl_t.FE_ACCEPT);
 	        }
 	     })
 	    .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
-	        public void onClick(DialogInterface dialog, int which) { 
+	        public void onClick(DialogInterface dialog, int which) {
 	            // do nothing
-	        	engineConnector.setTrainControl(IEE_FacialExpressionTrainingControl_t.FE_REJECT.getType());
+	        	engineConnector.setTrainControl(IEE_FacialExpressionTrainingControl_t.FE_REJECT);
 	        }
 	     })
 	    .setIcon(android.R.drawable.ic_dialog_alert)
 	     .show();
 	}
-	
-	
+
+
 	@Override
 	public void trainCompleted() {
 		// TODO Auto-generated method stub
@@ -435,12 +434,12 @@ public class ContentActivity extends Activity implements EngineInterface{
 		model.setChecked(true);
 		CustomListViewValuesArr.set(indexActionSellected, model);
         adapterSpinnerAction.notifyDataSetChanged();
-        
+
         new AlertDialog.Builder(this)
 	    .setTitle("Training Completed")
 	    .setMessage("")
 	    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-	     public void onClick(DialogInterface dialog, int which) { 
+	     public void onClick(DialogInterface dialog, int which) {
 	            // continue with delete
 	        }
 	     })
@@ -448,7 +447,7 @@ public class ContentActivity extends Activity implements EngineInterface{
 	     .show();
 		isTrainning = false;
 	}
-	
+
 	@Override
 	public void trainRejected() {
 		// TODO Auto-generated method stub
@@ -465,13 +464,13 @@ public class ContentActivity extends Activity implements EngineInterface{
 		    .setTitle("Training Erased")
 		    .setMessage("")
 		    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-		     public void onClick(DialogInterface dialog, int which) { 
+		     public void onClick(DialogInterface dialog, int which) {
 		            // continue with delete
 		        }
 		     })
 		    .setIcon(android.R.drawable.ic_dialog_alert)
 		     .show();
-	  
+
 		SpinnerModel model = CustomListViewValuesArr.get(indexActionSellected);
 		model.setChecked(false);
 		CustomListViewValuesArr.set(indexActionSellected, model);
@@ -493,12 +492,16 @@ public class ContentActivity extends Activity implements EngineInterface{
 	}
 
 	/// handler
-	  public Handler mHandlerUpdateUI = new Handler() {
+    public Handler mHandlerUpdateUI = new Handler() {
 	       public void handleMessage(Message msg) {
-	    	 switch (msg.what) {
+	        switch (msg.what) {
 			case 0:
 				count ++;
-				int trainningTime=(int)FacialExpressionDetection.IEE_FacialExpressionGetTrainingTime(userId)[1]/1000;
+				SWIGTYPE_p_unsigned_int pValue = edkJava.new_uint_p();
+				edkJava.IEE_FacialExpressionGetTrainingTime(userId, pValue);
+				int trainningTime=(int)edkJava.uint_p_value(pValue);
+				edkJava.delete_uint_p(pValue);
+				trainningTime = trainningTime/1000;
 				if(trainningTime > 0)
 					barTime.setProgress(count / trainningTime);
 				if (barTime.getProgress() > 100) {
@@ -513,7 +516,7 @@ public class ContentActivity extends Activity implements EngineInterface{
 			default:
 				break;
 			}
-	       } 
+	       }
 	    };
 	    private void moveImage() {
 			float power = _currentPower;
@@ -526,7 +529,7 @@ public class ContentActivity extends Activity implements EngineInterface{
 			if(( currentRunningAction.equals("Neutral"))  || (currentRunningAction.equals("Right")) && power > 0) {
 
 				if(imgBox.getScaleX() == 1.0f && startLeft > 0) {
-					
+
 					imgBox.setRight((int) widthScreen);
 					power = ( currentRunningAction.equals("Left")) ? power*3 : power*-3;
 					imgBox.setLeft((int) (power > 0 ? Math.max(0, (int)(imgBox.getLeft() - power)) : Math.min(widthScreen - imgBox.getMeasuredWidth(), (int)(imgBox.getLeft() - power))));
@@ -543,18 +546,18 @@ public class ContentActivity extends Activity implements EngineInterface{
 				power = (currentRunningAction.equals("Push")) ? power / 20 : power/-20;
 				imgBox.setScaleX((float) (power > 0 ? Math.max(0.1, (imgBox.getScaleX() - power)) : Math.min(2, (imgBox.getScaleX() - power))));
 				imgBox.setScaleY((float) (power > 0 ? Math.max(0.1, (imgBox.getScaleY() - power)) : Math.min(2, (imgBox.getScaleY() - power))));
-			} 
+			}
 			else if(imgBox.getScaleX() != 1.0f){
 				power = (imgBox.getScaleX() < 1.0f) ? 0.03f : -0.03f;
 				imgBox.setScaleX((float) (power > 0 ? Math.min(1, (imgBox.getScaleX() + power)) : Math.max(1, (imgBox.getScaleX() + power))));
-				imgBox.setScaleY((float) (power > 0 ? Math.min(1, (imgBox.getScaleY() + power)) : Math.max(1, (imgBox.getScaleY() + power))));		
+				imgBox.setScaleY((float) (power > 0 ? Math.min(1, (imgBox.getScaleY() + power)) : Math.max(1, (imgBox.getScaleY() + power))));
 			}
 		}
-	       
-	 public void onBackPressed() {
-		 android.os.Process.killProcess(android.os.Process.myPid());
-		  finish(); 
-	 }
+
+	public void onBackPressed() {
+	    android.os.Process.killProcess(android.os.Process.myPid());
+		finish();
+	}
 
 
 }

@@ -1,10 +1,7 @@
 package com.example.profilecloudexample;
 
-import com.emotiv.emotivcloud.EmotivCloudClient;
-import com.emotiv.emotivcloud.EmotivCloudErrorCode;
-import com.emotiv.insight.IEdk;
-import com.emotiv.insight.IEdkErrorCode;
-import com.emotiv.insight.IEdk.IEE_Event_t;
+import com.emotiv.sdk.*;
+import com.emotiv.bluetooth.*;
 
 import android.os.Build;
 import android.support.v4.content.ContextCompat;
@@ -42,6 +39,9 @@ public class MainActivity extends Activity {
 	boolean headsetConnected               = false;
 	int engineUserID           			   = 0;
 	int  userCloudID                       = -1;
+	private SWIGTYPE_p_void handleEvent;
+	private SWIGTYPE_p_void emoState;
+
 	Button Save_profile,Load_profile,Delete_profile,Login_btn;
 	EditText user_name, pass_word;
 	TextView status;
@@ -49,7 +49,7 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
+
 		final BluetoothManager bluetoothManager =
 				(BluetoothManager) getSystemService(Context.BLUETOOTH_SERVICE);
 		mBluetoothAdapter = bluetoothManager.getAdapter();
@@ -71,6 +71,10 @@ public class MainActivity extends Activity {
 			checkConnect();
 		}
 
+		Emotiv.IEE_EmoInitDevice(this);
+		edkJava.IEE_EngineConnect("");
+		handleEvent = edkJava.IEE_EmoEngineEventCreate();
+		emoState = edkJava.IEE_EmoStateCreate();
 
 		Save_profile   = (Button)findViewById(R.id.button2);
         Load_profile   = (Button)findViewById(R.id.button3);
@@ -79,13 +83,13 @@ public class MainActivity extends Activity {
         user_name      = (EditText)findViewById(R.id.editText_name);
         pass_word      = (EditText)findViewById(R.id.editText_pass);
         status         = (TextView)findViewById(R.id.textView4);
-        
+
         Save_profile.setEnabled(false);
         Load_profile.setEnabled(false);
         Delete_profile.setEnabled(false);
-        
+
         Save_profile.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
@@ -97,8 +101,8 @@ public class MainActivity extends Activity {
 				    	status.setText("Login first");
 				        return;
 				    }
-				    
-				    if(EmotivCloudClient.EC_SaveUserProfile(userCloudID, engineUserID, "test", EmotivCloudClient.profileFileType.TRAINING.ToInt() ) == EmotivCloudErrorCode.EC_OK.ToInt()) {
+
+				    if(edkJava.EC_SaveUserProfile(userCloudID, engineUserID, "test", profileFileType.TRAINING ) == edkJava.EDK_OK) {
 				    	status.setText("Save new profile successfully");
 				    }
 				    else {
@@ -108,7 +112,7 @@ public class MainActivity extends Activity {
 			}
 		});
         Load_profile.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
@@ -120,12 +124,15 @@ public class MainActivity extends Activity {
 			    	status.setText("Login first");
 			        return;
 			    }
-			    int profileID = EmotivCloudClient.EC_GetProfileId(userCloudID, "test");
+				SWIGTYPE_p_int pProfileId = edkJava.new_int_p();
+				edkJava.EC_GetProfileId(userCloudID, "test", pProfileId);
+			    int profileID = edkJava.int_p_value(pProfileId);
+				edkJava.delete_int_p(pProfileId);
 			    if ( profileID < 0) {
 			    	status.setText("Profile isnt existed");
 			        return;
 			    }
-			    if(EmotivCloudClient.EC_LoadUserProfile(userCloudID, engineUserID, profileID,-1) == EmotivCloudErrorCode.EC_OK.ToInt()) {
+			    if(edkJava.EC_LoadUserProfile(userCloudID, engineUserID, profileID,-1) == edkJava.EDK_OK) {
 			    	status.setText("Load profile successfully");
 			    }
 			    else {
@@ -135,7 +142,7 @@ public class MainActivity extends Activity {
 			}
 		});
         Delete_profile.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
@@ -147,12 +154,15 @@ public class MainActivity extends Activity {
 			    	status.setText("Login first");
 			        return;
 			    }
-			    int profileID = EmotivCloudClient.EC_GetProfileId(userCloudID, "test");
+				SWIGTYPE_p_int pProfileId = edkJava.new_int_p();
+				edkJava.EC_GetProfileId(userCloudID, "test", pProfileId);
+				int profileID = edkJava.int_p_value(pProfileId);
+				edkJava.delete_int_p(pProfileId);
 			    if ( profileID < 0) {
 			    	status.setText("Profile isnt existed");
 			        return;
 			    }
-			    if(EmotivCloudClient.EC_DeleteUserProfile(userCloudID, profileID) == EmotivCloudErrorCode.EC_OK.ToInt()){
+			    if(edkJava.EC_DeleteUserProfile(userCloudID, profileID) == edkJava.EDK_OK){
 			    	status.setText("Remove profile successfully");
 			    }
 			    else {
@@ -161,12 +171,12 @@ public class MainActivity extends Activity {
 			}
 		});
         Login_btn.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
 				if(!cloudConnected) {
-			        cloudConnected = (EmotivCloudClient.EC_Connect(MainActivity.this) == EmotivCloudErrorCode.EC_OK.ToInt());
+			        cloudConnected = (edkJava.EC_Connect() == edkJava.EDK_OK);
 			        if(!cloudConnected) {
 			            status.setText("Please check internet connection and connect again");
 			            return;
@@ -177,12 +187,14 @@ public class MainActivity extends Activity {
 			        return;
 			    }
 			    InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-	            imm.hideSoftInputFromWindow(Login_btn.getWindowToken(), 
+	            imm.hideSoftInputFromWindow(Login_btn.getWindowToken(),
 	                                      InputMethodManager.RESULT_UNCHANGED_SHOWN);
-			    if(EmotivCloudClient.EC_Login(user_name.getText().toString(),pass_word.getText().toString()) == EmotivCloudErrorCode.EC_OK.ToInt()) {
+			    if(edkJava.EC_Login(user_name.getText().toString(),pass_word.getText().toString()) == edkJava.EDK_OK) {
 			    	status.setText("Login successfully");
-			        userCloudID = EmotivCloudClient.EC_GetUserDetail();
-			        if(EmotivCloudClient.EC_GetUserDetail() != -1) {
+					SWIGTYPE_p_int pUserId = edkJava.new_int_p();
+			        int result  = edkJava.EC_GetUserDetail(pUserId);
+			        if(result  == edkJava.EDK_OK) {
+						userCloudID = edkJava.int_p_value(pUserId);
 			            Save_profile.setEnabled(true);
 			            Load_profile.setEnabled(true);
 			            Delete_profile.setEnabled(true);
@@ -190,6 +202,7 @@ public class MainActivity extends Activity {
 			        else {
 			        	status.setText("Cant get user detail. Please try again");
 			        }
+					edkJava.delete_int_p(pUserId);
 			    }
 			    else {
 			    	status.setText("Username or password is wrong. Check again");
@@ -211,7 +224,7 @@ public class MainActivity extends Activity {
       						handler.sendEmptyMessage(1);
       						Thread.sleep(5);
       					}
-      					
+
       					catch (Exception ex)
       					{
       						ex.printStackTrace();
@@ -221,48 +234,53 @@ public class MainActivity extends Activity {
       		};
 		    processingThread.start();
       	}
-      	
+
       	Handler handler = new Handler() {
       		@Override
       		public void handleMessage(Message msg) {
       			switch (msg.what) {
 
       			case 0:
-      				int state = IEdk.IEE_EngineGetNextEvent();
-      				if (state == IEdkErrorCode.EDK_OK.ToInt()) {
-      					int eventType = IEdk.IEE_EmoEngineEventGetType();
-      				    userId = IEdk.IEE_EmoEngineEventGetUserId();
-      					if(eventType == IEE_Event_t.IEE_UserAdded.ToInt()){
+      				int state = edkJava.IEE_EngineGetNextEvent(handleEvent);
+      				if (state == edkJava.EDK_OK) {
+      					IEE_Event_t eventType = edkJava.IEE_EmoEngineEventGetType(handleEvent);
+						SWIGTYPE_p_unsigned_int pEngineId = edkJava.new_uint_p();
+						int result = edkJava.IEE_EmoEngineEventGetUserId(handleEvent, pEngineId);
+						int tmpUserId = (int)edkJava.uint_p_value(pEngineId);
+						edkJava.delete_uint_p(pEngineId);
+
+      					if(eventType == IEE_Event_t.IEE_UserAdded){
       						Log.e("SDK","User added");
       						headsetConnected = true;
-      					}
-      					if(eventType == IEE_Event_t.IEE_UserRemoved.ToInt()){
+							userId = tmpUserId;
+						}
+      					if(eventType == IEE_Event_t.IEE_UserRemoved){
       						Log.e("SDK","User removed");
       						headsetConnected = false;
       					}
       				}
-      				
+
       				break;
       			case 1:
 					/*Connect device with Insight headset*/
-      				int number = IEdk.IEE_GetInsightDeviceCount();
+      				int number = Emotiv.IEE_GetInsightDeviceCount();
       				if(number != 0) {
       					if(!lock){
       						lock = true;
-      						IEdk.IEE_ConnectInsightDevice(0);
+							Emotiv.IEE_ConnectInsightDevice(0);
       					}
-      				}
-					/*************************************/
-					/*Connect device with Epoc Plus headset*/
-//					int number = IEdk.IEE_GetEpocPlusDeviceCount();
-//					if(number != 0) {
-//						if(!lock){
-//							lock = true;
-//							IEdk.IEE_ConnectEpocPlusDevice(0,false);
-//						}
-//					}
-					/*************************************/
-      				else lock = false;
+      				} else {
+						/*Connect device with Epoc Plus headset*/
+						number = Emotiv.IEE_GetEpocPlusDeviceCount();
+						if(number != 0) {
+							if(!lock){
+								lock = true;
+								Emotiv.IEE_ConnectEpocPlusDevice(0,false);
+							}
+						} else {
+							lock = false;
+						}
+					}
       				break;
       			}
       		   }
@@ -296,7 +314,7 @@ public class MainActivity extends Activity {
 		if (requestCode == REQUEST_ENABLE_BT) {
 			if(resultCode == Activity.RESULT_OK){
 				//Connect to emoEngine
-				IEdk.IEE_EngineConnect(this,"");
+				edkJava.IEE_EngineConnect("");
 			}
 			if (resultCode == Activity.RESULT_CANCELED) {
 				Toast.makeText(this, "You must be turn on bluetooth to connect with Emotiv devices"
@@ -334,7 +352,7 @@ public class MainActivity extends Activity {
 		else
 		{
 			//Connect to emoEngine
-			IEdk.IEE_EngineConnect(this,"");
+			edkJava.IEE_EngineConnect("");
 		}
 	}
 
