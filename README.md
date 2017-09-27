@@ -36,14 +36,14 @@ See [changelog](CHANGELOG.md)
   * Mac OS X 10.10 or above (check if Bluetooth LMP Version is 0x6 from System Report)
   * iOS 8.0 or above (excluding iOS 8.3 and 8.4)
   * Android 4.4.3 or above (excluding Android 5.0)
-  * Ubuntu 14.04 / 15.10 64-bit (see [Connecting on Ubuntu and Debian](doc/Connecting%20on%20Ubuntu%20and%20Debian.md))
+  * Ubuntu 16.04 (see [Connecting on Ubuntu and Debian](doc/Connecting%20on%20Ubuntu%20and%20Debian.md))
   * Debian 8.3 Jessie (armhf) (see [Connecting on Ubuntu and Debian](doc/Connecting%20on%20Ubuntu%20and%20Debian.md))
 
 * Insight with Emotiv Universal USB Receiver currently works with the SDK under:
   * Windows 7 or above
   * Mac OS X 10.8 or above
   * Android 4.4.3 or above
-  * Ubuntu 14.04 / 15.10 64-bit
+  * Ubuntu 16.04
   * Debian 8.3 Jessie (armhf)
 
 ## Connecting with BTLE

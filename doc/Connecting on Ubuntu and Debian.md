@@ -1,4 +1,4 @@
-## Connecting Emotiv device via USB dongle on Ubuntu 14.04/15.10 and Debian 8.3
+## Connecting Emotiv device via USB dongle on Ubuntu 16.04 and Debian 8.3
 
 ### Install HID configure for Emotiv USB dongle
 ```shell
@@ -8,7 +8,7 @@ sudo service udev restart
 
 Then plugin the USB dongle, you should see the flashing green light and it is ready to be connected to an Emotiv headset.
 
-## Connecting Emotiv device via BTLE on Ubuntu 14.04/15.10 and Debian 8.3 with BlueZ library
+## Connecting Emotiv device via BTLE on Ubuntu 16.04 and Debian 8.3 with BlueZ library
 ### Install and configure latest bluez
 #### Build bluez
 ```shell
