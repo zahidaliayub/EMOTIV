@@ -7,9 +7,13 @@
 ** This example work on single connection
 ****************************************************************************/
 
+#include <string.h>
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <string>
+#include <map>
+#include <cassert>
 
 #ifdef _WIN32
     #include <conio.h>
@@ -21,8 +25,7 @@
 int _kbhit(void);
 #endif
 
-#include <map>
-#include <cassert>
+
 
 #include "IEmoStateDLL.h"
 #include "Iedk.h"
